@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Navigation } from "@/components/Naviagtion";
+import { Toast } from "@heroui/react";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -27,7 +29,26 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <Toast.Provider placement="top end"/>
+        <Navigation />
+        <main>
+          {children}
+        </main>
+        <footer className="py-12 border-t border-gray-100 bg-white">
+        <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-sm text-[#6F6F6F]">
+            © {new Date().getFullYear()} Phan Hoàng Phúc. All rights reserved.
+          </p>
+          <div className="flex gap-8">
+            <a href="#" className="text-sm text-[#6F6F6F] hover:text-black transition-colors">GitHub</a>
+            <a href="#" className="text-sm text-[#6F6F6F] hover:text-black transition-colors">LinkedIn</a>
+            <a href="#" className="text-sm text-[#6F6F6F] hover:text-black transition-colors">Twitter</a>
+          </div>
+        </div>
+      </footer>
+      </body>
+      
     </html>
   );
 }
