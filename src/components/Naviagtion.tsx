@@ -23,8 +23,8 @@ export const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-[110] bg-white/90 backdrop-blur-md border-b border-gray-100">
-      <div className="flex justify-between items-center px-4 sm:px-8 py-4 sm:py-6 max-w-7xl mx-auto w-full relative z-[120]">
+    <nav className="z-100 sticky top-0 bg-white/90 backdrop-blur-md border-b border-gray-100">
+      <div className="flex justify-between items-center px-4 sm:px-8 py-4 sm:py-6 max-w-7xl mx-auto w-full relative">
         <Link
           href="/"
           className="text-2xl sm:text-3xl tracking-tight font-serif text-black"

@@ -4,3 +4,7 @@ allowBuilds:
 ignoredBuiltDependencies:
   - sharp
   - unrs-resolver
+minimumReleaseAgeExclude:
+  - hwagfu-link
+overrides:
+  hwagfu-quick-link: link:../../jasoncomponent

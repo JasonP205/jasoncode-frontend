@@ -115,3 +115,14 @@ body {
   --warning: oklch(82.03% 0.1388 45.88);
   --warning-foreground: oklch(21.03% 0.0059 45.88);
 }
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-foreground);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}

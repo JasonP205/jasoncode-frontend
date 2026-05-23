@@ -1,10 +1,11 @@
 "use client";
+
 import React, { useState } from 'react';
 import { Mail, Send, CheckCircle } from 'lucide-react';
-import { Button, Input, TextArea } from "@heroui/react"
+import { Input, TextArea, Button } from "@heroui/react";
 import { motion, AnimatePresence } from 'motion/react';
 
-export const Contact = () => {
+export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -110,7 +111,7 @@ export const Contact = () => {
                   <Button 
                     type="submit"
                     size="lg"
-                    className="w-full bg-white text-black hover:bg-white/90 rounded-full"
+                    className="w-full bg-white rounded-full text-black hover:bg-white/90"
                   >
                     Gửi yêu cầu <Send className="w-4 h-4 ml-2" />
                   </Button>

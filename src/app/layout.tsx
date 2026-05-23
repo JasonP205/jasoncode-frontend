@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Navigation } from "@/components/Naviagtion";
 import { Toast } from "@heroui/react";
 import "./globals.css";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,11 +16,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Code dạo - Phan Hoàng Phúc",
-  description: "Personal portfolio of Phan Hoàng Phúc, showcasing projects and skills in web development.",
-  icons : {
-    icon: "/favicon-for-app/favicon.ico"
-  }
+  title: "jasoncode - Phan Hoàng Phúc",
+  description:
+    "Personal portfolio of Phan Hoàng Phúc, showcasing projects and skills in web development.",
+  icons: {
+    icon: "/favicon-for-app/favicon.ico",
+  },
 };
 
 export default function RootLayout({
@@ -33,25 +35,11 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <Toast.Provider placement="top end"/>
+        <Toast.Provider placement="top end" />
         <Navigation />
-        <main>
-          {children}
-        </main>
-        <footer className="py-12 border-t border-gray-100 bg-white">
-        <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-sm text-[#6F6F6F]">
-            © {new Date().getFullYear()} Phan Hoàng Phúc. All rights reserved.
-          </p>
-          <div className="flex gap-8">
-            <a href="#" className="text-sm text-[#6F6F6F] hover:text-black transition-colors">GitHub</a>
-            <a href="#" className="text-sm text-[#6F6F6F] hover:text-black transition-colors">LinkedIn</a>
-            <a href="#" className="text-sm text-[#6F6F6F] hover:text-black transition-colors">Twitter</a>
-          </div>
-        </div>
-      </footer>
+        <main className="flex-1">{children}</main>
+        <Footer />
       </body>
-      
     </html>
   );
 }
