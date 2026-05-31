@@ -73,7 +73,7 @@ const Skills = () => {
     },
   ];
   return (
-    <section id="skill" className="py-24 bg-white">
+    <section data-anchor="skills" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* LEFT */}
@@ -163,41 +163,10 @@ const Skills = () => {
                   }}
                 >
                   <div
-                    className="
-          group
-          flex
-          flex-col
-          md:flex-row
-          md:items-center
-          md:gap-4
-          items-center
-          gap-3
-          rounded-2xl
-          border
-          border-zinc-200
-          bg-white
-          px-4
-          py-3
-          transition-all
-          duration-300
-          hover:border-zinc-900
-          hover:shadow-[0_10px_40px_rgba(0,0,0,0.08)]
-          hover:-translate-y-1
-        "
+                    className="group flex flex-col md:flex-row md:items-center md:gap-4 items-center gap-3 rounded-2xl border border-zinc-200 bg-white px-4 py-3 transition-all duration-300 hover:border-zinc-900 hover:shadow-[0_10px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1"
                   >
                     <div
-                      className="
-            flex
-            h-10
-            w-10
-            items-center
-            justify-center
-            rounded-xl
-            bg-zinc-100
-            transition-transform
-            duration-300
-            group-hover:scale-110
-          "
+                      className="flex h-10 w-10 items-center justify-center rounded-xl bg-zinc-100 transition-transform duration-300 group-hover:scale-110"
                     >
                       <Icon
                         icon={tech.icon}

@@ -1,9 +1,10 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Mail, Send, CheckCircle } from 'lucide-react';
-import { Input, TextArea, Button } from "@heroui/react";
+import { Mail, Send, CheckCircle, User } from 'lucide-react';
+import { Input, TextArea, Button, TextField, InputGroup, Label } from "@heroui/react";
 import { motion, AnimatePresence } from 'motion/react';
+
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -61,7 +62,7 @@ export default function Contact() {
             </motion.div>
           </div>
 
-          <div className="w-full lg:w-[450px]">
+          <div className="w-full lg:max-w-sm">
             <AnimatePresence mode="wait">
               {submitted ? (
                 <motion.div 
@@ -69,7 +70,7 @@ export default function Contact() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
-                  className="h-[300px] sm:h-[400px] flex flex-col items-center justify-center text-center bg-white/5 rounded-3xl border border-white/10 p-6"
+                  className="h-75 sm:h-100 flex flex-col items-center justify-center text-center bg-white/5 rounded-3xl border border-white/10 p-6"
                 >
                   <CheckCircle className="w-12 h-12 sm:w-16 sm:h-16 text-green-400 mb-6" />
                   <h3 className="text-xl sm:text-2xl text-white font-serif mb-2">Đã gửi tin nhắn!</h3>
@@ -89,14 +90,18 @@ export default function Contact() {
                     <label className="block text-xs sm:text-sm text-gray-400 mb-2">Họ và tên</label>
                     <Input 
                       required
+                      fullWidth
                       placeholder="Nguyễn Văn A"
+                      className="bg-zinc-950 border border-zinc-800 text-white placeholder:text-zinc-500 font-sans"
                     />
                   </div>
                   <div>
                     <label className="block text-xs sm:text-sm text-gray-400 mb-2">Email liên hệ</label>
                     <Input 
                       required
+                      fullWidth
                       type="email" 
+                      className="bg-zinc-950 border border-zinc-800 text-white placeholder:text-zinc-500 font-sans"
                       placeholder="email@example.com"
                     />
                   </div>
@@ -105,6 +110,8 @@ export default function Contact() {
                     <TextArea 
                       required
                       rows={4}
+                      fullWidth
+                      className="resize-none bg-zinc-950 border border-zinc-800 text-white placeholder:text-zinc-500 font-sans"
                       placeholder="Nhập nội dung tin nhắn của bạn..."
                     />
                   </div>

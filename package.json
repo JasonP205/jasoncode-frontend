@@ -9,13 +9,15 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@fullpage/react-fullpage": "^0.1.49",
     "@heroui/react": "^3.0.5",
     "@heroui/styles": "^3.0.5",
     "@hookform/resolvers": "^5.2.2",
     "@iconify/react": "^6.0.2",
     "@lottiefiles/dotlottie-react": "^0.19.2",
     "clsx": "^2.1.1",
-    "hwagfu-link": "^2.0.0",
+    "framer-motion": "^12.40.0",
+    "hwagfu-link": "^2.0.1",
     "lucide-react": "^1.16.0",
     "motion": "^12.38.0",
     "next": "16.2.6",

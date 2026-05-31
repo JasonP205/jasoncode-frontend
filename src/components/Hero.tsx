@@ -1,7 +1,7 @@
 import { Button } from "@heroui/react";
 const Hero = () => {
   return (
-    <section id="hero">
+    <section data-anchor="hero">
       <div className="relative w-full aspect-video">
         <div className="absolute top-0 left-0 w-full h-full">
           <video
