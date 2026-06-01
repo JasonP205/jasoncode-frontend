@@ -5,6 +5,8 @@ import { Toast } from "@heroui/react";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import { cn } from "@/lib/utils";
+import { Analytics } from '@vercel/analytics/next';
+
 
 const inter = Inter({subsets:['latin'],variable:'--font-sans'});
 
@@ -26,7 +28,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://jasoncode.dev"),
+  metadataBase: new URL("https://hwagfu.dev"),
   title: {
     default: "Jason Dev | Phan Hoàng Phúc - Web Developer",
     template: "%s | Jason Dev",
@@ -34,7 +36,7 @@ export const metadata: Metadata = {
   description:
     "Trang web portfolio cá nhân của Phan Hoàng Phúc (Jason Dev). Nơi trưng bày các dự án, kỹ năng và kinh nghiệm lập trình Web hiện đại.",
   applicationName: "Jason Dev Portfolio",
-  authors: [{ name: "Phan Hoàng Phúc", url: "https://jasoncode.dev" }],
+  authors: [{ name: "Phan Hoàng Phúc", url: "https://hwagfu.dev" }],
   generator: "Next.js",
   keywords: [
     "Web Developer",
@@ -68,7 +70,7 @@ export const metadata: Metadata = {
     title: "Jason Dev | Phan Hoàng Phúc - Web Developer",
     description:
       "Trang web portfolio cá nhân của Phan Hoàng Phúc (Jason Dev). Nơi trưng bày các dự án, kỹ năng và kinh nghiệm lập trình Web hiện đại.",
-    url: "https://jasoncode.dev",
+    url: "https://hwagfu.dev",
     siteName: "Jason Dev Portfolio",
     images: [
       {
@@ -119,7 +121,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="vi"
       className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", inter.variable)}
       data-scroll-behavior="smooth"
     >
@@ -128,6 +130,7 @@ export default function RootLayout({
         <Navigation />
         <main className="flex-1">{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );

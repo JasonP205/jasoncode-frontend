@@ -15,6 +15,7 @@
     "@hookform/resolvers": "^5.2.2",
     "@iconify/react": "^6.0.2",
     "@lottiefiles/dotlottie-react": "^0.19.2",
+    "@vercel/analytics": "^2.0.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.40.0",
