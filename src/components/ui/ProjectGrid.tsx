@@ -5,6 +5,7 @@ import { Card, Chip, Skeleton } from "@heroui/react";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, ExternalLink } from "lucide-react";
+import ThreeDCard from "@/components/ThreeDCard";
 
 const itemVariants = {
   hidden: { opacity: 0, y: 30 },
@@ -26,7 +27,8 @@ const ProjectGrid = async ({ projects }: { projects: Project[] }) => {
           viewport={{ once: true, margin: "-50px" }}
           transition={{ delay: index * 0.1 }}
         >
-          <Card className="group hover:shadow-xl hover:-translate-y-2 h-full flex flex-col transition-all duration-300">
+          <ThreeDCard>
+            <Card className="group hover:shadow-xl hover:-translate-y-2 h-full flex flex-col transition-all duration-300">
             <div className="relative aspect-video overflow-hidden">
               <div className="relative h-64 rounded-xl overflow-hidden">
                 <Image
@@ -69,6 +71,7 @@ const ProjectGrid = async ({ projects }: { projects: Project[] }) => {
               </Link>
             </Card.Footer>
           </Card>
+          </ThreeDCard>
         </MotionDiv>
       ))}
     </>

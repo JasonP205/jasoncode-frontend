@@ -1,8 +1,7 @@
-import { twMerge } from "tailwind-merge";
-import clsx from "clsx";
+import { clsx, type ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
 
-const cn = (...inputs: Parameters<typeof clsx>) => twMerge(clsx(...inputs));
-
-const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-
-export { cn, delay };
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
+export const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));

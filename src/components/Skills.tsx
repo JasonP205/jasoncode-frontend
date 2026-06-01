@@ -1,9 +1,8 @@
 import React from "react";
 import MotionDiv from "./ui/motionDiv";
-import { Chip, ScrollShadow } from "@heroui/react";
+import { ScrollShadow } from "@heroui/react";
 import Icon from "./ui/icon";
 import GreenwichLogo from "./ui/GreenwichLogo";
-import THPTLogo from "./ui/THPTLogo";
 import ExternalLink from "./ui/externalLink";
 
 const Skills = () => {
@@ -162,12 +161,8 @@ const Skills = () => {
                     delay: index * 0.05,
                   }}
                 >
-                  <div
-                    className="group flex flex-col md:flex-row md:items-center md:gap-4 items-center gap-3 rounded-2xl border border-zinc-200 bg-white px-4 py-3 transition-all duration-300 hover:border-zinc-900 hover:shadow-[0_10px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1"
-                  >
-                    <div
-                      className="flex h-10 w-10 items-center justify-center rounded-xl bg-zinc-100 transition-transform duration-300 group-hover:scale-110"
-                    >
+                  <div className="group flex flex-col md:flex-row md:items-center md:gap-4 items-center gap-3 rounded-2xl border border-zinc-200 bg-white px-4 py-3 transition-all duration-300 hover:border-zinc-900 hover:shadow-[0_10px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-zinc-100 transition-transform duration-300 group-hover:scale-110">
                       <Icon
                         icon={tech.icon}
                         className="h-6 w-6 text-zinc-800"

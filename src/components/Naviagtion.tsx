@@ -10,16 +10,16 @@ const navLinks = [
   { to: "/", label: "Trang chủ" },
   { to: "/projects", label: "Dự án" },
   { to: "/pricing", label: "Báo giá" },
-  { to: "/contact", label: "Liên hệ" },
   {
     to: "/utils",
     label: "Tiện ích",
   },
+  { to: "/contact", label: "Liên hệ" },
 ];
 export const Navigation = () => {
   return (
     <nav className="z-50 sticky top-0 bg-white/90 backdrop-blur-md border-b border-gray-100">
-      <div className="flex justify-between items-center px-4 sm:px-8 py-4 sm:py-6 max-w-7xl mx-auto w-full relative">
+      <div className="flex justify-between items-center px-4 sm:px-8  max-w-7xl mx-auto w-full relative">
         <Link
           href="/"
           className="text-2xl sm:text-3xl tracking-tight font-serif text-black flex items-center gap-2"
@@ -89,7 +89,9 @@ const MobileNavation = () => {
                       priority
                     />
                   </div>
-                  <span className="font-sans font-semibold text-base text-shadow-slate-900">Jason Dev</span>
+                  <span className="font-sans font-semibold text-base text-shadow-slate-900">
+                    Jason Dev
+                  </span>
                 </Link>
               </Drawer.Heading>
             </Drawer.Header>
