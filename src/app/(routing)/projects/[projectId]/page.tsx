@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import { ArrowLeft, ExternalLink, Code2 } from 'lucide-react';
 import { Chip, Button, Skeleton } from '@heroui/react';
 import MotionDiv from '@/components/ui/motionDiv';
+import { getProjectById } from '@/services/projects.service';
 
 function ProjectSkeleton() {
   return (
@@ -49,26 +50,8 @@ function ProjectSkeleton() {
 }
 
 async function ProjectContent({ projectId }: { projectId: string }) {
-  let project = null;
-  const apiUrl = process.env.NEXT_PUBLIC_API_URL || process.env.NEXT_API_URL || "http://localhost:3000/api";
-  
-  try {
-    const response = await fetch(`${apiUrl}/projects/${projectId}`);
-    
-    // Xử lý cứng nếu API trả về 404 Data Not Found
-    if (response.status === 404) {
-      notFound();
-    }
-    
-    if (response.ok) {
-      project = await response.json();
-    }
-  } catch (err) {
-    console.error("API fetch failed:", err);
-  }
-
-  // Backup phòng trường hợp project bị rỗng do cấu hình fetch
-  if (!project || project.error) {
+  const project = await getProjectById(projectId);
+  if (!project) {
     notFound();
   }
 

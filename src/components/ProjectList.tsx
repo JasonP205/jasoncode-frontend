@@ -1,9 +1,9 @@
-import React from "react";
 import MotionDiv from "./ui/motionDiv";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Suspense } from "react";
 import { ProjectGrid, ProjectGridSkeleton } from "./ui/ProjectGrid";
+import { getAllProjects } from "@/services/projects.service";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -25,8 +25,7 @@ const itemVariants = {
 };
 
 const ProjectGridData = async ({ maxLenght }: { maxLenght?: number }) => {
-  const apiUrl = process.env.NEXT_API_URL || "";
-  const projects = await fetch(`${apiUrl}/projects`).then((res) => res.json());
+  const projects = await getAllProjects();
   const featuredProjects = maxLenght ? projects.slice(0, maxLenght) : projects;
   return <ProjectGrid projects={featuredProjects} />;
 };
