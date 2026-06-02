@@ -5,6 +5,11 @@ import Link from "next/link";
 import MotionDiv from "@/components/ui/motionDiv";
 import ThreeDCard from "@/components/ThreeDCard";
 
+export const metadata = {
+  title: "Bảng giá dịch vụ thiết kế & lập trình web",
+  description: "Khám phá các gói dịch vụ thiết kế và lập trình web trọn gói, phù hợp với mọi nhu cầu từ cá nhân đến doanh nghiệp. Từ trang Portfolio cá nhân đến cửa hàng trực tuyến chuyên nghiệp, mình sẽ lo toàn bộ cho bạn với chi phí hợp lý. Liên hệ ngay để nhận tư vấn miễn phí và bắt đầu hành trình xây dựng trang web ấn tượng của bạn!"
+};
+
 const pricingPlans = [
   {
     name: "Dấu Ấn Cá Nhân",

@@ -4,6 +4,12 @@ import CountdownTimer from '@/components/ui/CountdownTimer';
 import { Button } from '@heroui/react';
 import Link from 'next/link';
 import { ArrowLeft, Clock } from 'lucide-react';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Tiện ích",
+  description: "Khám phá các công cụ tiện ích sắp ra mắt trên trang web của tôi! Từ bộ đếm thời gian đến các tính năng tương tác, mình đang chuẩn bị những tiện ích hữu ích để nâng cao trải nghiệm của bạn. Hãy đếm ngược cùng Jason và sẵn sàng trải nghiệm những công cụ mới mẻ này khi chúng chính thức được kích hoạt!"
+};
 
 const UtilsPage = () => {
   return (

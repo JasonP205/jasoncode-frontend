@@ -4,6 +4,7 @@ import { ScrollShadow } from "@heroui/react";
 import Icon from "./ui/icon";
 import GreenwichLogo from "./ui/GreenwichLogo";
 import ExternalLink from "./ui/externalLink";
+import ThreeDCard from "./ThreeDCard";
 
 const Skills = () => {
   const techStack = [

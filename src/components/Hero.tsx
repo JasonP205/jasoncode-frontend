@@ -1,4 +1,5 @@
-import { Button } from "@heroui/react";
+import ScrollButton from "@/components/ui/ScrollButton";
+
 const Hero = () => {
   return (
     <section data-anchor="hero">
@@ -30,7 +31,9 @@ const Hero = () => {
             ích và chỉn chu.
           </p>
           <div className="mt-10 sm:mt-12">
-            <Button size="lg">Bắt đầu hành trình</Button>
+            <ScrollButton sectionId="contact">
+              Bắt đầu hành trình
+            </ScrollButton>
           </div>
         </div>
       </div>

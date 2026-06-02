@@ -1,11 +1,9 @@
-"use client";
-
-import React, { useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Button, Drawer } from "@heroui/react";
-import { motion, AnimatePresence } from "motion/react";
+import MotionDiv from "./ui/motionDiv";
 import Image from "next/image";
+import logo from "@/app/logo.png"
 const navLinks = [
   { to: "/", label: "Trang chủ" },
   { to: "/projects", label: "Dự án" },
@@ -26,7 +24,7 @@ export const Navigation = () => {
         >
           <div className="w-16 h-16 shrink-0 flex items-center justify-center">
             <Image
-              src="/favicon/logo.png"
+              src={logo}
               alt="Jason Dev Logo"
               width={64}
               height={64}
@@ -98,7 +96,7 @@ const MobileNavation = () => {
             <Drawer.Body>
               <div className="flex flex-col gap-5">
                 {navLinks.map((link, index) => (
-                  <motion.div
+                  <MotionDiv
                     key={link.to}
                     initial={{ opacity: 0, x: 10 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -110,10 +108,10 @@ const MobileNavation = () => {
                     >
                       {link.label}
                     </Link>
-                  </motion.div>
+                  </MotionDiv>
                 ))}
 
-                <motion.div
+                <MotionDiv
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: navLinks.length * 0.05 }}
@@ -127,7 +125,7 @@ const MobileNavation = () => {
                       Đăng ký
                     </Button>
                   </Link>
-                </motion.div>
+                </MotionDiv>
               </div>
             </Drawer.Body>
             <Drawer.Footer />
