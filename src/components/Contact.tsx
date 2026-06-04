@@ -2,15 +2,7 @@
 
 import React, { useState, useTransition } from "react";
 import { Mail, Send, CheckCircle, User } from "lucide-react";
-import {
-  Input,
-  TextArea,
-  Button,
-  TextField,
-  InputGroup,
-  Label,
-  Spinner,
-} from "@heroui/react";
+import { Input, TextArea, Button, toast, Spinner } from "@heroui/react";
 import { motion, AnimatePresence } from "motion/react";
 import { submitContact } from "@/actions/contact.action";
 
@@ -19,25 +11,28 @@ export default function Contact() {
   const [isPending, startTransition] = useTransition();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  const formData = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
 
-  startTransition(async () => {
-    const result = await submitContact(formData);
+    startTransition(async () => {
+      const result = await submitContact(formData);
 
-    if (result.success) {
-      setSubmitted(true);
-      e.currentTarget.reset();
-
-      setTimeout(() => {
-        setSubmitted(false);
-      }, 5000);
-    } else {
-      alert(result.error);
-    }
-  });
-};
+      if (result.success) {
+        setSubmitted(true);
+        form.reset();
+        toast.success(
+          "Mình đã nhận được lời nhắn của bạn! Cảm ơn bạn đã liên hệ.",
+        );
+        setTimeout(() => {
+          setSubmitted(false);
+        }, 5000);
+      } else {
+        toast.danger(result.error);
+      }
+    });
+  };
 
   return (
     <section
@@ -50,7 +45,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="bg-black rounded-[2rem] sm:rounded-[3rem] p-8 sm:p-12 md:p-20 flex flex-col lg:flex-row gap-12 lg:gap-16 items-start"
+          className="bg-black rounded-[2rem] selection:bg-white! selection:text-black! sm:rounded-[3rem] p-8 sm:p-12 md:p-20 flex flex-col lg:flex-row gap-12 lg:gap-16 items-start"
         >
           <div className="flex-1 w-full">
             <motion.h2
@@ -78,19 +73,25 @@ export default function Contact() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex items-center gap-4 text-white"
             >
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0">
-                <Mail className="w-5 h-5 sm:w-6 sm:h-6" />
-              </div>
-              <div>
-                <p className="text-xs sm:text-sm text-gray-400">
-                  Email trực tiếp
-                </p>
-                <p className="text-base sm:text-lg break-all">
-                  contact@hwagfu.dev
-                </p>
-              </div>
+              <a
+                className="flex items-center gap-4 text-white cursor-pointer"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@hwagfu.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                  <Mail className="w-5 h-5 sm:w-6 sm:h-6" />
+                </div>
+                <div>
+                  <p className="text-xs sm:text-sm text-gray-400">
+                    Email trực tiếp
+                  </p>
+                  <p className="text-base sm:text-lg break-all">
+                    contact@hwagfu.dev
+                  </p>
+                </div>
+              </a>
             </motion.div>
           </div>
 
@@ -132,7 +133,7 @@ export default function Contact() {
                       fullWidth
                       disabled={isPending}
                       placeholder="Nguyễn Văn A"
-                      className="bg-zinc-950 border border-zinc-800 text-white placeholder:text-zinc-500 font-sans"
+                      className="bg-zinc-950 border border-zinc-800 text-white selection:bg-white! selection:text-black! placeholder:text-zinc-500 font-sans"
                     />
                   </div>
                   <div>
@@ -145,7 +146,7 @@ export default function Contact() {
                       fullWidth
                       type="email"
                       disabled={isPending}
-                      className="bg-zinc-950 border border-zinc-800 text-white placeholder:text-zinc-500 font-sans"
+                      className="bg-zinc-950 border border-zinc-800 text-white selection:bg-white! selection:text-black! placeholder:text-zinc-500 font-sans"
                       placeholder="email@example.com"
                     />
                   </div>
@@ -159,7 +160,7 @@ export default function Contact() {
                       rows={4}
                       fullWidth
                       disabled={isPending}
-                      className="resize-none bg-zinc-950 border border-zinc-800 text-white placeholder:text-zinc-500 font-sans"
+                      className="resize-none bg-zinc-950 border border-zinc-800 text-white selection:bg-white! selection:text-black! placeholder:text-zinc-500 font-sans"
                       placeholder="Nhập nội dung tin nhắn của bạn..."
                     />
                   </div>
@@ -167,7 +168,7 @@ export default function Contact() {
                     type="submit"
                     size="lg"
                     isPending={isPending}
-                    className="w-full bg-white rounded-full text-black hover:bg-white/90"
+                    className="w-full bg-white selection:bg-black! selection:text-white! rounded-full text-black hover:bg-white/90"
                   >
                     {isPending ? (
                       <>

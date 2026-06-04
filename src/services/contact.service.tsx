@@ -34,7 +34,7 @@ export async function sendContactEmail(
     // 1. Gửi thông báo đến Admin (System -> Admin)
     if (adminEmail) {
       await transporter.sendMail({
-        from: `"Hệ thống Website" <system@hwagfu.dev>`,
+        from: `"Jason Dev - System" <system@hwagfu.dev>`,
         to: adminEmail,
         subject: `[Jason Dev] Liên hệ mới từ ${name}`,
         html: notificationHtml,
@@ -44,7 +44,7 @@ export async function sendContactEmail(
 
     // 2. Gửi xác nhận cho Khách hàng (No-Reply -> Khách hàng)
     await transporter.sendMail({
-      from: `"Thông báo" <info@hwagfu.dev>`,
+      from: `"no-reply | Jason Dev" <info@hwagfu.dev>`,
       to: email,
       subject: "Mình đã nhận được lời nhắn của bạn - Jason Dev",
       html: customerHtml,
