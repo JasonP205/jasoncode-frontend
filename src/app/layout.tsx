@@ -53,8 +53,6 @@ export const metadata: Metadata = {
   creator: "Phan Hoàng Phúc",
   publisher: "Phan Hoàng Phúc",
 
-  generator: "Next.js",
-
   keywords: [
     "Web Developer",
     "Frontend Developer",
@@ -68,6 +66,9 @@ export const metadata: Metadata = {
     "dự án cá nhân",
     "thiết kế web",
     "phát triển web",
+    "hoàng phúc",
+    "Hoàng Phúc",
+    "Jason Phan"
   ],
 
   referrer: "origin-when-cross-origin",

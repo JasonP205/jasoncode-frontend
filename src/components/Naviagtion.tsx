@@ -79,7 +79,7 @@ const MobileNavation = () => {
                 >
                   <div className="w-16 h-16 shrink-0 flex items-center justify-center">
                     <Image
-                      src="/favicon/logo.png"
+                      src={logo}
                       alt="Jason Dev Logo"
                       width={64}
                       height={64}
@@ -87,7 +87,7 @@ const MobileNavation = () => {
                       priority
                     />
                   </div>
-                  <span className="font-sans font-semibold text-base text-shadow-slate-900">
+                  <span className="font-serif leading-relaxed text-xl text-shadow-slate-900">
                     Jason Dev
                   </span>
                 </Link>
