@@ -33,6 +33,16 @@ const Footer = () => {
               className="bg-white rounded-full px-0"
               classNames={{ image: "rounded-full w-8 h-8 hover:scale-105 transition-transform duration-200 hover:shadow-lg", content: "text-black hover:underline decoration-1 underline-offset-2" }}
             />
+            <JasonCode
+              url="https://vercel.com"
+              className="bg-white rounded-full px-0"
+              classNames={{ image: "rounded-full w-8 h-8 hover:scale-105 transition-transform duration-200 hover:shadow-lg", content: "text-black hover:underline decoration-1 underline-offset-2" }}
+            />
+            <JasonCode
+              url="https://www.hugowishpax.studio"
+              className="bg-white rounded-full px-0"
+              classNames={{ image: "rounded-full w-8 h-8 hover:scale-105 transition-transform duration-200 hover:shadow-lg", content: "text-black hover:underline decoration-1 underline-offset-2" }}
+            />
           </div>
           <div className="flex gap-8">
             {socialLinks.map((link) => (

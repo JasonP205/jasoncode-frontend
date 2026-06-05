@@ -8,5 +8,6 @@ ignoredBuiltDependencies:
   - unrs-resolver
 minimumReleaseAgeExclude:
   - hwagfu-link
+  - hwagfu-cursor@0.1.0
 overrides:
   hwagfu-quick-link: link:../../jasoncomponent

@@ -6,6 +6,7 @@ import "./globals.css";
 import Footer from "@/components/Footer";
 import { cn } from "@/lib/utils";
 import { Analytics } from "@vercel/analytics/next";
+import CursorEffect from "@/components/ui/Cursor";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -68,7 +69,7 @@ export const metadata: Metadata = {
     "phát triển web",
     "hoàng phúc",
     "Hoàng Phúc",
-    "Jason Phan"
+    "Jason Phan",
   ],
 
   referrer: "origin-when-cross-origin",
@@ -145,11 +146,12 @@ export default function RootLayout({
         geistSans.variable,
         geistMono.variable,
         "font-sans",
-        inter.variable
+        inter.variable,
       )}
       data-scroll-behavior="smooth"
     >
       <body className="min-h-full flex flex-col">
+        <CursorEffect />
         <Toast.Provider placement="top end" />
 
         <Navigation />

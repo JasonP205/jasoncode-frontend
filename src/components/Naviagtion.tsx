@@ -26,10 +26,7 @@ export const Navigation = () => {
             <Image
               src={logo}
               alt="Jason Dev Logo"
-              width={64}
-              height={64}
-              sizes="64px"
-              priority
+              decoding="async"
             />
           </div>
           <span className="hidden sm:inline">Jason Dev</span>
@@ -81,10 +78,7 @@ const MobileNavation = () => {
                     <Image
                       src={logo}
                       alt="Jason Dev Logo"
-                      width={64}
-                      height={64}
-                      sizes="64px"
-                      priority
+                      decoding="async"
                     />
                   </div>
                   <span className="font-serif leading-relaxed text-xl text-shadow-slate-900">
