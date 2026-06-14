@@ -9,5 +9,6 @@ ignoredBuiltDependencies:
 minimumReleaseAgeExclude:
   - hwagfu-link
   - hwagfu-cursor@0.1.0
+  - '@hwagfu/cursor@1.2.0'
 overrides:
   hwagfu-quick-link: link:../../jasoncomponent

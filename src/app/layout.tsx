@@ -6,7 +6,7 @@ import "./globals.css";
 import Footer from "@/components/Footer";
 import { cn } from "@/lib/utils";
 import { Analytics } from "@vercel/analytics/next";
-import CursorEffect from "@/components/ui/Cursor";
+import {CursorEffect} from "@hwagfu/cursor";
 
 const inter = Inter({
   subsets: ["latin"],

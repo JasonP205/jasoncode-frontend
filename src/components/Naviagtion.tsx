@@ -29,7 +29,6 @@ export const Navigation = () => {
               decoding="async"
             />
           </div>
-          <span className="hidden sm:inline">Jason Dev</span>
         </Link>
 
         {/* Desktop Navigation */}
