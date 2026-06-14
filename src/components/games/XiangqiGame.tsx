@@ -265,11 +265,11 @@ export default function XiangqiGame() {
         </div>
 
         <div className="mt-4 flex flex-wrap gap-2">
-          <Chip variant="flat" className="bg-default-100 px-3 py-4 text-sm font-semibold">
+          <Chip variant="soft" className="bg-default-100 px-3 py-4 text-sm font-semibold">
             Lượt: {getTurnLabel(state.turn)}
           </Chip>
           <Chip
-            variant="flat"
+            variant="soft"
             className={cn(
               "px-3 py-4 text-sm font-semibold",
               mode === "ai" ? "bg-emerald-100 text-emerald-800" : "bg-sky-100 text-sky-800",
@@ -278,7 +278,7 @@ export default function XiangqiGame() {
             {mode === "ai" ? "Đấu với máy" : "2 người cùng máy"}
           </Chip>
           {isAiTurn ? (
-            <Chip variant="flat" className="bg-amber-100 px-3 py-4 text-sm font-semibold text-amber-800">
+            <Chip variant="soft" className="bg-amber-100 px-3 py-4 text-sm font-semibold text-amber-800">
               Máy đang tính nước
             </Chip>
           ) : null}

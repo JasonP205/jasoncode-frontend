@@ -310,7 +310,10 @@ function isGeneralInCheck(board: (XiangqiPiece | null)[][], color: XiangqiColor)
   return false;
 }
 
-function makeMoveInternal(state: XiangqiState, move: XiangqiMove) {
+function makeMoveInternal(
+  state: XiangqiState,
+  move: XiangqiMove,
+): XiangqiState {
   const board = cloneBoard(state.board);
   const piece = board[move.from.row][move.from.col];
   if (!piece) return state;
