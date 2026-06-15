@@ -18,7 +18,7 @@ const CallToAction = () => {
             Liên hệ
           </Button>
         </Link>
-        <Link href="/pricing" passHref>
+        <Link href="/services" passHref>
           <Button size="lg" variant="secondary" className="w-full sm:w-auto">
             Xem thêm
           </Button>

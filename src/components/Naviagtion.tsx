@@ -7,7 +7,7 @@ import logo from "@/app/logo.png"
 const navLinks = [
   { to: "/", label: "Trang chủ" },
   { to: "/projects", label: "Dự án" },
-  { to: "/pricing", label: "Báo giá" },
+  { to: "/services", label: "Dịch vụ" },
   {
     to: "/utils",
     label: "Tiện ích",
@@ -32,7 +32,7 @@ export const Navigation = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-8 absolute left-1/2 transform -translate-x-1/2">
           {navLinks.map((link) => (
             <Link
               key={link.to}

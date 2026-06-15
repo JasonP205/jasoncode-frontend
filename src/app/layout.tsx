@@ -6,7 +6,6 @@ import "./globals.css";
 import Footer from "@/components/Footer";
 import { cn } from "@/lib/utils";
 import { Analytics } from "@vercel/analytics/next";
-import {CursorEffect} from "@hwagfu/cursor";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -35,12 +34,12 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://hwagfu.dev"),
 
   title: {
-    default: "Trang chủ | Jason Dev - Web Developer",
+    default: "Jason Dev | Freelance Web Developer",
     template: "%s | Jason Dev",
   },
 
   description:
-    "Trang web portfolio cá nhân của Phan Hoàng Phúc (Jason Dev). Nơi trưng bày các dự án, kỹ năng và kinh nghiệm lập trình Web hiện đại.",
+    "Trang cá nhân và dịch vụ freelance của Phan Hoàng Phúc (Jason Dev), chuyên làm website, tối ưu SEO, tối ưu web sẵn có và thiết kế hệ thống dữ liệu dễ mở rộng.",
 
   applicationName: "Jason Dev Portfolio",
 
@@ -63,6 +62,11 @@ export const metadata: Metadata = {
     "Phan Hoàng Phúc",
     "Jason Dev",
     "hwagfu dev",
+    "freelance web developer",
+    "dịch vụ làm website",
+    "tối ưu seo website",
+    "tối ưu code website",
+    "thiết kế hệ thống database",
     "lập trình web",
     "dự án cá nhân",
     "thiết kế web",
@@ -96,7 +100,7 @@ export const metadata: Metadata = {
     title: "Jason Dev | Phan Hoàng Phúc - Web Developer",
 
     description:
-      "Trang web portfolio cá nhân của Phan Hoàng Phúc (Jason Dev). Nơi trưng bày các dự án, kỹ năng và kinh nghiệm lập trình Web hiện đại.",
+      "Trang cá nhân và dịch vụ freelance của Phan Hoàng Phúc (Jason Dev), chuyên làm website, tối ưu SEO, tối ưu web sẵn có và thiết kế hệ thống dữ liệu.",
   },
 
   twitter: {
@@ -105,7 +109,7 @@ export const metadata: Metadata = {
     title: "Jason Dev | Phan Hoàng Phúc - Web Developer",
 
     description:
-      "Trang web portfolio cá nhân của Phan Hoàng Phúc (Jason Dev). Nơi trưng bày các dự án, kỹ năng và kinh nghiệm lập trình Web hiện đại.",
+      "Trang cá nhân và dịch vụ freelance của Phan Hoàng Phúc (Jason Dev), chuyên làm website, tối ưu SEO, tối ưu web sẵn có và thiết kế hệ thống dữ liệu.",
   },
 
   robots: {
@@ -151,7 +155,6 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
     >
       <body className="min-h-full flex flex-col">
-        <CursorEffect />
         <Toast.Provider placement="top end" />
 
         <Navigation />

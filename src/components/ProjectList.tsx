@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { Suspense } from "react";
 import { ProjectGrid, ProjectGridSkeleton } from "./ui/ProjectGrid";
 import { getAllProjects } from "@/services/projects.service";
+import {CursorEffect} from "@hwagfu/cursor";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -33,6 +34,7 @@ const ProjectGridData = async ({ maxLenght }: { maxLenght?: number }) => {
 const ProjectList = ({ maxLenght }: { maxLenght?: number }) => {
   return (
     <section data-anchor="projects" className="py-16 sm:py-24 bg-gray-50">
+      <CursorEffect />
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         <MotionDiv
           initial="hidden"

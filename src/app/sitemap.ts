@@ -9,31 +9,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}`,
-      lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 1,
     },
     {
       url: `${baseUrl}/projects`,
-      lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/pricing`,
-      lastModified: new Date(),
+      url: `${baseUrl}/services`,
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/contact`,
-      lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/utils`,
-      lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 0.5,
     },
@@ -42,7 +37,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Lấy các route động từ CSDL local projects.ts
   const dynamicProjectRoutes: MetadataRoute.Sitemap = projects.map((project) => ({
     url: `${baseUrl}/projects/${project.id}`,
-    lastModified: new Date(),
+    // Khuyến nghị: Thay thế bằng ngày cập nhật thực tế từ data của bạn nếu có
+    lastModified: (project as any).updatedAt ? new Date((project as any).updatedAt) : undefined,
     changeFrequency: 'monthly',
     priority: 0.6,
   }));

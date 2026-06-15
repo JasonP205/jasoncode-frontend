@@ -23,6 +23,22 @@ export async function generateMetadata(props: any): Promise<Metadata> {
   return {
     title: project.title,
     description: project.description,
+    keywords: project.tags || ["dự án web", "thiết kế web", "Jason Dev"],
+    alternates: {
+      canonical: `/projects/${projectId}`,
+    },
+    openGraph: {
+      title: `${project.title} | Jason Dev`,
+      description: project.description,
+      url: `https://hwagfu.dev/projects/${projectId}`,
+      images: project.image ? [{ url: project.image, alt: project.title }] : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: project.title,
+      description: project.description,
+      images: project.image ? [project.image] : undefined,
+    },
   };
 }
 
