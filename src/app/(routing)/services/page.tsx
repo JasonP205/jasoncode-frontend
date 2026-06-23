@@ -6,6 +6,7 @@ import Link from "next/link";
 import MotionDiv from "@/components/ui/motionDiv";
 import ThreeDCard from "@/components/ThreeDCard";
 import { CursorEffect } from "@hwagfu/cursor";
+import Questions from "@/components/services/Questions";
 
 export const metadata: Metadata = {
   title: "Dịch vụ freelance thiết kế hệ thống, SEO và lập trình web",
@@ -163,10 +164,10 @@ export default function PricingPage() {
           <span className="italic text-muted">rõ ràng, chuyên nghiệp</span>.
         </h1>
         <p className="text-sm sm:text-base md:text-lg text-muted max-w-2xl mt-6 sm:mt-8 leading-relaxed">
-          Các dịch vụ được xây dựng dành cho nhu cầu phát triển website mới,
-          tối ưu website hiện có và cải thiện hiệu quả hiển thị trên công cụ
-          tìm kiếm. Nội dung được trình bày rõ ràng theo từng hạng mục để bạn
-          dễ đánh giá phạm vi công việc và giá trị nhận được trước khi bắt đầu.
+          Các dịch vụ được xây dựng dành cho nhu cầu phát triển website mới, tối
+          ưu website hiện có và cải thiện hiệu quả hiển thị trên công cụ tìm
+          kiếm. Nội dung được trình bày rõ ràng theo từng hạng mục để bạn dễ
+          đánh giá phạm vi công việc và giá trị nhận được trước khi bắt đầu.
         </p>
       </MotionDiv>
 
@@ -301,7 +302,7 @@ export default function PricingPage() {
           </MotionDiv>
         ))}
       </div>
-
+      <Questions />
       <MotionDiv
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

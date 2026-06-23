@@ -24,8 +24,8 @@ importers:
         specifier: ^5.2.2
         version: 5.2.2(react-hook-form@7.76.0(react@19.2.4))
       '@hwagfu/cursor':
-        specifier: ^1.2.0
-        version: 1.2.0(motion@12.38.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        specifier: ^1.2.1
+        version: 1.2.1(motion@12.38.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@iconify/react':
         specifier: ^6.0.2
         version: 6.0.2(react@19.2.4)
@@ -452,8 +452,8 @@ packages:
     resolution: {integrity: sha512-bV0Tgo9K4hfPCek+aMAn81RppFKv2ySDQeMoSZuvTASywNTnVJCArCZE2FWqpvIatKu7VMRLWlR1EazvVhDyhQ==}
     engines: {node: '>=18.18'}
 
-  '@hwagfu/cursor@1.2.0':
-    resolution: {integrity: sha512-W0gyOKEmRXJYMwt90WIOSbYr06kO5dYb/NZntZ8kUTfn0fvv5Fnor5agI9h5qEskeaGrGRNk8tl1DWSalD5VeQ==}
+  '@hwagfu/cursor@1.2.1':
+    resolution: {integrity: sha512-uYQeRW9vVU4+yTwgBA4n/DYbuDC9T+t7eOYK0QjjcM9/prgQatSLuv4nSMPd17Nwqr7qdt0UNjy6Q3KqIgXIkg==}
     peerDependencies:
       motion: ^12.0.0
       react: ^18.0.0 || ^19.0.0
@@ -4738,7 +4738,7 @@ snapshots:
 
   '@humanwhocodes/retry@0.4.3': {}
 
-  '@hwagfu/cursor@1.2.0(motion@12.38.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+  '@hwagfu/cursor@1.2.1(motion@12.38.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       motion: 12.38.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       react: 19.2.4
