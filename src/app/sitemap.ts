@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { projects } from "@/data/projects";
+import { libraries } from "@/data/libraries";
 import { routing } from "@/i18n/routing";
 import { getPathname } from "@/i18n/navigation";
 import { SITE_URL } from "@/lib/seo";
@@ -12,7 +13,9 @@ type RouteDef = {
 
 const staticRoutes: RouteDef[] = [
   { path: "/", changeFrequency: "yearly", priority: 1 },
+  { path: "/library", changeFrequency: "monthly", priority: 0.7 },
   { path: "/library/projects", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/library/components", changeFrequency: "monthly", priority: 0.8 },
   { path: "/services", changeFrequency: "monthly", priority: 0.8 },
   { path: "/contact", changeFrequency: "yearly", priority: 0.8 },
   { path: "/utils", changeFrequency: "yearly", priority: 0.5 },
@@ -33,6 +36,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       path: `/library/projects/${project.id}`,
       changeFrequency: "monthly" as const,
       priority: 0.6,
+    })),
+    ...libraries.map((lib) => ({
+      path: `/library/${lib.slug}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
     })),
   ];
 

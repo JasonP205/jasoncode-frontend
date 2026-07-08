@@ -87,39 +87,45 @@
       "landing": {
         "name": "One-page landing",
         "description": "Ideal when you need a single, striking page to showcase a product, event, personal CV or run ads — fast, focused and the lightest on cost.",
-        "price": "From 690,000₫",
-        "note": "The most affordable way to get online in just a few days.",
+        "price": "999,000₫",
+        "note": "Custom-designed, no generic templates. Delivered in 5–7 days.",
         "features": [
-          "Visitors instantly get what you offer and tap to call or order, instead of leaving to look elsewhere",
-          "Clean and beautiful on mobile, so customers reach you with a single tap",
-          "Paste the link on Facebook or Zalo and it shows an eye-catching image and title, so more people click",
-          "Later you can update prices, photos and phone number yourself — no code, no paid callbacks"
+          "One page custom-designed to your brand, up to 7 sections — no generic templates",
+          "2 rounds of revisions based on your feedback before sign-off",
+          "Contact form sent straight to Zalo or email so you get leads instantly",
+          "Basic SEO plus a rich share preview on Facebook/Zalo",
+          "I put the site live and connect your domain for you",
+          "Free bug fixes for 7 days after handover"
         ],
         "buttonText": "Build a landing page"
       },
       "website": {
         "name": "Multi-page website",
         "description": "For small shops, cafés, personal brands or services that need a complete multi-page website (about, services, contact...) to look professional and sell better.",
-        "price": "From 1,900,000₫",
-        "note": "Price depends on the number of pages, features and content you need — confirmed clearly before we start.",
+        "price": "2,490,000₫",
+        "note": "Final price depends on the number of pages and features to fit your budget; paid in milestones.",
         "features": [
-          "Your shop or service looks professional and trustworthy, on par with the big brands",
-          "Customers find information and order on their own, so you stop repeating the same answers",
-          "A chance to show up when people search your service on Google, instead of only your competitors",
-          "Easy to expand later with more pages or online sales — no need to rebuild from scratch"
+          "4–6 complete pages: home, about, services, contact...",
+          "Cohesive brand-aligned design + 2 rounds of revisions",
+          "SEO-ready structure and Google indexing so customers can find you",
+          "Zalo, Messenger and Google Maps integration for easy contact",
+          "1 month of free maintenance (4 small edits) after handover",
+          "1 walkthrough session + 14 days of support"
         ],
         "buttonText": "Start my website"
       },
       "dynamic": {
-        "name": "Website with dynamic features",
+        "name": "Website with data management",
         "description": "When you need more than a brochure site: sign-up / booking forms, member login, a content admin area, or a connection to your existing system or API.",
-        "price": "From 6,900,000₫",
-        "note": "Price depends on how many features you need and how complex they are; projects with payments, a dashboard or multiple user roles typically run 12–20 million VND. I'll break it down clearly before quoting.",
+        "price": "6,999,000₫",
+        "note": "Projects with automated online payments or complex roles usually start at 12–20 million₫; I break down each part before quoting.",
         "features": [
-          "Customers sign up, book or send requests right on the site, with the info landing straight in your email or system",
-          "A login or admin area so you update content yourself, without calling a developer every time",
-          "Connects to the tools and data you already use (Google Sheets, APIs, existing systems...)",
-          "Built on solid tech (Next.js/React) to run reliably and add more features later"
+          "One core flow: online booking OR basic order taking, stored in a database",
+          "Management dashboard: view orders/appointments, customers and basic stats",
+          "Role-based login for 2 levels: owner and staff",
+          "Connect one data source you already use: Google Sheet or Zalo",
+          "Full clean source code handed over — the website is your asset",
+          "1 month of technical support after handover (fixing new issues)"
         ],
         "buttonText": "Discuss the features I need"
       },
@@ -127,12 +133,12 @@
         "name": "SEO & speed up an existing site",
         "description": "For a live Next.js/React website that loads slowly, breaks often, looks poor on mobile or can't rank on Google — I clean it up to be leaner, faster and more SEO-ready.",
         "price": "From 890,000₫",
-        "note": "I optimize sites built with Next.js/React; cost depends on the current state and scope of work.",
+        "note": "Best for React/Next.js sites or websites that are slow or hard to rank on Google.",
         "features": [
-          "A faster, smoother site so customers aren't frustrated by waiting or glitches",
-          "Looks and works well on mobile, so a broken layout no longer costs you customers",
-          "Reworked titles, descriptions and speed so the site ranks better and pulls in free traffic",
-          "You get a clear report of what was improved and what to do next, in plain language"
+          "Speed optimization: compress images, clean up dead code, enable caching",
+          "Metadata + rich share images for up to 5 key pages",
+          "Google Search Console setup and a complete sitemap",
+          "Before–after PageSpeed report with recommended next steps"
         ],
         "buttonText": "Send a site to optimize"
       }
@@ -201,14 +207,20 @@
       {
         "title": "I need a new website",
         "hint": "A one-page landing or a full multi-page site",
-        "priceFrom": "From 690,000₫",
+        "priceFrom": "From 999,000₫",
         "href": "#build"
       },
       {
         "title": "I need features or a system",
         "hint": "Forms, login, admin, backend integration",
-        "priceFrom": "From 6,900,000₫",
+        "priceFrom": "From 6,999,000₫",
         "href": "#app"
+      },
+      {
+        "title": "A student who needs a project or CV",
+        "hint": "HTML/PHP/React coursework, bug fixing, Bento CV",
+        "priceFrom": "From 120,000₫",
+        "href": "#student"
       }
     ],
     "fixLabel": "Start small · transparent",
@@ -220,7 +232,84 @@
     "buildSub": "When you need an official home on the internet — pick a lean landing page or a full multi-page site. Each plan spells out exactly what you get.",
     "appLabel": "Level up",
     "appHeading": "A website with its own features & system",
-    "appSub": "When your site needs to work for you: take sign-ups and bookings, logins, content admin, or connect to your existing system."
+    "appSub": "When your site needs to work for you: take sign-ups and bookings, logins, content admin, or connect to your existing system.",
+    "studentLabel": "For students",
+    "studentHeading": "Coursework, capstones & CVs for IT students",
+    "studentSub": "Deadline closing in and your project still won't run? I rescue course projects, fix coursework bugs and build CV/portfolios for job hunting — student pricing, and even cheaper when split across a group. I only help with the code and interface, never writing reports or theory for you.",
+    "student": [
+      {
+        "name": "Coursework bug fixing",
+        "description": "Final project breaking on logic errors, database connections or a broken layout? I debug it so it runs perfectly before the deadline.",
+        "price": "From 120,000₫",
+        "note": "Quick quote based on the assignment brief. Solved fast, before your submission deadline.",
+        "features": [
+          "Fix the exact logic or display bug we agreed on",
+          "Quick Zalo guide on deploying to a free host (Vercel/Render)",
+          "3-day stability warranty on the running build",
+          "Handover of fully working code"
+        ],
+        "buttonText": "Ask me to check it",
+        "href": "/contact"
+      },
+      {
+        "name": "Bento CV / Portfolio",
+        "description": "Show off your grades, standout projects and personal links in an Apple-style Bento Grid aesthetic.",
+        "price": "799,000₫",
+        "note": "Modern Bento Grid design. Great for job applications, scholarships or studying abroad.",
+        "features": [
+          "One modern Bento Grid portfolio page, up to 7 sections",
+          "Links to GitHub, social media and contact details",
+          "Contact/message form sent to Google Sheet for free",
+          "Deployed to free lifetime hosting (Vercel/Netlify)"
+        ],
+        "buttonText": "Build my CV/Portfolio",
+        "href": "/contact"
+      },
+      {
+        "name": "Web App Coursework (HTML)",
+        "description": "Great for Web Design courses: building responsive layouts and static-interface projects.",
+        "price": "From 590,000₫",
+        "note": "Static interface with basic DOM/JS effects. Split between 2 people it's only ~295k each.",
+        "features": [
+          "Responsive interface design, mobile-friendly",
+          "DOM motion effects and basic JavaScript",
+          "Detailed guide to run the code yourself",
+          "Clean source code + free self-deploy instructions"
+        ],
+        "buttonText": "Order HTML project",
+        "href": "/contact"
+      },
+      {
+        "name": "Web App Coursework (PHP)",
+        "description": "Great for basic dynamic web courses: CRUD data management, registration/login.",
+        "price": "From 1,490,000₫",
+        "note": "Basic dynamic PHP/MySQL web. Split between 3 people it's only ~495k each.",
+        "features": [
+          "Dynamic data handling with PHP + MySQL database",
+          "Registration and role-based login features",
+          "Bundled seed mock data so it runs out of the box",
+          "Bonus: 1 live call to guide setup and a test run"
+        ],
+        "buttonText": "Order PHP project",
+        "href": "/contact"
+      },
+      {
+        "name": "Web App Coursework (React)",
+        "description": "Great for advanced web capstones: React single-page apps, REST APIs, MongoDB/PostgreSQL.",
+        "price": "From 2,490,000₫",
+        "note": "Advanced full-stack React/Node.js. Split between 4 people it's only ~620k each.",
+        "features": [
+          "React SPA architecture + Node.js/Express REST API backend",
+          "Bundled seed mock data so it runs out of the box",
+          "Bonus: 1 live call to explain the code and run it",
+          "Support setting up the run environment"
+        ],
+        "buttonText": "Order React project",
+        "href": "/contact"
+      }
+    ],
+    "audienceBusiness": "Business & personal",
+    "audienceStudent": "IT students"
   },
   "faq": {
     "heading": "Frequently asked questions",
@@ -332,6 +421,9 @@
     "notFoundDescription": "The library you are looking for does not exist or was renamed.",
     "componentsHeading": "Component Library",
     "componentsSubtitle": "React components & utilities I wrote and packaged for reuse. Click one to read the guide and try it live in the playground.",
+    "componentsCardTitle": "See all the component libraries I have built",
+    "componentsCardDesc": "React components & utilities I package myself for reuse — with guides and a live playground.",
+    "componentsCardCta": "View all components",
     "playgroundLabel": "Playground",
     "playgroundHint": "Tweak the controls on the right to see the component update live.",
     "projectsHeading": "Projects",

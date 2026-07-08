@@ -14,6 +14,6 @@ minimumReleaseAgeExclude:
   - '@hwagfu/cursor@1.2.0'
   - '@hwagfu/cursor@1.2.1'
   - '@hwagfu/images'
-  - '@hwagfu/url-preview@1.0.0'
+  - '@hwagfu/url-preview'
 overrides:
   hwagfu-quick-link: link:../../jasoncomponent

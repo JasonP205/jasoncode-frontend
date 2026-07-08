@@ -1,14 +1,12 @@
 import { use } from "react";
 import type { Metadata } from "next";
 import { ArrowUpRight } from "lucide-react";
-import { Chip } from "@heroui/react";
 import { useTranslations } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import MotionDiv from "@/components/ui/motionDiv";
 import { Link } from "@/i18n/navigation";
 import { buildAlternates, ogLocaleFields } from "@/lib/seo";
 import type { Locale } from "@/i18n/routing";
-import { libraries, localize } from "@/data/libraries";
 
 export async function generateMetadata({
   params,
@@ -87,63 +85,34 @@ export default function LibraryIndexPage({
         </MotionDiv>
       </section>
 
-      {/* Part 2 — Component Library */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-8 py-8 sm:py-12">
+      {/* Part 2 — Component Library: a single card into the full list */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-8 mt-6 sm:mt-8">
         <MotionDiv
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="max-w-2xl"
+          transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <h2 className="text-4xl sm:text-5xl font-serif text-foreground mb-4 sm:mb-6">
-            {t("componentsHeading")}
-          </h2>
-          <p className="text-muted text-base sm:text-lg leading-relaxed">
-            {t("componentsSubtitle")}
-          </p>
+          <Link
+            href="/library/components"
+            className="group flex flex-col gap-4 rounded-2xl border border-border p-6 sm:p-8 transition-colors hover:border-foreground/40 hover:bg-secondary/30 sm:flex-row sm:items-center sm:justify-between"
+          >
+            <div>
+              <span className="text-xs uppercase tracking-[0.24em] text-muted">
+                {t("componentsHeading")}
+              </span>
+              <h2 className="mt-2 text-2xl sm:text-3xl font-serif text-foreground">
+                {t("componentsCardTitle")}
+              </h2>
+              <p className="mt-2 text-sm sm:text-base text-muted leading-relaxed max-w-xl">
+                {t("componentsCardDesc")}
+              </p>
+            </div>
+            <span className="inline-flex shrink-0 items-center gap-1.5 text-sm font-medium text-foreground">
+              {t("componentsCardCta")}
+              <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </span>
+          </Link>
         </MotionDiv>
-
-        <div className="mt-10 sm:mt-12 grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
-          {libraries.map((lib, index) => (
-            <MotionDiv
-              key={lib.slug}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="h-full"
-            >
-              <Link
-                href={`/library/${lib.slug}`}
-                className="group flex flex-col h-full rounded-2xl border border-border p-6 transition-colors hover:border-foreground/40 hover:bg-secondary/30"
-              >
-                <div className="flex items-center gap-3">
-                  <span
-                    className="size-3 rounded-full shrink-0"
-                    style={{ backgroundColor: lib.accent }}
-                  />
-                  <span className="font-mono text-sm text-foreground truncate">
-                    {lib.pkg}
-                  </span>
-                  <Chip
-                    size="sm"
-                    className="ml-auto bg-secondary text-muted border-none shrink-0"
-                  >
-                    v{lib.version}
-                  </Chip>
-                </div>
-
-                <p className="text-sm text-muted mt-4 leading-relaxed flex-1">
-                  {localize(lib.tagline, locale)}
-                </p>
-
-                <span className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-foreground">
-                  {t("viewGuide")}
-                  <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </span>
-              </Link>
-            </MotionDiv>
-          ))}
-        </div>
       </section>
     </div>
   );

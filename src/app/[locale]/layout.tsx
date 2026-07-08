@@ -115,9 +115,10 @@ export async function generateMetadata({
       description: t("homeDescription"),
       images: [
         {
-          url: "/opengraph-image.png",
+          url: "/opengraph-image.jpg",
           width: 1200,
           height: 630,
+          type: "image/jpeg",
           alt: "Jason Dev — Freelance Web Developer",
         },
       ],
@@ -127,7 +128,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: t("homeTitle"),
       description: t("homeDescription"),
-      images: ["/twitter-image.png"],
+      images: ["/twitter-image.jpg"],
     },
 
     robots: {

@@ -87,39 +87,45 @@
       "landing": {
         "name": "Landing page 1 trang",
         "description": "Phù hợp khi bạn cần một trang duy nhất thật ấn tượng để giới thiệu sản phẩm, sự kiện, CV cá nhân hoặc chạy quảng cáo — nhanh, gọn và chi phí nhẹ nhất.",
-        "price": "Từ 690.000đ",
-        "note": "Lựa chọn tiết kiệm nhất để có mặt trên internet chỉ trong vài ngày.",
+        "price": "999.000đ",
+        "note": "Thiết kế riêng, không dùng template đại trà. Hoàn thành trong 5–7 ngày.",
         "features": [
-          "Khách vừa mở trang là hiểu ngay bạn bán gì và bấm gọi/đặt hàng, không thoát ra tìm chỗ khác",
-          "Đẹp gọn trên điện thoại, khách liên hệ với bạn chỉ bằng một chạm",
-          "Dán link lên Facebook/Zalo hiện ảnh và tiêu đề bắt mắt, khách tò mò bấm vào nhiều hơn",
-          "Về sau bạn tự đổi giá, ảnh, số điện thoại... mà không cần biết code hay gọi lại tốn phí"
+          "1 trang thiết kế riêng theo thương hiệu của bạn, tối đa 7 section — không dùng template đại trà",
+          "2 vòng chỉnh sửa theo góp ý của bạn trước khi chốt",
+          "Form liên hệ đổ thẳng về Zalo hoặc email, khách bấm là bạn nhận ngay",
+          "Chuẩn SEO cơ bản, link chia sẻ Facebook/Zalo hiện ảnh và tiêu đề đẹp",
+          "Đưa web lên mạng và gắn tên miền giúp bạn",
+          "Hỗ trợ sửa lỗi miễn phí 7 ngày sau bàn giao"
         ],
         "buttonText": "Làm landing page"
       },
       "website": {
         "name": "Website nhiều trang",
         "description": "Dành cho shop nhỏ, quán, thương hiệu cá nhân hay dịch vụ cần một website hoàn chỉnh nhiều trang (giới thiệu, dịch vụ, liên hệ...) để trông chuyên nghiệp và bán hàng tốt hơn.",
-        "price": "Từ 1.900.000đ",
-        "note": "Giá tùy số trang, tính năng và nội dung bạn cần chuẩn bị — sẽ chốt rõ trước khi làm.",
+        "price": "2.490.000đ",
+        "note": "Giá chốt theo số trang và tính năng, phù hợp ngân sách của bạn; thanh toán theo tiến độ.",
         "features": [
-          "Shop, dịch vụ của bạn trông chuyên nghiệp và uy tín ngang các thương hiệu lớn",
-          "Khách tự tìm được thông tin và tự đặt hàng, bạn đỡ phải nhắn đi nhắn lại giải thích",
-          "Có cơ hội xuất hiện khi khách gõ tìm dịch vụ của bạn trên Google, thay vì chỉ thấy đối thủ",
-          "Sau này muốn thêm trang hay bán hàng online đều mở rộng được, không phải làm lại từ đầu"
+          "4–6 trang hoàn chỉnh: trang chủ, giới thiệu, dịch vụ, liên hệ...",
+          "Thiết kế đồng bộ theo nhận diện thương hiệu + 2 vòng chỉnh sửa",
+          "Cấu trúc chuẩn SEO và khai báo với Google để khách tìm thấy bạn",
+          "Kết nối Zalo, Messenger, Google Maps — khách liên hệ tiện nhất",
+          "Bảo dưỡng miễn phí 1 tháng (4 lần chỉnh sửa nhỏ) sau bàn giao",
+          "1 buổi hướng dẫn sử dụng + hỗ trợ 14 ngày"
         ],
         "buttonText": "Bắt đầu làm website"
       },
       "dynamic": {
-        "name": "Website có tính năng động",
+        "name": "Website có quản lý dữ liệu",
         "description": "Khi bạn cần hơn một trang giới thiệu: form đăng ký/đặt lịch, đăng nhập thành viên, khu vực quản trị nội dung hay kết nối với hệ thống, API sẵn có của bạn.",
-        "price": "Từ 6.900.000đ",
-        "note": "Giá tùy số lượng và độ phức tạp của tính năng; dự án có thanh toán, bảng điều khiển hay nhiều vai trò người dùng thường từ 12–20 triệu. Mình sẽ tách rõ từng phần trước khi báo giá.",
+        "price": "6.999.000đ",
+        "note": "Dự án có thanh toán online tự động hoặc phân quyền phức tạp thường từ 12–20 triệu; mình tách rõ từng phần trước khi báo giá.",
         "features": [
-          "Khách tự đăng ký, đặt lịch hay gửi yêu cầu ngay trên web, thông tin về thẳng email hoặc hệ thống của bạn",
-          "Có khu vực đăng nhập hoặc trang quản trị để bạn tự cập nhật nội dung, không cần gọi thợ mỗi lần",
-          "Kết nối được với công cụ và dữ liệu bạn đang dùng (Google Sheet, API, hệ thống có sẵn...)",
-          "Xây bằng công nghệ vững (Next.js/React) để chạy ổn định và dễ thêm tính năng về sau"
+          "1 luồng chức năng chính: đặt lịch hẹn HOẶC nhận đơn hàng cơ bản, có lưu cơ sở dữ liệu",
+          "Dashboard quản lý: xem đơn/lịch hẹn, khách hàng và số liệu cơ bản",
+          "Đăng nhập phân quyền 2 cấp độ: chủ và nhân viên",
+          "Kết nối 1 nguồn dữ liệu bạn đang dùng: Google Sheet hoặc Zalo",
+          "Bàn giao toàn bộ mã nguồn sạch — website là tài sản của bạn",
+          "Đồng hành kỹ thuật 1 tháng sau bàn giao (sửa lỗi phát sinh)"
         ],
         "buttonText": "Trao đổi tính năng cần làm"
       },
@@ -127,12 +133,12 @@
         "name": "Tối ưu SEO & tăng tốc web có sẵn",
         "description": "Dành cho website Next.js/React đang chạy nhưng tải chậm, hay lỗi, hiển thị xấu trên điện thoại hoặc chưa lên được Google — mình dọn lại cho gọn, nhanh và chuẩn SEO hơn.",
         "price": "Từ 890.000đ",
-        "note": "Mình nhận tối ưu các web dựng bằng Next.js/React; chi phí tùy hiện trạng và phạm vi cần xử lý.",
+        "note": "Phù hợp web React/Next.js hoặc website đang chậm, khó lên Google.",
         "features": [
-          "Web chạy nhanh và mượt hơn, khách không còn khó chịu vì phải chờ hay gặp lỗi vặt",
-          "Đẹp và dùng tốt trên điện thoại, không còn vỡ giao diện làm mất khách",
-          "Chỉnh lại tiêu đề, mô tả và tốc độ để web dễ lên Google và kéo thêm khách tự nhiên",
-          "Bạn nhận báo cáo rõ đã cải thiện được gì và nên làm tiếp gì, bằng lời dễ hiểu"
+          "Tối ưu tốc độ: nén ảnh, dọn code thừa, bật cache cho web chạy nhanh mượt",
+          "Metadata + ảnh chia sẻ đẹp cho tối đa 5 trang chính",
+          "Khai báo Google Search Console và sitemap đầy đủ để lên Google",
+          "Báo cáo điểm PageSpeed trước–sau, kèm gợi ý việc nên làm tiếp"
         ],
         "buttonText": "Gửi web cần tối ưu"
       }
@@ -201,14 +207,20 @@
       {
         "title": "Cần một website mới",
         "hint": "Landing 1 trang hoặc web nhiều trang chuyên nghiệp",
-        "priceFrom": "Từ 690.000đ",
+        "priceFrom": "Từ 999.000đ",
         "href": "#build"
       },
       {
         "title": "Cần web có tính năng, hệ thống",
         "hint": "Form, đăng nhập, quản trị, kết nối backend",
-        "priceFrom": "Từ 6.900.000đ",
+        "priceFrom": "Từ 6.999.000đ",
         "href": "#app"
+      },
+      {
+        "title": "Là sinh viên, cần làm đồ án hoặc CV",
+        "hint": "Coursework HTML/PHP/React, sửa lỗi bài tập, Bento CV",
+        "priceFrom": "Từ 120.000đ",
+        "href": "#student"
       }
     ],
     "fixLabel": "Bắt đầu nhỏ · minh bạch",
@@ -220,7 +232,84 @@
     "buildSub": "Khi bạn cần một nơi chính thức trên internet — chọn landing gọn nhẹ hay web nhiều trang đầy đủ. Mỗi gói ghi rõ bạn nhận được gì.",
     "appLabel": "Nâng tầm",
     "appHeading": "Website có tính năng & hệ thống riêng",
-    "appSub": "Khi web cần làm việc thay bạn: nhận đăng ký, đặt lịch, đăng nhập, quản trị nội dung hay kết nối hệ thống sẵn có."
+    "appSub": "Khi web cần làm việc thay bạn: nhận đăng ký, đặt lịch, đăng nhập, quản trị nội dung hay kết nối hệ thống sẵn có.",
+    "studentLabel": "Dành cho sinh viên",
+    "studentHeading": "Đồ án, coursework & CV cho sinh viên IT",
+    "studentSub": "Deadline tới gần mà bài chưa chạy? Mình nhận cứu đồ án môn học, sửa lỗi coursework và làm CV/Portfolio xin việc — giá sinh viên, làm nhóm còn chia nhỏ hơn nữa. Mình chỉ hỗ trợ phần code và giao diện, không viết báo cáo hay lý thuyết thay bạn.",
+    "student": [
+      {
+        "name": "Sửa lỗi Coursework",
+        "description": "Bài tập lớn cuối kỳ bị lỗi logic, kết nối database hay vỡ layout? Mình debug để bài chạy hoàn hảo trước hạn nộp.",
+        "price": "Từ 120.000đ",
+        "note": "Báo giá nhanh theo yêu cầu đề bài. Giải quyết nhanh trước thời hạn nộp bài.",
+        "features": [
+          "Khắc phục đúng lỗi logic hoặc lỗi hiển thị đã chốt",
+          "Hướng dẫn nhanh qua Zalo cách deploy lên host free (Vercel/Render)",
+          "Bảo hành chạy thử ổn định trong 3 ngày",
+          "Bàn giao code chạy hoàn chỉnh"
+        ],
+        "buttonText": "Nhờ mình xem lỗi",
+        "href": "/contact"
+      },
+      {
+        "name": "Bento CV / Portfolio",
+        "description": "Khoe thành tích học tập, bài tập nổi bật và các link cá nhân theo phong cách Bento Grid aesthetic chuẩn Apple.",
+        "price": "799.000đ",
+        "note": "Thiết kế Bento Grid hiện đại. Tối ưu cho xin việc, học bổng hoặc du học.",
+        "features": [
+          "1 trang Portfolio chuẩn Bento Grid hiện đại, tối đa 7 section",
+          "Kết nối link GitHub, mạng xã hội và thông tin liên lạc",
+          "Form nhận liên hệ/tin nhắn đổ về Google Sheet miễn phí",
+          "Deploy lên hosting miễn phí trọn đời (Vercel/Netlify)"
+        ],
+        "buttonText": "Làm CV/Portfolio",
+        "href": "/contact"
+      },
+      {
+        "name": "Web App Coursework (HTML)",
+        "description": "Phù hợp môn Thiết kế web: xây layout Responsive, làm đồ án giao diện tĩnh.",
+        "price": "Từ 590.000đ",
+        "note": "Cắt giao diện tĩnh, hiệu ứng DOM/JS cơ bản. Nhóm 2 bạn chia ra chỉ ~295k/người.",
+        "features": [
+          "Thiết kế giao diện Responsive, tương thích điện thoại",
+          "Hiệu ứng chuyển động DOM, JavaScript cơ bản",
+          "Tài liệu hướng dẫn tự chạy code chi tiết",
+          "Bàn giao source code sạch + hướng dẫn tự deploy free"
+        ],
+        "buttonText": "Đặt làm đồ án HTML",
+        "href": "/contact"
+      },
+      {
+        "name": "Web App Coursework (PHP)",
+        "description": "Phù hợp môn Lập trình web động cơ bản: quản lý dữ liệu CRUD, đăng ký/đăng nhập.",
+        "price": "Từ 1.490.000đ",
+        "note": "Web động PHP/MySQL cơ bản. Nhóm 3 bạn chia ra chỉ ~495k/người.",
+        "features": [
+          "Xử lý dữ liệu động bằng PHP + database MySQL",
+          "Chức năng Đăng ký, Đăng nhập phân quyền cơ bản",
+          "Tích hợp sẵn bộ dữ liệu mẫu (Seed Mock Data) để chạy thử",
+          "Tặng kèm 1 buổi Call hướng dẫn setup và chạy thử"
+        ],
+        "buttonText": "Đặt làm đồ án PHP",
+        "href": "/contact"
+      },
+      {
+        "name": "Web App Coursework (React)",
+        "description": "Phù hợp bài tập lớn Web nâng cao: Single Page App React, REST API, MongoDB/PostgreSQL.",
+        "price": "Từ 2.490.000đ",
+        "note": "Full-stack React/Node.js nâng cao. Nhóm 4 bạn chia ra chỉ ~620k/người.",
+        "features": [
+          "Kiến trúc SPA React + REST API backend Node.js/Express",
+          "Tích hợp sẵn bộ dữ liệu mẫu (Seed Mock Data) để chạy thử",
+          "Tặng kèm 1 buổi Call giải thích code và hướng dẫn chạy",
+          "Đồng hành hỗ trợ cài đặt môi trường chạy"
+        ],
+        "buttonText": "Đặt làm đồ án React",
+        "href": "/contact"
+      }
+    ],
+    "audienceBusiness": "Doanh nghiệp & cá nhân",
+    "audienceStudent": "Sinh viên IT"
   },
   "faq": {
     "heading": "Câu hỏi thường gặp",
@@ -332,6 +421,9 @@
     "notFoundDescription": "Thư viện bạn tìm không tồn tại hoặc đã đổi tên.",
     "componentsHeading": "Component Library",
     "componentsSubtitle": "Các component & tiện ích React mình tự viết và đóng gói để dùng lại. Bấm vào để xem hướng dẫn và thử trực tiếp trong playground.",
+    "componentsCardTitle": "Xem tất cả component library mình đã viết",
+    "componentsCardDesc": "Bộ component & tiện ích React mình tự đóng gói để dùng lại — kèm hướng dẫn và playground.",
+    "componentsCardCta": "Xem tất cả component",
     "playgroundLabel": "Playground",
     "playgroundHint": "Chỉnh các thông số bên phải để xem component thay đổi trực tiếp.",
     "projectsHeading": "Dự án",

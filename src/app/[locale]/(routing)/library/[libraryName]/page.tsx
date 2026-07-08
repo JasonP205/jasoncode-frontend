@@ -11,16 +11,17 @@ import CodeBlock from "@/components/library/CodeBlock";
 import LinkPlayground from "@/components/library/playground/LinkPlayground";
 import CursorPlayground from "@/components/library/playground/CursorPlayground";
 import ImagesPlayground from "@/components/library/playground/ImagesPlayground";
+import UrlPreviewPlayground from "@/components/library/playground/UrlPreviewPlayground"
 import { Link } from "@/i18n/navigation";
 import { buildAlternates, ogLocaleFields } from "@/lib/seo";
 import type { Locale } from "@/i18n/routing";
 import { getLibrary, libraries, localize } from "@/data/libraries";
 
 const playgrounds: Record<string, ComponentType> = {
-  link: LinkPlayground,
-  cursor: CursorPlayground,
-  images: ImagesPlayground,
-//   "url-preview": UrlPreviewPlayground,
+  "hwagfu-link": LinkPlayground,
+  "hwagfu-cursor": CursorPlayground,
+  "hwagfu-images": ImagesPlayground,
+  "hwagfu-url-preview": UrlPreviewPlayground,
 };
 
 export function generateStaticParams() {

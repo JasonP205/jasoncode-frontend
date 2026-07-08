@@ -16,7 +16,7 @@
     "@hwagfu/cursor": "^1.2.1",
     "@hwagfu/images": "1.2.2",
     "@hwagfu/link": "1.0.0",
-    "@hwagfu/url-preview": "^1.0.0",
+    "@hwagfu/url-preview": "^1.0.2",
     "@iconify/react": "^6.0.2",
     "@lottiefiles/dotlottie-react": "^0.19.2",
     "@react-email/render": "^2.0.8",

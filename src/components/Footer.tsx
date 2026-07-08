@@ -34,6 +34,7 @@ const Footer = () => {
               url="https://www.hugowishpax.studio"
               className="bg-background rounded-full px-0"
               label="Hugo Studio"
+type="icon"
               classNames={{ image: "rounded-full w-8 h-8 hover:scale-105 transition-transform duration-200 hover:shadow-lg", content: "text-foreground hover:underline decoration-1 underline-offset-2" }}
             />
           

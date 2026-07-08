@@ -40,5 +40,13 @@ export default async function Page({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  return <Contact />;
+  const t = await getTranslations({ locale, namespace: "metadata" });
+  return (
+    <>
+      {/* Page-level H1: Contact is shared with the homepage (where Hero owns the
+          H1), so we expose the heading here without altering the shared layout. */}
+      <h1 className="sr-only">{t("contactTitle")}</h1>
+      <Contact />
+    </>
+  );
 }

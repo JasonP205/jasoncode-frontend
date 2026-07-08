@@ -38,7 +38,7 @@ export interface Library {
 
 export const libraries: Library[] = [
   {
-    slug: "link",
+    slug: "hwagfu-link",
     pkg: "@hwagfu/link",
     version: "1.0.0",
     accent: "#38bdf8",
@@ -181,7 +181,7 @@ export const libraries: Library[] = [
     ],
   },
   {
-    slug: "cursor",
+    slug: "hwagfu-cursor",
     pkg: "@hwagfu/cursor",
     version: "1.2.1",
     accent: "#fb7185",
@@ -390,7 +390,7 @@ export const libraries: Library[] = [
     },
   },
   {
-    slug: "images",
+    slug: "hwagfu-images",
     pkg: "@hwagfu/images",
     version: "1.2.0",
     accent: "#a78bfa",
@@ -543,202 +543,202 @@ export const libraries: Library[] = [
       ],
     },
   },
-  // {
-  //   slug: "url-preview",
-  //   pkg: "@hwagfu/url-preview",
-  //   version: "1.0.0",
-  //   accent: "#34d399",
-  //   tagline: {
-  //     vi: "Thẻ xem trước liên kết — đưa vào một URL, tự lấy metadata và render card đẹp.",
-  //     en: "A link preview card — pass a URL and it fetches metadata and renders a card.",
-  //   },
-  //   description: {
-  //     vi: "Component React hiển thị thẻ xem trước liên kết. Chỉ cần đưa vào một URL, thư viện sẽ tự lấy metadata (tiêu đề, mô tả, ảnh, tên trang, tác giả, ngày đăng...) qua Microlink API và render thành card có thể tùy biến layout và theme. Kèm hook useLinkPreview và hàm fetchLinkPreview để tự dựng UI.",
-  //     en: "A React component that renders a link preview card. Pass in a URL and it fetches metadata (title, description, image, site name, author, date...) via the Microlink API and renders a customizable card. Ships a useLinkPreview hook and a fetchLinkPreview function for building your own UI.",
-  //   },
-  //   install: "npm install @hwagfu/url-preview",
-  //   importLine: 'import LinkPreviewCard from "@hwagfu/url-preview";',
-  //   features: {
-  //     vi: [
-  //       "Tự lấy metadata qua Microlink API — không cần backend riêng.",
-  //       "Ba kiểu layout: large, wide và small.",
-  //       "Bật/tắt mô tả, favicon, tên trang, tác giả và ngày đăng.",
-  //       "Tùy biến theme: màu sắc, font, bo góc, đổ bóng.",
-  //       "Kèm hook useLinkPreview và fetchLinkPreview để tự dựng UI.",
-  //       "Cache theo URL; style inline sẵn, không cần thêm CSS.",
-  //     ],
-  //     en: [
-  //       "Fetches metadata via the Microlink API — no backend needed.",
-  //       "Three layout presets: large, wide and small.",
-  //       "Toggle description, favicon, site name, author and date.",
-  //       "Themeable: colors, fonts, corner radius and shadow.",
-  //       "Ships a useLinkPreview hook and fetchLinkPreview for custom UIs.",
-  //       "Cached per URL; styles are inlined, no extra CSS required.",
-  //     ],
-  //   },
-  //   examples: [
-  //     {
-  //       title: { vi: "Dùng cơ bản", en: "Basic usage" },
-  //       lang: "tsx",
-  //       code: [
-  //         'import LinkPreviewCard from "@hwagfu/url-preview";',
-  //         "",
-  //         "export default function App() {",
-  //         '  return <LinkPreviewCard url="https://react.dev" />;',
-  //         "}",
-  //       ].join("\n"),
-  //     },
-  //     {
-  //       title: { vi: "Ba kiểu layout", en: "Three layouts" },
-  //       lang: "tsx",
-  //       code: [
-  //         '<LinkPreviewCard url="https://react.dev" layout="large" />',
-  //         '<LinkPreviewCard url="https://react.dev" layout="wide" imagePosition="right" />',
-  //         '<LinkPreviewCard url="https://react.dev" layout="small" />',
-  //       ].join("\n"),
-  //     },
-  //     {
-  //       title: { vi: "Theme", en: "Theming" },
-  //       lang: "tsx",
-  //       code: [
-  //         "<LinkPreviewCard",
-  //         '  url="https://react.dev"',
-  //         "  theme={{",
-  //         "    backgroundColor: '#1a1a1a',",
-  //         "    textColor: '#f5f5f5',",
-  //         "    mutedColor: '#a0a0a0',",
-  //         "    borderColor: '#333333',",
-  //         "    borderRadius: '16px',",
-  //         "    boxShadow: '0 4px 16px rgba(0,0,0,0.4)',",
-  //         "  }}",
-  //         "/>",
-  //       ].join("\n"),
-  //     },
-  //     {
-  //       title: { vi: "Dùng hook riêng", en: "Using the hook directly" },
-  //       lang: "tsx",
-  //       code: [
-  //         'import { useLinkPreview } from "@hwagfu/url-preview";',
-  //         "",
-  //         "function CustomPreview({ url }: { url: string }) {",
-  //         "  const state = useLinkPreview(url);",
-  //         "",
-  //         '  if (state.status === "loading") return <p>Loading...</p>;',
-  //         '  if (state.status === "error") return <p>Error: {state.error.message}</p>;',
-  //         "",
-  //         "  return <h3>{state.data.title}</h3>;",
-  //         "}",
-  //       ].join("\n"),
-  //     },
-  //   ],
-  //   props: [
-  //     {
-  //       name: "url",
-  //       type: "string",
-  //       desc: {
-  //         vi: "URL cần xem trước (bắt buộc).",
-  //         en: "URL to preview (required).",
-  //       },
-  //     },
-  //     {
-  //       name: "layout",
-  //       type: '"large" | "wide" | "small"',
-  //       default: '"large"',
-  //       desc: { vi: "Kiểu bố cục card.", en: "Card layout preset." },
-  //     },
-  //     {
-  //       name: "imagePosition",
-  //       type: '"top" | "left" | "right"',
-  //       default: "suy ra từ layout",
-  //       desc: {
-  //         vi: "Ghi đè vị trí ảnh (mặc định suy ra từ layout).",
-  //         en: "Override media position (derived from layout by default).",
-  //       },
-  //     },
-  //     {
-  //       name: "width",
-  //       type: "number | string",
-  //       default: "tùy layout",
-  //       desc: {
-  //         vi: "Bề rộng card (số → px).",
-  //         en: "Card width (numbers → px).",
-  //       },
-  //     },
-  //     {
-  //       name: "mediaHeight",
-  //       type: "number | string",
-  //       default: "tùy layout",
-  //       desc: {
-  //         vi: "Chiều cao vùng ảnh (số → px).",
-  //         en: "Media area height (numbers → px).",
-  //       },
-  //     },
-  //     {
-  //       name: "showDescription",
-  //       type: "boolean",
-  //       default: "true",
-  //       desc: { vi: "Hiện đoạn mô tả.", en: "Show the description." },
-  //     },
-  //     {
-  //       name: "showFavicon",
-  //       type: "boolean",
-  //       default: "true",
-  //       desc: {
-  //         vi: "Hiện favicon/logo trang.",
-  //         en: "Show the site favicon/logo.",
-  //       },
-  //     },
-  //     {
-  //       name: "showSiteName",
-  //       type: "boolean",
-  //       default: "true",
-  //       desc: {
-  //         vi: "Hiện tên trang (publisher).",
-  //         en: "Show the publisher name.",
-  //       },
-  //     },
-  //     {
-  //       name: "showAuthor",
-  //       type: "boolean",
-  //       default: "false",
-  //       desc: { vi: "Hiện tác giả.", en: "Show the author." },
-  //     },
-  //     {
-  //       name: "showDate",
-  //       type: "boolean",
-  //       default: "false",
-  //       desc: { vi: "Hiện ngày đăng.", en: "Show the publish date." },
-  //     },
-  //     {
-  //       name: "fetchOptions",
-  //       type: "FetchLinkPreviewOptions",
-  //       desc: {
-  //         vi: "Tùy chọn gọi Microlink (API key Pro, timeout).",
-  //         en: "Microlink fetch options (Pro API key, timeout).",
-  //       },
-  //     },
-  //     {
-  //       name: "theme",
-  //       type: "LinkPreviewCardTheme",
-  //       desc: {
-  //         vi: "Ghi đè màu sắc, font, bo góc, đổ bóng.",
-  //         en: "Override colors, fonts, radius, shadow.",
-  //       },
-  //     },
-  //   ],
-  //   notes: {
-  //     vi: [
-  //       "LinkPreviewCard là export default duy nhất; useLinkPreview, fetchLinkPreview, invalidateLinkPreview và clearLinkPreviewCache là các named export.",
-  //       "Kết quả được cache theo URL. Dùng invalidateLinkPreview(url) để xóa một URL, hoặc clearLinkPreviewCache() để xóa toàn bộ.",
-  //       "Yêu cầu react và react-dom ^19.2.0 (peer dependencies).",
-  //     ],
-  //     en: [
-  //       "LinkPreviewCard is the sole default export; useLinkPreview, fetchLinkPreview, invalidateLinkPreview and clearLinkPreviewCache are named exports.",
-  //       "Results are cached per URL. Use invalidateLinkPreview(url) to clear one entry, or clearLinkPreviewCache() to clear everything.",
-  //       "Requires react and react-dom ^19.2.0 (peer dependencies).",
-  //     ],
-  //   },
-  // },
+  {
+    slug: "hwagfu-url-preview",
+    pkg: "@hwagfu/url-preview",
+    version: "1.0.0",
+    accent: "#34d399",
+    tagline: {
+      vi: "Thẻ xem trước liên kết — đưa vào một URL, tự lấy metadata và render card đẹp.",
+      en: "A link preview card — pass a URL and it fetches metadata and renders a card.",
+    },
+    description: {
+      vi: "Component React hiển thị thẻ xem trước liên kết. Chỉ cần đưa vào một URL, thư viện sẽ tự lấy metadata (tiêu đề, mô tả, ảnh, tên trang, tác giả, ngày đăng...) qua Microlink API và render thành card có thể tùy biến layout và theme. Kèm hook useLinkPreview và hàm fetchLinkPreview để tự dựng UI.",
+      en: "A React component that renders a link preview card. Pass in a URL and it fetches metadata (title, description, image, site name, author, date...) via the Microlink API and renders a customizable card. Ships a useLinkPreview hook and a fetchLinkPreview function for building your own UI.",
+    },
+    install: "npm install @hwagfu/url-preview",
+    importLine: 'import LinkPreviewCard from "@hwagfu/url-preview";',
+    features: {
+      vi: [
+        "Tự lấy metadata qua Microlink API — không cần backend riêng.",
+        "Ba kiểu layout: large, wide và small.",
+        "Bật/tắt mô tả, favicon, tên trang, tác giả và ngày đăng.",
+        "Tùy biến theme: màu sắc, font, bo góc, đổ bóng.",
+        "Kèm hook useLinkPreview và fetchLinkPreview để tự dựng UI.",
+        "Cache theo URL; style inline sẵn, không cần thêm CSS.",
+      ],
+      en: [
+        "Fetches metadata via the Microlink API — no backend needed.",
+        "Three layout presets: large, wide and small.",
+        "Toggle description, favicon, site name, author and date.",
+        "Themeable: colors, fonts, corner radius and shadow.",
+        "Ships a useLinkPreview hook and fetchLinkPreview for custom UIs.",
+        "Cached per URL; styles are inlined, no extra CSS required.",
+      ],
+    },
+    examples: [
+      {
+        title: { vi: "Dùng cơ bản", en: "Basic usage" },
+        lang: "tsx",
+        code: [
+          'import LinkPreviewCard from "@hwagfu/url-preview";',
+          "",
+          "export default function App() {",
+          '  return <LinkPreviewCard url="https://react.dev" />;',
+          "}",
+        ].join("\n"),
+      },
+      {
+        title: { vi: "Ba kiểu layout", en: "Three layouts" },
+        lang: "tsx",
+        code: [
+          '<LinkPreviewCard url="https://react.dev" layout="large" />',
+          '<LinkPreviewCard url="https://react.dev" layout="wide" imagePosition="right" />',
+          '<LinkPreviewCard url="https://react.dev" layout="small" />',
+        ].join("\n"),
+      },
+      {
+        title: { vi: "Theme", en: "Theming" },
+        lang: "tsx",
+        code: [
+          "<LinkPreviewCard",
+          '  url="https://react.dev"',
+          "  theme={{",
+          "    backgroundColor: '#1a1a1a',",
+          "    textColor: '#f5f5f5',",
+          "    mutedColor: '#a0a0a0',",
+          "    borderColor: '#333333',",
+          "    borderRadius: '16px',",
+          "    boxShadow: '0 4px 16px rgba(0,0,0,0.4)',",
+          "  }}",
+          "/>",
+        ].join("\n"),
+      },
+      {
+        title: { vi: "Dùng hook riêng", en: "Using the hook directly" },
+        lang: "tsx",
+        code: [
+          'import { useLinkPreview } from "@hwagfu/url-preview";',
+          "",
+          "function CustomPreview({ url }: { url: string }) {",
+          "  const state = useLinkPreview(url);",
+          "",
+          '  if (state.status === "loading") return <p>Loading...</p>;',
+          '  if (state.status === "error") return <p>Error: {state.error.message}</p>;',
+          "",
+          "  return <h3>{state.data.title}</h3>;",
+          "}",
+        ].join("\n"),
+      },
+    ],
+    props: [
+      {
+        name: "url",
+        type: "string",
+        desc: {
+          vi: "URL cần xem trước (bắt buộc).",
+          en: "URL to preview (required).",
+        },
+      },
+      {
+        name: "layout",
+        type: '"large" | "wide" | "small"',
+        default: '"large"',
+        desc: { vi: "Kiểu bố cục card.", en: "Card layout preset." },
+      },
+      {
+        name: "imagePosition",
+        type: '"top" | "left" | "right"',
+        default: "suy ra từ layout",
+        desc: {
+          vi: "Ghi đè vị trí ảnh (mặc định suy ra từ layout).",
+          en: "Override media position (derived from layout by default).",
+        },
+      },
+      {
+        name: "width",
+        type: "number | string",
+        default: "tùy layout",
+        desc: {
+          vi: "Bề rộng card (số → px).",
+          en: "Card width (numbers → px).",
+        },
+      },
+      {
+        name: "mediaHeight",
+        type: "number | string",
+        default: "tùy layout",
+        desc: {
+          vi: "Chiều cao vùng ảnh (số → px).",
+          en: "Media area height (numbers → px).",
+        },
+      },
+      {
+        name: "showDescription",
+        type: "boolean",
+        default: "true",
+        desc: { vi: "Hiện đoạn mô tả.", en: "Show the description." },
+      },
+      {
+        name: "showFavicon",
+        type: "boolean",
+        default: "true",
+        desc: {
+          vi: "Hiện favicon/logo trang.",
+          en: "Show the site favicon/logo.",
+        },
+      },
+      {
+        name: "showSiteName",
+        type: "boolean",
+        default: "true",
+        desc: {
+          vi: "Hiện tên trang (publisher).",
+          en: "Show the publisher name.",
+        },
+      },
+      {
+        name: "showAuthor",
+        type: "boolean",
+        default: "false",
+        desc: { vi: "Hiện tác giả.", en: "Show the author." },
+      },
+      {
+        name: "showDate",
+        type: "boolean",
+        default: "false",
+        desc: { vi: "Hiện ngày đăng.", en: "Show the publish date." },
+      },
+      {
+        name: "fetchOptions",
+        type: "FetchLinkPreviewOptions",
+        desc: {
+          vi: "Tùy chọn gọi Microlink (API key Pro, timeout).",
+          en: "Microlink fetch options (Pro API key, timeout).",
+        },
+      },
+      {
+        name: "theme",
+        type: "LinkPreviewCardTheme",
+        desc: {
+          vi: "Ghi đè màu sắc, font, bo góc, đổ bóng.",
+          en: "Override colors, fonts, radius, shadow.",
+        },
+      },
+    ],
+    notes: {
+      vi: [
+        "LinkPreviewCard là export default duy nhất; useLinkPreview, fetchLinkPreview, invalidateLinkPreview và clearLinkPreviewCache là các named export.",
+        "Kết quả được cache theo URL. Dùng invalidateLinkPreview(url) để xóa một URL, hoặc clearLinkPreviewCache() để xóa toàn bộ.",
+        "Yêu cầu react và react-dom ^19.2.0 (peer dependencies).",
+      ],
+      en: [
+        "LinkPreviewCard is the sole default export; useLinkPreview, fetchLinkPreview, invalidateLinkPreview and clearLinkPreviewCache are named exports.",
+        "Results are cached per URL. Use invalidateLinkPreview(url) to clear one entry, or clearLinkPreviewCache() to clear everything.",
+        "Requires react and react-dom ^19.2.0 (peer dependencies).",
+      ],
+    },
+  },
 ];
 
 export function localize<T>(value: Localized<T>, locale: Locale): T {
