@@ -91,7 +91,12 @@ const MobileNavation = () => {
   const pathname = usePathname();
   return (
     <Drawer>
-      <Button variant="ghost" isIconOnly className="md:hidden z-140">
+      <Button
+        aria-label="Toggle navigation menu"
+        variant="ghost"
+        isIconOnly
+        className="md:hidden z-140"
+      >
         <Menu size={24} />
       </Button>
       <Drawer.Backdrop>
