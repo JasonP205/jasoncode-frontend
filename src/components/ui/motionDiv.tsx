@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion, type HTMLMotionProps } from "motion/react";
 
 interface MotionDivProps extends HTMLMotionProps<"div"> {
@@ -7,7 +8,15 @@ interface MotionDivProps extends HTMLMotionProps<"div"> {
 }
 
 export default function MotionDiv({ children, variants, ...props }: MotionDivProps) {
-
+  const [mouted, setMouted] = useState(false)
+  useEffect(()=>{
+    if (!mouted) {
+      setMouted(true)
+    }
+  },[])
+  if (!mouted) {
+    return null
+  }
 
   return (
     <motion.div variants={variants} {...props}>

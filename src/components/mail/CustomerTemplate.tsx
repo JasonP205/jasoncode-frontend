@@ -1,12 +1,60 @@
 import React from "react";
 
+type MailLocale = "vi" | "en";
+
 interface CustomerTemplateProps {
   name: string;
+  locale?: MailLocale;
 }
 
-export default function CustomerTemplate({ name }: CustomerTemplateProps) {
+const copy: Record<
+  MailLocale,
+  {
+    greeting: string;
+    p1: React.ReactNode;
+    p2: string;
+    p3: string;
+    signoff: string;
+    footer: string;
+  }
+> = {
+  vi: {
+    greeting: "Xin chào,",
+    p1: (
+      <>
+        Cảm ơn bạn đã để lại lời nhắn. Mình đã nhận được thông tin liên hệ của
+        bạn tại <strong>Jason Dev</strong>.
+      </>
+    ),
+    p2: "Hệ thống đã tự động lưu lại yêu cầu này. Mình sẽ xem xét thông tin và trực tiếp phản hồi lại qua email của bạn trong thời gian sớm nhất nhé (thường là trong vòng 24 giờ làm việc).",
+    p3: "Chúc bạn một ngày làm việc hiệu quả và nhiều niềm vui!",
+    signoff: "Trân trọng,",
+    footer:
+      "Email này được tạo tự động bởi hệ thống của hwagfu.dev. Vui lòng không phản hồi (reply) vào địa chỉ email này.",
+  },
+  en: {
+    greeting: "Hello,",
+    p1: (
+      <>
+        Thank you for your message. I&apos;ve received your contact details at{" "}
+        <strong>Jason Dev</strong>.
+      </>
+    ),
+    p2: "The system has automatically saved your request. I'll review it and reply directly to your email as soon as possible (usually within 24 business hours).",
+    p3: "Have a productive day full of good things!",
+    signoff: "Best regards,",
+    footer:
+      "This email was generated automatically by the hwagfu.dev system. Please do not reply to this address.",
+  },
+};
+
+export default function CustomerTemplate({
+  name,
+  locale = "vi",
+}: CustomerTemplateProps) {
+  const t = copy[locale];
   return (
-    <html lang="vi">
+    <html lang={locale}>
       <head>
         <meta name="color-scheme" content="light dark" />
         <meta name="supported-color-schemes" content="light dark" />
@@ -71,25 +119,18 @@ export default function CustomerTemplate({ name }: CustomerTemplateProps) {
         <div className="container">
           <div className="card">
             <h1>
-              Xin chào, <span className="italic-muted">{name}</span>
+              {t.greeting} <span className="italic-muted">{name}</span>
             </h1>
-            <p>
-              Cảm ơn bạn đã để lại lời nhắn. Mình đã nhận được thông tin liên hệ của bạn tại <strong>Jason Dev</strong>.
-            </p>
-            <p>
-              Hệ thống đã tự động lưu lại yêu cầu này. Mình sẽ xem xét thông tin và trực tiếp phản hồi lại qua email của bạn trong thời gian sớm nhất nhé (thường là trong vòng 24 giờ làm việc).
-            </p>
-            <p>
-              Chúc bạn một ngày làm việc hiệu quả và nhiều niềm vui!
-            </p>
+            <p>{t.p1}</p>
+            <p>{t.p2}</p>
+            <p>{t.p3}</p>
             <p style={{ marginTop: "40px" }}>
-              Trân trọng,<br />
+              {t.signoff}
+              <br />
               <strong>Phan Hoàng Phúc (Jason Dev)</strong>
             </p>
           </div>
-          <div className="footer">
-            Email này được tạo tự động bởi hệ thống của hwagfu.dev. Vui lòng không phản hồi (reply) vào địa chỉ email này.
-          </div>
+          <div className="footer">{t.footer}</div>
         </div>
       </body>
     </html>

@@ -1,0 +1,342 @@
+{
+  "nav": {
+    "home": "Trang chủ",
+    "projects": "Dự án",
+    "services": "Dịch vụ",
+    "library": "Thư viện",
+    "utils": "Tiện ích",
+    "contact": "Liên hệ",
+    "signUp": "Đăng ký",
+    "signIn": "Đăng nhập",
+    "logoAria": "Jason Dev - Trang chủ",
+    "themeToggle": "Chuyển giao diện sáng/tối",
+    "localeSwitcher": "Chọn ngôn ngữ"
+  },
+  "hero": {
+    "headline": "Một chút <design>thiết kế</design>, một chút <code>lập trình</code>, và những điều thú vị.",
+    "intro": "Chào, tôi là <name>Phan Hoàng Phúc</name>. Một freelancer Web Developer đam mê tạo ra những sản phẩm đơn giản, hữu ích và chỉn chu.",
+    "cta": "Bắt đầu hành trình"
+  },
+  "skills": {
+    "educationLabel": "Education",
+    "techStackLabel": "Tech Stack",
+    "heading": "Học vấn & Chuyên môn",
+    "proficiency": "{level}% thông thạo",
+    "summary": "Tôi thích xây dựng những sản phẩm mà mọi người có thể sử dụng mỗi ngày. Từ giao diện, API cho đến cơ sở dữ liệu, tôi luôn cố gắng tạo ra các giải pháp gọn gàng, dễ bảo trì và mang lại trải nghiệm mượt mà.",
+    "present": "Hiện tại",
+    "education": {
+      "highschoolDegree": "Tốt nghiệp Trung Học Phổ Thông",
+      "highschoolDescription": "Tôi đã hoàn thành chương trình học tại Trường THPT Cây Dương với thành tích HSG trong 3 năm với hạnh kiểm tốt. Trong suốt thời gian học, tôi được rèn luyện kỹ năng lãnh đạo, giải quyết vấn đề và làm việc nhóm với vai trò là lớp trưởng. Đồng thời tôi cũng tham gia các hoạt động do trường tổ chức để phát triển kỹ năng mềm và mở rộng kiến thức xã hội.",
+      "universityDegree": "Cử nhân Khoa học Máy tính",
+      "universityDescription": "Tập trung vào phát triển phần mềm, thiết kế hệ thống và phát triển ứng dụng web cũng như ứng dụng di động hiện đại."
+    }
+  },
+  "projectList": {
+    "heading": "Dự án tiêu biểu",
+    "subtitle": "Tuyển tập những sản phẩm tâm huyết mà tôi đã tham gia thiết kế và phát triển.",
+    "viewAll": "Xem tất cả dự án",
+    "viewDetail": "Xem chi tiết dự án",
+    "back": "Trở lại trang trước"
+  },
+  "projectDetail": {
+    "back": "Về danh sách dự án",
+    "websiteLabel": "Website Dự Án",
+    "visit": "Truy cập ngay",
+    "notFoundTitle": "Không tìm thấy dự án",
+    "notFoundDescription": "Dự án bạn tìm kiếm không tồn tại hoặc đã bị xóa.",
+    "notFoundHeading": "Dự án không tồn tại",
+    "notFoundLong": "Có vẻ như dự án này đã bị xóa, thay đổi đường dẫn hoặc chưa từng được công bố trong portfolio của tôi.",
+    "notFoundBack": "Trở lại trang trước",
+    "notFoundList": "Xem danh sách dự án",
+    "deployingTitle": "Đợi một chút nhé!",
+    "deployingMessage": "Mình đang hoàn thiện những bước cuối cùng cho dự án này. Sẽ sẵn sàng ngay thôi!"
+  },
+  "services": {
+    "heroTitle": "Website chuyên nghiệp,",
+    "heroTitleAccent": "giá sinh viên",
+    "heroSubtitle": "Mình là Phúc — sinh viên năm cuối ngành lập trình, giúp shop nhỏ, thương hiệu cá nhân và người mới bắt đầu có một website đẹp, uy tín và mang khách về, với mức giá dễ thở. Bạn không cần biết gì về kỹ thuật — cứ nói mục tiêu, phần còn lại để mình lo. Báo giá rõ ràng ngay từ đầu, xem bản thử rồi mới quyết định.",
+    "guaranteesLabel": "Cam kết của mình",
+    "guaranteesHeading": "Bạn gần như không phải mạo hiểm gì",
+    "guarantees": [
+      {
+        "title": "Tư vấn & báo giá miễn phí",
+        "desc": "Nhắn mình trước, chốt giá trọn gói rõ ràng — chưa cần cọc và không có phí ẩn về sau."
+      },
+      {
+        "title": "Xem bản thử rồi mới quyết",
+        "desc": "Bạn duyệt giao diện mẫu, thấy ưng rồi mới đi tiếp — không phải 'mua mèo trong bị'."
+      },
+      {
+        "title": "Hỗ trợ sau khi bàn giao",
+        "desc": "Miễn phí sửa lỗi và chỉnh sửa nhỏ trong 14 ngày, kèm hướng dẫn sử dụng dễ hiểu."
+      }
+    ],
+    "processLabel": "Cách làm việc",
+    "processHeading": "Quy trình gọn, bạn luôn nắm được tiến độ",
+    "workingSteps": [
+      "Bạn nhắn nhu cầu, gửi web đang có hoặc mô tả ý tưởng — miễn phí, không ràng buộc.",
+      "Mình tư vấn hướng làm và báo giá phù hợp với ngân sách của bạn.",
+      "Chốt phạm vi, thời gian và cọc nhẹ để bắt đầu; bạn theo dõi tiến độ theo từng bước.",
+      "Bàn giao đầy đủ, hướng dẫn sử dụng và hỗ trợ chỉnh sửa nhỏ sau khi nhận web."
+    ],
+    "featuredBadge": "ĐƯỢC CHỌN NHIỀU NHẤT",
+    "closingNote": "Chưa biết nên bắt đầu từ đâu? Cứ nhắn mình mục tiêu hiện tại hoặc web bạn đang có, mình sẽ gợi ý phương án gọn nhất trong ngân sách của bạn — kể cả khi bạn chỉ cần một trang thật đơn giản. Không rành kỹ thuật cũng không sao, phần đó để mình lo. Muốn chắc chắn hơn? Bạn có thể xem trước những dự án mình đã làm.",
+    "closingCta": "Nhắn mình để được tư vấn miễn phí",
+    "closingCtaSecondary": "Xem dự án mình đã làm",
+    "plans": {
+      "landing": {
+        "name": "Landing page 1 trang",
+        "description": "Phù hợp khi bạn cần một trang duy nhất thật ấn tượng để giới thiệu sản phẩm, sự kiện, CV cá nhân hoặc chạy quảng cáo — nhanh, gọn và chi phí nhẹ nhất.",
+        "price": "Từ 690.000đ",
+        "note": "Lựa chọn tiết kiệm nhất để có mặt trên internet chỉ trong vài ngày.",
+        "features": [
+          "Khách vừa mở trang là hiểu ngay bạn bán gì và bấm gọi/đặt hàng, không thoát ra tìm chỗ khác",
+          "Đẹp gọn trên điện thoại, khách liên hệ với bạn chỉ bằng một chạm",
+          "Dán link lên Facebook/Zalo hiện ảnh và tiêu đề bắt mắt, khách tò mò bấm vào nhiều hơn",
+          "Về sau bạn tự đổi giá, ảnh, số điện thoại... mà không cần biết code hay gọi lại tốn phí"
+        ],
+        "buttonText": "Làm landing page"
+      },
+      "website": {
+        "name": "Website nhiều trang",
+        "description": "Dành cho shop nhỏ, quán, thương hiệu cá nhân hay dịch vụ cần một website hoàn chỉnh nhiều trang (giới thiệu, dịch vụ, liên hệ...) để trông chuyên nghiệp và bán hàng tốt hơn.",
+        "price": "Từ 1.900.000đ",
+        "note": "Giá tùy số trang, tính năng và nội dung bạn cần chuẩn bị — sẽ chốt rõ trước khi làm.",
+        "features": [
+          "Shop, dịch vụ của bạn trông chuyên nghiệp và uy tín ngang các thương hiệu lớn",
+          "Khách tự tìm được thông tin và tự đặt hàng, bạn đỡ phải nhắn đi nhắn lại giải thích",
+          "Có cơ hội xuất hiện khi khách gõ tìm dịch vụ của bạn trên Google, thay vì chỉ thấy đối thủ",
+          "Sau này muốn thêm trang hay bán hàng online đều mở rộng được, không phải làm lại từ đầu"
+        ],
+        "buttonText": "Bắt đầu làm website"
+      },
+      "dynamic": {
+        "name": "Website có tính năng động",
+        "description": "Khi bạn cần hơn một trang giới thiệu: form đăng ký/đặt lịch, đăng nhập thành viên, khu vực quản trị nội dung hay kết nối với hệ thống, API sẵn có của bạn.",
+        "price": "Từ 6.900.000đ",
+        "note": "Giá tùy số lượng và độ phức tạp của tính năng; dự án có thanh toán, bảng điều khiển hay nhiều vai trò người dùng thường từ 12–20 triệu. Mình sẽ tách rõ từng phần trước khi báo giá.",
+        "features": [
+          "Khách tự đăng ký, đặt lịch hay gửi yêu cầu ngay trên web, thông tin về thẳng email hoặc hệ thống của bạn",
+          "Có khu vực đăng nhập hoặc trang quản trị để bạn tự cập nhật nội dung, không cần gọi thợ mỗi lần",
+          "Kết nối được với công cụ và dữ liệu bạn đang dùng (Google Sheet, API, hệ thống có sẵn...)",
+          "Xây bằng công nghệ vững (Next.js/React) để chạy ổn định và dễ thêm tính năng về sau"
+        ],
+        "buttonText": "Trao đổi tính năng cần làm"
+      },
+      "optimize": {
+        "name": "Tối ưu SEO & tăng tốc web có sẵn",
+        "description": "Dành cho website Next.js/React đang chạy nhưng tải chậm, hay lỗi, hiển thị xấu trên điện thoại hoặc chưa lên được Google — mình dọn lại cho gọn, nhanh và chuẩn SEO hơn.",
+        "price": "Từ 890.000đ",
+        "note": "Mình nhận tối ưu các web dựng bằng Next.js/React; chi phí tùy hiện trạng và phạm vi cần xử lý.",
+        "features": [
+          "Web chạy nhanh và mượt hơn, khách không còn khó chịu vì phải chờ hay gặp lỗi vặt",
+          "Đẹp và dùng tốt trên điện thoại, không còn vỡ giao diện làm mất khách",
+          "Chỉnh lại tiêu đề, mô tả và tốc độ để web dễ lên Google và kéo thêm khách tự nhiên",
+          "Bạn nhận báo cáo rõ đã cải thiện được gì và nên làm tiếp gì, bằng lời dễ hiểu"
+        ],
+        "buttonText": "Gửi web cần tối ưu"
+      }
+    },
+    "miniLabel": "Việc nhỏ, giá lẻ",
+    "miniHeading": "Chỉ cần một việc nhỏ? Nhắn là làm ngay",
+    "miniSubtitle": "Không phải ai cũng cần cả một website. Đây là những việc lẻ mình làm nhanh, giá mềm — đa số báo giá trong ngày và xong trong 1–3 ngày.",
+    "miniNote": "Không thấy việc bạn cần trong danh sách? Cứ nhắn mô tả, mình báo giá nhanh và thật.",
+    "mini": [
+      {
+        "name": "Sửa lỗi / bug giao diện",
+        "desc": "Web vỡ layout, nút không bấm được, lỗi vặt... mình sửa nhanh gọn.",
+        "price": "Từ 150.000đ"
+      },
+      {
+        "name": "Chỉnh sửa & thêm nội dung",
+        "desc": "Đổi chữ, ảnh, màu sắc hay thêm một khu mới vào web đang có.",
+        "price": "Từ 200.000đ"
+      },
+      {
+        "name": "Sửa web đẹp trên điện thoại",
+        "desc": "Web hiển thị lỗi, vỡ trên mobile — mình chỉnh lại cho gọn đẹp.",
+        "price": "Từ 250.000đ"
+      },
+      {
+        "name": "Đưa web lên mạng + tên miền",
+        "desc": "Deploy web, gắn tên miền và hosting để website chính thức chạy.",
+        "price": "Từ 250.000đ"
+      },
+      {
+        "name": "Gắn tiện ích cho web",
+        "desc": "Form liên hệ, chat Zalo/Messenger, Google Maps, nút gọi nhanh...",
+        "price": "Từ 150.000đ"
+      },
+      {
+        "name": "Tăng tốc web nhanh",
+        "desc": "Xử lý các điểm làm web tải chậm, nặng để mượt và lên điểm PageSpeed.",
+        "price": "Từ 300.000đ"
+      },
+      {
+        "name": "Chỉnh SEO nhanh 1 trang",
+        "desc": "Tiêu đề, mô tả, ảnh chia sẻ để lên Google và share Facebook đẹp hơn.",
+        "price": "Từ 200.000đ"
+      },
+      {
+        "name": "Cắt Figma sang giao diện",
+        "desc": "Có sẵn thiết kế Figma? Mình dựng thành web thật, tính theo mỗi trang.",
+        "price": "Từ 400.000đ"
+      },
+      {
+        "name": "Bảo trì web theo tháng",
+        "desc": "Cập nhật nội dung, sao lưu và sửa lỗi nhỏ định kỳ, bạn khỏi lo.",
+        "price": "Từ 300.000đ/tháng"
+      }
+    ],
+    "journeyLabel": "Chọn theo nhu cầu",
+    "journeyHeading": "Bạn đang cần gì?",
+    "journeySub": "Chọn đúng tình huống của bạn — mỗi hướng nói rõ bạn nhận được gì và giá từ bao nhiêu, minh bạch ngay từ đầu.",
+    "journey": [
+      {
+        "title": "Đã có web, cần chỉnh hoặc cải thiện",
+        "hint": "Sửa lỗi, thêm nội dung, tăng tốc, lên SEO...",
+        "priceFrom": "Từ 150.000đ",
+        "href": "#fix"
+      },
+      {
+        "title": "Cần một website mới",
+        "hint": "Landing 1 trang hoặc web nhiều trang chuyên nghiệp",
+        "priceFrom": "Từ 690.000đ",
+        "href": "#build"
+      },
+      {
+        "title": "Cần web có tính năng, hệ thống",
+        "hint": "Form, đăng nhập, quản trị, kết nối backend",
+        "priceFrom": "Từ 6.900.000đ",
+        "href": "#app"
+      }
+    ],
+    "fixLabel": "Bắt đầu nhỏ · minh bạch",
+    "fixHeading": "Đã có web? Chỉnh sửa & cải thiện nhanh",
+    "fixSub": "Từ vài trăm nghìn cho việc lẻ đến gói tối ưu toàn diện — giá niêm yết rõ ràng, làm nhanh, thấy kết quả ngay. Đây là cách dễ nhất để bắt đầu làm việc cùng mình.",
+    "fixMoreLead": "Cần làm bài bản hơn một việc lẻ?",
+    "buildLabel": "Xây mới",
+    "buildHeading": "Một website mới, chỉn chu từ đầu",
+    "buildSub": "Khi bạn cần một nơi chính thức trên internet — chọn landing gọn nhẹ hay web nhiều trang đầy đủ. Mỗi gói ghi rõ bạn nhận được gì.",
+    "appLabel": "Nâng tầm",
+    "appHeading": "Website có tính năng & hệ thống riêng",
+    "appSub": "Khi web cần làm việc thay bạn: nhận đăng ký, đặt lịch, đăng nhập, quản trị nội dung hay kết nối hệ thống sẵn có."
+  },
+  "faq": {
+    "heading": "Câu hỏi thường gặp",
+    "subtitle": "Một số thắc mắc phổ biến trước khi bắt đầu dự án.",
+    "items": [
+      {
+        "title": "Chi phí làm website là bao nhiêu?",
+        "content": "Landing page 1 trang bắt đầu từ 690.000đ, website nhiều trang từ 1.900.000đ, web có tính năng động (form, đăng nhập, quản trị, kết nối backend...) từ 6.900.000đ. Giá cuối tùy số trang, tính năng và độ phức tạp — mình luôn báo rõ trước khi bắt đầu, không phát sinh phí ẩn."
+      },
+      {
+        "title": "Bạn là sinh viên thì làm có ổn không?",
+        "content": "Mình là sinh viên năm cuối ngành lập trình và đang nhận dự án thật để hoàn thiện tay nghề. Đổi lại mức giá dễ chịu, bạn nhận sản phẩm làm bằng công nghệ mới, code sạch và mình làm hết mình vì đây cũng là portfolio của mình. Bạn hoàn toàn có thể xem demo, dự án cũ trước khi quyết định."
+      },
+      {
+        "title": "Tôi chưa có thiết kế thì có làm được không?",
+        "content": "Được. Bạn chỉ cần mô tả ý tưởng, lĩnh vực kinh doanh hoặc mục tiêu sử dụng. Mình sẽ tư vấn cấu trúc nội dung, bố cục và hướng triển khai phù hợp."
+      },
+      {
+        "title": "Website có được tối ưu SEO không?",
+        "content": "Có. Website được dựng với cấu trúc thân thiện với công cụ tìm kiếm, hỗ trợ tối ưu tốc độ tải trang, metadata, sitemap và các yếu tố SEO kỹ thuật cơ bản."
+      },
+      {
+        "title": "Có hỗ trợ domain và hosting không?",
+        "content": "Có. Mình hỗ trợ tư vấn hoặc triển khai domain, hosting và các dịch vụ liên quan nếu bạn chưa có sẵn hạ tầng."
+      },
+      {
+        "title": "Sau khi bàn giao có được hỗ trợ không?",
+        "content": "Có. Sau khi hoàn thành, mình vẫn hướng dẫn sử dụng, giải đáp thắc mắc và xử lý các lỗi phát sinh cũng như chỉnh sửa nhỏ trong phạm vi đã thống nhất."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Cùng nhau kiến tạo",
+    "titleAccent": "tương lai số.",
+    "subtitle": "Bạn có một ý tưởng tuyệt vời hay một dự án cần thực hiện? Hãy để lại lời nhắn, tôi sẽ phản hồi trong vòng 24h.",
+    "directEmail": "Email trực tiếp",
+    "nameLabel": "Họ và tên",
+    "namePlaceholder": "Nguyễn Văn A",
+    "emailLabel": "Email liên hệ",
+    "emailPlaceholder": "email@example.com",
+    "messageLabel": "Lời nhắn",
+    "messagePlaceholder": "Nhập nội dung tin nhắn của bạn...",
+    "submit": "Gửi yêu cầu",
+    "submitting": "Đang gửi...",
+    "successTitle": "Đã gửi tin nhắn!",
+    "successBody": "Cảm ơn bạn đã liên hệ. Tôi sẽ sớm phản hồi.",
+    "toastSuccess": "Mình đã nhận được lời nhắn của bạn! Cảm ơn bạn đã liên hệ.",
+    "toastError": "Đã có lỗi xảy ra. Vui lòng thử lại sau."
+  },
+  "footer": {
+    "partner": "Đối tác",
+    "rights": "Jason Dev. Bảo lưu mọi quyền.",
+    "version": "Phiên bản"
+  },
+  "utils": {
+    "badge": "Sắp ra mắt",
+    "heading": "Các Công Cụ Tiện Ích",
+    "description": "Tính năng này đang trong giai đoạn chuẩn bị và sẽ chính thức được kích hoạt. Hãy đếm ngược cùng Jason nhé!",
+    "backHome": "Quay lại trang chủ",
+    "countdown": {
+      "days": "Ngày",
+      "hours": "Giờ",
+      "minutes": "Phút",
+      "seconds": "Giây"
+    }
+  },
+  "notFound": {
+    "heading": "Oops! Lạc đường rồi",
+    "description": "Trang bạn đang tìm kiếm không tồn tại, đã bị thay đổi đường dẫn hoặc tạm thời không thể truy cập.",
+    "back": "Trở lại trang trước",
+    "home": "Về trang chủ an toàn"
+  },
+  "comingSoon": {
+    "defaultTitle": "Tính năng đang phát triển",
+    "defaultDescription": "Chúng tôi đang nỗ lực hoàn thiện và sẽ sớm ra mắt tính năng này. Cảm ơn bạn đã quan tâm và vui lòng quay lại sau nhé!",
+    "back": "Trở lại trang trước",
+    "signInTitle": "Tính năng Đăng Nhập đang phát triển",
+    "signUpTitle": "Tính năng Đăng Ký đang phát triển"
+  },
+  "metadata": {
+    "homeTitle": "Jason Dev | Freelance Web Developer",
+    "homeDescription": "Trang cá nhân và dịch vụ freelance của Phan Hoàng Phúc (Jason Dev), chuyên làm website, tối ưu SEO, tối ưu web sẵn có và thiết kế hệ thống dữ liệu dễ mở rộng.",
+    "projectsTitle": "Tất cả dự án",
+    "projectsDescription": "Khám phá tất cả dự án mà tôi đã thực hiện, từ các trang web cá nhân đến các ứng dụng phức tạp. Mỗi dự án đều được thiết kế và lập trình với sự chú ý đến chi tiết, hiệu suất và trải nghiệm người dùng.",
+    "servicesTitle": "Dịch vụ thiết kế website giá sinh viên — Landing page, Web & SEO",
+    "servicesDescription": "Nhận thiết kế website, landing page, tối ưu SEO và tăng tốc web có sẵn bằng công nghệ hiện đại (Next.js, React) với giá hợp lý cho shop nhỏ, thương hiệu cá nhân và người mới bắt đầu. Freelancer trẻ, báo giá minh bạch từ 690.000đ.",
+    "contactTitle": "Liên hệ",
+    "contactDescription": "Liên hệ với tôi để biết thêm thông tin về các dự án, kỹ năng hoặc cơ hội hợp tác. Tôi luôn sẵn sàng kết nối và trao đổi ý tưởng mới.",
+    "utilsTitle": "Tiện ích",
+    "utilsDescription": "Khám phá các công cụ tiện ích hữu ích sắp ra mắt, giúp nâng cao trải nghiệm của bạn.",
+    "libraryTitle": "Thư viện mã nguồn mở — Component & tiện ích React",
+    "libraryDescription": "Bộ thư viện React mình tự viết: @hwagfu/link, @hwagfu/cursor, @hwagfu/images. Giới thiệu, ví dụ và hướng dẫn sử dụng chi tiết."
+  },
+  "library": {
+    "title": "Thư viện của mình",
+    "subtitle": "Nơi tập hợp những dự án mình đã làm và các component library mình tự đóng gói. Chọn một mục để xem chi tiết.",
+    "back": "Tất cả thư viện",
+    "installLabel": "Cài đặt",
+    "usageLabel": "Cách dùng",
+    "featuresLabel": "Tính năng",
+    "propsLabel": "Thuộc tính (Props)",
+    "notesLabel": "Lưu ý",
+    "propName": "Tên",
+    "propType": "Kiểu",
+    "propDefault": "Mặc định",
+    "propDesc": "Mô tả",
+    "viewGuide": "Xem hướng dẫn",
+    "notFoundTitle": "Không tìm thấy thư viện",
+    "notFoundDescription": "Thư viện bạn tìm không tồn tại hoặc đã đổi tên.",
+    "componentsHeading": "Component Library",
+    "componentsSubtitle": "Các component & tiện ích React mình tự viết và đóng gói để dùng lại. Bấm vào để xem hướng dẫn và thử trực tiếp trong playground.",
+    "playgroundLabel": "Playground",
+    "playgroundHint": "Chỉnh các thông số bên phải để xem component thay đổi trực tiếp.",
+    "projectsHeading": "Dự án",
+    "projectsCardTitle": "Xem tất cả dự án mình đã làm",
+    "projectsCardDesc": "Tổng hợp các sản phẩm web mình đã xây dựng — từ landing page đến hệ thống có backend.",
+    "projectsCardCta": "Xem tất cả dự án"
+  }
+}

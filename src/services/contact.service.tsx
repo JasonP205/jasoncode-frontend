@@ -15,15 +15,24 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+type MailLocale = "vi" | "en";
+
+const customerSubject: Record<MailLocale, string> = {
+  vi: "Mình đã nhận được lời nhắn của bạn - Jason Dev",
+  en: "I've received your message - Jason Dev",
+};
+
 export async function sendContactEmail(
   name: string,
   email: string,
   message: string,
+  locale: MailLocale = "vi",
 ) {
   try {
-    // Để render Component React thành chuỗi HTML trong Server Action mà không cần đổi đuôi file sang .tsx
-    // Chúng ta truyền component dưới dạng function call thay vì JSX tag.
-    const customerHtml = await render(<CustomerTemplate name={name} />);
+    // Render the React component to an HTML string inside the Server Action.
+    const customerHtml = await render(
+      <CustomerTemplate name={name} locale={locale} />,
+    );
 
     const notificationHtml = await render(
       <NotificationMail name={name} email={email} message={message} />,
@@ -31,22 +40,22 @@ export async function sendContactEmail(
 
     const adminEmail = process.env.NEXT_RECEIVE_CONTACT_MAIL;
 
-    // 1. Gửi thông báo đến Admin (System -> Admin)
+    // 1. Notify the admin (System -> Admin) — always in Vietnamese.
     if (adminEmail) {
       await transporter.sendMail({
         from: `"Jason Dev - System" <system@hwagfu.dev>`,
         to: adminEmail,
         subject: `[Jason Dev] Liên hệ mới từ ${name}`,
         html: notificationHtml,
-        replyTo: email, // Set Reply-To về email khách hàng để dễ tiện reply lại khách trực tiếp
+        replyTo: email,
       });
     }
 
-    // 2. Gửi xác nhận cho Khách hàng (No-Reply -> Khách hàng)
+    // 2. Confirm to the customer (No-Reply -> Customer) — in their locale.
     await transporter.sendMail({
       from: `"no-reply | Jason Dev" <info@hwagfu.dev>`,
       to: email,
-      subject: "Mình đã nhận được lời nhắn của bạn - Jason Dev",
+      subject: customerSubject[locale],
       html: customerHtml,
     });
 
@@ -55,7 +64,7 @@ export async function sendContactEmail(
     console.error("Lỗi khi gửi email:", error);
     return {
       success: false,
-      error: "Hệ thống email đang bận, vui lòng thử lại sau.",
+      error: "EMAIL_SEND_FAILED",
     };
   }
 }

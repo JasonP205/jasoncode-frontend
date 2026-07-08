@@ -1,12 +1,16 @@
 "use client";
 
 import React, { useState, useTransition } from "react";
-import { Mail, Send, CheckCircle, User } from "lucide-react";
+import { Mail, Send, CheckCircle } from "lucide-react";
 import { Input, TextArea, Button, toast, Spinner } from "@heroui/react";
 import { motion, AnimatePresence } from "motion/react";
+import { useLocale, useTranslations } from "next-intl";
 import { submitContact } from "@/actions/contact.action";
+import RainbowText from "./ui/RainbowText"
 
 export default function Contact() {
+  const t = useTranslations("contact");
+  const locale = useLocale();
   const [submitted, setSubmitted] = useState(false);
   const [isPending, startTransition] = useTransition();
 
@@ -15,6 +19,7 @@ export default function Contact() {
 
     const form = e.currentTarget;
     const formData = new FormData(form);
+    formData.set("locale", locale);
 
     startTransition(async () => {
       const result = await submitContact(formData);
@@ -22,14 +27,12 @@ export default function Contact() {
       if (result.success) {
         setSubmitted(true);
         form.reset();
-        toast.success(
-          "Mình đã nhận được lời nhắn của bạn! Cảm ơn bạn đã liên hệ.",
-        );
+        toast.success(t("toastSuccess"));
         setTimeout(() => {
           setSubmitted(false);
         }, 5000);
       } else {
-        toast.danger(result.error);
+        toast.danger(t("toastError"));
       }
     });
   };
@@ -37,7 +40,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-16 sm:py-24 bg-white relative overflow-hidden"
+      className="py-16 sm:py-24 bg-background relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
         <motion.div
@@ -55,8 +58,8 @@ export default function Contact() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-3xl sm:text-4xl md:text-6xl font-serif text-white mb-6 sm:mb-8"
             >
-              Cùng nhau kiến tạo <br className="hidden sm:block" />
-              <span className="italic text-[#6F6F6F]">tương lai số.</span>
+              {t("title")} <br className="hidden sm:block" />
+              <RainbowText>{t("titleAccent")}</RainbowText>
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, x: -30 }}
@@ -65,8 +68,7 @@ export default function Contact() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-gray-400 text-base sm:text-lg mb-8 sm:mb-12 max-w-md"
             >
-              Bạn có một ý tưởng tuyệt vời hay một dự án cần thực hiện? Hãy để
-              lại lời nhắn, tôi sẽ phản hồi trong vòng 24h.
+              {t("subtitle")}
             </motion.p>
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -85,7 +87,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-xs sm:text-sm text-gray-400">
-                    Email trực tiếp
+                    {t("directEmail")}
                   </p>
                   <p className="text-base sm:text-lg break-all">
                     contact@hwagfu.dev
@@ -107,10 +109,10 @@ export default function Contact() {
                 >
                   <CheckCircle className="w-12 h-12 sm:w-16 sm:h-16 text-green-400 mb-6" />
                   <h3 className="text-xl sm:text-2xl text-white font-serif mb-2">
-                    Đã gửi tin nhắn!
+                    {t("successTitle")}
                   </h3>
                   <p className="text-sm sm:text-base text-gray-400">
-                    Cảm ơn bạn đã liên hệ. Tôi sẽ sớm phản hồi.
+                    {t("successBody")}
                   </p>
                 </motion.div>
               ) : (
@@ -124,44 +126,59 @@ export default function Contact() {
                   className="space-y-4 sm:space-y-6"
                 >
                   <div>
-                    <label className="block text-xs sm:text-sm text-gray-400 mb-2">
-                      Họ và tên
+                    <label
+                      htmlFor="contact-name"
+                      className="block text-xs sm:text-sm text-gray-400 mb-2"
+                    >
+                      {t("nameLabel")}
                     </label>
                     <Input
+                      id="contact-name"
                       name="name"
                       required
                       fullWidth
+                      autoComplete="name"
                       disabled={isPending}
-                      placeholder="Nguyễn Văn A"
+                      placeholder={t("namePlaceholder")}
                       className="bg-zinc-950 border border-zinc-800 text-white selection:bg-white! selection:text-black! placeholder:text-zinc-500 font-sans"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs sm:text-sm text-gray-400 mb-2">
-                      Email liên hệ
+                    <label
+                      htmlFor="contact-email"
+                      className="block text-xs sm:text-sm text-gray-400 mb-2"
+                    >
+                      {t("emailLabel")}
                     </label>
                     <Input
+                      id="contact-email"
                       name="email"
                       required
                       fullWidth
                       type="email"
+                      autoComplete="email"
+                      inputMode="email"
                       disabled={isPending}
                       className="bg-zinc-950 border border-zinc-800 text-white selection:bg-white! selection:text-black! placeholder:text-zinc-500 font-sans"
-                      placeholder="email@example.com"
+                      placeholder={t("emailPlaceholder")}
                     />
                   </div>
                   <div>
-                    <label className="block text-xs sm:text-sm text-gray-400 mb-2">
-                      Lời nhắn
+                    <label
+                      htmlFor="contact-message"
+                      className="block text-xs sm:text-sm text-gray-400 mb-2"
+                    >
+                      {t("messageLabel")}
                     </label>
                     <TextArea
+                      id="contact-message"
                       name="message"
                       required
                       rows={4}
                       fullWidth
                       disabled={isPending}
                       className="resize-none bg-zinc-950 border border-zinc-800 text-white selection:bg-white! selection:text-black! placeholder:text-zinc-500 font-sans"
-                      placeholder="Nhập nội dung tin nhắn của bạn..."
+                      placeholder={t("messagePlaceholder")}
                     />
                   </div>
                   <Button
@@ -173,11 +190,11 @@ export default function Contact() {
                     {isPending ? (
                       <>
                         <Spinner className="w-4 h-4 mr-2" />
-                        Đang gửi...
+                        {t("submitting")}
                       </>
                     ) : (
                       <>
-                        Gửi yêu cầu <Send className="w-4 h-4 ml-2" />
+                        {t("submit")} <Send className="w-4 h-4 ml-2" />
                       </>
                     )}
                   </Button>

@@ -2,8 +2,10 @@
 
 import React, { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 
 export default function CountdownTimer({ targetDate }: { targetDate: string | Date }) {
+  const t = useTranslations('utils.countdown');
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -45,10 +47,10 @@ export default function CountdownTimer({ targetDate }: { targetDate: string | Da
   }
 
   const timeUnits = [
-    { label: 'Ngày', value: timeLeft.days },
-    { label: 'Giờ', value: timeLeft.hours },
-    { label: 'Phút', value: timeLeft.minutes },
-    { label: 'Giây', value: timeLeft.seconds },
+    { label: t('days'), value: timeLeft.days },
+    { label: t('hours'), value: timeLeft.hours },
+    { label: t('minutes'), value: timeLeft.minutes },
+    { label: t('seconds'), value: timeLeft.seconds },
   ];
 
   return (

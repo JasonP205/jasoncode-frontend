@@ -1,0 +1,342 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "services": "Services",
+    "library": "Library",
+    "utils": "Utilities",
+    "contact": "Contact",
+    "signUp": "Sign up",
+    "signIn": "Sign in",
+    "logoAria": "Jason Dev - Home",
+    "themeToggle": "Toggle light/dark theme",
+    "localeSwitcher": "Select language"
+  },
+  "hero": {
+    "headline": "A little <design>design</design>, a little <code>code</code>, and delightful things.",
+    "intro": "Hi, I'm <name>Phan Hoàng Phúc</name>. A freelance Web Developer passionate about crafting simple, useful, and polished products.",
+    "cta": "Start the journey"
+  },
+  "skills": {
+    "educationLabel": "Education",
+    "techStackLabel": "Tech Stack",
+    "heading": "Education & Expertise",
+    "proficiency": "{level}% proficiency",
+    "summary": "I love building products people can use every day. From interfaces and APIs to databases, I always aim to create clean, maintainable solutions that deliver a smooth experience.",
+    "present": "Present",
+    "education": {
+      "highschoolDegree": "High School Diploma",
+      "highschoolDescription": "I completed my studies at Cay Duong High School as an honor student for three years with excellent conduct. Throughout that time I developed leadership, problem-solving, and teamwork skills as class monitor, and took part in school activities to grow my soft skills and broaden my social knowledge.",
+      "universityDegree": "Bachelor of Science in Computer Science",
+      "universityDescription": "Focused on software development, system design, and building modern web and mobile applications."
+    }
+  },
+  "projectList": {
+    "heading": "Featured Projects",
+    "subtitle": "A collection of products I've passionately designed and developed.",
+    "viewAll": "View all projects",
+    "viewDetail": "View project details",
+    "back": "Go back"
+  },
+  "projectDetail": {
+    "back": "Back to projects",
+    "websiteLabel": "Project Website",
+    "visit": "Visit now",
+    "notFoundTitle": "Project not found",
+    "notFoundDescription": "The project you're looking for doesn't exist or has been removed.",
+    "notFoundHeading": "This project doesn't exist",
+    "notFoundLong": "It looks like this project was removed, had its URL changed, or was never published in my portfolio.",
+    "notFoundBack": "Go back",
+    "notFoundList": "View all projects",
+    "deployingTitle": "Hang tight! 🚀",
+    "deployingMessage": "We're putting the finishing touches on this project. It'll be ready in just a moment!"
+  },
+  "services": {
+    "heroTitle": "Professional websites,",
+    "heroTitleAccent": "student-friendly prices",
+    "heroSubtitle": "I'm Phuc — a final-year software student helping small shops, personal brands and beginners get a website that looks professional, builds trust and brings in customers, at a price that won't hurt. You don't need to know anything technical — just tell me your goal and I'll handle the rest. Clear pricing from the start, and you review a preview before deciding.",
+    "guaranteesLabel": "My promise to you",
+    "guaranteesHeading": "There's almost no risk on your side",
+    "guarantees": [
+      {
+        "title": "Free advice & quote",
+        "desc": "Message me first and get a clear all-in quote — no deposit needed yet and no hidden fees later."
+      },
+      {
+        "title": "Preview before you commit",
+        "desc": "You review a sample design and only move forward once you're happy — no buying blind."
+      },
+      {
+        "title": "Support after handover",
+        "desc": "Free bug fixes and small tweaks for 14 days, plus an easy-to-follow usage guide."
+      }
+    ],
+    "processLabel": "How we work",
+    "processHeading": "A lean process you can always follow",
+    "workingSteps": [
+      "You message your needs, share your current site or describe an idea — free, no commitment.",
+      "I advise on the approach and quote a price that fits your budget.",
+      "We agree on scope, timeline and a small deposit to start; you track progress step by step.",
+      "Full handover with a usage guide and support for small tweaks after you receive the site."
+    ],
+    "featuredBadge": "MOST POPULAR",
+    "closingNote": "Not sure where to start? Just send me your current goal or the site you already have, and I'll suggest the leanest option within your budget — even if all you need is one simple page. Not tech-savvy? No worries, I've got that part covered. Want to be sure first? Feel free to check out the projects I've already built.",
+    "closingCta": "Message me for a free consultation",
+    "closingCtaSecondary": "See projects I've built",
+    "plans": {
+      "landing": {
+        "name": "One-page landing",
+        "description": "Ideal when you need a single, striking page to showcase a product, event, personal CV or run ads — fast, focused and the lightest on cost.",
+        "price": "From 690,000₫",
+        "note": "The most affordable way to get online in just a few days.",
+        "features": [
+          "Visitors instantly get what you offer and tap to call or order, instead of leaving to look elsewhere",
+          "Clean and beautiful on mobile, so customers reach you with a single tap",
+          "Paste the link on Facebook or Zalo and it shows an eye-catching image and title, so more people click",
+          "Later you can update prices, photos and phone number yourself — no code, no paid callbacks"
+        ],
+        "buttonText": "Build a landing page"
+      },
+      "website": {
+        "name": "Multi-page website",
+        "description": "For small shops, cafés, personal brands or services that need a complete multi-page website (about, services, contact...) to look professional and sell better.",
+        "price": "From 1,900,000₫",
+        "note": "Price depends on the number of pages, features and content you need — confirmed clearly before we start.",
+        "features": [
+          "Your shop or service looks professional and trustworthy, on par with the big brands",
+          "Customers find information and order on their own, so you stop repeating the same answers",
+          "A chance to show up when people search your service on Google, instead of only your competitors",
+          "Easy to expand later with more pages or online sales — no need to rebuild from scratch"
+        ],
+        "buttonText": "Start my website"
+      },
+      "dynamic": {
+        "name": "Website with dynamic features",
+        "description": "When you need more than a brochure site: sign-up / booking forms, member login, a content admin area, or a connection to your existing system or API.",
+        "price": "From 6,900,000₫",
+        "note": "Price depends on how many features you need and how complex they are; projects with payments, a dashboard or multiple user roles typically run 12–20 million VND. I'll break it down clearly before quoting.",
+        "features": [
+          "Customers sign up, book or send requests right on the site, with the info landing straight in your email or system",
+          "A login or admin area so you update content yourself, without calling a developer every time",
+          "Connects to the tools and data you already use (Google Sheets, APIs, existing systems...)",
+          "Built on solid tech (Next.js/React) to run reliably and add more features later"
+        ],
+        "buttonText": "Discuss the features I need"
+      },
+      "optimize": {
+        "name": "SEO & speed up an existing site",
+        "description": "For a live Next.js/React website that loads slowly, breaks often, looks poor on mobile or can't rank on Google — I clean it up to be leaner, faster and more SEO-ready.",
+        "price": "From 890,000₫",
+        "note": "I optimize sites built with Next.js/React; cost depends on the current state and scope of work.",
+        "features": [
+          "A faster, smoother site so customers aren't frustrated by waiting or glitches",
+          "Looks and works well on mobile, so a broken layout no longer costs you customers",
+          "Reworked titles, descriptions and speed so the site ranks better and pulls in free traffic",
+          "You get a clear report of what was improved and what to do next, in plain language"
+        ],
+        "buttonText": "Send a site to optimize"
+      }
+    },
+    "miniLabel": "Small jobs, small prices",
+    "miniHeading": "Just need one small thing? Message me and it's done",
+    "miniSubtitle": "Not everyone needs a whole website. These are the quick, low-cost odd jobs I take on — most quoted the same day and done in 1–3 days.",
+    "miniNote": "Don't see what you need? Just describe it and I'll send a quick, honest quote.",
+    "mini": [
+      {
+        "name": "Fix a bug / broken layout",
+        "desc": "Broken layout, buttons that don't work, small glitches — fixed fast.",
+        "price": "From 150,000₫"
+      },
+      {
+        "name": "Content & small edits",
+        "desc": "Change text, images, colours or add a new section to an existing site.",
+        "price": "From 200,000₫"
+      },
+      {
+        "name": "Mobile display fix",
+        "desc": "Your site looks broken on phones — I make it clean and tidy again.",
+        "price": "From 250,000₫"
+      },
+      {
+        "name": "Deploy site + domain",
+        "desc": "Put your site online, connect the domain and hosting to go live.",
+        "price": "From 250,000₫"
+      },
+      {
+        "name": "Add a widget",
+        "desc": "Contact form, Zalo/Messenger chat, Google Maps, quick-call button...",
+        "price": "From 150,000₫"
+      },
+      {
+        "name": "Speed up your site",
+        "desc": "Quick fixes for what makes your site slow and heavy, boosting PageSpeed.",
+        "price": "From 300,000₫"
+      },
+      {
+        "name": "Quick SEO for one page",
+        "desc": "Title, description and share image so it ranks and shares better.",
+        "price": "From 200,000₫"
+      },
+      {
+        "name": "Figma to code",
+        "desc": "Got a Figma design? I turn it into a real page, priced per page.",
+        "price": "From 400,000₫"
+      },
+      {
+        "name": "Monthly maintenance",
+        "desc": "Regular content updates, backups and small bug fixes — worry-free.",
+        "price": "From 300,000₫/mo"
+      }
+    ],
+    "journeyLabel": "Pick what you need",
+    "journeyHeading": "What do you need right now?",
+    "journeySub": "Choose the situation that fits you — each path spells out what you get and the starting price, transparent from the start.",
+    "journey": [
+      {
+        "title": "I have a site, need fixes or improvements",
+        "hint": "Bug fixes, new content, speed, SEO...",
+        "priceFrom": "From 150,000₫",
+        "href": "#fix"
+      },
+      {
+        "title": "I need a new website",
+        "hint": "A one-page landing or a full multi-page site",
+        "priceFrom": "From 690,000₫",
+        "href": "#build"
+      },
+      {
+        "title": "I need features or a system",
+        "hint": "Forms, login, admin, backend integration",
+        "priceFrom": "From 6,900,000₫",
+        "href": "#app"
+      }
+    ],
+    "fixLabel": "Start small · transparent",
+    "fixHeading": "Already have a site? Quick fixes & improvements",
+    "fixSub": "From a few hundred thousand for odd jobs to a full optimization package — listed prices, fast turnaround, visible results. It's the easiest way to start working with me.",
+    "fixMoreLead": "Need something more thorough than a one-off?",
+    "buildLabel": "Build new",
+    "buildHeading": "A brand-new website, polished from day one",
+    "buildSub": "When you need an official home on the internet — pick a lean landing page or a full multi-page site. Each plan spells out exactly what you get.",
+    "appLabel": "Level up",
+    "appHeading": "A website with its own features & system",
+    "appSub": "When your site needs to work for you: take sign-ups and bookings, logins, content admin, or connect to your existing system."
+  },
+  "faq": {
+    "heading": "Frequently asked questions",
+    "subtitle": "A few common questions before starting a project.",
+    "items": [
+      {
+        "title": "How much does a website cost?",
+        "content": "A one-page landing starts from 690,000₫, a multi-page website from 1,900,000₫, and a site with dynamic features (forms, login, admin, backend...) from 6,900,000₫. The final price depends on pages, features and complexity — I always confirm it clearly before starting, with no hidden fees."
+      },
+      {
+        "title": "You're a student — is the work reliable?",
+        "content": "I'm a final-year software student taking on real projects to sharpen my skills. In exchange for the friendly price, you get a product built with modern tech and clean code, and I give it my all because it's part of my portfolio too. You're welcome to review demos and past work before deciding."
+      },
+      {
+        "title": "Can you build a site if I don't have a design?",
+        "content": "Yes. Just describe your idea, your field or your goal. I'll advise on content structure, layout and the right approach."
+      },
+      {
+        "title": "Is the website SEO-optimized?",
+        "content": "Yes. Sites are built with a search-friendly structure and support load-speed optimization, metadata, sitemap and the basic technical SEO factors."
+      },
+      {
+        "title": "Do you help with domain and hosting?",
+        "content": "Yes. I can advise on or set up domain, hosting and related services if you don't have the infrastructure yet."
+      },
+      {
+        "title": "Is there support after handover?",
+        "content": "Yes. After completion I still provide usage guidance, answer questions and handle bug fixes and small tweaks within the agreed scope."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Let's build the",
+    "titleAccent": "digital future together.",
+    "subtitle": "Have a great idea or a project to bring to life? Leave a message and I'll get back to you within 24 hours.",
+    "directEmail": "Direct email",
+    "nameLabel": "Full name",
+    "namePlaceholder": "John Doe",
+    "emailLabel": "Contact email",
+    "emailPlaceholder": "email@example.com",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Type your message here...",
+    "submit": "Send request",
+    "submitting": "Sending...",
+    "successTitle": "Message sent!",
+    "successBody": "Thanks for reaching out. I'll get back to you soon.",
+    "toastSuccess": "I've received your message! Thanks for getting in touch.",
+    "toastError": "Something went wrong. Please try again later."
+  },
+  "footer": {
+    "partner": "Partner",
+    "rights": "Jason Dev. All rights reserved.",
+    "version": "Version"
+  },
+  "utils": {
+    "badge": "Coming Soon",
+    "heading": "Utility Tools",
+    "description": "This feature is being prepared and will go live officially. Count down with Jason!",
+    "backHome": "Back to home",
+    "countdown": {
+      "days": "Days",
+      "hours": "Hours",
+      "minutes": "Minutes",
+      "seconds": "Seconds"
+    }
+  },
+  "notFound": {
+    "heading": "Oops! You're lost",
+    "description": "The page you're looking for doesn't exist, had its URL changed, or is temporarily unavailable.",
+    "back": "Go back",
+    "home": "Back to home safely"
+  },
+  "comingSoon": {
+    "defaultTitle": "Feature in development",
+    "defaultDescription": "We're working hard to finish this feature and will launch it soon. Thanks for your interest — please check back later!",
+    "back": "Go back",
+    "signInTitle": "Sign-in feature in development",
+    "signUpTitle": "Sign-up feature in development"
+  },
+  "metadata": {
+    "homeTitle": "Jason Dev | Freelance Web Developer",
+    "homeDescription": "Personal portfolio and freelance services of Phan Hoàng Phúc (Jason Dev), specializing in building websites, SEO optimization, improving existing sites, and designing scalable data systems.",
+    "projectsTitle": "All projects",
+    "projectsDescription": "Explore every project I've built, from personal websites to complex applications. Each one is designed and engineered with attention to detail, performance, and user experience.",
+    "servicesTitle": "Student-priced website design — Landing pages, Web & SEO",
+    "servicesDescription": "Website design, landing pages, SEO optimization and speed-ups for existing sites, built with modern tech (Next.js, React) at prices that fit small shops, personal brands and beginners. A young freelancer, transparent pricing from 690,000₫.",
+    "contactTitle": "Contact",
+    "contactDescription": "Get in touch to learn more about my projects, skills, or collaboration opportunities. I'm always happy to connect and exchange new ideas.",
+    "utilsTitle": "Utilities",
+    "utilsDescription": "Explore useful utility tools coming soon to enhance your experience.",
+    "libraryTitle": "Open-source libraries — React components & utilities",
+    "libraryDescription": "React libraries I built: @hwagfu/link, @hwagfu/cursor, @hwagfu/images. Intro, examples and detailed usage guides."
+  },
+  "library": {
+    "title": "My libraries",
+    "subtitle": "A home for the projects I have built and the component libraries I package myself. Pick a section to dive in.",
+    "back": "All libraries",
+    "installLabel": "Installation",
+    "usageLabel": "Usage",
+    "featuresLabel": "Features",
+    "propsLabel": "Props",
+    "notesLabel": "Notes",
+    "propName": "Name",
+    "propType": "Type",
+    "propDefault": "Default",
+    "propDesc": "Description",
+    "viewGuide": "View guide",
+    "notFoundTitle": "Library not found",
+    "notFoundDescription": "The library you are looking for does not exist or was renamed.",
+    "componentsHeading": "Component Library",
+    "componentsSubtitle": "React components & utilities I wrote and packaged for reuse. Click one to read the guide and try it live in the playground.",
+    "playgroundLabel": "Playground",
+    "playgroundHint": "Tweak the controls on the right to see the component update live.",
+    "projectsHeading": "Projects",
+    "projectsCardTitle": "See all the projects I have built",
+    "projectsCardDesc": "A collection of the web products I have built — from landing pages to full backend systems.",
+    "projectsCardCta": "View all projects"
+  }
+}

@@ -1,6 +1,8 @@
 import Icon from "@/components/ui/icon";
 import { JasonCode } from "hwagfu-link";
+import { useTranslations } from "next-intl";
 const Footer = () => {
+  const t = useTranslations("footer");
   const socialLinks = [
     {
       id: 1,
@@ -23,15 +25,16 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="border-t border-gray-100 bg-white">
+    <footer className="border-t border-border bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-8 text-center flex flex-col gap-4 w-full pb-4 pt-6">
         <div className="max-w-7xl px-8 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex flex-col md:items-start items-center gap-2">
-            <h3 className=" font-bold text-md text-muted">Đối tác</h3>
+            <h3 className=" font-bold text-md text-muted">{t("partner")}</h3>
             <JasonCode
               url="https://www.hugowishpax.studio"
-              className="bg-white rounded-full px-0"
-              classNames={{ image: "rounded-full w-8 h-8 hover:scale-105 transition-transform duration-200 hover:shadow-lg", content: "text-black hover:underline decoration-1 underline-offset-2" }}
+              className="bg-background rounded-full px-0"
+              label="Hugo Studio"
+              classNames={{ image: "rounded-full w-8 h-8 hover:scale-105 transition-transform duration-200 hover:shadow-lg", content: "text-foreground hover:underline decoration-1 underline-offset-2" }}
             />
           
           </div>
@@ -40,7 +43,7 @@ const Footer = () => {
               <a
                 key={link.id}
                 href={link.url}
-                className="text-sm text-muted flex items-center hover:text-black transition-colors"
+                className="text-sm text-muted-foreground flex items-center hover:text-foreground transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -51,7 +54,7 @@ const Footer = () => {
           </div>
         </div>
         <p className="text-sm text-muted">
-          ©{new Date().getFullYear()} Jason Dev. All rights reserved.
+          © {new Date().getFullYear()} {t("rights")} | {t("version")} 2.0
         </p>
       </div>
     </footer>

@@ -1,10 +1,11 @@
 import React from "react";
-import type { Project } from "@/data/projects";
+import type { LocalizedProject } from "@/data/projects";
 import MotionDiv from "./motionDiv";
 import { Card, Chip, Skeleton } from "@heroui/react";
-import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import ThreeDCard from "@/components/ThreeDCard";
 
 const itemVariants = {
@@ -15,7 +16,8 @@ const itemVariants = {
     transition: { duration: 0.6, ease: "easeOut" as const },
   },
 };
-const ProjectGrid = async ({ projects }: { projects: Project[] }) => {
+const ProjectGrid = async ({ projects }: { projects: LocalizedProject[] }) => {
+  const t = await getTranslations("projectList");
   return (
     <>
       {projects.map((project, index) => (
@@ -27,22 +29,17 @@ const ProjectGrid = async ({ projects }: { projects: Project[] }) => {
           viewport={{ once: true, margin: "-50px" }}
           transition={{ delay: index * 0.1 }}
         >
-          <Link href={`/projects/${project.id}`}>
+          <Link href={`/library/projects/${project.id}`}>
             <ThreeDCard>
               <Card className="group hover:shadow-xl hover:-translate-y-2 h-full flex flex-col transition-all duration-300">
-                <div className="relative aspect-video overflow-hidden">
-                  <div className="relative h-64 rounded-xl overflow-hidden">
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      width={800}
-                      height={450}
-                    />
-                  </div>
-                  <span className="absolute inset-0 bg-black/20 opacity-0 rounded-lg group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <ExternalLink className="text-white w-8 h-8" />
-                  </span>
+                <div className="overflow-hidden rounded-xl bg-muted">
+                  <Image
+                    src={project.image[0].src}
+                    alt={project.title}
+                    width={1440}
+                    height={900}
+                    className="h-auto w-full transition-transform duration-300"
+                  />
                 </div>
                 <Card.Header className="p-8 pb-4">
                   <div className="flex flex-wrap gap-2 mb-4">
@@ -50,18 +47,18 @@ const ProjectGrid = async ({ projects }: { projects: Project[] }) => {
                       <Chip key={tag}>{tag}</Chip>
                     ))}
                   </div>
-                  <Card.Title className="group-hover:text-black transition-colors">
+                  <Card.Title className="group-hover:text-foreground transition-colors">
                     {project.title}
                   </Card.Title>
                 </Card.Header>
                 <Card.Content className="px-8 pb-4 grow">
-                  <Card.Description className="text-muted leading-relaxed">
+                  <Card.Description className="text-muted leading-relaxed line-clamp-2">
                     {project.description}
                   </Card.Description>
                 </Card.Content>
                 <Card.Footer className="px-8 pb-8">
-                  <span className="hover:underline flex items-center underline-offset-4 decoration-1 group/link">
-                    <span>Xem chi tiết dự án</span>
+                  <span className="hover:underline group-hover:underline flex items-center underline-offset-4 decoration-1 group/link">
+                    <span>{t("viewDetail")}</span>
                     <ArrowRight className="w-4 h-4 ml-1 transition-transform group-hover/link:translate-x-1" />
                   </span>
                 </Card.Footer>

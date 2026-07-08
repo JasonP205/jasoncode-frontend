@@ -1,15 +1,19 @@
 allowBuilds:
-  core-js: false
-  msw: false
-  sharp: false
-  unrs-resolver: false
+  '@parcel/watcher': false
+  '@swc/core': false
 ignoredBuiltDependencies:
   - sharp
   - unrs-resolver
+  - '@parcel/watcher'
+  - '@swc/core'
+  - core-js
+  - msw
 minimumReleaseAgeExclude:
   - hwagfu-link
   - hwagfu-cursor@0.1.0
   - '@hwagfu/cursor@1.2.0'
   - '@hwagfu/cursor@1.2.1'
+  - '@hwagfu/images'
+  - '@hwagfu/url-preview@1.0.0'
 overrides:
   hwagfu-quick-link: link:../../jasoncomponent

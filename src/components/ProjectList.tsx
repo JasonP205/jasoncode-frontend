@@ -1,10 +1,13 @@
 import MotionDiv from "./ui/motionDiv";
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Suspense } from "react";
+import { getLocale } from "next-intl/server";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { ProjectGrid, ProjectGridSkeleton } from "./ui/ProjectGrid";
 import { getAllProjects } from "@/services/projects.service";
-import {CursorEffect} from "@hwagfu/cursor";
+import type { Locale } from "@/i18n/routing";
+import { BackButton } from "./ui/BackButton";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -26,16 +29,26 @@ const itemVariants = {
 };
 
 const ProjectGridData = async ({ maxLenght }: { maxLenght?: number }) => {
-  const projects = await getAllProjects();
+  const locale = (await getLocale()) as Locale;
+  const projects = await getAllProjects(locale);
   const featuredProjects = maxLenght ? projects.slice(0, maxLenght) : projects;
   return <ProjectGrid projects={featuredProjects} />;
 };
 
 const ProjectList = ({ maxLenght }: { maxLenght?: number }) => {
+  const t = useTranslations("projectList");
   return (
-    <section data-anchor="projects" className="py-16 sm:py-24 bg-gray-50">
-      <CursorEffect />
+    <section data-anchor="projects" className="py-16 sm:py-24 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
+        {maxLenght === undefined && (
+          <MotionDiv
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mb-10"
+          >
+            <BackButton fallbackHref="/library">{t("back")}</BackButton>
+          </MotionDiv>
+        )}
         <MotionDiv
           initial="hidden"
           whileInView="visible"
@@ -45,20 +58,19 @@ const ProjectList = ({ maxLenght }: { maxLenght?: number }) => {
         >
           <MotionDiv variants={itemVariants} className="max-w-2xl">
             <h2 className="text-4xl sm:text-5xl font-serif mb-4 sm:mb-6">
-              Dự án tiêu biểu
+              {t("heading")}
             </h2>
-            <p className="text-[#6F6F6F] text-base sm:text-lg">
-              Tuyển tập những sản phẩm tâm huyết mà tôi đã tham gia thiết kế và
-              phát triển.
+            <p className="text-muted-foreground text-base sm:text-lg">
+              {t("subtitle")}
             </p>
           </MotionDiv>
           {maxLenght && (
             <MotionDiv variants={itemVariants}>
               <Link
-                href="/projects"
-                className="group flex items-center gap-2 text-black font-medium border-b-2 border-black pb-1 hover:opacity-70 transition-all text-sm sm:text-base"
+                href="/library/projects"
+                className="group flex items-center gap-2 text-foreground font-medium border-b-2 border-foreground pb-1 hover:opacity-70 transition-all text-sm sm:text-base"
               >
-                Xem tất cả dự án{" "}
+                {t("viewAll")}{" "}
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </MotionDiv>
@@ -70,7 +82,7 @@ const ProjectList = ({ maxLenght }: { maxLenght?: number }) => {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={containerVariants}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           <Suspense fallback={<ProjectGridSkeleton length={3} />}>
             <ProjectGridData maxLenght={maxLenght} />

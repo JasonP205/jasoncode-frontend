@@ -1,64 +1,94 @@
-import Link from "next/link";
+"use client";
+
+import { useTranslations } from "next-intl";
 import { Menu } from "lucide-react";
 import { Button, Drawer } from "@heroui/react";
 import MotionDiv from "./ui/motionDiv";
 import Image from "next/image";
-import logo from "@/app/logo.png"
+import { cn } from "@/lib/utils";
+import ThemeToggle from "./ui/ThemeToggle";
+import LocaleSwitcher from "./ui/LocaleSwitcher";
+import { Link, usePathname } from "@/i18n/navigation";
+import logo from "@/app/logo.png";
+
 const navLinks = [
-  { to: "/", label: "Trang chủ" },
-  { to: "/projects", label: "Dự án" },
-  { to: "/services", label: "Dịch vụ" },
-  {
-    to: "/utils",
-    label: "Tiện ích",
-  },
-  { to: "/contact", label: "Liên hệ" },
-];
+  { to: "/", key: "home" },
+  { to: "/services", key: "services" },
+  { to: "/library", key: "library" },
+  { to: "/utils", key: "utils" },
+  { to: "/contact", key: "contact" },
+] as const;
+
+const isActiveLink = (pathname: string, href: string) =>
+  href === "/" ? pathname === "/" : pathname.startsWith(href);
+
 export const Navigation = () => {
+  const t = useTranslations("nav");
+  const pathname = usePathname();
   return (
-    <nav className="z-50 sticky top-0 bg-white/90 backdrop-blur-md border-b border-gray-100">
+    <nav className="z-50 sticky top-0 bg-background/90 backdrop-blur-md border-b border-border">
       <div className="flex justify-between items-center px-4 sm:px-8  max-w-7xl mx-auto w-full relative">
         <Link
           href="/"
-          className="text-2xl sm:text-3xl tracking-tight font-serif text-black flex items-center gap-2"
+          aria-label={t("logoAria")}
+          className="text-2xl sm:text-3xl tracking-tight font-serif text-foreground flex items-center gap-2"
         >
           <div className="w-16 h-16 shrink-0 flex items-center justify-center">
             <Image
               src={logo}
               alt="Jason Dev Logo"
-              decoding="async"
+              width={64}
+              height={64}
+              priority
+              sizes="64px"
+              className="w-full h-full object-contain"
             />
           </div>
         </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8 absolute left-1/2 transform -translate-x-1/2">
-          {navLinks.map((link) => (
-            <Link
-              key={link.to}
-              href={link.to}
-              className="text-sm transition-colors text-[#6F6F6F] hover:text-black font-medium"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const active = isActiveLink(pathname, link.to);
+            return (
+              <Link
+                key={link.to}
+                href={link.to}
+                aria-current={active ? "page" : undefined}
+                className={cn(
+                  "text-sm font-medium transition-colors hover:text-foreground",
+                  active ? "text-foreground" : "text-muted-foreground",
+                )}
+              >
+                {t(link.key)}
+              </Link>
+            );
+          })}
         </div>
 
         <div className="hidden md:flex items-center gap-2">
+          <LocaleSwitcher label={t("localeSwitcher")} />
+          <ThemeToggle label={t("themeToggle")} />
           <Link href="/sign-up">
-            <Button variant="outline">Đăng ký</Button>
+            <Button variant="outline">{t("signUp")}</Button>
           </Link>
           <Link href="/sign-in">
-            <Button>Đăng nhập</Button>
+            <Button>{t("signIn")}</Button>
           </Link>
         </div>
-        <MobileNavation />
+        <div className="flex items-center gap-1 md:hidden">
+          <LocaleSwitcher label={t("localeSwitcher")} />
+          <ThemeToggle label={t("themeToggle")} />
+          <MobileNavation />
+        </div>
       </div>
     </nav>
   );
 };
 
 const MobileNavation = () => {
+  const t = useTranslations("nav");
+  const pathname = usePathname();
   return (
     <Drawer>
       <Button variant="ghost" isIconOnly className="md:hidden z-140">
@@ -71,16 +101,19 @@ const MobileNavation = () => {
               <Drawer.Heading>
                 <Link
                   href="/"
-                  className="text-2xl sm:text-3xl tracking-tight font-serif text-black flex items-center gap-2"
+                  className="text-2xl sm:text-3xl tracking-tight font-serif text-foreground flex items-center gap-2"
                 >
                   <div className="w-16 h-16 shrink-0 flex items-center justify-center">
                     <Image
                       src={logo}
                       alt="Jason Dev Logo"
-                      decoding="async"
+                      width={64}
+                      height={64}
+                      sizes="64px"
+                      className="w-full h-full object-contain"
                     />
                   </div>
-                  <span className="font-serif leading-relaxed text-xl text-shadow-slate-900">
+                  <span className="font-serif leading-relaxed text-xl">
                     Jason Dev
                   </span>
                 </Link>
@@ -97,9 +130,17 @@ const MobileNavation = () => {
                   >
                     <Link
                       href={link.to}
-                      className="text-lg font-serif text-black hover:opacity-70 transition-opacity block py-1"
+                      aria-current={
+                        isActiveLink(pathname, link.to) ? "page" : undefined
+                      }
+                      className={cn(
+                        "text-lg font-serif block py-1 transition-opacity hover:opacity-70",
+                        isActiveLink(pathname, link.to)
+                          ? "text-foreground font-semibold"
+                          : "text-foreground/70",
+                      )}
                     >
-                      {link.label}
+                      {t(link.key)}
                     </Link>
                   </MotionDiv>
                 ))}
@@ -108,14 +149,14 @@ const MobileNavation = () => {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: navLinks.length * 0.05 }}
-                  className="mt-4 pt-6 border-t flex flex-col gap-3 border-gray-100"
+                  className="mt-4 pt-6 border-t flex flex-col gap-3 border-border"
                 >
                   <Link href="/sign-in" className="block">
-                    <Button fullWidth>Đăng nhập</Button>
+                    <Button fullWidth>{t("signIn")}</Button>
                   </Link>
                   <Link href="/sign-up" className="block">
                     <Button variant="outline" fullWidth>
-                      Đăng ký
+                      {t("signUp")}
                     </Button>
                   </Link>
                 </MotionDiv>

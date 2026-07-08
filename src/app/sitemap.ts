@@ -1,47 +1,49 @@
-import { MetadataRoute } from 'next';
-import { projects } from '@/data/projects';
+import { MetadataRoute } from "next";
+import { projects } from "@/data/projects";
+import { routing } from "@/i18n/routing";
+import { getPathname } from "@/i18n/navigation";
+import { SITE_URL } from "@/lib/seo";
+
+type RouteDef = {
+  path: string;
+  changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"];
+  priority: number;
+};
+
+const staticRoutes: RouteDef[] = [
+  { path: "/", changeFrequency: "yearly", priority: 1 },
+  { path: "/library/projects", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/services", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/contact", changeFrequency: "yearly", priority: 0.8 },
+  { path: "/utils", changeFrequency: "yearly", priority: 0.5 },
+];
+
+function languagesFor(path: string): Record<string, string> {
+  const languages: Record<string, string> = {};
+  for (const locale of routing.locales) {
+    languages[locale] = SITE_URL + getPathname({ locale, href: path });
+  }
+  return languages;
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  // Thay đổi URL base của bạn tại đây hoặc cấu hình environment variable NEXT_PUBLIC_APP_URL
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://hwagfu.dev';
-
-  // Lấy danh sách các trang tĩnh
-  const staticRoutes: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}`,
-      changeFrequency: 'yearly',
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/projects`,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/services`,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      changeFrequency: 'yearly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/utils`,
-      changeFrequency: 'yearly',
-      priority: 0.5,
-    },
+  const routes: RouteDef[] = [
+    ...staticRoutes,
+    ...projects.map((project) => ({
+      path: `/library/projects/${project.id}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
   ];
 
-  // Lấy các route động từ CSDL local projects.ts
-  const dynamicProjectRoutes: MetadataRoute.Sitemap = projects.map((project) => ({
-    url: `${baseUrl}/projects/${project.id}`,
-    // Khuyến nghị: Thay thế bằng ngày cập nhật thực tế từ data của bạn nếu có
-    lastModified: (project as any).updatedAt ? new Date((project as any).updatedAt) : undefined,
-    changeFrequency: 'monthly',
-    priority: 0.6,
-  }));
-
-  return [...staticRoutes, ...dynamicProjectRoutes];
+  // Emit one entry per locale, each carrying the full hreflang alternate set.
+  return routes.flatMap(({ path, changeFrequency, priority }) => {
+    const languages = languagesFor(path);
+    return routing.locales.map((locale) => ({
+      url: SITE_URL + getPathname({ locale, href: path }),
+      changeFrequency,
+      priority,
+      alternates: { languages },
+    }));
+  });
 }
