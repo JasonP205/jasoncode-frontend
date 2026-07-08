@@ -113,12 +113,21 @@ export async function generateMetadata({
       siteName: "Jason Dev Portfolio",
       title: t("homeTitle"),
       description: t("homeDescription"),
+      images: [
+        {
+          url: "/opengraph-image.png",
+          width: 1200,
+          height: 630,
+          alt: "Jason Dev — Freelance Web Developer",
+        },
+      ],
     },
 
     twitter: {
       card: "summary_large_image",
       title: t("homeTitle"),
       description: t("homeDescription"),
+      images: ["/twitter-image.png"],
     },
 
     robots: {
