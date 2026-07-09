@@ -194,14 +194,9 @@ export default async function RootLayout({
           suppressHydrationWarning
           dangerouslySetInnerHTML={{ __html: themeInitScript }}
         />
-        {/* Preload the hero's LCP poster (default light theme). Dark-theme users
-            fall back to the in-markup <img>, which is still gate-free. */}
-        <link
-          rel="preload"
-          as="image"
-          href="/day_poster.webp"
-          fetchPriority="high"
-        />
+        {/* The hero poster preload comes from next/image `priority` (with a
+            responsive imagesrcset) — no manual <link rel=preload> needed; a
+            second one would double-download the raw file. */}
       </head>
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <NextIntlClientProvider>
