@@ -361,6 +361,14 @@
   },
   "footer": {
     "partner": "Partner",
+    "quickLinksTitle": "Quick links",
+    "quickLinks": {
+      "home": "Home",
+      "projects": "Web projects portfolio",
+      "services": "Website design services",
+      "contact": "Hire a web developer",
+      "utils": "Free tools"
+    },
     "rights": "Jason Dev. All rights reserved.",
     "version": "Version"
   },

@@ -361,6 +361,14 @@
   },
   "footer": {
     "partner": "Đối tác",
+    "quickLinksTitle": "Liên kết nhanh",
+    "quickLinks": {
+      "home": "Trang chủ",
+      "projects": "Dự án web đã thực hiện",
+      "services": "Dịch vụ thiết kế website",
+      "contact": "Liên hệ làm website",
+      "utils": "Công cụ miễn phí"
+    },
     "rights": "Jason Dev. Bảo lưu mọi quyền.",
     "version": "Phiên bản"
   },

@@ -1,62 +1,131 @@
 import Icon from "@/components/ui/icon";
-import { JasonCode } from "hwagfu-link";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
+import Image from "next/image";
+import logo from "@/app/logo.png";
+import Url from "@/components/ui/UrlPreview"
 const Footer = () => {
   const t = useTranslations("footer");
+  // Keyword-rich internal anchors — these labels double as SEO signals for the
+  // pages they point to, so keep them descriptive rather than generic.
+  const quickLinks = [
+    { href: "/", label: t("quickLinks.home") },
+    { href: "/library/projects", label: t("quickLinks.projects") },
+    { href: "/services", label: t("quickLinks.services") },
+    { href: "/contact", label: t("quickLinks.contact") },
+    { href: "/utils", label: t("quickLinks.utils") },
+  ];
   const socialLinks = [
     {
       id: 1,
       name: "GitHub",
       url: "https://github.com/JasonP205",
-      icon: "mdi:github"
+      icon: "mdi:github",
     },
     {
       id: 2,
       name: "Facebook",
       url: "https://facebook.com/hoangphuc05",
-      icon: "mdi:facebook"
+      icon: "mdi:facebook",
     },
     {
       id: 3,
       name: "Zalo",
       url: "https://zalo.me/0798020513",
-      icon: "simple-icons:zalo"
-    }
+      icon: "simple-icons:zalo",
+    },
   ];
 
   return (
-    <footer className="border-t border-border bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 text-center flex flex-col gap-4 w-full pb-4 pt-6">
-        <div className="max-w-7xl px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex flex-col md:items-start items-center gap-2">
-            <h3 className=" font-bold text-md text-muted">{t("partner")}</h3>
-            <JasonCode
-              url="https://www.hugowishpax.studio"
-              className="bg-background rounded-full px-0"
-              label="Hugo Studio"
-type="icon"
-              classNames={{ image: "rounded-full w-8 h-8 hover:scale-105 transition-transform duration-200 hover:shadow-lg", content: "text-foreground hover:underline decoration-1 underline-offset-2" }}
-            />
-          
+    <footer className="border-t border-border/60 bg-background">
+      <div className="mx-auto max-w-7xl px-6 py-14">
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+          {/* About */}
+          <div className="space-y-4">
+            <div className="w-16 h-16 shrink-0 flex items-center justify-center">
+              <Image
+                src={logo}
+                alt="Jason Dev Logo"
+                width={64}
+                height={64}
+                priority
+                sizes="64px"
+                className="w-full h-full object-contain"
+              />
+            </div>
+
+            <p className="max-w-xs text-sm leading-6 text-muted-foreground">
+              Full-stack developer crafting modern, accessible and
+              high-performance web applications.
+            </p>
+
+            <div className="flex gap-2">
+              {socialLinks.map((item) => (
+                <a
+                  key={item.id}
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={item.name}
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-border transition-all hover:bg-foreground hover:text-background"
+                >
+                  <Icon icon={item.icon} className="h-5 w-5" />
+                </a>
+              ))}
+            </div>
           </div>
-          <div className="flex gap-8">
-            {socialLinks.map((link) => (
+
+          {/* Navigation */}
+          <div>
+            <h3 className="mb-4 font-semibold">{t("quickLinksTitle")}</h3>
+
+            <ul className="space-y-3">
+              {quickLinks.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h3 className="mb-4 font-semibold">Contact</h3>
+
+            <div className="space-y-3 text-sm text-muted-foreground">
               <a
-                key={link.id}
-                href={link.url}
-                className="text-sm text-muted-foreground flex items-center hover:text-foreground transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="mailto:contact@hwagfu.dev"
+                className="flex items-center gap-2 hover:text-foreground"
               >
-                <Icon icon={link.icon} className="w-5 h-5 inline-block mr-1" />
-                {link.name}
+                <Icon icon="solar:letter-linear" className="h-4 w-4" />
+                contact@hwagfu.dev
               </a>
-            ))}
+
+              <div className="flex items-center gap-2">
+                <Icon icon="solar:global-linear" className="h-4 w-4" />
+                hwagfu.dev
+              </div>
+            </div>
+          </div>
+
+          {/* Partner */}
+          <div>
+            <h3 className="mb-4 font-semibold">{t("partner")}</h3>
+
+            <Url url="https://www.hugowishpax.studio" />
           </div>
         </div>
-        <p className="text-sm text-muted">
-          © {new Date().getFullYear()} {t("rights")} | {t("version")} 2.0
-        </p>
+
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-6 text-sm text-muted-foreground md:flex-row">
+          <span>
+            © {new Date().getFullYear()} {t("rights")}
+          </span>
+        </div>
       </div>
     </footer>
   );
