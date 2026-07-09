@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
+import { useMounted } from '@/hooks/useMounted';
 
 export default function CountdownTimer({ targetDate }: { targetDate: string | Date }) {
   const t = useTranslations('utils.countdown');
@@ -12,11 +13,9 @@ export default function CountdownTimer({ targetDate }: { targetDate: string | Da
     minutes: 0,
     seconds: 0,
   });
-  const [mounted, setMounted] = useState(false);
+  const mounted = useMounted();
 
   useEffect(() => {
-    setMounted(true);
-    
     const calculateTimeLeft = () => {
       const difference = +new Date(targetDate) - +new Date();
       if (difference > 0) {

@@ -1,7 +1,15 @@
 "use client";
 
 import { useSyncExternalStore } from "react";
-import { CursorEffect } from "@hwagfu/cursor";
+import dynamic from "next/dynamic";
+
+// Decorative only — keep it out of the initial JS chunk so it never competes
+// for the main thread during hydration (TBT). Loaded lazily, and only when the
+// pointer/motion check below actually enables it.
+const CursorEffect = dynamic(
+  () => import("@hwagfu/cursor").then((m) => m.CursorEffect),
+  { ssr: false },
+);
 
 /**
  * Renders the decorative cursor exactly once, and only where it makes sense:

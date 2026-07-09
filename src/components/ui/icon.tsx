@@ -1,13 +1,10 @@
 "use client";
 
 import { Icon } from "@iconify/react";
-import { useState, useEffect } from "react";
-const Icons = (props: React.ComponentProps<typeof Icon>) => {
-  const [mounted, setMounted] = useState(false);
+import { useMounted } from "@/hooks/useMounted";
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+const Icons = (props: React.ComponentProps<typeof Icon>) => {
+  const mounted = useMounted();
   if (!mounted) return null;
   return <Icon {...props} />;
 };

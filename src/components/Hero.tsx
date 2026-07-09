@@ -3,10 +3,6 @@ import ScrollButton from "@/components/ui/ScrollButton";
 import HeroVideo from "@/components/HeroVideo";
 import RainbowText from "@/components/ui/RainbowText";
 
-const HERO_VIDEO_SRC =
-  "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260328_083109_283f3553-e28f-428b-a723-d639c617eb2b.mp4";
-const HERO_VIDEO_NIGHT_SRC = "https://res.cloudinary.com/dw1k4fknp/video/upload/v1782454827/hero-night_mw0let.mp4";
-
 const Hero = async () => {
   const t = await getTranslations("hero");
   return (
