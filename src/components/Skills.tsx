@@ -168,10 +168,6 @@ const Skills = () => {
 
                     <div className="flex flex-col items-center md:items-start">
                       <p className="font-medium text-foreground">{tech.name}</p>
-
-                      <p className="text-xs text-muted-foreground">
-                        {t("proficiency", { level: tech.level })}
-                      </p>
                     </div>
                   </div>
                 </MotionDiv>
