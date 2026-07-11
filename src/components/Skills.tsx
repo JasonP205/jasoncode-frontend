@@ -13,37 +13,31 @@ const Skills = () => {
       name: "Next.js",
       color: "bg-black text-white",
       icon: "devicon:nextjs",
-      level: 40,
     },
     {
       name: "React.js",
       color: "bg-blue-500 text-white",
       icon: "devicon:react",
-      level: 80,
     },
     {
       name: "Node.js",
       color: "bg-green-600 text-white",
       icon: "material-icon-theme:nodejs",
-      level: 70,
     },
     {
       name: "Express.js",
       color: "bg-gray-800 text-white",
       icon: "devicon:express",
-      level: 60,
     },
     {
       name: "TailwindCSS",
       color: "bg-cyan-500 text-white",
       icon: "devicon:tailwindcss",
-      level: 85,
     },
     {
       name: "PHP",
       color: "bg-indigo-600 text-white",
       icon: "material-icon-theme:php",
-      level: 50,
     },
   ];
   const educationData = [
