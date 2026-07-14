@@ -12,6 +12,7 @@ import { cn } from "@/lib/utils";
 import { Analytics } from "@vercel/analytics/next";
 import ThemeProvider, { themeInitScript } from "@/components/ui/ThemeProvider";
 import { routing } from "@/i18n/routing";
+import  Script  from "next/script";
 
 // Body / UI font — matches the font HeroUI's theme expects, with full
 // Vietnamese glyph coverage so diacritics render correctly.
@@ -195,7 +196,7 @@ export default async function RootLayout({
       <head>
         {/* Anti-FOUC: applies the stored theme before first paint. Server-
             rendered on purpose so it doesn't trip React's client-script warning. */}
-        <script
+        <Script
           suppressHydrationWarning
           dangerouslySetInnerHTML={{ __html: themeInitScript }}
         />
