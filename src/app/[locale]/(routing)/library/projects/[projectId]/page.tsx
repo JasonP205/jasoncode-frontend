@@ -1,24 +1,30 @@
 import React, { Suspense } from "react";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { ArrowLeft, ExternalLink, Code2 } from "lucide-react";
 import { Chip, Button, Skeleton } from "@heroui/react";
 import { getTranslations } from "next-intl/server";
 import MotionDiv from "@/components/ui/motionDiv";
-import { getProjectById } from "@/services/projects.service";
+import { getProjectById, getProjects } from "@/services/projects.service";
 import { Link } from "@/i18n/navigation";
-import type { Locale } from "@/i18n/routing";
+import { routing, type Locale } from "@/i18n/routing";
 import { buildAlternates, ogLocaleFields } from "@/lib/seo";
-import { MultipleImage } from "@hwagfu/images";
+import ProjectGallery from "@/components/ui/ProjectGallery";
 import Dialog from "@/components/ui/AlertDialog"
+
+/** The project list is local data, so every detail page can be prerendered. */
+export function generateStaticParams() {
+  return routing.locales.flatMap((locale) =>
+    getProjects().map((project) => ({ locale, projectId: project.id })),
+  );
+}
 
 export async function generateMetadata(props: {
   params: Promise<{ locale: Locale; projectId: string }>;
 }): Promise<Metadata> {
   const { locale, projectId } = await props.params;
 
-  const project = await getProjectById(projectId, locale);
+  const project = getProjectById(projectId, locale);
 
   if (!project) {
     const t = await getTranslations({ locale, namespace: "projectDetail" });
@@ -68,7 +74,16 @@ function ProjectSkeleton() {
         </div>
       </div>
 
-      <Skeleton className="w-full aspect-video rounded-2xl mb-12 shadow-sm before:duration-1000!" />
+      <Skeleton className="w-full aspect-4/3 sm:aspect-16/10 rounded-2xl mb-4 shadow-sm before:duration-1000!" />
+      <Skeleton className="h-4 w-64 rounded-md mb-8 before:duration-1000!" />
+      <div className="mb-14 grid grid-cols-[repeat(auto-fill,minmax(6.5rem,1fr))] gap-2">
+        {Array.from({ length: 6 }).map((_, index) => (
+          <Skeleton
+            key={index}
+            className="aspect-16/10 w-full rounded-lg before:duration-1000!"
+          />
+        ))}
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
         <div className="md:col-span-2 space-y-4">
@@ -96,7 +111,7 @@ async function ProjectContent({
   projectId: string;
   locale: Locale;
 }) {
-  const project = await getProjectById(projectId, locale);
+  const project = getProjectById(projectId, locale);
   const t = await getTranslations("projectDetail");
 
   if (!project) {
@@ -135,22 +150,13 @@ async function ProjectContent({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
-        className="w-full relative aspect-video rounded-2xl overflow-hidden mb-12 shadow-sm"
+        className="mb-14 w-full"
       >
-        {project.image ? (
-          // <Image
-          //   src={project.image}
-          //   alt={project.title}
-          //   fill
-          //   className="object-cover"
-          //   priority
-          //   sizes="(max-width: 1024px) 100vw, 1024px"
-          // />
-          <MultipleImage imgList={project.image} />
+        {project.image.length > 0 ? (
+          <ProjectGallery shots={project.image} />
         ) : (
-          // <span></span>
-          <div className="w-full h-full bg-secondary flex items-center justify-center text-muted-foreground">
-            <Code2 className="w-16 h-16 opacity-30" />
+          <div className="flex aspect-16/10 w-full items-center justify-center rounded-2xl bg-foreground/4 text-muted-foreground ring-1 ring-border/70">
+            <Code2 className="h-16 w-16 opacity-30" />
           </div>
         )}
       </MotionDiv>

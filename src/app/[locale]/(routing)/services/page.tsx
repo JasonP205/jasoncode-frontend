@@ -40,9 +40,9 @@ export async function generateMetadata({
     description: t("servicesDescription"),
     alternates,
     keywords: [
-      "thiết kế website giá rẻ",
-      "làm website giá sinh viên",
-      "thiết kế landing page giá rẻ",
+      "thiết kế website chuyên nghiệp",
+      "nhận làm website theo yêu cầu",
+      "thiết kế landing page",
       "làm web có tính năng động",
       "lập trình web app Next.js React",
       "làm đồ án coursework sinh viên",
@@ -74,13 +74,15 @@ export default function PricingPage({
 
   const servicesUrl = buildAlternates(locale, "/services")?.canonical as string;
 
+  // Offers carry no price: the page no longer quotes one, and a
+  // `priceSpecification` here would put a figure into search results that the
+  // page itself does not stand behind.
   const offers = [
     ...planKeys.map((key) => ({
       name: t(`plans.${key}.name`),
       description: t(`plans.${key}.description`),
-      price: t(`plans.${key}.price`),
     })),
-    ...(t.raw("student") as { name: string; description: string; price: string }[]),
+    ...(t.raw("student") as { name: string; description: string }[]),
   ];
 
   const serviceSchema = {
@@ -98,11 +100,6 @@ export default function PricingPage({
         "@type": "Service",
         name: offer.name,
         description: offer.description,
-      },
-      priceSpecification: {
-        "@type": "PriceSpecification",
-        priceCurrency: "VND",
-        price: offer.price.replace(/[^\d]/g, "") || undefined,
       },
       url: servicesUrl,
     })),

@@ -1,31 +1,15 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { Menu } from "lucide-react";
 import { Button } from "@heroui/react";
 import Image from "next/image";
-import dynamic from "next/dynamic";
 import { cn } from "@/lib/utils";
 import ThemeToggle from "./ui/ThemeToggle";
 import LocaleSwitcher from "./ui/LocaleSwitcher";
 import { Link, usePathname } from "@/i18n/navigation";
 import logo from "@/app/logo.png";
 
-// The mobile drawer pulls in HeroUI's Drawer + framer-motion. It's only needed
-// once the user opens the menu, so keep it out of the initial hydration bundle.
-// The placeholder keeps the trigger's footprint stable until the chunk lands.
-const MobileNavation = dynamic(() => import("./ui/MobileNav"), {
-  ssr: false,
-  loading: () => (
-    <span
-      aria-hidden
-      className="md:hidden inline-flex h-10 w-10 items-center justify-center"
-    >
-      <Menu size={24} />
-    </span>
-  ),
-});
-
+// Mirrors `BottomNav.tsx`, which carries these same routes on mobile.
 const navLinks = [
   { to: "/", key: "home" },
   { to: "/services", key: "services" },
@@ -41,14 +25,19 @@ export const Navigation = () => {
   const t = useTranslations("nav");
   const pathname = usePathname();
   return (
-    <nav className="z-50 sticky top-0 bg-background/90 backdrop-blur-md border-b border-border">
-      <div className="flex justify-between items-center px-4 sm:px-8  max-w-7xl mx-auto w-full relative">
+    <nav
+      aria-label={t("primaryNav")}
+      className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur-md"
+    >
+      <div className="relative mx-auto flex w-full max-w-7xl items-center justify-between px-4 sm:px-8">
         <Link
           href="/"
           aria-label={t("logoAria")}
-          className="text-2xl sm:text-3xl tracking-tight font-serif text-foreground flex items-center gap-2"
+          className="flex items-center gap-2 font-serif text-2xl tracking-tight text-foreground sm:text-3xl"
         >
-          <div className="w-16 h-16 shrink-0 flex items-center justify-center">
+          {/* Smaller on mobile: at 64px the logo alone set the header height,
+              eating vertical space on the shortest screens. */}
+          <span className="flex h-12 w-12 shrink-0 items-center justify-center sm:h-16 sm:w-16">
             <Image
               src={logo}
               alt="Jason Dev Logo"
@@ -56,13 +45,13 @@ export const Navigation = () => {
               height={64}
               priority
               sizes="64px"
-              className="w-full h-full object-contain"
+              className="h-full w-full object-contain"
             />
-          </div>
+          </span>
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-8 absolute left-1/2 transform -translate-x-1/2">
+        <div className="absolute left-1/2 hidden -translate-x-1/2 transform items-center gap-8 md:flex">
           {navLinks.map((link) => {
             const active = isActiveLink(pathname, link.to);
             return (
@@ -81,7 +70,7 @@ export const Navigation = () => {
           })}
         </div>
 
-        <div className="hidden md:flex items-center gap-2">
+        <div className="hidden items-center gap-2 md:flex">
           <LocaleSwitcher label={t("localeSwitcher")} />
           <ThemeToggle label={t("themeToggle")} />
           <Link href="/sign-up">
@@ -91,10 +80,20 @@ export const Navigation = () => {
             <Button>{t("signIn")}</Button>
           </Link>
         </div>
+
+        {/* Mobile: the five routes live in `BottomNav`, so the header only
+            keeps the settings that have no place in a thumb bar. */}
         <div className="flex items-center gap-1 md:hidden">
           <LocaleSwitcher label={t("localeSwitcher")} />
           <ThemeToggle label={t("themeToggle")} />
-          <MobileNavation />
+          {/* Ghost, not solid: a filled pill made sign-in the highest-
+              contrast element on every mobile screen, outranking the page's
+              own content and its contact CTA. */}
+          <Link href="/sign-in">
+            <Button size="sm" variant="ghost">
+              {t("signIn")}
+            </Button>
+          </Link>
         </div>
       </div>
     </nav>

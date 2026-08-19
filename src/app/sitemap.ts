@@ -1,5 +1,5 @@
 import { MetadataRoute } from "next";
-import { projects } from "@/data/projects";
+import { getProjects } from "@/services/projects.service";
 import { libraries } from "@/data/libraries";
 import { routing } from "@/i18n/routing";
 import { getPathname } from "@/i18n/navigation";
@@ -30,6 +30,8 @@ function languagesFor(path: string): Record<string, string> {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const projects = getProjects();
+
   const routes: RouteDef[] = [
     ...staticRoutes,
     ...projects.map((project) => ({

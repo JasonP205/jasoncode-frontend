@@ -34,10 +34,10 @@
   --popover-foreground: oklch(0.145 0 0);
   --primary: oklch(0.205 0 0);
   --primary-foreground: oklch(43.687% 0.15099 26.099);
-  --secondary: oklch(0.97 0 0);
+  --secondary: oklch(0.932 0 0);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
+  --muted-foreground: oklch(0.505 0 0);
   --accent: oklch(0.97 0 0);
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);
@@ -73,7 +73,7 @@
   --popover-foreground: oklch(0.985 0 0);
   --primary: oklch(0.922 0 0);
   --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
+  --secondary: oklch(0.178 0 0);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
@@ -158,7 +158,7 @@
   --accent: oklch(0 0 0);
   --accent-foreground: oklch(99.11% 0 0);
   --background: oklch(97.02% 0.0000 0.00);
-  --border: oklch(90.00% 0.0000 0.00);
+  --border: oklch(87.00% 0.0000 0.00);
   --danger: oklch(65.32% 0.2328 355.28);
   --danger-foreground: oklch(99.11% 0 0);
   --default: oklch(94.00% 0.0000 0.00);
@@ -175,7 +175,7 @@
   --scrollbar: oklch(87.10% 0.0000 0.00);
   --segment: oklch(100.00% 0.0000 0.00);
   --segment-foreground: oklch(21.03% 0.0000 0.00);
-  --separator: oklch(92.00% 0.0000 0.00);
+  --separator: oklch(89.00% 0.0000 0.00);
   --success: oklch(73.29% 0.1935 120.35);
   --success-foreground: oklch(21.03% 0.0059 120.35);
   --surface: oklch(100.00% 0.0000 0.00);
@@ -256,3 +256,110 @@
     animation: none;
   }
 }
+
+/*
+ ---break---
+ */
+
+/*
+ * Tech-stack marquee (`TechMarquee.tsx`)
+ *
+ * CSS-only, so the band streams without shipping a line of JS. The track holds
+ * an even number of identical groups and slides exactly -50%, which lands
+ * copy N+1 precisely where copy 1 started — the loop has no seam. The inter-
+ * group gap is `padding-right` on each group rather than `gap` on the track:
+ * with `gap`, half the track width is off by half a gap and the loop visibly
+ * stutters once per cycle.
+ */
+@keyframes marquee-x {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-viewport {
+  /* Items dissolve at both ends instead of being guillotined by the edge. The
+     fade is kept short on a phone, where a generous one would eat most of the
+     readable width, and opened up on wider screens where an abrupt cut is the
+     thing that reads as crude. */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 3rem,
+    #000 calc(100% - 3rem),
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 3rem,
+    #000 calc(100% - 3rem),
+    transparent
+  );
+}
+
+@media (width >= 40rem) {
+  .marquee-viewport {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 9rem,
+      #000 calc(100% - 9rem),
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 9rem,
+      #000 calc(100% - 9rem),
+      transparent
+    );
+  }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-x var(--marquee-duration, 40s) linear infinite;
+  animation-direction: var(--marquee-direction, normal);
+}
+
+/* A moving list you cannot read is a dead end — hold it still while the
+   pointer is over it, and while anything inside it has keyboard focus. */
+.marquee-viewport:hover .marquee-track,
+.marquee-viewport:focus-within .marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  /* Falls back to the plain wrapped list it was before the band moved. */
+  .marquee-clone {
+    display: none;
+  }
+  .marquee-viewport {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  /* A parked track is a plain list and has to sit on the page's text column;
+     only a moving one is meant to run edge to edge. */
+  .marquee-track {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) and (width >= 40rem) {
+  .marquee-track {
+    padding-left: max(2rem, calc((100% - 80rem) / 2 + 2rem));
+    padding-right: 2rem;
+  }
+}
+

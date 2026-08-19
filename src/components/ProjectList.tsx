@@ -8,6 +8,7 @@ import { ProjectGrid, ProjectGridSkeleton } from "./ui/ProjectGrid";
 import { getAllProjects } from "@/services/projects.service";
 import type { Locale } from "@/i18n/routing";
 import { BackButton } from "./ui/BackButton";
+import SectionLabel from "./ui/SectionLabel";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -30,7 +31,7 @@ const itemVariants = {
 
 const ProjectGridData = async ({ maxLenght }: { maxLenght?: number }) => {
   const locale = (await getLocale()) as Locale;
-  const projects = await getAllProjects(locale);
+  const projects = getAllProjects(locale);
   const featuredProjects = maxLenght ? projects.slice(0, maxLenght) : projects;
   return <ProjectGrid projects={featuredProjects} />;
 };
@@ -38,7 +39,7 @@ const ProjectGridData = async ({ maxLenght }: { maxLenght?: number }) => {
 const ProjectList = ({ maxLenght }: { maxLenght?: number }) => {
   const t = useTranslations("projectList");
   return (
-    <section data-anchor="projects" className="py-16 sm:py-24 bg-background">
+    <section data-anchor="projects" className="py-20 sm:py-28 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         {maxLenght === undefined && (
           <MotionDiv
@@ -57,10 +58,11 @@ const ProjectList = ({ maxLenght }: { maxLenght?: number }) => {
           className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 sm:mb-16 gap-6 sm:gap-8"
         >
           <MotionDiv variants={itemVariants} className="max-w-2xl">
-            <h2 className="text-4xl sm:text-5xl font-serif mb-4 sm:mb-6">
+            <SectionLabel>{t("label")}</SectionLabel>
+            <h2 className="mt-5 text-4xl sm:text-5xl font-serif tracking-tight">
               {t("heading")}
             </h2>
-            <p className="text-muted-foreground text-base sm:text-lg">
+            <p className="mt-6 text-muted-foreground text-base sm:text-lg">
               {t("subtitle")}
             </p>
           </MotionDiv>

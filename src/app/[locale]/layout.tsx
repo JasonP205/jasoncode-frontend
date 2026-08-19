@@ -11,6 +11,7 @@ import Footer from "@/components/Footer";
 import { cn } from "@/lib/utils";
 import { Analytics } from "@vercel/analytics/next";
 import ThemeProvider, { themeInitScript } from "@/components/ui/ThemeProvider";
+import BottomNav from "@/components/ui/BottomNav";
 import { routing } from "@/i18n/routing";
 import  Script  from "next/script";
 
@@ -204,7 +205,7 @@ export default async function RootLayout({
             responsive imagesrcset) — no manual <link rel=preload> needed; a
             second one would double-download the raw file. */}
       </head>
-      <body className="min-h-full flex flex-col bg-background text-foreground">
+      <body className="min-h-full flex flex-col bg-background text-foreground pb-[calc(3.5rem+env(safe-area-inset-bottom))] md:pb-0">
         <NextIntlClientProvider>
           <ThemeProvider>
             <Toast.Provider placement="top end" />
@@ -215,6 +216,8 @@ export default async function RootLayout({
             <main className="flex-1">{children}</main>
 
             <Footer />
+
+            <BottomNav />
 
             <Analytics />
           </ThemeProvider>
