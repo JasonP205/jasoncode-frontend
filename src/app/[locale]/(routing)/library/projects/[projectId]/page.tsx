@@ -1,22 +1,25 @@
-import React, { Suspense } from "react";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { ArrowLeft, ExternalLink, Code2 } from "lucide-react";
-import { Chip, Button, Skeleton } from "@heroui/react";
-import { getTranslations } from "next-intl/server";
+import { Chip, Button } from "@heroui/react";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import MotionDiv from "@/components/ui/motionDiv";
 import { getProjectById, getProjects } from "@/services/projects.service";
+import type { LocalizedProject } from "@/data/projects";
 import { Link } from "@/i18n/navigation";
-import { routing, type Locale } from "@/i18n/routing";
+import type { Locale } from "@/i18n/routing";
 import { buildAlternates, ogLocaleFields } from "@/lib/seo";
 import ProjectGallery from "@/components/ui/ProjectGallery";
 import Dialog from "@/components/ui/AlertDialog"
 
-/** The project list is local data, so every detail page can be prerendered. */
+/**
+ * The project list is local data, so every detail page can be prerendered.
+ * The parent `[locale]` layout already generates the locales and Next calls
+ * this once per locale, so it returns only this segment — returning `locale`
+ * here as well left the route unprerendered (ƒ) in the build.
+ */
 export function generateStaticParams() {
-  return routing.locales.flatMap((locale) =>
-    getProjects().map((project) => ({ locale, projectId: project.id })),
-  );
+  return getProjects().map((project) => ({ projectId: project.id }));
 }
 
 export async function generateMetadata(props: {
@@ -59,64 +62,8 @@ export async function generateMetadata(props: {
   };
 }
 
-function ProjectSkeleton() {
-  return (
-    <div className="w-full">
-      {/* Header Skeleton */}
-      <div className="mb-6">
-        <Skeleton className="h-12 md:h-16 w-3/4 mb-6 rounded-lg before:duration-1000!" />
-        <Skeleton className="h-6 md:h-7 w-full max-w-3xl mb-2 rounded-lg before:duration-1000!" />
-        <Skeleton className="h-6 md:h-7 w-5/6 max-w-3xl mb-6 rounded-lg before:duration-1000!" />
-        <div className="flex flex-wrap gap-2 mb-10">
-          <Skeleton className="h-7 w-20 rounded-full before:duration-1000!" />
-          <Skeleton className="h-7 w-24 rounded-full before:duration-1000!" />
-          <Skeleton className="h-7 w-16 rounded-full before:duration-1000!" />
-        </div>
-      </div>
-
-      <Skeleton className="w-full aspect-4/3 sm:aspect-16/10 rounded-2xl mb-4 shadow-sm before:duration-1000!" />
-      <Skeleton className="h-4 w-64 rounded-md mb-8 before:duration-1000!" />
-      <div className="mb-14 grid grid-cols-[repeat(auto-fill,minmax(6.5rem,1fr))] gap-2">
-        {Array.from({ length: 6 }).map((_, index) => (
-          <Skeleton
-            key={index}
-            className="aspect-16/10 w-full rounded-lg before:duration-1000!"
-          />
-        ))}
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-        <div className="md:col-span-2 space-y-4">
-          <Skeleton className="h-5 w-full rounded-md before:duration-1000!" />
-          <Skeleton className="h-5 w-full rounded-md before:duration-1000!" />
-          <Skeleton className="h-5 w-11/12 rounded-md before:duration-1000!" />
-          <Skeleton className="h-5 w-4/5 rounded-md before:duration-1000!" />
-        </div>
-
-        <div className="md:col-span-1">
-          <div className="sticky top-32">
-            <Skeleton className="h-5 w-32 mb-4 rounded-md before:duration-1000!" />
-            <Skeleton className="h-12 w-full sm:w-40 rounded-full before:duration-1000!" />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-async function ProjectContent({
-  projectId,
-  locale,
-}: {
-  projectId: string;
-  locale: Locale;
-}) {
-  const project = getProjectById(projectId, locale);
+async function ProjectContent({ project }: { project: LocalizedProject }) {
   const t = await getTranslations("projectDetail");
-
-  if (!project) {
-    notFound();
-  }
 
   return (
     <article>
@@ -125,11 +72,11 @@ async function ProjectContent({
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1 }}
       >
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif mb-6 text-foreground">
+        <h1 className="headline-hero mb-6 text-foreground">
           {project.title}
         </h1>
 
-        <p className="text-lg md:text-xl text-muted-foreground mb-6 leading-relaxed max-w-3xl">
+        <p className="lede mb-6 max-w-3xl">
           {project.description}
         </p>
 
@@ -138,7 +85,7 @@ async function ProjectContent({
             <Chip
               key={tag}
               size="sm"
-              className="bg-secondary text-foreground border-none"
+              className="bg-band text-foreground border-none"
             >
               {tag}
             </Chip>
@@ -174,29 +121,24 @@ async function ProjectContent({
         <div className="md:col-span-1">
           {project.liveUrl && (
             <div className="sticky top-32">
-              <h3 className="font-bold text-sm uppercase tracking-widest text-muted-foreground mb-4">
+              <h2 className="kicker mb-4 text-hue-blue">
                 {t("websiteLabel")}
-              </h3>
+              </h2>
 
               {project.isDone ? (
                 <a
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full"
+                  className="btn-primary w-full sm:w-auto"
                 >
-                  <Button
-                    className="w-full sm:w-auto font-medium shadow-md bg-foreground text-background hover:bg-foreground/80 rounded-full px-8"
-                    size="lg"
-                  >
-                    {t("visit")}
-                    <ExternalLink className="w-4 h-4 ml-2" />
-                  </Button>
+                  {t("visit")}
+                  <ExternalLink className="w-4 h-4" aria-hidden />
                 </a>
               ) : (
-                <Dialog type="info" acceptText="Okay" title={t("deployingTitle")} message={t("deployingMessage")}>
+                <Dialog type="info" acceptText={t("deployingAccept")} title={t("deployingTitle")} message={t("deployingMessage")}>
                   <Button
-                    className="w-full sm:w-auto font-medium shadow-md bg-foreground text-background hover:bg-foreground/80 rounded-full px-8"
+                    className="w-full sm:w-auto font-medium bg-action text-white hover:bg-[var(--action-hover)] rounded-full px-6"
                     size="lg"
                   >
                     {t("visit")}
@@ -216,10 +158,23 @@ export default async function Page(props: {
   params: Promise<{ locale: Locale; projectId: string }>;
 }) {
   const { locale, projectId } = await props.params;
+  // Without this, next-intl reads the locale from request headers and the
+  // route silently falls back to dynamic rendering despite generateStaticParams.
+  setRequestLocale(locale);
   const t = await getTranslations("projectDetail");
 
+  // Resolved up front, with no <Suspense> around the content: the data is a
+  // local file, so there is nothing to stream. The old boundary also meant
+  // `notFound()` fired after streaming began (a 200 soft 404) and kept the
+  // route from prerendering.
+  const project = getProjectById(projectId, locale);
+  if (!project) {
+    notFound();
+  }
+
   return (
-    <main className="min-h-screen py-16 bg-secondary flex justify-center">
+    // A <div>, not <main>: the root layout already provides the page's <main>.
+    <div className="min-h-screen py-16 sm:py-20 flex justify-center">
       <div className="max-w-6xl w-full px-4 sm:px-6 lg:px-8">
         <MotionDiv
           initial={{ opacity: 0, y: -20 }}
@@ -235,10 +190,8 @@ export default async function Page(props: {
           </Link>
         </MotionDiv>
 
-        <Suspense fallback={<ProjectSkeleton />}>
-          <ProjectContent projectId={projectId} locale={locale} />
-        </Suspense>
+        <ProjectContent project={project} />
       </div>
-    </main>
+    </div>
   );
 }

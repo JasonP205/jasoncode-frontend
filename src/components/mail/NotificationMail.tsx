@@ -9,6 +9,7 @@ interface NotificationMailProps {
 export default function NotificationMail({ name, email, message }: NotificationMailProps) {
   return (
     <html lang="vi">
+      {/* eslint-disable-next-line @next/next/no-head-element -- an email document rendered by @react-email/render, not a Next.js page */}
       <head>
         <meta name="color-scheme" content="light dark" />
         <meta name="supported-color-schemes" content="light dark" />
@@ -94,11 +95,10 @@ export default function NotificationMail({ name, email, message }: NotificationM
       <body>
         <div className="container">
           <div className="card">
-            <h1>Thông báo Hệ thống</h1>
+            <h1>Liên hệ mới</h1>
             <p>
-              Có một yêu cầu liên hệ mới vừa được gửi từ Website <strong>Jason Dev</strong>.
+              Vừa có yêu cầu liên hệ mới gửi từ website <strong>Jason Dev</strong>.
             </p>
-            <p>Thông tin chi tiết bên dưới:</p>
             
             <div className="detail-box">
               <div className="detail-item">
@@ -112,7 +112,7 @@ export default function NotificationMail({ name, email, message }: NotificationM
                 </span>
               </div>
               <div className="detail-item">
-                <span className="detail-label">Nội dung thông điệp</span>
+                <span className="detail-label">Lời nhắn</span>
                 <div className="detail-message">{message}</div>
               </div>
             </div>

@@ -4,12 +4,16 @@ type LocalizedText = Record<Locale, string>;
 
 export interface Project {
   id: string;
+  /** The product's own name, short enough for a tile ("Go Hike", not a sentence). */
   title: LocalizedText;
+  /** One line under the tile title. Must fit without truncation — write it to fit. */
+  tagline: LocalizedText;
   description: LocalizedText;
   fullDescription: LocalizedText;
+  /** Alt text is localized: it is read aloud to visitors in their language. */
   image: {
     src: string;
-    alt?: string;
+    alt: LocalizedText;
   }[];
   tags: string[];
   liveUrl?: string;
@@ -20,6 +24,7 @@ export interface Project {
 export interface LocalizedProject {
   id: string;
   title: string;
+  tagline: string;
   description: string;
   fullDescription: string;
   image: {
@@ -47,53 +52,84 @@ export const projects: Project[] = [
     id: "bamboo-house-restaurant",
     isDone: true,
     title: {
-      vi: `Nhà Hàng Bamboo House`,
-      en: `Bamboo House Restaurant`,
+      vi: `Bamboo House`,
+      en: `Bamboo House`,
+    },
+    tagline: {
+      vi: `Quản lý nhà hàng, đặt món bằng mã QR tại bàn.`,
+      en: `Restaurant management with QR table ordering.`,
     },
     description: {
       vi: `Nền tảng quản lý nhà hàng đa chi nhánh song ngữ với đặt món qua mã QR tại bàn và theo dõi đơn hàng thời gian thực.`,
       en: `A bilingual, multi-branch restaurant management platform with QR table ordering and realtime order tracking.`,
     },
     fullDescription: {
-      vi: `Hệ thống quản lý nhà hàng Bamboo House là một nền tảng full-stack số hóa các hoạt động hằng ngày của một chuỗi nhà hàng nhiều chi nhánh. Quản lý điều hành chi nhánh, bàn, thực đơn và nhân viên trong cùng một không gian làm việc; nhân viên theo dõi đơn hàng đến trên bảng điều khiển thời gian thực; khách hàng đặt món ngay tại bàn bằng cách quét mã QR riêng của bàn. Giao diện được xây dựng bằng React 19, TypeScript và Vite, thiết kế với HeroUI v3 và Tailwind CSS v4, dùng Zustand cho quản lý trạng thái, react-hook-form và Zod để kiểm tra dữ liệu, cùng i18next cho song ngữ Anh/Việt. Phía máy chủ dùng Express 5 với MongoDB và Mongoose, xác thực JWT kèm phiên làm mới, đăng nhập Google OAuth 2.0 qua Passport, Cloudinary để lưu trữ hình ảnh, DeepL cho nội dung thực đơn song ngữ và Socket.IO để đồng bộ giỏ hàng của khách, màn hình theo dõi của nhân viên và trạng thái đơn hàng.`,
-      en: `The Bamboo House Restaurant Management System is a full-stack platform that digitizes daily operations of a multi-branch restaurant. Managers administer branches, tables, menus and staff from one workspace, staff monitor incoming orders on a realtime dashboard, and customers order straight from their table by scanning a table-specific QR link. The frontend is built with React 19, TypeScript and Vite, styled with HeroUI v3 and Tailwind CSS v4, with Zustand for state slices, react-hook-form and Zod for validation, and i18next for full English/Vietnamese localization. The backend runs on Express 5 with MongoDB and Mongoose, JWT authentication backed by refresh sessions, Google OAuth 2.0 via Passport, Cloudinary for image storage, DeepL for bilingual menu content, and Socket.IO to keep customer carts, staff monitors and order statuses in sync.`,
+      vi: `Hệ thống quản lý nhà hàng Bamboo House là một nền tảng full-stack số hóa các hoạt động hằng ngày của một chuỗi nhà hàng nhiều chi nhánh. Quản lý điều hành chi nhánh, bàn, thực đơn và nhân viên trong cùng một không gian làm việc; nhân viên theo dõi đơn hàng đến trên bảng điều khiển thời gian thực; khách hàng đặt món ngay tại bàn bằng cách quét mã QR riêng của bàn.\n\nGiao diện được xây dựng bằng React 19, TypeScript và Vite, thiết kế với HeroUI v3 và Tailwind CSS v4, dùng Zustand cho quản lý trạng thái, react-hook-form và Zod để kiểm tra dữ liệu, cùng i18next cho song ngữ Anh/Việt. Phía máy chủ dùng Express 5 với MongoDB và Mongoose, xác thực JWT kèm phiên làm mới, đăng nhập Google OAuth 2.0 qua Passport, Cloudinary để lưu trữ hình ảnh, DeepL cho nội dung thực đơn song ngữ và Socket.IO để đồng bộ giỏ hàng của khách, màn hình theo dõi của nhân viên và trạng thái đơn hàng.`,
+      en: `The Bamboo House Restaurant Management System is a full-stack platform that digitizes daily operations of a multi-branch restaurant. Managers administer branches, tables, menus and staff from one workspace, staff monitor incoming orders on a realtime dashboard, and customers order straight from their table by scanning a table-specific QR link.\n\nThe frontend is built with React 19, TypeScript and Vite, styled with HeroUI v3 and Tailwind CSS v4, with Zustand for state slices, react-hook-form and Zod for validation, and i18next for full English/Vietnamese localization. The backend runs on Express 5 with MongoDB and Mongoose, JWT authentication backed by refresh sessions, Google OAuth 2.0 via Passport, Cloudinary for image storage, DeepL for bilingual menu content, and Socket.IO to keep customer carts, staff monitors and order statuses in sync.`,
     },
     image: [
       {
         src: "/project-screenshots/bamboo/hero-section.jpg",
-        alt: "Bamboo House landing page hero section",
+        alt: {
+          vi: "Phần mở đầu trang giới thiệu Bamboo House",
+          en: "Bamboo House landing page hero section",
+        },
       },
       {
         src: "/project-screenshots/bamboo/flycam.jpg",
-        alt: "Aerial view of the Bamboo House restaurant",
+        alt: {
+          vi: "Nhà hàng Bamboo House nhìn từ trên cao",
+          en: "Aerial view of the Bamboo House restaurant",
+        },
       },
       {
         src: "/project-screenshots/bamboo/signature-dishes.jpg",
-        alt: "Signature dishes showcased on the menu",
+        alt: {
+          vi: "Các món đặc trưng trong thực đơn",
+          en: "Signature dishes showcased on the menu",
+        },
       },
       {
         src: "/project-screenshots/bamboo/indoor-space.jpg",
-        alt: "Indoor dining space of the restaurant",
+        alt: {
+          vi: "Không gian ăn uống trong nhà hàng",
+          en: "Indoor dining space of the restaurant",
+        },
       },
       {
         src: "/project-screenshots/bamboo/menu.png",
-        alt: "Customer-facing menu with dish details",
+        alt: {
+          vi: "Thực đơn cho khách, kèm chi tiết từng món",
+          en: "Customer-facing menu with dish details",
+        },
       },
       {
         src: "/project-screenshots/bamboo/order.png",
-        alt: "Order tracking screen",
+        alt: {
+          vi: "Màn hình theo dõi đơn hàng",
+          en: "Order tracking screen",
+        },
       },
       {
         src: "/project-screenshots/bamboo/cashier.png",
-        alt: "Staff table map with live occupancy",
+        alt: {
+          vi: "Sơ đồ bàn cho nhân viên, cập nhật bàn trống theo thời gian thực",
+          en: "Staff table map with live occupancy",
+        },
       },
       {
         src: "/project-screenshots/bamboo/manager.png",
-        alt: "Manager dashboard",
+        alt: {
+          vi: "Bảng điều khiển của quản lý",
+          en: "Manager dashboard",
+        },
       },
       {
         src: "/project-screenshots/bamboo/login.png",
-        alt: "Staff sign in screen",
+        alt: {
+          vi: "Màn hình đăng nhập của nhân viên",
+          en: "Staff sign in screen",
+        },
       },
     ],
     tags: [
@@ -121,8 +157,12 @@ export const projects: Project[] = [
       vi: `L3GO Coffee`,
       en: `L3GO Coffee`,
     },
+    tagline: {
+      vi: `Website quán cà phê, thực đơn 68 món chọn theo mood.`,
+      en: `A coffee shop site with a 68-drink menu picked by mood.`,
+    },
     description: {
-      vi: `Website cho quán cà phê bốn tầng ở Tân An, Cần Thơ — thực đơn 68 món chọn theo mood, chia sẻ được bằng đường dẫn.`,
+      vi: `Website cho quán cà phê bốn tầng ở Tân An, Cần Thơ – thực đơn 68 món chọn theo mood, chia sẻ được bằng đường dẫn.`,
       en: `A site for a four-floor coffee shop in Tân An, Cần Thơ — a 68-drink menu you pick by mood and can share as a link.`,
     },
     fullDescription: {
@@ -132,23 +172,38 @@ export const projects: Project[] = [
     image: [
       {
         src: "/project-screenshots/l3go/home.png",
-        alt: "Trang chủ Chính thức của LegoCoffee",
+        alt: {
+          vi: "Trang chủ website L3GO Coffee",
+          en: "L3GO Coffee website home page",
+        },
       },
       {
         src: "/project-screenshots/l3go/glass-wall.jpg",
-        alt: "Tường gạch kính màu uốn cong trong quán",
+        alt: {
+          vi: "Tường gạch kính màu uốn cong trong quán",
+          en: "Curved coloured glass-block wall inside the shop",
+        },
       },
       {
         src: "/project-screenshots/l3go/exterior-night.jpg",
-        alt: "Mặt tiền L3GO Coffee về đêm",
+        alt: {
+          vi: "Mặt tiền L3GO Coffee về đêm",
+          en: "L3GO Coffee storefront at night",
+        },
       },
       {
         src: "/project-screenshots/l3go/entrance-night.jpg",
-        alt: "Bảng hiệu và lối vào buổi tối",
+        alt: {
+          vi: "Bảng hiệu và lối vào buổi tối",
+          en: "Sign and entrance in the evening",
+        },
       },
       {
         src: "/project-screenshots/l3go/mesh-screen.jpg",
-        alt: "Vách lưới thép cắt hình logo tại khu làm việc",
+        alt: {
+          vi: "Vách lưới thép cắt hình logo tại khu làm việc",
+          en: "Steel mesh screen cut with the logo in the work area",
+        },
       },
     ],
     tags: [
@@ -169,27 +224,68 @@ export const projects: Project[] = [
       vi: "Go Hike",
       en: "Go Hike",
     },
+    tagline: {
+      vi: "App nhật ký hiking chạy trọn vẹn khi mất sóng.",
+      en: "A hiking journal app that works with no signal.",
+    },
     description: {
       vi: "App nhật ký hiking chạy trọn vẹn khi mất sóng. Miễn phí, không tài khoản, không quảng cáo.",
       en: "A hiking journal that works with no signal at all. Free, no account, no ads.",
     },
     fullDescription: {
-      vi: "Go Hike ra đời từ một chuyến đi bỗng dưng im bặt: giữa thung lũng, không còn vạch sóng nào, ba app hiking đang mở đều chỉ hiện một vòng xoay. Nên mình làm lại từ đầu kia — nếu app không bao giờ cần internet thì sao?\n\nMọi thứ bạn ghi xuống đều nằm sẵn trong máy và ở lại đó: cung đường, ảnh, ghi chú, quan sát dọc trail. App tự gắn nơi chốn, thời tiết và nhiệt độ vào từng mục, để một năm sau tấm ảnh vẫn kể được cả câu chuyện chứ không phải một nửa. Không có server nào hỏi bạn là ai, nên cũng không cần đăng ký, không thuê bao, không bảng xếp hạng.\n\nTám tính năng chính: nhật ký quan sát, lên kế hoạch cung đường, thống kê quãng đường, thành tích, bản đồ, thời tiết, tìm kiếm và sao lưu — bảy trong tám chạy hoàn toàn offline.",
+      vi: "Go Hike ra đời từ một chuyến đi bỗng dưng im bặt: giữa thung lũng, không còn vạch sóng nào, ba app hiking đang mở đều chỉ hiện một vòng xoay. Nên mình làm lại từ đầu kia – nếu app không bao giờ cần internet thì sao?\n\nMọi thứ bạn ghi xuống đều nằm sẵn trong máy và ở lại đó: cung đường, ảnh, ghi chú, quan sát dọc trail. App tự gắn nơi chốn, thời tiết và nhiệt độ vào từng mục, để một năm sau tấm ảnh vẫn kể được cả câu chuyện chứ không phải một nửa. Không có server nào hỏi bạn là ai, nên cũng không cần đăng ký, không thuê bao, không bảng xếp hạng.\n\nTám tính năng chính: nhật ký quan sát, lên kế hoạch cung đường, thống kê quãng đường, thành tích, bản đồ, thời tiết, tìm kiếm và sao lưu – bảy trong tám chạy hoàn toàn offline.",
       en: "Go Hike started with a hike that went quiet. Mid-valley, no bars left, three hiking apps open and all three showing nothing but a spinner. So I started again from the other end: what if the app never needed the internet?\n\nEverything you write down already lives on your phone and stays there — routes, photos, notes, what you spotted along the trail. The app attaches place, weather and temperature to each entry, so a year later the photo still tells the whole story instead of half of it. No server ever asks who you are, which means no sign-up, no subscription, no leaderboards.\n\nEight core features: trail observations, hike planning, distance analytics, achievements, maps, weather, search and backup — seven of the eight run fully offline.",
     },
     image: [
       {
         src: "/project-screenshots/gohike/home.png",
-        alt: "Trang chủ Chính thức của Go Hiking",
+        alt: {
+          vi: "Trang chủ website Go Hike",
+          en: "Go Hike website home page",
+        },
       },
       {
         src: "/project-screenshots/gohike/home-beautified.png",
+        alt: {
+          vi: "Màn hình chính của app Go Hike: thời tiết, chuyến đi gần nhất và lối tắt",
+          en: "Go Hike app home screen with weather, latest hike and shortcuts",
+        },
       },
-      { src: "/project-screenshots/gohike/observation-beautified.png" },
-      { src: "/project-screenshots/gohike/hikes-beautified.png" },
-      { src: "/project-screenshots/gohike/analytics-beautified.png" },
-      { src: "/project-screenshots/gohike/map-beautified.png" },
-      { src: "/project-screenshots/gohike/achievement-beautified.png" },
+      {
+        src: "/project-screenshots/gohike/observation-beautified.png",
+        alt: {
+          vi: "Chi tiết một quan sát: thời tiết, tâm trạng, đánh giá và vị trí trên bản đồ",
+          en: "Observation detail with weather, mood, rating and map location",
+        },
+      },
+      {
+        src: "/project-screenshots/gohike/hikes-beautified.png",
+        alt: {
+          vi: "Danh sách chuyến đi, lọc theo trạng thái",
+          en: "List of hikes filtered by status",
+        },
+      },
+      {
+        src: "/project-screenshots/gohike/analytics-beautified.png",
+        alt: {
+          vi: "Thống kê theo tháng: số chuyến, quãng đường và mục tiêu tuần",
+          en: "Monthly analytics with hikes, distance and weekly goal",
+        },
+      },
+      {
+        src: "/project-screenshots/gohike/map-beautified.png",
+        alt: {
+          vi: "Bản đồ các chuyến đi ở gần",
+          en: "Map of nearby hikes",
+        },
+      },
+      {
+        src: "/project-screenshots/gohike/achievement-beautified.png",
+        alt: {
+          vi: "Huy hiệu thành tích First Summit vừa mở khóa",
+          en: "First Summit achievement badge just unlocked",
+        },
+      },
     ],
     tags: ["React Native", "Expo", "SQLite", "Offline-first", "iOS", "Android"],
     liveUrl: "https://gohike.hwagfu.dev",
@@ -200,21 +296,28 @@ export const projects: Project[] = [
     id: "chap-app",
     isDone: true,
     title: {
-      vi: `Chap - Ứng Dụng Nhắn Tin Thời Gian Thực`,
-      en: `Chap - Realtime Chat App`,
+      vi: `Chap`,
+      en: `Chap`,
+    },
+    tagline: {
+      vi: `Nhắn tin riêng và nhóm theo thời gian thực.`,
+      en: `Realtime direct and group messaging.`,
     },
     description: {
       vi: `Ứng dụng nhắn tin thời gian thực với trò chuyện riêng và nhóm, hệ thống kết bạn cùng trạng thái trực tuyến và đã xem.`,
       en: `A realtime messaging app with direct and group chats, a friend system, and presence and seen indicators.`,
     },
     fullDescription: {
-      vi: `Chap là một ứng dụng nhắn tin thời gian thực full-stack. Người dùng đăng ký, tìm kiếm người khác theo tên đăng nhập, gửi và phản hồi lời mời kết bạn, sau đó bắt đầu trò chuyện riêng hoặc tạo nhóm chat. Tin nhắn, số tin chưa đọc, trạng thái trực tuyến và dấu đã xem được đẩy tức thì qua Socket.IO, còn lịch sử hội thoại được tải theo cơ chế cuộn vô hạn. Giao diện được xây dựng bằng React 19, TypeScript và Vite, thiết kế với Tailwind CSS v4 và các thành phần shadcn/ui dựa trên Radix UI, dùng Zustand cho quản lý trạng thái, react-hook-form và Zod để kiểm tra dữ liệu, emoji-mart cho bộ chọn biểu tượng cảm xúc và sonner cho thông báo. Phía máy chủ dùng Express 5 với MongoDB và Mongoose, xác thực JWT kèm phiên làm mới lưu trong cơ sở dữ liệu, mã hóa mật khẩu bằng bcrypt, Multer và Cloudinary để tải ảnh đại diện, cùng Socket.IO cho việc truyền tin thời gian thực.`,
-      en: `Chap is a full-stack realtime chat application. Users sign up, search for other people by username, send and answer friend requests, then start direct conversations or create group chats. Messages, unread counters, online presence and seen receipts are pushed instantly over Socket.IO, while conversation history loads through infinite scroll. The frontend is built with React 19, TypeScript and Vite, styled with Tailwind CSS v4 and shadcn/ui components on top of Radix UI primitives, with Zustand for state, react-hook-form and Zod for validation, emoji-mart for the emoji picker and sonner for toasts. The backend runs on Express 5 with MongoDB and Mongoose, JWT access tokens with refresh sessions stored in the database, bcrypt password hashing, Multer and Cloudinary for avatar uploads, and Socket.IO for realtime delivery.`,
+      vi: `Chap là một ứng dụng nhắn tin thời gian thực full-stack. Người dùng đăng ký, tìm kiếm người khác theo tên đăng nhập, gửi và phản hồi lời mời kết bạn, sau đó bắt đầu trò chuyện riêng hoặc tạo nhóm chat. Tin nhắn, số tin chưa đọc, trạng thái trực tuyến và dấu đã xem được đẩy tức thì qua Socket.IO, còn lịch sử hội thoại được tải theo cơ chế cuộn vô hạn.\n\nGiao diện được xây dựng bằng React 19, TypeScript và Vite, thiết kế với Tailwind CSS v4 và các thành phần shadcn/ui dựa trên Radix UI, dùng Zustand cho quản lý trạng thái, react-hook-form và Zod để kiểm tra dữ liệu, emoji-mart cho bộ chọn biểu tượng cảm xúc và sonner cho thông báo. Phía máy chủ dùng Express 5 với MongoDB và Mongoose, xác thực JWT kèm phiên làm mới lưu trong cơ sở dữ liệu, mã hóa mật khẩu bằng bcrypt, Multer và Cloudinary để tải ảnh đại diện, cùng Socket.IO cho việc truyền tin thời gian thực.`,
+      en: `Chap is a full-stack realtime chat application. Users sign up, search for other people by username, send and answer friend requests, then start direct conversations or create group chats. Messages, unread counters, online presence and seen receipts are pushed instantly over Socket.IO, while conversation history loads through infinite scroll.\n\nThe frontend is built with React 19, TypeScript and Vite, styled with Tailwind CSS v4 and shadcn/ui components on top of Radix UI primitives, with Zustand for state, react-hook-form and Zod for validation, emoji-mart for the emoji picker and sonner for toasts. The backend runs on Express 5 with MongoDB and Mongoose, JWT access tokens with refresh sessions stored in the database, bcrypt password hashing, Multer and Cloudinary for avatar uploads, and Socket.IO for realtime delivery.`,
     },
     image: [
       {
         src: "/project-screenshots/chap/home.png",
-        alt: "Chap sign in screen",
+        alt: {
+          vi: "Màn hình đăng nhập Chap",
+          en: "Chap sign in screen",
+        },
       },
     ],
     tags: [
@@ -242,19 +345,32 @@ export const projects: Project[] = [
       vi: `TLUX`,
       en: `TLUX`,
     },
+    tagline: {
+      vi: `Bán hàng và tồn kho theo lô, quét mã bằng điện thoại.`,
+      en: `Retail POS and batch inventory, scanned by phone.`,
+    },
     description: {
-      vi: `Hệ thống quản lý bán hàng và tồn kho theo lô — POS đa hoá đơn, xuất hàng FEFO theo hạn sử dụng, quét mã vạch bằng camera điện thoại.`,
+      vi: `Hệ thống quản lý bán hàng và tồn kho theo lô – POS đa hóa đơn, xuất hàng FEFO theo hạn sử dụng, quét mã vạch bằng camera điện thoại.`,
       en: `A retail POS and batch-inventory system — multi-invoice checkout, FEFO stock allocation by expiry date, and barcode scanning from a phone camera.`,
     },
     fullDescription: {
-      vi: `Nền tảng vận hành nội bộ cho cửa hàng bán lẻ, dựng trên Next.js App Router và Express + MongoDB. Tồn kho không lưu trên sản phẩm mà là tổng số còn lại của các lô nhập, nên mỗi lần thanh toán hệ thống trừ hàng theo FEFO — lô hết hạn sớm nhất đi trước — trong một transaction và ghi lại chính xác đã lấy từ lô nào. Thu ngân mở nhiều hoá đơn song song, mỗi hoá đơn là một đơn nháp lưu ở server nên tải lại trang vẫn còn nguyên. Mã vạch quét được bằng đầu đọc USB hoặc bằng camera điện thoại ghép cặp qua QR và socket.io; tiền tố mã cho biết đang quét sản phẩm, tem giảm giá theo dòng, mã khuyến mãi hay thẻ thành viên. Có màn hình phụ hướng về khách hiển thị giỏ hàng và QR chuyển khoản PayOS theo thời gian thực, tìm kiếm mờ tiếng Việt không dấu bằng Elasticsearch, phân quyền bốn vai trò, tích điểm khách hàng, và hoá đơn in khổ 80mm.`,
+      vi: `Nền tảng vận hành nội bộ cho cửa hàng bán lẻ, dựng trên Next.js App Router và Express + MongoDB. Tồn kho không lưu trên sản phẩm mà là tổng số còn lại của các lô nhập, nên mỗi lần thanh toán hệ thống trừ hàng theo FEFO – lô hết hạn sớm nhất đi trước – trong một transaction và ghi lại chính xác đã lấy từ lô nào. Thu ngân mở nhiều hóa đơn song song, mỗi hóa đơn là một đơn nháp lưu ở server nên tải lại trang vẫn còn nguyên. Mã vạch quét được bằng đầu đọc USB hoặc bằng camera điện thoại ghép cặp qua QR và socket.io; tiền tố mã cho biết đang quét sản phẩm, tem giảm giá theo dòng, mã khuyến mãi hay thẻ thành viên. Có màn hình phụ hướng về khách hiển thị giỏ hàng và QR chuyển khoản PayOS theo thời gian thực, tìm kiếm mờ tiếng Việt không dấu bằng Elasticsearch, phân quyền bốn vai trò, tích điểm khách hàng, và hóa đơn in khổ 80mm.`,
       en: `An internal operations platform for retail stores, built on the Next.js App Router with Express and MongoDB. Stock is never stored on the product — it is the sum of what remains across intake batches — so every checkout draws down stock FEFO, earliest expiry first, inside a transaction that records exactly which batches were consumed. Cashiers keep several invoices open at once; each one is a draft order held server-side, so parked carts survive a page reload. Barcodes come from a USB reader or from a phone camera paired over QR and socket.io, and the code's prefix tells the register whether it is a product, a per-line discount label, a promo code or a member card. It also ships a customer-facing second screen that mirrors the cart and the PayOS transfer QR in realtime, accent-insensitive Vietnamese fuzzy search via Elasticsearch, four-role access control, a loyalty-points ledger, and 80mm thermal receipts.`,
     },
     image: [
-      { src: "/project-screenshots/tlux/screenshot.png", alt: "Logo TLUX" },
+      {
+        src: "/project-screenshots/tlux/screenshot.png",
+        alt: {
+          vi: "Logo TLUX",
+          en: "TLUX logo",
+        },
+      },
       {
         src: "/project-screenshots/tlux/tlux.png",
-        alt: "Overview dashboard with revenue and stock",
+        alt: {
+          vi: "Bảng tổng quan doanh thu và tồn kho",
+          en: "Overview dashboard with revenue and stock",
+        },
       },
     ],
     tags: [
@@ -280,9 +396,10 @@ export function localizeProject(
   return {
     id: project.id,
     title: project.title[locale],
+    tagline: project.tagline[locale],
     description: project.description[locale],
     fullDescription: project.fullDescription[locale],
-    image: project.image,
+    image: project.image.map(({ src, alt }) => ({ src, alt: alt[locale] })),
     tags: project.tags,
     liveUrl: project.liveUrl,
     isDone: project.isDone,

@@ -26,11 +26,11 @@ const copy: Record<
         bạn tại <strong>Jason Dev</strong>.
       </>
     ),
-    p2: "Hệ thống đã tự động lưu lại yêu cầu này. Mình sẽ xem xét thông tin và trực tiếp phản hồi lại qua email của bạn trong thời gian sớm nhất nhé (thường là trong vòng 24 giờ làm việc).",
-    p3: "Chúc bạn một ngày làm việc hiệu quả và nhiều niềm vui!",
+    p2: "Yêu cầu của bạn đã được lưu lại. Mình sẽ đọc kỹ và trả lời qua email của bạn trong vòng 24 giờ.",
+    p3: "Chúc bạn một ngày tốt lành.",
     signoff: "Trân trọng,",
     footer:
-      "Email này được tạo tự động bởi hệ thống của hwagfu.dev. Vui lòng không phản hồi (reply) vào địa chỉ email này.",
+      "Đây là email tự động từ hwagfu.dev. Bạn đừng trả lời vào địa chỉ này – nếu cần bổ sung, hãy gửi về contact@hwagfu.dev.",
   },
   en: {
     greeting: "Hello,",
@@ -40,11 +40,11 @@ const copy: Record<
         <strong>Jason Dev</strong>.
       </>
     ),
-    p2: "The system has automatically saved your request. I'll review it and reply directly to your email as soon as possible (usually within 24 business hours).",
-    p3: "Have a productive day full of good things!",
+    p2: "Your request has been saved. I'll read it carefully and reply to your email within 24 hours.",
+    p3: "Have a good day.",
     signoff: "Best regards,",
     footer:
-      "This email was generated automatically by the hwagfu.dev system. Please do not reply to this address.",
+      "This is an automated email from hwagfu.dev. Please don't reply to this address — send anything extra to contact@hwagfu.dev.",
   },
 };
 
@@ -55,6 +55,7 @@ export default function CustomerTemplate({
   const t = copy[locale];
   return (
     <html lang={locale}>
+      {/* eslint-disable-next-line @next/next/no-head-element -- an email document rendered by @react-email/render, not a Next.js page */}
       <head>
         <meta name="color-scheme" content="light dark" />
         <meta name="supported-color-schemes" content="light dark" />

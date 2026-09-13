@@ -1,9 +1,10 @@
 import { use } from "react";
 import type { Metadata } from "next";
-import { ArrowUpRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import MotionDiv from "@/components/ui/motionDiv";
+import Reveal from "@/components/ui/Reveal";
+import SectionHeader from "@/components/ui/SectionHeader";
 import { Link } from "@/i18n/navigation";
 import { buildAlternates, ogLocaleFields } from "@/lib/seo";
 import type { Locale } from "@/i18n/routing";
@@ -39,81 +40,51 @@ export default function LibraryIndexPage({
   setRequestLocale(locale);
   const t = useTranslations("library");
 
+  const cards = [
+    {
+      href: "/library/projects",
+      label: t("projectsHeading"),
+      tone: "text-hue-blue",
+      title: t("projectsCardTitle"),
+      desc: t("projectsCardDesc"),
+      cta: t("projectsCardCta"),
+    },
+    {
+      href: "/library/components",
+      label: t("componentsHeading"),
+      tone: "text-hue-purple",
+      title: t("componentsCardTitle"),
+      desc: t("componentsCardDesc"),
+      cta: t("componentsCardCta"),
+    },
+  ];
+
   return (
-    <div className="w-full relative py-16 sm:py-24">
-      <MotionDiv
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="max-w-6xl mx-auto px-4 sm:px-8 text-center flex flex-col items-center"
-      >
-        <h1 className="text-4xl sm:text-6xl font-serif text-foreground leading-snug tracking-tight text-balance">
-          {t("title")}
-        </h1>
-        <p className="text-sm sm:text-base md:text-lg text-muted max-w-2xl mt-6 leading-relaxed">
-          {t("subtitle")}
-        </p>
-      </MotionDiv>
+    <section className="px-4 py-20 sm:px-8 sm:py-28">
+      <div className="mx-auto max-w-6xl">
+        <SectionHeader as="h1" title={t("title")} lede={t("subtitle")} />
 
-      {/* Part 1 — Projects: a single card into the full list */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-8 mt-12 sm:mt-16">
-        <MotionDiv
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-        >
-          <Link
-            href="/library/projects"
-            className="group flex flex-col gap-4 rounded-2xl border border-border p-6 sm:p-8 transition-colors hover:border-foreground/40 hover:bg-secondary/30 sm:flex-row sm:items-center sm:justify-between"
-          >
-            <div>
-              <span className="text-xs uppercase tracking-[0.24em] text-muted">
-                {t("projectsHeading")}
-              </span>
-              <h2 className="mt-2 text-2xl sm:text-3xl font-serif text-foreground">
-                {t("projectsCardTitle")}
-              </h2>
-              <p className="mt-2 text-sm sm:text-base text-muted leading-relaxed max-w-xl">
-                {t("projectsCardDesc")}
-              </p>
-            </div>
-            <span className="inline-flex shrink-0 items-center gap-1.5 text-sm font-medium text-foreground">
-              {t("projectsCardCta")}
-              <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </span>
-          </Link>
-        </MotionDiv>
-      </section>
-
-      {/* Part 2 — Component Library: a single card into the full list */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-8 mt-6 sm:mt-8">
-        <MotionDiv
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          <Link
-            href="/library/components"
-            className="group flex flex-col gap-4 rounded-2xl border border-border p-6 sm:p-8 transition-colors hover:border-foreground/40 hover:bg-secondary/30 sm:flex-row sm:items-center sm:justify-between"
-          >
-            <div>
-              <span className="text-xs uppercase tracking-[0.24em] text-muted">
-                {t("componentsHeading")}
-              </span>
-              <h2 className="mt-2 text-2xl sm:text-3xl font-serif text-foreground">
-                {t("componentsCardTitle")}
-              </h2>
-              <p className="mt-2 text-sm sm:text-base text-muted leading-relaxed max-w-xl">
-                {t("componentsCardDesc")}
-              </p>
-            </div>
-            <span className="inline-flex shrink-0 items-center gap-1.5 text-sm font-medium text-foreground">
-              {t("componentsCardCta")}
-              <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </span>
-          </Link>
-        </MotionDiv>
-      </section>
-    </div>
+        <ul className="mt-14 grid gap-5 sm:mt-16 md:grid-cols-2">
+          {cards.map((card, index) => (
+            <li key={card.href}>
+              <Reveal variant="zoom" delay={index * 0.08} className="h-full">
+                <Link
+                  href={card.href}
+                  className="group flex h-full flex-col rounded-[1.75rem] bg-band p-8 transition-shadow hover:shadow-[0_12px_40px_-12px_rgb(0_0_0/0.18)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground sm:p-10"
+                >
+                  <p className={`kicker ${card.tone}`}>{card.label}</p>
+                  <h2 className="headline-card mt-2 text-foreground">{card.title}</h2>
+                  <p className="mt-3 flex-1 leading-relaxed text-muted-foreground">{card.desc}</p>
+                  <span className="link-more mt-8">
+                    {card.cta}
+                    <ChevronRight className="size-4" aria-hidden />
+                  </span>
+                </Link>
+              </Reveal>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
   );
 }

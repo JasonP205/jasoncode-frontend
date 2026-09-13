@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { MultipleImage } from "@hwagfu/images";
 import {
   PlaygroundShell,
@@ -43,6 +44,7 @@ export const SAMPLES = [
 ];
 
 export default function ImagesPlayground() {
+  const t = useTranslations("library");
   const [count, setCount] = useState(3);
   const [radius, setRadius] = useState<Radius>("xl");
   const [blur, setBlur] = useState(true);
@@ -79,7 +81,7 @@ export default function ImagesPlayground() {
             onChange={setBlur}
           />
           <p className="text-xs text-muted leading-relaxed">
-            Bấm vào một ảnh để mở lightbox · Click an image to open the lightbox.
+            {t("imagesHint")}
           </p>
         </>
       }

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { CursorEffect } from "@hwagfu/cursor";
 import {
   ColorControl,
@@ -10,6 +11,7 @@ import {
 } from "./controls";
 
 export default function CursorPlayground() {
+  const t = useTranslations("library");
   const [enabled, setEnabled] = useState(false);
   const [ringSize, setRingSize] = useState(42);
   const [ringHoverSize, setRingHoverSize] = useState(65);
@@ -44,9 +46,7 @@ export default function CursorPlayground() {
               Hover me
             </button>
             <p className="max-w-xs text-xs text-muted leading-relaxed">
-              {enabled
-                ? "Di chuột bất kỳ đâu trên trang để xem hiệu ứng · Move your mouse anywhere on the page."
-                : "Bật công tắc “enabled” để kích hoạt hiệu ứng con trỏ · Turn on “enabled” to activate."}
+              {enabled ? t("cursorHintOn") : t("cursorHintOff")}
             </p>
           </div>
         }

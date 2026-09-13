@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Be_Vietnam_Pro, Geist_Mono, Playfair_Display } from "next/font/google";
+import { Be_Vietnam_Pro, Geist_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -10,24 +10,18 @@ import "../globals.css";
 import Footer from "@/components/Footer";
 import { cn } from "@/lib/utils";
 import { Analytics } from "@vercel/analytics/next";
-import ThemeProvider, { themeInitScript } from "@/components/ui/ThemeProvider";
+import ThemeProvider from "@/components/ui/ThemeProvider";
 import BottomNav from "@/components/ui/BottomNav";
+import MotionProvider from "@/components/ui/MotionProvider";
 import { routing } from "@/i18n/routing";
-import  Script  from "next/script";
 
-// Body / UI font — matches the font HeroUI's theme expects, with full
-// Vietnamese glyph coverage so diacritics render correctly.
+// The only text family on the site: headlines (600) and body (400/500) alike,
+// with full Vietnamese glyph coverage. A display serif used to sit on top of
+// it; its tight metrics let stacked diacritics collide with the line above.
 const beVietnam = Be_Vietnam_Pro({
   subsets: ["latin", "vietnamese"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-be-vietnam",
-  display: "swap",
-});
-
-// Display / heading serif used by every `font-serif` headline.
-const playfair = Playfair_Display({
-  subsets: ["latin", "vietnamese"],
-  variable: "--font-serif-display",
   display: "swap",
 });
 
@@ -126,7 +120,7 @@ export async function generateMetadata({
           width: 1200,
           height: 630,
           type: "image/jpeg",
-          alt: "Jason Dev — Freelance Web Developer",
+          alt: "Jason Dev – Một chút thiết kế. Một chút lập trình. Thành một sản phẩm.",
         },
       ],
     },
@@ -188,38 +182,29 @@ export default async function RootLayout({
         "antialiased",
         "font-sans",
         beVietnam.variable,
-        playfair.variable,
         geistMono.variable,
       )}
       data-scroll-behavior="smooth"
       suppressHydrationWarning
     >
-      <head>
-        {/* Anti-FOUC: applies the stored theme before first paint. Server-
-            rendered on purpose so it doesn't trip React's client-script warning. */}
-        <Script
-          suppressHydrationWarning
-          dangerouslySetInnerHTML={{ __html: themeInitScript }}
-        />
-        {/* The hero poster preload comes from next/image `priority` (with a
-            responsive imagesrcset) — no manual <link rel=preload> needed; a
-            second one would double-download the raw file. */}
-      </head>
       <body className="min-h-full flex flex-col bg-background text-foreground pb-[calc(3.5rem+env(safe-area-inset-bottom))] md:pb-0">
         <NextIntlClientProvider>
           <ThemeProvider>
-            <Toast.Provider placement="top end" />
+            {/* ThemeProvider also writes the anti-FOUC theme script into the
+                server HTML (see themeInitScript). */}
+            <MotionProvider>
+              <Toast.Provider placement="top end" />
 
+              <Navigation />
 
-            <Navigation />
+              <main className="flex-1">{children}</main>
 
-            <main className="flex-1">{children}</main>
+              <Footer />
 
-            <Footer />
+              <BottomNav />
 
-            <BottomNav />
-
-            <Analytics />
+              <Analytics />
+            </MotionProvider>
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>

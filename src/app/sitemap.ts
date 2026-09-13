@@ -17,8 +17,9 @@ const staticRoutes: RouteDef[] = [
   { path: "/library/projects", changeFrequency: "monthly", priority: 0.8 },
   { path: "/library/components", changeFrequency: "monthly", priority: 0.8 },
   { path: "/services", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/services/students", changeFrequency: "monthly", priority: 0.6 },
   { path: "/contact", changeFrequency: "yearly", priority: 0.8 },
-  { path: "/utils", changeFrequency: "yearly", priority: 0.5 },
+  { path: "/cv", changeFrequency: "monthly", priority: 0.7 },
 ];
 
 function languagesFor(path: string): Record<string, string> {

@@ -4,65 +4,73 @@
     "projects": "Projects",
     "services": "Services",
     "library": "Library",
-    "utils": "Utilities",
     "contact": "Contact",
-    "signUp": "Sign up",
-    "signIn": "Sign in",
-    "logoAria": "Jason Dev - Home",
+    "logoAria": "Jason Dev – Home",
     "themeToggle": "Toggle light/dark theme",
     "localeSwitcher": "Select language",
     "primaryNav": "Primary navigation"
   },
+  "common": {
+    "loading": "Loading…",
+    "mascot": "Jot, the Jason Dev mascot"
+  },
   "hero": {
-    "headline": "A little <design>design</design>, a little <code>code</code>, and delightful things.",
-    "intro": "Hi, I'm <name>Phan Hoàng Phúc</name>. A freelance Web Developer passionate about crafting simple, useful, and polished products.",
-    "cta": "Start the journey",
+    "headlineLead": "A little design.\nA little code.",
+    "headlineAccent": "One finished product.",
+    "intro": "I'm <name>Phan Hoàng Phúc</name>, a freelance web developer. From a coffee shop website to a batch-inventory POS, I take each one from design to code myself.",
+    "cta": "Start a project",
     "cvCta": "View CV",
-    "cvCtaAria": "View CV (opens a PDF in a new tab)"
+    "cvCtaAria": "View Phan Hoang Phuc's CV"
+  },
+  "cv": {
+    "badge": "Résumé",
+    "download": "Download CV (PDF)",
+    "downloadAria": "Download Phan Hoang Phuc's CV as a PDF file",
+    "open": "Open in new tab",
+    "openAria": "Open the CV PDF in a new tab"
   },
   "skills": {
-    "educationLabel": "Education",
     "techStackLabel": "Capabilities",
-    "heading": "Education & Expertise",
-    "summary": "I love building products people can use every day. From interfaces and APIs to databases, I always aim to create clean, maintainable solutions that deliver a smooth experience.",
+    "heading": "Learned at school.\nSharpened on real projects.",
+    "summary": "I love building things people open every day. Interfaces, APIs and databases — I handle all three layers myself. And every project has a demo you can open for yourself.",
     "present": "Present",
     "education": {
       "highschoolDegree": "High School Diploma",
-      "highschoolDescription": "I completed my studies at Cay Duong High School as an honor student for three years with excellent conduct. Throughout that time I developed leadership, problem-solving, and teamwork skills as class monitor, and took part in school activities to grow my soft skills and broaden my social knowledge.",
-      "universityDegree": "Bachelor of Science in Computer Science",
-      "universityDescription": "Focused on software development, system design, and building modern web and mobile applications."
+      "highschoolDescription": "Honor student for three years with excellent conduct. As class monitor, I learned to lead a group, untangle problems and work as a team.",
+      "universityDegree": "Bachelor of Computing – Software Engineering",
+      "universityDescription": "Focused on system design and web and mobile applications."
     },
     "educationHeading": "Where I studied",
     "techStackHeading": "What I build with",
-    "techStackNote": "The tools I have used to build and run real products.",
+    "techStackNote": "Every tool here has been used in my projects.",
     "categories": {
       "frontend": "Frontend",
       "backend": "Backend",
       "database": "Data",
       "devops": "Ops"
     },
-    "sectionLabel": "Profile"
+    "sectionLabel": "Profile",
+    "cvLink": "View full CV"
   },
   "projectList": {
-    "heading": "Featured Projects",
-    "subtitle": "A collection of products I've passionately designed and developed.",
+    "heading": "Built from scratch. Seen through.",
+    "subtitle": "Personal projects, built end to end from design to code. Each one has a demo you can try.",
     "viewAll": "View all projects",
-    "viewDetail": "View project details",
-    "back": "Go back",
     "label": "Selected work"
   },
   "projectDetail": {
     "back": "Back to projects",
-    "websiteLabel": "Project Website",
-    "visit": "Visit now",
+    "websiteLabel": "Demo",
+    "visit": "Open the demo",
     "notFoundTitle": "Project not found",
     "notFoundDescription": "The project you're looking for doesn't exist or has been removed.",
-    "notFoundHeading": "This project doesn't exist",
-    "notFoundLong": "It looks like this project was removed, had its URL changed, or was never published in my portfolio.",
+    "notFoundHeading": "This project doesn't exist.",
+    "notFoundLong": "It looks like this project was removed, moved to a new URL, or was never published.",
     "notFoundBack": "Go back",
     "notFoundList": "View all projects",
-    "deployingTitle": "Hang tight! 🚀",
-    "deployingMessage": "We're putting the finishing touches on this project. It'll be ready in just a moment!",
+    "deployingTitle": "Almost there.",
+    "deployingMessage": "I'm finishing the last steps on this project. Check back in a few days.",
+    "deployingAccept": "Got it",
     "gallery": {
       "label": "Screenshots",
       "previous": "Previous screenshot",
@@ -71,321 +79,338 @@
       "close": "Close"
     }
   },
+  "home": {
+    "servicesLabel": "Services",
+    "servicesHeading": "Three ways to take your website further.",
+    "servicesItems": [
+      {
+        "title": "Landing page",
+        "desc": "One page for a product, event or ad campaign. Live in 5–7 days."
+      },
+      {
+        "title": "Multi-page website",
+        "desc": "The full set of about, services and contact pages, so customers find you on Google."
+      },
+      {
+        "title": "Fix & speed up",
+        "desc": "Site slow or broken on phones? You get a before-and-after PageSpeed report."
+      }
+    ],
+    "servicesCta": "Learn more about services",
+    "servicesStory": {
+      "chapters": [
+        {
+          "eyebrow": "01 · Multi-page website",
+          "title": "One website. Everything you want to say.",
+          "description": "About, services, work and contact — each page has a role, all moving as one."
+        },
+        {
+          "eyebrow": "02 · Landing page",
+          "title": "One page. More than enough to make an impact.",
+          "description": "Message, imagery and action land in the right place to turn views into customers."
+        },
+        {
+          "eyebrow": "03 · Performance & SEO",
+          "title": "Zero to 100. Then further.",
+          "description": "Faster for people. Clearer for Google. Ready to be found."
+        }
+      ],
+      "progress": ["Multi-page", "Landing page", "Accelerate SEO"],
+      "speedUnit": "performance score",
+      "mergeLabel": "Launch campaign",
+      "seoBurst": ["ACCELERATE", "SEO"]
+    },
+    "promiseLabel": "Promises",
+    "promiseHeading": "Peace of mind\nfrom preview to handover."
+  },
   "services": {
-    "heroTitle": "A website done properly,",
-    "heroTitleAccent": "end to end",
-    "heroSubtitle": "I'm Phúc — a final-year software student building websites for small shops, personal brands and people just starting out. You don't need to know anything technical: tell me the goal and I'll handle the rest. You see a working preview before deciding to go further.",
-    "guaranteesLabel": "My promise to you",
-    "guaranteesHeading": "There's almost no risk on your side",
+    "heroTitle": "You name the goal.",
+    "heroTitleAccent": "I handle the rest.",
+    "heroSubtitle": "I'm Phúc, a final-year Software Engineering student building websites for small shops, personal brands and people just starting out. No technical knowledge needed. And you see a preview before deciding to go further.",
+    "heroPlansCta": "See the plans",
     "guarantees": [
       {
         "title": "Free consultation",
-        "desc": "Message me first and we'll pin down exactly what the work covers — no commitment yet."
+        "desc": "Message me first and we'll pin down exactly what the work covers. No commitment yet."
       },
       {
         "title": "Preview before you commit",
         "desc": "You review a sample design and only move forward once you're happy — no buying blind."
       },
       {
-        "title": "Support after handover",
-        "desc": "Free bug fixes and small tweaks for 14 days, plus an easy-to-follow usage guide."
+        "title": "Lifetime bug fixes",
+        "desc": "Bugs in code I wrote get fixed free, with no time limit. Doesn't apply once the source code has been changed by you or someone else."
       }
     ],
-    "processLabel": "How we work",
-    "processHeading": "A lean process you can always follow",
-    "workingSteps": [
-      "You send me what you need — an existing site or just the idea. No obligation.",
-      "I talk you through the options and suggest the approach that fits.",
-      "We agree the scope and timeline, then start; you follow progress step by step.",
-      "Full handover, a usage walkthrough, and help with small tweaks afterwards."
-    ],
-    "featuredBadge": "MOST POPULAR",
-    "closingNote": "Not sure where to start? Send me your goal or the site you already have and I'll suggest the leanest way forward — even if all you need is one very simple page. Not technical? That's my part to handle. Want more certainty first? Take a look at the work I've already shipped.",
-    "closingCta": "Message me for a free consultation",
-    "closingCtaSecondary": "See projects I've built",
+    "plansLabel": "Plans",
+    "plansHeading": "What do you need right now?",
+    "plansSub": "Four plans for four situations. Each one spells out what you get.",
+    "plansFootnote": "Projects with online payments or complex permissions get their own scope. The optimization plan is mainly for React/Next.js sites.",
+    "featuredBadge": "My pick",
     "plans": {
       "landing": {
-        "name": "One-page landing",
-        "description": "For when you need one striking page — a product, an event, a personal CV, or a page to run ads to. The quickest thing to get live.",
-        "note": "Custom-designed, no generic templates. Delivered in 5–7 days.",
+        "name": "Landing page",
+        "description": "One page for a product, event or ad campaign. Live in 5–7 days.",
         "features": [
-          "One page custom-designed to your brand, up to 7 sections — no generic templates",
-          "2 rounds of revisions based on your feedback before sign-off",
-          "Contact form sent straight to Zalo or email so you get leads instantly",
-          "Basic SEO plus a rich share preview on Facebook/Zalo",
-          "I put the site live and connect your domain for you",
-          "Free bug fixes for 7 days after handover"
+          "Custom design, up to 7 sections",
+          "2 rounds of revisions before sign-off",
+          "Contact form sent to Zalo or email",
+          "Basic SEO, domain connected, site put live"
         ],
-        "buttonText": "Build a landing page"
+        "buttonText": "Ask about this plan"
       },
       "website": {
         "name": "Multi-page website",
-        "description": "For small shops, cafés, personal brands or services that need a complete multi-page website (about, services, contact...) to look professional and sell better.",
-        "note": "Scope is set by the pages and features you actually need; you follow progress milestone by milestone.",
+        "description": "The full set of pages for small shops, cafés and personal brands.",
         "features": [
-          "4–6 complete pages: home, about, services, contact...",
-          "Cohesive brand-aligned design + 2 rounds of revisions",
-          "SEO-ready structure and Google indexing so customers can find you",
-          "Zalo, Messenger and Google Maps integration for easy contact",
-          "1 month of free maintenance (4 small edits) after handover",
-          "1 walkthrough session + 14 days of support"
+          "4–6 pages matched to your brand",
+          "2 rounds of revisions before sign-off",
+          "SEO-ready, with Zalo, Messenger and Google Maps",
+          "First month: 4 small edits and 1 walkthrough"
         ],
-        "buttonText": "Start my website"
+        "buttonText": "Ask about this plan"
       },
       "dynamic": {
         "name": "Website with data management",
-        "description": "When you need more than a brochure site: sign-up / booking forms, member login, a content admin area, or a connection to your existing system or API.",
-        "note": "Projects with automated online payment or complex permissions get broken out part by part before we start.",
+        "description": "When your site needs bookings, orders or member login.",
         "features": [
-          "One core flow: online booking OR basic order taking, stored in a database",
-          "Management dashboard: view orders/appointments, customers and basic stats",
-          "Role-based login for 2 levels: owner and staff",
-          "Connect one data source you already use: Google Sheet or Zalo",
-          "Full clean source code handed over — the website is your asset",
-          "1 month of technical support after handover (fixing new issues)"
+          "One core flow: bookings or orders, stored in a database",
+          "Dashboard for orders, appointments and customers",
+          "Role-based login for owner and staff",
+          "Google Sheet or Zalo connection, full source code handed over"
         ],
-        "buttonText": "Discuss the features I need"
+        "buttonText": "Ask about this plan"
       },
       "optimize": {
-        "name": "SEO & speed up an existing site",
-        "description": "For a live Next.js/React website that loads slowly, breaks often, looks poor on mobile or can't rank on Google — I clean it up to be leaner, faster and more SEO-ready.",
-        "note": "Best for React/Next.js sites or websites that are slow or hard to rank on Google.",
+        "name": "SEO & speed",
+        "description": "For a site that's slow, broken on mobile or not ranking on Google.",
         "features": [
-          "Speed optimization: compress images, clean up dead code, enable caching",
-          "Metadata + rich share images for up to 5 key pages",
-          "Google Search Console setup and a complete sitemap",
-          "Before–after PageSpeed report with recommended next steps"
+          "Compressed images, dead code removed, caching on",
+          "Metadata and share images for up to 5 key pages",
+          "Google Search Console and sitemap set up",
+          "Before–after PageSpeed report with next steps"
         ],
-        "buttonText": "Send a site to optimize"
+        "buttonText": "Ask about this plan"
       }
     },
-    "miniHeading": "Just need one small thing? Message me and it's done",
-    "miniNote": "Don't see what you need here? Describe it and I'll get back to you shortly.",
+    "miniLabel": "Small jobs",
+    "miniHeading": "Already have a site?\nQuick fixes, visible results.",
+    "miniSub": "No job too small. It's an easy way to start working together.",
+    "miniNote": "Don't see what you need?",
+    "miniCta": "Describe it and I'll reply within 24 hours",
     "mini": [
       {
-        "name": "Fix a bug / broken layout",
-        "desc": "Broken layout, buttons that don't work, small glitches — fixed fast."
+        "name": "Fix a broken layout",
+        "desc": "Layout broken on desktop or phone, buttons that don't work — fixed fast."
       },
       {
         "name": "Content & small edits",
         "desc": "Change text, images, colours or add a new section to an existing site."
       },
       {
-        "name": "Mobile display fix",
-        "desc": "Your site looks broken on phones — I make it clean and tidy again."
+        "name": "Speed & SEO for one page",
+        "desc": "Fix what slows the page down, plus title, description and share image."
       },
       {
-        "name": "Deploy site + domain",
-        "desc": "Put your site online, connect the domain and hosting to go live."
+        "name": "Put your site online",
+        "desc": "Deploy, connect the domain and hosting to go live."
       },
       {
         "name": "Add a widget",
-        "desc": "Contact form, Zalo/Messenger chat, Google Maps, quick-call button..."
-      },
-      {
-        "name": "Speed up your site",
-        "desc": "Quick fixes for what makes your site slow and heavy, boosting PageSpeed."
-      },
-      {
-        "name": "Quick SEO for one page",
-        "desc": "Title, description and share image so it ranks and shares better."
+        "desc": "Contact form, Zalo/Messenger chat, Google Maps, quick-call button…"
       },
       {
         "name": "Figma to code",
         "desc": "Got a Figma design? I turn it into a real page, faithful to the detail."
-      },
-      {
-        "name": "Monthly maintenance",
-        "desc": "Regular content updates, backups and small bug fixes — worry-free."
       }
     ],
-    "journeyLabel": "Pick what you need",
-    "journeyHeading": "What do you need right now?",
-    "journeySub": "Pick the situation that matches yours — each one spells out what you get.",
-    "fixLabel": "Start small",
-    "fixHeading": "Already have a site? Quick fixes & improvements",
-    "fixSub": "From a single small job to a full optimization pass — quick to do, with results you can see. It's the easiest way to start working together.",
-    "fixMoreLead": "Need something more thorough than a one-off?",
-    "buildLabel": "Build new",
-    "buildHeading": "A brand-new website, polished from day one",
-    "buildSub": "When you need an official home on the internet — pick a lean landing page or a full multi-page site. Each plan spells out exactly what you get.",
-    "appLabel": "Level up",
-    "appHeading": "A website with its own features & system",
-    "appSub": "When your site needs to work for you: take sign-ups and bookings, logins, content admin, or connect to your existing system.",
-    "studentLabel": "For students",
-    "studentHeading": "Coursework, capstones & CVs for IT students",
-    "studentSub": "Deadline closing in and it still won't run? I take on course projects, coursework bug fixes and CV/portfolio sites. I help with the code and the interface only — I don't write your report or your theory for you.",
-    "student": [
+    "processLabel": "How we work",
+    "processHeading": "Four steps. No surprises.",
+    "workingSteps": [
+      "You send me what you need — an existing site or just the idea. No obligation.",
+      "I talk you through the options and suggest the approach that fits.",
+      "We agree the scope and timeline, then start. You follow progress step by step.",
+      "Full handover and a usage walkthrough. And lifetime bug fixes for the code I wrote."
+    ],
+    "studentTeaserHeading": "An IT student?",
+    "studentTeaserSub": "Coursework bug fixes, course projects and CV/portfolio sites have their own page.",
+    "studentTeaserCta": "Learn more about student plans",
+    "closingHeading": "Not sure where to start?",
+    "closingNote": "Send me your goal or the site you already have. I'll suggest the leanest way forward, even if all you need is one page. Not technical? That's fine.",
+    "closingCta": "Get a free consultation",
+    "closingCtaSecondary": "See projects I've built"
+  },
+  "students": {
+    "label": "For students",
+    "heading": "Code won't run?",
+    "headingAccent": "Let me take a look.",
+    "sub": "Coursework bug fixes, course projects and CV/portfolio sites. I help with the code and the interface only — I don't write your report or your theory for you.",
+    "cta": "Send me the brief",
+    "backToServices": "See website services",
+    "plansHeading": "Pick the job you need.",
+    "plansSub": "Five plans, each spelling out what you get.",
+    "items": [
       {
-        "name": "Coursework bug fixing",
-        "description": "Final project breaking on logic errors, database connections or a broken layout? I debug it so it runs perfectly before the deadline.",
-        "note": "I read the brief, then we agree the approach. Sorted well before the deadline.",
+        "name": "Web course project (HTML)",
+        "description": "Great for Web Design courses: responsive layouts and static interfaces.",
         "features": [
-          "Fix the exact logic or display bug we agreed on",
-          "Quick Zalo guide on deploying to a free host (Vercel/Render)",
-          "3-day stability warranty on the running build",
-          "Handover of fully working code"
+          "Responsive interface that works on phones",
+          "DOM effects and basic JavaScript",
+          "Run-it-yourself guide plus free deploy instructions",
+          "Group projects welcome"
         ],
-        "buttonText": "Ask me to check it",
-        "href": "/contact"
+        "buttonText": "Ask about this plan"
+      },
+      {
+        "name": "Web course project (PHP)",
+        "description": "Great for dynamic web courses: CRUD, registration and login.",
+        "features": [
+          "PHP and MySQL, sample data included",
+          "Registration, login and basic roles",
+          "One video call to guide setup and a test run",
+          "Group projects welcome"
+        ],
+        "buttonText": "Ask about this plan"
+      },
+      {
+        "name": "Web course project (React)",
+        "description": "Great for advanced web capstones: React SPA, REST API, MongoDB/PostgreSQL.",
+        "features": [
+          "React SPA with a Node.js/Express REST API",
+          "Sample data included so it runs out of the box",
+          "One video call to explain the code and set up the environment",
+          "Group projects welcome"
+        ],
+        "buttonText": "Ask about this plan"
       },
       {
         "name": "Bento CV / Portfolio",
-        "description": "Show off your grades, standout projects and personal links in an Apple-style Bento Grid aesthetic.",
-        "note": "Modern Bento Grid design. Great for job applications, scholarships or studying abroad.",
+        "description": "One page for your grades, standout projects and links. Great for jobs, scholarships or study abroad.",
         "features": [
-          "One modern Bento Grid portfolio page, up to 7 sections",
-          "Links to GitHub, social media and contact details",
-          "Contact/message form sent to Google Sheet for free",
-          "Deployed to free lifetime hosting (Vercel/Netlify)"
+          "Bento Grid layout, up to 7 sections",
+          "GitHub, social media and contact details",
+          "Message form sent to Google Sheet for free",
+          "Deployed to free hosting (Vercel/Netlify)"
         ],
-        "buttonText": "Build my CV/Portfolio",
-        "href": "/contact"
+        "buttonText": "Ask about this plan"
       },
       {
-        "name": "Web App Coursework (HTML)",
-        "description": "Great for Web Design courses: building responsive layouts and static-interface projects.",
-        "note": "Static interface build with basic DOM/JS effects. Group submissions welcome.",
+        "name": "Coursework bug fixing",
+        "description": "Logic errors, database issues or a broken layout? I debug it so it runs before the deadline.",
         "features": [
-          "Responsive interface design, mobile-friendly",
-          "DOM motion effects and basic JavaScript",
-          "Detailed guide to run the code yourself",
-          "Clean source code + free self-deploy instructions"
+          "I read the brief, then we agree the approach",
+          "Fix the exact logic or display bug we agreed on",
+          "Guide to deploying on a free host (Vercel/Render)",
+          "Handover of fully working code"
         ],
-        "buttonText": "Order HTML project",
-        "href": "/contact"
-      },
-      {
-        "name": "Web App Coursework (PHP)",
-        "description": "Great for basic dynamic web courses: CRUD data management, registration/login.",
-        "note": "Basic dynamic PHP/MySQL site. Group submissions welcome.",
-        "features": [
-          "Dynamic data handling with PHP + MySQL database",
-          "Registration and role-based login features",
-          "Bundled seed mock data so it runs out of the box",
-          "Bonus: 1 live call to guide setup and a test run"
-        ],
-        "buttonText": "Order PHP project",
-        "href": "/contact"
-      },
-      {
-        "name": "Web App Coursework (React)",
-        "description": "Great for advanced web capstones: React single-page apps, REST APIs, MongoDB/PostgreSQL.",
-        "note": "Advanced full-stack React/Node.js. Group submissions welcome.",
-        "features": [
-          "React SPA architecture + Node.js/Express REST API backend",
-          "Bundled seed mock data so it runs out of the box",
-          "Bonus: 1 live call to explain the code and run it",
-          "Support setting up the run environment"
-        ],
-        "buttonText": "Order React project",
-        "href": "/contact"
+        "buttonText": "Ask about this plan"
       }
-    ]
+    ],
+    "closingHeading": "Not sure which plan fits?",
+    "closingSub": "Send the brief or describe the bug. I'll look first, then we agree the approach."
   },
   "faq": {
     "heading": "Frequently asked questions",
-    "subtitle": "A few common questions before starting a project.",
+    "subtitle": "What people usually ask before starting.",
     "items": [
       {
         "title": "How is the cost worked out?",
-        "content": "Every project is different, so there's no fixed list. Describe what you need, we agree on a clear scope, and we settle the rest directly — once it's agreed, nothing hidden."
+        "content": "Every project is different, so there's no fixed price list. Describe what you need, we agree on a clear scope, and I quote you directly. Once it's agreed, there are no hidden fees."
       },
       {
-        "title": "You're a student — is the work reliable?",
-        "content": "I'm a final-year software student taking on real projects to sharpen my skills. You get a product built with modern tech and clean code, and I give it my all because it's part of my portfolio too. You're welcome to review demos and past work before deciding."
+        "title": "A student — is the work reliable?",
+        "content": "I'm a final-year Software Engineering student taking on real projects. You get a product built with modern tech and clean code — and I give it my all because it's part of my portfolio too. You're welcome to review past projects before deciding."
       },
       {
         "title": "Can you build a site if I don't have a design?",
-        "content": "Yes. Just describe your idea, your field or your goal. I'll advise on content structure, layout and the right approach."
+        "content": "Yes. Just describe your idea, your field or your goal. I'll advise on content structure, layout and the approach."
       },
       {
         "title": "Is the website SEO-optimized?",
-        "content": "Yes. Sites are built with a search-friendly structure and support load-speed optimization, metadata, sitemap and the basic technical SEO factors."
+        "content": "Yes. Sites are built with a search-friendly structure, optimized load speed, metadata, a sitemap and the basic technical SEO factors."
       },
       {
         "title": "Do you help with domain and hosting?",
-        "content": "Yes. I can advise on or set up domain, hosting and related services if you don't have the infrastructure yet."
+        "content": "Yes. If you don't have them yet, I'll advise on and set up your domain, hosting and related services."
       },
       {
         "title": "Is there support after handover?",
-        "content": "Yes. After completion I still provide usage guidance, answer questions and handle bug fixes and small tweaks within the agreed scope."
+        "content": "Yes. Bugs in code I wrote are fixed free for life. I also walk you through using the site and answer questions after handover. The bug-fix policy doesn't apply once the source code has been changed by you or someone else."
       }
     ]
   },
   "contact": {
-    "title": "Let's build the",
-    "titleAccent": "digital future together.",
-    "subtitle": "Have a great idea or a project to bring to life? Leave a message and I'll get back to you within 24 hours.",
+    "title": "Got an idea?",
+    "titleAccent": "Message me to start.",
+    "subtitle": "Leave a message. I'll reply within 24 hours.",
     "directEmail": "Direct email",
     "nameLabel": "Full name",
     "namePlaceholder": "John Doe",
     "emailLabel": "Contact email",
     "emailPlaceholder": "email@example.com",
     "messageLabel": "Message",
-    "messagePlaceholder": "Type your message here...",
-    "submit": "Send request",
-    "submitting": "Sending...",
-    "successTitle": "Message sent!",
-    "successBody": "Thanks for reaching out. I'll get back to you soon.",
-    "toastSuccess": "I've received your message! Thanks for getting in touch.",
-    "toastError": "Something went wrong. Please try again later."
+    "messagePlaceholder": "What you need, your current site (if any), your ideal timeline…",
+    "submit": "Send message",
+    "submitting": "Sending…",
+    "successTitle": "Sent.",
+    "successBody": "I'll reply by email within 24 hours.",
+    "toastSuccess": "Got your message. Thank you.",
+    "toastError": "Couldn't send. Try again in a few minutes, or email me directly."
   },
   "footer": {
+    "tagline": "Freelance web developer based in Ho Chi Minh City.",
     "partner": "Partner",
     "quickLinksTitle": "Quick links",
     "quickLinks": {
-      "home": "Home",
       "projects": "Web projects portfolio",
       "services": "Website design services",
-      "contact": "Hire a web developer",
-      "utils": "Free tools"
+      "students": "Coursework help for students",
+      "library": "Open-source React components",
+      "cv": "Phan Hoang Phuc's CV",
+      "contact": "Hire a web developer"
     },
-    "rights": "Jason Dev. All rights reserved.",
-    "version": "Version"
+    "rights": "Jason Dev. All rights reserved."
   },
   "utils": {
     "badge": "Coming Soon",
-    "heading": "Utility Tools",
-    "description": "This feature is being prepared and will go live officially. Count down with Jason!",
-    "backHome": "Back to home",
-    "countdown": {
-      "days": "Days",
-      "hours": "Hours",
-      "minutes": "Minutes",
-      "seconds": "Seconds"
-    }
+    "heading": "Utility tools",
+    "description": "The tools are being finished. I'll update this page as soon as they're ready.",
+    "backHome": "Back to home"
   },
   "notFound": {
-    "heading": "Oops! You're lost",
-    "description": "The page you're looking for doesn't exist, had its URL changed, or is temporarily unavailable.",
+    "heading": "Lost your way.",
+    "description": "The page you're looking for doesn't exist or has moved.",
     "back": "Go back",
-    "home": "Back to home safely"
+    "home": "Back to home"
   },
   "comingSoon": {
-    "defaultTitle": "Feature in development",
-    "defaultDescription": "We're working hard to finish this feature and will launch it soon. Thanks for your interest — please check back later!",
+    "defaultTitle": "Feature in progress",
+    "defaultDescription": "I'm finishing this feature. Please check back later.",
     "back": "Go back",
-    "signInTitle": "Sign-in feature in development",
-    "signUpTitle": "Sign-up feature in development"
+    "signInTitle": "Sign-in is in progress",
+    "signUpTitle": "Sign-up is in progress"
   },
   "metadata": {
     "homeTitle": "Jason Dev | Freelance Web Developer",
-    "homeDescription": "Personal portfolio and freelance services of Phan Hoàng Phúc (Jason Dev), specializing in building websites, SEO optimization, improving existing sites, and designing scalable data systems.",
+    "homeDescription": "Personal portfolio and freelance services of Phan Hoàng Phúc (Jason Dev): websites, SEO, speeding up existing sites and data system design.",
     "projectsTitle": "All projects",
-    "projectsDescription": "Explore every project I've built, from personal websites to complex applications. Each one is designed and engineered with attention to detail, performance, and user experience.",
-    "servicesTitle": "Website design services — Landing pages, Web & SEO",
-    "servicesDescription": "Website design, landing pages, SEO optimization and speed-ups for existing sites, built with modern tech (Next.js, React) for small shops, personal brands and beginners. A young freelancer, clear about scope from the start.",
+    "projectsDescription": "Web and mobile projects by Phan Hoang Phuc, each with a demo: restaurant management, a batch-inventory POS, realtime chat, an offline hiking app and a coffee shop website.",
+    "servicesTitle": "Website design services – Landing pages, Web & SEO",
+    "servicesDescription": "Websites, landing pages, SEO and speed-ups for existing sites, built with Next.js and React for small shops, personal brands and beginners. Preview first, lifetime bug fixes.",
     "contactTitle": "Contact",
-    "contactDescription": "Get in touch to learn more about my projects, skills, or collaboration opportunities. I'm always happy to connect and exchange new ideas.",
+    "contactDescription": "Message Phan Hoang Phuc (Jason Dev) about a website, landing page or SEO work. Free consultation, reply within 24 hours.",
     "utilsTitle": "Utilities",
-    "utilsDescription": "Explore useful utility tools coming soon to enhance your experience.",
-    "libraryTitle": "Open-source libraries — React components & utilities",
-    "libraryDescription": "React libraries I built: @hwagfu/link, @hwagfu/cursor, @hwagfu/images. Intro, examples and detailed usage guides."
+    "utilsDescription": "Free web tools from Jason Dev, currently in progress.",
+    "libraryTitle": "Open-source libraries – React components & utilities",
+    "libraryDescription": "React libraries I built: @hwagfu/link, @hwagfu/cursor, @hwagfu/images. Intro, examples and detailed usage guides.",
+    "cvTitle": "CV – Phan Hoang Phuc (Jason Dev)",
+    "cvDescription": "View and download the CV of Phan Hoang Phuc (Jason Dev), a freelance web developer working with Next.js, React, SEO and web performance.",
+    "studentsTitle": "Coursework and CV help for IT students",
+    "studentsDescription": "Coursework bug fixes, HTML, PHP and React web course projects, and Bento Grid CV/portfolio sites for IT students. Code and interface only."
   },
   "library": {
     "title": "My libraries",
-    "subtitle": "A home for the projects I have built and the component libraries I package myself. Pick a section to dive in.",
+    "subtitle": "The projects I've built and the components I package myself.",
     "back": "All libraries",
     "installLabel": "Installation",
     "usageLabel": "Usage",
@@ -401,14 +426,17 @@
     "notFoundDescription": "The library you are looking for does not exist or was renamed.",
     "componentsHeading": "Component Library",
     "componentsSubtitle": "React components & utilities I wrote and packaged for reuse. Click one to read the guide and try it live in the playground.",
-    "componentsCardTitle": "See all the component libraries I have built",
-    "componentsCardDesc": "React components & utilities I package myself for reuse — with guides and a live playground.",
+    "componentsCardTitle": "React components & utilities",
+    "componentsCardDesc": "Packaged for reuse, with guides and a live playground.",
     "componentsCardCta": "View all components",
     "playgroundLabel": "Playground",
-    "playgroundHint": "Tweak the controls on the right to see the component update live.",
+    "playgroundHint": "Tweak the controls to see the component update live.",
+    "cursorHintOn": "Move your mouse anywhere on the page.",
+    "cursorHintOff": "Turn on “enabled” to activate the cursor effect.",
+    "imagesHint": "Click an image to open the lightbox.",
     "projectsHeading": "Projects",
-    "projectsCardTitle": "See all the projects I have built",
-    "projectsCardDesc": "A collection of the web products I have built — from landing pages to full backend systems.",
+    "projectsCardTitle": "Projects I've built",
+    "projectsCardDesc": "From landing pages to backend systems — each one with a demo.",
     "projectsCardCta": "View all projects"
   }
 }

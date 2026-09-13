@@ -1,73 +1,50 @@
 import Icon from "@/components/ui/icon";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import Image from "next/image";
-import logo from "@/app/logo.png";
-import Url from "@/components/ui/UrlPreview"
+import Logo from "@/components/ui/Logo";
+
+const socialLinks = [
+  { name: "GitHub", url: "https://github.com/JasonP205", icon: "mdi:github" },
+  { name: "Facebook", url: "https://facebook.com/hoangphuc05", icon: "mdi:facebook" },
+  { name: "Zalo", url: "https://zalo.me/0798020513", icon: "simple-icons:zalo" },
+];
+
+/**
+ * One compact band: who, where to go, how to reach. It used to be four columns
+ * with a live link-preview card for the partner, which ran ~1000px tall on a
+ * phone and pulled in someone else's English description.
+ */
 const Footer = () => {
   const t = useTranslations("footer");
   // Keyword-rich internal anchors — these labels double as SEO signals for the
   // pages they point to, so keep them descriptive rather than generic.
   const quickLinks = [
-    { href: "/", label: t("quickLinks.home") },
     { href: "/library/projects", label: t("quickLinks.projects") },
     { href: "/services", label: t("quickLinks.services") },
+    { href: "/services/students", label: t("quickLinks.students") },
+    { href: "/library/components", label: t("quickLinks.library") },
+    { href: "/cv", label: t("quickLinks.cv") },
     { href: "/contact", label: t("quickLinks.contact") },
-    { href: "/utils", label: t("quickLinks.utils") },
-  ];
-  const socialLinks = [
-    {
-      id: 1,
-      name: "GitHub",
-      url: "https://github.com/JasonP205",
-      icon: "mdi:github",
-    },
-    {
-      id: 2,
-      name: "Facebook",
-      url: "https://facebook.com/hoangphuc05",
-      icon: "mdi:facebook",
-    },
-    {
-      id: 3,
-      name: "Zalo",
-      url: "https://zalo.me/0798020513",
-      icon: "simple-icons:zalo",
-    },
   ];
 
   return (
-    <footer className="border-t border-border/60 bg-background">
-      <div className="mx-auto max-w-7xl px-6 py-14">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
-          {/* About */}
-          <div className="space-y-4">
-            <div className="w-16 h-16 shrink-0 flex items-center justify-center">
-              <Image
-                src={logo}
-                alt="Jason Dev Logo"
-                width={64}
-                height={64}
-                priority
-                sizes="64px"
-                className="w-full h-full object-contain"
-              />
-            </div>
-
-            <p className="max-w-xs text-sm leading-6 text-muted-foreground">
-              Full-stack developer crafting modern, accessible and
-              high-performance web applications.
+    <footer className="border-t border-border/60 bg-band px-4 sm:px-8">
+      <div className="mx-auto max-w-6xl py-12 sm:py-14">
+        <div className="flex flex-col gap-10 md:flex-row md:justify-between">
+          <div className="max-w-xs">
+            <Logo variant="full" />
+            <p className="mt-4 text-sm leading-6 text-muted-foreground">
+              {t("tagline")}
             </p>
-
-            <div className="flex gap-2">
+            <div className="mt-5 flex gap-2">
               {socialLinks.map((item) => (
                 <a
-                  key={item.id}
+                  key={item.name}
                   href={item.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={item.name}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-border transition-all hover:bg-foreground hover:text-background"
+                  className="flex h-9 w-9 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-tile hover:text-foreground focus-visible:outline-2 focus-visible:outline-foreground"
                 >
                   <Icon icon={item.icon} className="h-5 w-5" />
                 </a>
@@ -75,55 +52,41 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Navigation */}
-          <div>
-            <h3 className="mb-4 font-semibold">{t("quickLinksTitle")}</h3>
-
-            <ul className="space-y-3">
+          <nav aria-label={t("quickLinksTitle")}>
+            <ul className="grid grid-cols-1 gap-x-12 gap-y-3 text-sm sm:grid-cols-2">
               {quickLinks.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                    className="text-muted-foreground transition-colors hover:text-foreground"
                   >
                     {item.label}
                   </Link>
                 </li>
               ))}
             </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h3 className="mb-4 font-semibold">Contact</h3>
-
-            <div className="space-y-3 text-sm text-muted-foreground">
-              <a
-                href="mailto:contact@hwagfu.dev"
-                className="flex items-center gap-2 hover:text-foreground"
-              >
-                <Icon icon="solar:letter-linear" className="h-4 w-4" />
-                contact@hwagfu.dev
-              </a>
-
-              <div className="flex items-center gap-2">
-                <Icon icon="solar:global-linear" className="h-4 w-4" />
-                hwagfu.dev
-              </div>
-            </div>
-          </div>
-
-          {/* Partner */}
-          <div>
-            <h3 className="mb-4 font-semibold">{t("partner")}</h3>
-
-            <Url url="https://www.hugowishpax.studio" />
-          </div>
+          </nav>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-6 text-sm text-muted-foreground md:flex-row">
+        <div className="mt-10 flex flex-col gap-3 border-t border-border/60 pt-6 text-sm text-muted-foreground md:flex-row md:items-center md:justify-between">
           <span>
             © {new Date().getFullYear()} {t("rights")}
+          </span>
+          <span className="flex flex-wrap gap-x-6 gap-y-2">
+            <a href="mailto:contact@hwagfu.dev" className="hover:text-foreground">
+              contact@hwagfu.dev
+            </a>
+            <span>
+              {t("partner")}:{" "}
+              <a
+                href="https://www.hugowishpax.studio"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground hover:underline underline-offset-4"
+              >
+                Hugo Studio
+              </a>
+            </span>
           </span>
         </div>
       </div>

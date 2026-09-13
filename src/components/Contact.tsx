@@ -1,12 +1,17 @@
 "use client";
 
 import React, { useState, useTransition } from "react";
-import { Mail, Send, CheckCircle } from "lucide-react";
-import { Input, TextArea, Button, toast, Spinner } from "@heroui/react";
+import { Mail } from "lucide-react";
+import { Input, TextArea, Button, toast } from "@heroui/react";
 import { motion, AnimatePresence } from "motion/react";
 import { useLocale, useTranslations } from "next-intl";
 import { submitContact } from "@/actions/contact.action";
-import RainbowText from "./ui/RainbowText"
+import Jot from "./ui/Jot";
+import Reveal from "./ui/Reveal";
+
+// Fields sit on the white form card, so they take the band grey to stay
+// visible; the theme's own field background is white.
+const fieldClass = "bg-band font-sans text-foreground placeholder:text-muted-foreground";
 
 export default function Contact() {
   const t = useTranslations("contact");
@@ -38,171 +43,134 @@ export default function Contact() {
   };
 
   return (
-    <section
-      id="contact"
-      className="py-16 sm:py-24 bg-background relative overflow-hidden"
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="bg-black rounded-[2rem] selection:bg-white! selection:text-black! sm:rounded-[3rem] p-8 sm:p-12 md:p-20 flex flex-col lg:flex-row gap-12 lg:gap-16 items-start"
-        >
-          <div className="flex-1 w-full">
-            <motion.h2
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-3xl sm:text-4xl md:text-6xl font-serif text-white mb-6 sm:mb-8"
-            >
-              {t("title")} <br className="hidden sm:block" />
-              <RainbowText>{t("titleAccent")}</RainbowText>
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-gray-400 text-base sm:text-lg mb-8 sm:mb-12 max-w-md"
-            >
-              {t("subtitle")}
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
-              <a
-                className="flex items-center gap-4 text-white cursor-pointer"
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@hwagfu.dev"
-                target="_blank"
-                rel="noopener noreferrer"
+    <section id="contact" className="scroll-mt-16 bg-band px-4 py-20 sm:px-8 sm:py-32">
+      <div className="mx-auto grid max-w-6xl items-start gap-12 lg:grid-cols-2 lg:gap-20">
+        <Reveal>
+          <h2 className="headline-section text-foreground">
+            <span className="block">{t("title")}</span>
+            <span className="block headline-quiet">{t("titleAccent")}</span>
+          </h2>
+          <p className="lede mt-5 max-w-xl">{t("subtitle")}</p>
+
+          <a
+            className="group mt-10 inline-flex items-center gap-4 rounded-2xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground"
+            // mailto, not a Gmail compose URL: it opens whatever mail app the
+            // visitor actually uses.
+            href="mailto:contact@hwagfu.dev"
+          >
+            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-hue-blue/10 text-hue-blue dark:bg-hue-blue/15">
+              <Mail className="h-5 w-5" aria-hidden />
+            </span>
+            <span>
+              <span className="block text-sm text-muted-foreground">{t("directEmail")}</span>
+              <span className="block text-lg text-foreground group-hover:underline underline-offset-4">
+                contact@hwagfu.dev
+              </span>
+            </span>
+          </a>
+        </Reveal>
+
+        <Reveal delay={0.08} className="rounded-[1.75rem] bg-tile p-6 sm:p-9">
+          <AnimatePresence mode="wait">
+            {submitted ? (
+              <motion.div
+                key="success"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                role="status"
+                className="flex min-h-80 flex-col items-center justify-center text-center"
               >
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0">
-                  <Mail className="w-5 h-5 sm:w-6 sm:h-6" />
+                {/* Message sent: Jot hops. */}
+                <Jot mood="happy" className="mb-4 size-32" />
+                <h3 className="headline-card text-foreground">{t("successTitle")}</h3>
+                <p className="mt-2 text-muted-foreground">{t("successBody")}</p>
+              </motion.div>
+            ) : (
+              <motion.form
+                key="form"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onSubmit={handleSubmit}
+                className="space-y-5"
+              >
+                <div>
+                  <label
+                    htmlFor="contact-name"
+                    className="mb-2 block text-sm font-medium text-foreground"
+                  >
+                    {t("nameLabel")}
+                  </label>
+                  <Input
+                    id="contact-name"
+                    name="name"
+                    required
+                    fullWidth
+                    autoComplete="name"
+                    disabled={isPending}
+                    placeholder={t("namePlaceholder")}
+                    className={fieldClass}
+                  />
                 </div>
                 <div>
-                  <p className="text-xs sm:text-sm text-gray-400">
-                    {t("directEmail")}
-                  </p>
-                  <p className="text-base sm:text-lg break-all">
-                    contact@hwagfu.dev
-                  </p>
-                </div>
-              </a>
-            </motion.div>
-          </div>
-
-          <div className="w-full lg:max-w-sm">
-            <AnimatePresence mode="wait">
-              {submitted ? (
-                <motion.div
-                  key="success"
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  className="h-75 sm:h-100 flex flex-col items-center justify-center text-center bg-white/5 rounded-3xl border border-white/10 p-6"
-                >
-                  <CheckCircle className="w-12 h-12 sm:w-16 sm:h-16 text-green-400 mb-6" />
-                  <h3 className="text-xl sm:text-2xl text-white font-serif mb-2">
-                    {t("successTitle")}
-                  </h3>
-                  <p className="text-sm sm:text-base text-gray-400">
-                    {t("successBody")}
-                  </p>
-                </motion.div>
-              ) : (
-                <motion.form
-                  key="form"
-                  initial={{ opacity: 0, x: 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.5 }}
-                  onSubmit={handleSubmit}
-                  className="space-y-4 sm:space-y-6"
-                >
-                  <div>
-                    <label
-                      htmlFor="contact-name"
-                      className="block text-xs sm:text-sm text-gray-400 mb-2"
-                    >
-                      {t("nameLabel")}
-                    </label>
-                    <Input
-                      id="contact-name"
-                      name="name"
-                      required
-                      fullWidth
-                      autoComplete="name"
-                      disabled={isPending}
-                      placeholder={t("namePlaceholder")}
-                      className="bg-zinc-950 border border-zinc-800 text-white selection:bg-white! selection:text-black! placeholder:text-zinc-500 font-sans"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="contact-email"
-                      className="block text-xs sm:text-sm text-gray-400 mb-2"
-                    >
-                      {t("emailLabel")}
-                    </label>
-                    <Input
-                      id="contact-email"
-                      name="email"
-                      required
-                      fullWidth
-                      type="email"
-                      autoComplete="email"
-                      inputMode="email"
-                      disabled={isPending}
-                      className="bg-zinc-950 border border-zinc-800 text-white selection:bg-white! selection:text-black! placeholder:text-zinc-500 font-sans"
-                      placeholder={t("emailPlaceholder")}
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="contact-message"
-                      className="block text-xs sm:text-sm text-gray-400 mb-2"
-                    >
-                      {t("messageLabel")}
-                    </label>
-                    <TextArea
-                      id="contact-message"
-                      name="message"
-                      required
-                      rows={4}
-                      fullWidth
-                      disabled={isPending}
-                      className="resize-none bg-zinc-950 border border-zinc-800 text-white selection:bg-white! selection:text-black! placeholder:text-zinc-500 font-sans"
-                      placeholder={t("messagePlaceholder")}
-                    />
-                  </div>
-                  <Button
-                    type="submit"
-                    size="lg"
-                    isPending={isPending}
-                    className="w-full bg-white selection:bg-black! selection:text-white! rounded-full text-black hover:bg-white/90"
+                  <label
+                    htmlFor="contact-email"
+                    className="mb-2 block text-sm font-medium text-foreground"
                   >
-                    {isPending ? (
-                      <>
-                        <Spinner className="w-4 h-4 mr-2" />
-                        {t("submitting")}
-                      </>
-                    ) : (
-                      <>
-                        {t("submit")} <Send className="w-4 h-4 ml-2" />
-                      </>
-                    )}
-                  </Button>
-                </motion.form>
-              )}
-            </AnimatePresence>
-          </div>
-        </motion.div>
+                    {t("emailLabel")}
+                  </label>
+                  <Input
+                    id="contact-email"
+                    name="email"
+                    required
+                    fullWidth
+                    type="email"
+                    autoComplete="email"
+                    inputMode="email"
+                    disabled={isPending}
+                    placeholder={t("emailPlaceholder")}
+                    className={fieldClass}
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="contact-message"
+                    className="mb-2 block text-sm font-medium text-foreground"
+                  >
+                    {t("messageLabel")}
+                  </label>
+                  <TextArea
+                    id="contact-message"
+                    name="message"
+                    required
+                    rows={5}
+                    fullWidth
+                    disabled={isPending}
+                    placeholder={t("messagePlaceholder")}
+                    className={`resize-none ${fieldClass}`}
+                  />
+                </div>
+                <Button
+                  type="submit"
+                  size="lg"
+                  isPending={isPending}
+                  className="w-full rounded-full bg-action font-medium text-white hover:bg-[var(--action-hover)]"
+                >
+                  {isPending ? (
+                    <>
+                      {/* Jot's dot bouncing stands in for a spinner. */}
+                      <Jot mood="thinking" face={false} className="mr-1 size-6" />
+                      {t("submitting")}
+                    </>
+                  ) : (
+                    t("submit")
+                  )}
+                </Button>
+              </motion.form>
+            )}
+          </AnimatePresence>
+        </Reveal>
       </div>
     </section>
   );

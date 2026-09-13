@@ -6,26 +6,27 @@ interface RainbowTextProps {
 }
 
 /**
- * Emphasises a word with an animated rainbow gradient clipped to the text,
- * backed by a soft blurred "splash" of the same colours. Pure CSS (no hooks),
- * so it stays a server component and respects `prefers-reduced-motion` via the
- * `animate-rainbow` utility defined in globals.css.
+ * The site's one colour moment: a slow rainbow gradient clipped to the text.
+ * Use it once per page at most — it is the signature, not a highlighter.
+ *
+ * Pure CSS, so it stays a server component; `animate-rainbow` stops under
+ * `prefers-reduced-motion`. The vertical padding (pulled back with negative
+ * margins) grows the background-clip paint box so stacked Vietnamese
+ * diacritics above the cap height are painted rather than clipped.
  */
 const RainbowText = ({ children, className }: RainbowTextProps) => {
   return (
-    <span className={cn("relative inline-block italic overflow-visible", className)}>
-      {/* Blurred rainbow splash behind the word */}
-      <span
-        aria-hidden
-        className="animate-rainbow pointer-events-none absolute -inset-x-2 inset-y-0 -z-10 rounded-full bg-[linear-gradient(110deg,#ff6b6b,#f9d423,#34d399,#3b82f6,#a855f7,#ff6b6b)] bg-size-[200%_auto] opacity-30 blur-2xl dark:opacity-40"
-      />
-      {/* Gradient-filled text. The padding (pulled back with matching negative
-          margins) enlarges the background-clip:text paint box so the italic
-          overshoot — slanted tips and tall serif ascenders — is still painted
-          instead of being clipped at the element's edge. */}
-      <span className="animate-rainbow bg-[linear-gradient(110deg,#ff6b6b,#f9d423,#34d399,#3b82f6,#a855f7,#ff6b6b)] bg-size-[200%_auto] bg-clip-text text-transparent px-[0.14em] mx-[-0.14em] py-[0.14em] my-[-0.14em]">
-        {children}
-      </span>
+    <span
+      className={cn(
+        "animate-rainbow bg-size-[200%_auto] bg-clip-text text-transparent py-[0.14em] my-[-0.14em] [filter:drop-shadow(0_1px_14px_rgb(72_105_255/0.2))]",
+        className,
+      )}
+      style={{
+        backgroundImage:
+          "linear-gradient(110deg, #f04464, #e68313, #18a86f, #1595d3, #626cf4, #a95be8, #f04464)",
+      }}
+    >
+      {children}
     </span>
   );
 };

@@ -48,12 +48,12 @@ export async function generateMetadata({
   const description = localize(lib.description, locale);
 
   return {
-    title: `${lib.pkg} — ${localize(lib.tagline, locale)}`,
+    title: `${lib.pkg} – ${localize(lib.tagline, locale)}`,
     description,
     keywords: [lib.pkg, lib.slug, "React", "component", "Jason Dev"],
     alternates,
     openGraph: {
-      title: `${lib.pkg} | Jason Libs`,
+      title: `${lib.pkg} | Jason Dev`,
       description,
       url: alternates?.canonical as string,
       ...ogLocaleFields(locale),
@@ -84,7 +84,7 @@ export default function LibraryDetailPage({
           className="mb-10"
         >
           <Link
-            href="/library"
+            href="/library/components"
             className="group inline-flex items-center text-sm font-medium text-muted hover:text-foreground transition-colors"
           >
             <ArrowLeft className="w-4 h-4 mr-2 transition-transform group-hover:-translate-x-1" />
@@ -105,7 +105,7 @@ export default function LibraryDetailPage({
             />
             <Chip
               size="sm"
-              className="bg-secondary text-muted border-none"
+              className="bg-band text-muted border-none"
             >
               v{lib.version}
             </Chip>
@@ -125,7 +125,7 @@ export default function LibraryDetailPage({
         {Demo && (
           <section className="mt-14">
             <div className="flex flex-col gap-1 mb-5">
-              <h2 className="text-2xl sm:text-3xl font-serif text-foreground">
+              <h2 className="headline-card text-foreground">
                 {t("playgroundLabel")}
               </h2>
               <p className="text-sm text-muted leading-relaxed">
@@ -138,7 +138,7 @@ export default function LibraryDetailPage({
 
         {/* Install */}
         <section className="mt-14">
-          <h2 className="text-xs uppercase tracking-[0.24em] text-muted mb-4">
+          <h2 className="headline-card text-foreground mb-4">
             {t("installLabel")}
           </h2>
           <div className="flex flex-col gap-3">
@@ -149,14 +149,14 @@ export default function LibraryDetailPage({
 
         {/* Features */}
         <section className="mt-14">
-          <h2 className="text-xs uppercase tracking-[0.24em] text-muted mb-4">
+          <h2 className="headline-card text-foreground mb-4">
             {t("featuresLabel")}
           </h2>
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {localize(lib.features, locale).map((feature) => (
               <li
                 key={feature}
-                className="flex items-start gap-3 rounded-2xl border border-border p-4"
+                className="flex items-start gap-3 rounded-2xl bg-band p-4"
               >
                 <Check className="size-5 shrink-0 text-foreground mt-0.5" />
                 <span className="text-sm text-foreground/80 leading-relaxed">
@@ -169,7 +169,7 @@ export default function LibraryDetailPage({
 
         {/* Usage */}
         <section className="mt-14">
-          <h2 className="text-2xl sm:text-3xl font-serif text-foreground mb-6">
+          <h2 className="headline-card text-foreground mb-6">
             {t("usageLabel")}
           </h2>
           <div className="flex flex-col gap-8">
@@ -186,13 +186,13 @@ export default function LibraryDetailPage({
 
         {/* Props */}
         <section className="mt-14">
-          <h2 className="text-2xl sm:text-3xl font-serif text-foreground mb-6">
+          <h2 className="headline-card text-foreground mb-6">
             {t("propsLabel")}
           </h2>
           <div className="overflow-x-auto rounded-2xl border border-border">
             <table className="w-full text-left text-sm border-collapse">
               <thead>
-                <tr className="border-b border-border bg-secondary/50">
+                <tr className="border-b border-border bg-band">
                   <th className="p-3 font-medium text-muted whitespace-nowrap">
                     {t("propName")}
                   </th>
@@ -235,14 +235,14 @@ export default function LibraryDetailPage({
         {/* Notes */}
         {lib.notes && (
           <section className="mt-14">
-            <h2 className="text-xs uppercase tracking-[0.24em] text-muted mb-4">
+            <h2 className="headline-card text-foreground mb-4">
               {t("notesLabel")}
             </h2>
             <ul className="flex flex-col gap-3">
               {localize(lib.notes, locale).map((note) => (
                 <li
                   key={note}
-                  className="rounded-2xl border border-border bg-secondary/40 p-4 text-sm text-foreground/80 leading-relaxed"
+                  className="rounded-2xl bg-band p-4 text-sm text-foreground/80 leading-relaxed"
                 >
                   {note}
                 </li>

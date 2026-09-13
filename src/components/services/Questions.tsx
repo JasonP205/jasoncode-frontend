@@ -1,63 +1,47 @@
 import { Accordion } from "@heroui/react";
+import { ChevronDown } from "lucide-react";
 import { useTranslations } from "next-intl";
+import Reveal from "@/components/ui/Reveal";
+import SectionHeader from "@/components/ui/SectionHeader";
 
-import {
-  ChevronDown,
-  Globe,
-  GraduationCap,
-  HandCoins,
-  Headset,
-  LayoutTemplate,
-  Search,
-} from "lucide-react";
-
-const faqIcons = [
-  <HandCoins key="cost" className="size-4" />,
-  <GraduationCap key="student" className="size-4" />,
-  <LayoutTemplate key="design" className="size-4" />,
-  <Search key="seo" className="size-4" />,
-  <Globe key="domain" className="size-4" />,
-  <Headset key="support" className="size-4" />,
-];
-
+/** Plain questions, plain answers — no icon per row. */
 export default function FAQ() {
   const t = useTranslations("faq");
   const items = t.raw("items") as { title: string; content: string }[];
 
   return (
-    <section className="max-w-4xl mx-auto px-4 sm:px-8 py-16">
-      <div className="text-center mb-10">
-        <h2 className="text-3xl sm:text-4xl font-serif">{t("heading")}</h2>
-        <p className="text-muted mt-3">{t("subtitle")}</p>
+    <section className="px-4 py-20 sm:px-8 sm:py-32">
+      <div className="mx-auto max-w-3xl">
+        <SectionHeader title={t("heading")} lede={t("subtitle")} />
+
+        <Reveal className="mt-12 border-t border-border">
+          <Accordion className="w-full">
+            {items.map((item, index) => (
+              <Accordion.Item key={index} className="border-b border-border">
+                <Accordion.Heading>
+                  <Accordion.Trigger className="group flex w-full items-center gap-4 py-5 text-left">
+                    <span className="flex-1 text-lg font-medium text-foreground">
+                      {item.title}
+                    </span>
+                    <Accordion.Indicator>
+                      <ChevronDown
+                        className="size-5 text-muted-foreground transition-transform group-data-[state=open]:rotate-180"
+                        aria-hidden
+                      />
+                    </Accordion.Indicator>
+                  </Accordion.Trigger>
+                </Accordion.Heading>
+
+                <Accordion.Panel>
+                  <Accordion.Body className="pb-6 pr-9 leading-relaxed text-muted-foreground">
+                    {item.content}
+                  </Accordion.Body>
+                </Accordion.Panel>
+              </Accordion.Item>
+            ))}
+          </Accordion>
+        </Reveal>
       </div>
-
-      <Accordion className="w-full">
-        {items.map((item, index) => (
-          <Accordion.Item key={index}>
-            <Accordion.Heading>
-              <Accordion.Trigger className="group flex items-center">
-                <span className="mr-3 flex size-8 items-center justify-center rounded-full bg-default-100 text-default-600">
-                  {faqIcons[index]}
-                </span>
-
-                <span className="flex-1 text-left font-medium">
-                  {item.title}
-                </span>
-
-                <Accordion.Indicator>
-                  <ChevronDown className="size-4 transition-transform group-data-[state=open]:rotate-180" />
-                </Accordion.Indicator>
-              </Accordion.Trigger>
-            </Accordion.Heading>
-
-            <Accordion.Panel>
-              <Accordion.Body className="pl-11 text-muted leading-relaxed">
-                {item.content}
-              </Accordion.Body>
-            </Accordion.Panel>
-          </Accordion.Item>
-        ))}
-      </Accordion>
     </section>
   );
 }

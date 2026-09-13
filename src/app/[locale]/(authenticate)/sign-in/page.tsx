@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import ComingSoon from "@/components/ui/ComingSoon";
 import { buildAlternates } from "@/lib/seo";
 import type { Locale } from "@/i18n/routing";
@@ -20,12 +20,13 @@ export async function generateMetadata({
   };
 }
 
-const page = async () => {
+const page = async ({ params }: { params: Promise<{ locale: Locale }> }) => {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations("comingSoon");
   return (
-    <main className="min-h-[100dvh] pt-24 pb-16 bg-secondary flex items-center justify-center">
-      <ComingSoon title={t("signInTitle")} />
-    </main>
+    // No <main> here: the root layout already renders one.
+    <ComingSoon title={t("signInTitle")} />
   );
 };
 

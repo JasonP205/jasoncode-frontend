@@ -18,8 +18,8 @@ const transporter = nodemailer.createTransport({
 type MailLocale = "vi" | "en";
 
 const customerSubject: Record<MailLocale, string> = {
-  vi: "Mình đã nhận được lời nhắn của bạn - Jason Dev",
-  en: "I've received your message - Jason Dev",
+  vi: "Mình đã nhận được lời nhắn của bạn – Jason Dev",
+  en: "I've received your message – Jason Dev",
 };
 
 export async function sendContactEmail(

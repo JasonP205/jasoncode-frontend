@@ -4,9 +4,11 @@ import {
   createContext,
   useCallback,
   useContext,
-  useEffect,
+  useLayoutEffect,
+  useRef,
   useSyncExternalStore,
 } from "react";
+import { useServerInsertedHTML } from "next/navigation";
 
 export type Theme = "light" | "dark" | "system";
 export type ResolvedTheme = "light" | "dark";
@@ -16,10 +18,17 @@ const DEFAULT_THEME: Theme = "light";
 const CHANGE_EVENT = "themechange";
 
 /**
- * The anti-FOUC script. Rendered as a plain inline `<script>` from the *server*
- * root layout `<head>` (see `layout.tsx`) so it runs before first paint without
- * tripping React 19.2's "script inside a client component" warning — the reason
- * we no longer rely on `next-themes`' own client-rendered script.
+ * The anti-FOUC script: applies the stored theme before first paint.
+ *
+ * It is injected with `useServerInsertedHTML` (see `ThemeProvider`), which
+ * writes it into the server HTML stream and does nothing on the client. The
+ * other options all failed at something:
+ * - `<script>` in the layout: React re-creates it whenever the root layout
+ *   remounts on the client (switching locale), and warns that such scripts
+ *   never run.
+ * - `next/script`: `afterInteractive` runs after hydration and
+ *   `beforeInteractive` only queues it for the Next runtime, so dark-theme
+ *   visitors saw a white flash first.
  */
 export const themeInitScript = `(function(){try{var t=localStorage.getItem('${STORAGE_KEY}')||'${DEFAULT_THEME}';var d=t==='dark'||(t==='system'&&window.matchMedia('(prefers-color-scheme: dark)').matches);var e=document.documentElement;d?e.classList.add('dark'):e.classList.remove('dark');e.style.colorScheme=d?'dark':'light';}catch(e){}})();`;
 
@@ -92,9 +101,22 @@ const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   );
   const resolvedTheme = resolve(theme);
 
+  // Server only: emit the init script into the HTML once, ahead of the page.
+  const scriptInserted = useRef(false);
+  useServerInsertedHTML(() => {
+    if (scriptInserted.current) return null;
+    scriptInserted.current = true;
+    return (
+      <script id="theme-init" dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+    );
+  });
+
   // Keep the DOM in sync with the store. Also re-runs when the OS preference
   // changes while the user is on "system" (subscribe listens to matchMedia).
-  useEffect(() => {
+  // A layout effect, so it lands before paint: when the root layout remounts
+  // (switching locale) React resets <html>'s class and would otherwise drop
+  // `dark` for a frame.
+  useLayoutEffect(() => {
     applyToDom(resolvedTheme);
   }, [resolvedTheme]);
 

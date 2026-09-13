@@ -186,7 +186,7 @@ export const libraries: Library[] = [
     version: "1.2.1",
     accent: "#fb7185",
     tagline: {
-      vi: "Hiệu ứng con trỏ animate: vòng theo chuột, chấm giữa và vệt hạt pastel.",
+      vi: "Hiệu ứng con trỏ chuyển động: vòng bám chuột, chấm giữa và vệt hạt pastel.",
       en: "Animated cursor effect: a spring-following ring, center dot and pastel particle trail.",
     },
     description: {
@@ -395,7 +395,7 @@ export const libraries: Library[] = [
     version: "1.2.0",
     accent: "#a78bfa",
     tagline: {
-      vi: "Thư viện ảnh dạng lưới kèm lightbox — dùng cho React, Next.js hoặc HTML thuần.",
+      vi: "Thư viện ảnh dạng lưới kèm lightbox, dùng cho React, Next.js hoặc HTML thuần.",
       en: "A grid image gallery with a built-in lightbox — for React, Next.js or plain HTML.",
     },
     description: {
@@ -549,7 +549,7 @@ export const libraries: Library[] = [
     version: "1.0.0",
     accent: "#34d399",
     tagline: {
-      vi: "Thẻ xem trước liên kết — đưa vào một URL, tự lấy metadata và render card đẹp.",
+      vi: "Thẻ xem trước liên kết: đưa vào một URL, tự lấy metadata và dựng thành card.",
       en: "A link preview card — pass a URL and it fetches metadata and renders a card.",
     },
     description: {

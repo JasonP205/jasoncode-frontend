@@ -1,6 +1,6 @@
 import { use } from "react";
 import type { Metadata } from "next";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Chip } from "@heroui/react";
 import { useTranslations } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -50,17 +50,11 @@ export default function LibraryComponentsPage({
           transition={{ duration: 0.5 }}
           className="max-w-2xl"
         >
-          <Link
-            href="/library"
-            className="inline-flex items-center gap-1.5 text-sm text-muted transition-colors hover:text-foreground"
-          >
-            <ArrowLeft className="size-4" />
-            {t("back")}
-          </Link>
-          <h1 className="text-4xl sm:text-5xl font-serif text-foreground mt-6 mb-4 sm:mb-6">
+          {/* No back link: this page is a top-level nav destination now. */}
+          <h1 className="headline-section text-foreground mb-4 sm:mb-5">
             {t("componentsHeading")}
           </h1>
-          <p className="text-muted text-base sm:text-lg leading-relaxed">
+          <p className="lede">
             {t("componentsSubtitle")}
           </p>
         </MotionDiv>
@@ -76,7 +70,7 @@ export default function LibraryComponentsPage({
             >
               <Link
                 href={`/library/${lib.slug}`}
-                className="group flex flex-col h-full rounded-2xl border border-border p-6 transition-colors hover:border-foreground/40 hover:bg-secondary/30"
+                className="group flex flex-col h-full rounded-[1.75rem] bg-band p-7 transition-shadow hover:shadow-[0_12px_40px_-12px_rgb(0_0_0/0.18)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground"
               >
                 <div className="flex items-center gap-3">
                   <span
@@ -88,7 +82,7 @@ export default function LibraryComponentsPage({
                   </span>
                   <Chip
                     size="sm"
-                    className="ml-auto bg-secondary text-muted border-none shrink-0"
+                    className="ml-auto bg-tile text-muted border-none shrink-0"
                   >
                     v{lib.version}
                   </Chip>

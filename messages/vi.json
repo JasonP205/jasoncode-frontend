@@ -4,65 +4,73 @@
     "projects": "Dự án",
     "services": "Dịch vụ",
     "library": "Thư viện",
-    "utils": "Tiện ích",
     "contact": "Liên hệ",
-    "signUp": "Đăng ký",
-    "signIn": "Đăng nhập",
-    "logoAria": "Jason Dev - Trang chủ",
+    "logoAria": "Jason Dev – Trang chủ",
     "themeToggle": "Chuyển giao diện sáng/tối",
     "localeSwitcher": "Chọn ngôn ngữ",
     "primaryNav": "Điều hướng chính"
   },
+  "common": {
+    "loading": "Đang tải…",
+    "mascot": "Jot, linh vật của Jason Dev"
+  },
   "hero": {
-    "headline": "Một chút <design>thiết kế</design>, một chút <code>lập trình</code>, và những điều thú vị.",
-    "intro": "Chào, tôi là <name>Phan Hoàng Phúc</name>. Một freelancer Web Developer đam mê tạo ra những sản phẩm đơn giản, hữu ích và chỉn chu.",
-    "cta": "Bắt đầu hành trình",
+    "headlineLead": "Một chút thiết kế.\nMột chút lập trình.",
+    "headlineAccent": "Thành một sản phẩm.",
+    "intro": "Mình là <name>Phan Hoàng Phúc</name>, lập trình viên web tự do. Từ website quán cà phê đến hệ thống bán hàng theo lô, mình tự tay làm từ thiết kế đến code.",
+    "cta": "Bắt đầu dự án",
     "cvCta": "Xem CV",
-    "cvCtaAria": "Xem CV (mở file PDF trong tab mới)"
+    "cvCtaAria": "Xem CV của Phan Hoàng Phúc"
+  },
+  "cv": {
+    "badge": "Hồ sơ năng lực",
+    "download": "Tải CV (PDF)",
+    "downloadAria": "Tải CV của Phan Hoàng Phúc dưới dạng file PDF",
+    "open": "Mở tab mới",
+    "openAria": "Mở CV dạng PDF trong tab mới"
   },
   "skills": {
-    "educationLabel": "Học vấn",
     "techStackLabel": "Năng lực",
-    "heading": "Học vấn & Chuyên môn",
-    "summary": "Tôi thích xây dựng những sản phẩm mà mọi người có thể sử dụng mỗi ngày. Từ giao diện, API cho đến cơ sở dữ liệu, tôi luôn cố gắng tạo ra các giải pháp gọn gàng, dễ bảo trì và mang lại trải nghiệm mượt mà.",
+    "heading": "Học ở trường.\nRèn ở dự án thật.",
+    "summary": "Mình thích làm những sản phẩm người ta mở ra dùng mỗi ngày. Từ giao diện, API đến cơ sở dữ liệu, mình tự làm trọn cả ba lớp. Và dự án nào cũng có bản demo để bạn tự mở ra xem.",
     "present": "Hiện tại",
     "education": {
-      "highschoolDegree": "Tốt nghiệp Trung Học Phổ Thông",
-      "highschoolDescription": "Tôi đã hoàn thành chương trình học tại Trường THPT Cây Dương với thành tích HSG trong 3 năm với hạnh kiểm tốt. Trong suốt thời gian học, tôi được rèn luyện kỹ năng lãnh đạo, giải quyết vấn đề và làm việc nhóm với vai trò là lớp trưởng. Đồng thời tôi cũng tham gia các hoạt động do trường tổ chức để phát triển kỹ năng mềm và mở rộng kiến thức xã hội.",
-      "universityDegree": "Cử nhân Khoa học Máy tính",
-      "universityDescription": "Tập trung vào phát triển phần mềm, thiết kế hệ thống và phát triển ứng dụng web cũng như ứng dụng di động hiện đại."
+      "highschoolDegree": "Tốt nghiệp trung học phổ thông",
+      "highschoolDescription": "Học sinh giỏi ba năm liền, hạnh kiểm tốt. Làm lớp trưởng, mình học cách dẫn dắt tập thể, gỡ rối vấn đề và làm việc nhóm.",
+      "universityDegree": "Cử nhân Computing – Kỹ thuật phần mềm",
+      "universityDescription": "Tập trung vào thiết kế hệ thống, ứng dụng web và di động."
     },
     "educationHeading": "Quá trình học",
-    "techStackHeading": "Công nghệ tôi dùng",
-    "techStackNote": "Những công nghệ tôi đã dùng để xây dựng và vận hành sản phẩm thật.",
+    "techStackHeading": "Công nghệ mình dùng",
+    "techStackNote": "Mọi công nghệ dưới đây đều đã được dùng trong các dự án của mình.",
     "categories": {
       "frontend": "Giao diện",
       "backend": "Máy chủ",
       "database": "Dữ liệu",
       "devops": "Vận hành"
     },
-    "sectionLabel": "Hồ sơ"
+    "sectionLabel": "Hồ sơ",
+    "cvLink": "Xem CV đầy đủ"
   },
   "projectList": {
-    "heading": "Dự án tiêu biểu",
-    "subtitle": "Tuyển tập những sản phẩm tâm huyết mà tôi đã tham gia thiết kế và phát triển.",
+    "heading": "Làm từ đầu. Làm đến cùng.",
+    "subtitle": "Dự án cá nhân, làm trọn từ thiết kế đến code. Dự án nào cũng có bản demo để bạn mở ra dùng thử.",
     "viewAll": "Xem tất cả dự án",
-    "viewDetail": "Xem chi tiết dự án",
-    "back": "Trở lại trang trước",
     "label": "Dự án"
   },
   "projectDetail": {
     "back": "Về danh sách dự án",
-    "websiteLabel": "Website Dự Án",
-    "visit": "Truy cập ngay",
+    "websiteLabel": "Bản demo",
+    "visit": "Mở bản demo",
     "notFoundTitle": "Không tìm thấy dự án",
-    "notFoundDescription": "Dự án bạn tìm kiếm không tồn tại hoặc đã bị xóa.",
-    "notFoundHeading": "Dự án không tồn tại",
-    "notFoundLong": "Có vẻ như dự án này đã bị xóa, thay đổi đường dẫn hoặc chưa từng được công bố trong portfolio của tôi.",
+    "notFoundDescription": "Dự án bạn tìm không tồn tại hoặc đã bị xóa.",
+    "notFoundHeading": "Dự án không tồn tại.",
+    "notFoundLong": "Có vẻ dự án này đã bị xóa, đổi đường dẫn hoặc chưa từng được công bố.",
     "notFoundBack": "Trở lại trang trước",
     "notFoundList": "Xem danh sách dự án",
-    "deployingTitle": "Đợi một chút nhé!",
-    "deployingMessage": "Mình đang hoàn thiện những bước cuối cùng cho dự án này. Sẽ sẵn sàng ngay thôi!",
+    "deployingTitle": "Sắp xong rồi.",
+    "deployingMessage": "Mình đang hoàn thiện những bước cuối cho dự án này. Bạn quay lại sau ít hôm nhé.",
+    "deployingAccept": "Đã hiểu",
     "gallery": {
       "label": "Hình ảnh dự án",
       "previous": "Ảnh trước",
@@ -71,321 +79,338 @@
       "close": "Đóng"
     }
   },
+  "home": {
+    "servicesLabel": "Dịch vụ",
+    "servicesHeading": "Ba cách để website đi xa hơn.",
+    "servicesItems": [
+      {
+        "title": "Landing page",
+        "desc": "Một trang cho sản phẩm, sự kiện hoặc quảng cáo. Lên mạng sau 5–7 ngày."
+      },
+      {
+        "title": "Website nhiều trang",
+        "desc": "Đủ bộ trang giới thiệu, dịch vụ, liên hệ để khách tìm thấy bạn trên Google."
+      },
+      {
+        "title": "Sửa và tăng tốc web",
+        "desc": "Web đang chậm hoặc vỡ trên điện thoại? Có báo cáo PageSpeed trước và sau."
+      }
+    ],
+    "servicesCta": "Tìm hiểu thêm về dịch vụ",
+    "servicesStory": {
+      "chapters": [
+        {
+          "eyebrow": "01 · Website nhiều trang",
+          "title": "Một website. Mọi điều bạn muốn kể.",
+          "description": "Giới thiệu, dịch vụ, dự án và liên hệ — mỗi trang một vai, tất cả cùng một nhịp."
+        },
+        {
+          "eyebrow": "02 · Landing page",
+          "title": "Một trang. Đủ sức làm nên chuyện.",
+          "description": "Thông điệp, hình ảnh và nút hành động rơi đúng chỗ để biến lượt xem thành khách hàng."
+        },
+        {
+          "eyebrow": "03 · Hiệu năng & SEO",
+          "title": "Từ 0 đến 100. Rồi đi xa hơn.",
+          "description": "Nhanh hơn cho người xem. Rõ ràng hơn với Google. Sẵn sàng để được tìm thấy."
+        }
+      ],
+      "progress": ["Nhiều trang", "Landing page", "Tăng tốc SEO"],
+      "speedUnit": "điểm hiệu năng",
+      "mergeLabel": "Khởi chạy chiến dịch",
+      "seoBurst": ["TĂNG TỐC", "SEO"]
+    },
+    "promiseLabel": "Cam kết",
+    "promiseHeading": "Yên tâm từ bản thử\nđến bàn giao."
+  },
   "services": {
-    "heroTitle": "Website chỉn chu,",
-    "heroTitleAccent": "làm từ đầu đến cuối",
-    "heroSubtitle": "Mình là Phúc — sinh viên năm cuối ngành lập trình, nhận làm website cho shop nhỏ, thương hiệu cá nhân và người mới bắt đầu. Bạn không cần biết gì về kỹ thuật — cứ nói mục tiêu, phần còn lại để mình lo. Xem bản thử rồi mới quyết định đi tiếp.",
-    "guaranteesLabel": "Cam kết của mình",
-    "guaranteesHeading": "Bạn gần như không phải mạo hiểm gì",
+    "heroTitle": "Bạn nói mục tiêu.",
+    "heroTitleAccent": "Mình lo phần còn lại.",
+    "heroSubtitle": "Mình là Phúc, sinh viên năm cuối ngành Kỹ thuật phần mềm, chuyên làm website cho shop nhỏ, thương hiệu cá nhân và người mới bắt đầu. Không cần rành kỹ thuật. Và bạn được xem bản thử trước khi quyết định đi tiếp.",
+    "heroPlansCta": "Xem các gói",
     "guarantees": [
       {
         "title": "Tư vấn miễn phí",
-        "desc": "Nhắn mình trước để cùng chốt phạm vi công việc thật rõ ràng — chưa cần cam kết gì."
+        "desc": "Nhắn mình trước để chốt phạm vi công việc thật rõ. Chưa cần cam kết gì."
       },
       {
         "title": "Xem bản thử rồi mới quyết",
-        "desc": "Bạn duyệt giao diện mẫu, thấy ưng rồi mới đi tiếp — không phải 'mua mèo trong bị'."
+        "desc": "Bạn duyệt giao diện mẫu, ưng rồi mới đi tiếp – không phải “mua mèo trong bị”."
       },
       {
-        "title": "Hỗ trợ sau khi bàn giao",
-        "desc": "Miễn phí sửa lỗi và chỉnh sửa nhỏ trong 14 ngày, kèm hướng dẫn sử dụng dễ hiểu."
+        "title": "Sửa lỗi trọn đời",
+        "desc": "Lỗi phát sinh từ code mình viết, mình sửa miễn phí, không giới hạn thời gian. Không áp dụng khi mã nguồn đã bị bạn hoặc bên khác chỉnh sửa."
       }
     ],
-    "processLabel": "Cách làm việc",
-    "processHeading": "Quy trình gọn, bạn luôn nắm được tiến độ",
-    "workingSteps": [
-      "Bạn nhắn nhu cầu, gửi web đang có hoặc mô tả ý tưởng — không ràng buộc gì.",
-      "Mình tư vấn hướng làm và đề xuất phương án phù hợp với nhu cầu của bạn.",
-      "Chốt phạm vi và thời gian để bắt đầu; bạn theo dõi tiến độ theo từng bước.",
-      "Bàn giao đầy đủ, hướng dẫn sử dụng và hỗ trợ chỉnh sửa nhỏ sau khi nhận web."
-    ],
-    "featuredBadge": "ĐƯỢC CHỌN NHIỀU NHẤT",
-    "closingNote": "Chưa biết nên bắt đầu từ đâu? Cứ nhắn mình mục tiêu hiện tại hoặc web bạn đang có, mình sẽ gợi ý phương án gọn nhất cho nhu cầu của bạn — kể cả khi bạn chỉ cần một trang thật đơn giản. Không rành kỹ thuật cũng không sao, phần đó để mình lo. Muốn chắc chắn hơn? Bạn có thể xem trước những dự án mình đã làm.",
-    "closingCta": "Nhắn mình để được tư vấn miễn phí",
-    "closingCtaSecondary": "Xem dự án mình đã làm",
+    "plansLabel": "Các gói",
+    "plansHeading": "Bạn đang cần gì?",
+    "plansSub": "Bốn gói cho bốn tình huống. Gói nào cũng ghi rõ bạn nhận được gì.",
+    "plansFootnote": "Dự án có thanh toán online hoặc phân quyền phức tạp được chốt phạm vi riêng. Gói tối ưu dành chủ yếu cho website React/Next.js.",
+    "featuredBadge": "Mình gợi ý",
     "plans": {
       "landing": {
-        "name": "Landing page 1 trang",
-        "description": "Phù hợp khi bạn cần một trang duy nhất thật ấn tượng để giới thiệu sản phẩm, sự kiện, CV cá nhân hoặc chạy quảng cáo — nhanh, gọn và triển khai sớm nhất.",
-        "note": "Thiết kế riêng, không dùng template đại trà. Hoàn thành trong 5–7 ngày.",
+        "name": "Landing page",
+        "description": "Một trang cho sản phẩm, sự kiện hoặc quảng cáo. Lên mạng sau 5–7 ngày.",
         "features": [
-          "1 trang thiết kế riêng theo thương hiệu của bạn, tối đa 7 section — không dùng template đại trà",
-          "2 vòng chỉnh sửa theo góp ý của bạn trước khi chốt",
-          "Form liên hệ đổ thẳng về Zalo hoặc email, khách bấm là bạn nhận ngay",
-          "Chuẩn SEO cơ bản, link chia sẻ Facebook/Zalo hiện ảnh và tiêu đề đẹp",
-          "Đưa web lên mạng và gắn tên miền giúp bạn",
-          "Hỗ trợ sửa lỗi miễn phí 7 ngày sau bàn giao"
+          "Thiết kế riêng, tối đa 7 section",
+          "2 vòng chỉnh sửa trước khi chốt",
+          "Form liên hệ đổ về Zalo hoặc email",
+          "SEO cơ bản, gắn tên miền và đưa lên mạng"
         ],
-        "buttonText": "Làm landing page"
+        "buttonText": "Hỏi về gói này"
       },
       "website": {
         "name": "Website nhiều trang",
-        "description": "Dành cho shop nhỏ, quán, thương hiệu cá nhân hay dịch vụ cần một website hoàn chỉnh nhiều trang (giới thiệu, dịch vụ, liên hệ...) để trông chuyên nghiệp và bán hàng tốt hơn.",
-        "note": "Phạm vi chốt theo số trang và tính năng bạn cần; bạn theo dõi tiến độ theo từng mốc.",
+        "description": "Đủ bộ trang cho shop nhỏ, quán và thương hiệu cá nhân.",
         "features": [
-          "4–6 trang hoàn chỉnh: trang chủ, giới thiệu, dịch vụ, liên hệ...",
-          "Thiết kế đồng bộ theo nhận diện thương hiệu + 2 vòng chỉnh sửa",
-          "Cấu trúc chuẩn SEO và khai báo với Google để khách tìm thấy bạn",
-          "Kết nối Zalo, Messenger, Google Maps — khách liên hệ tiện nhất",
-          "Bảo dưỡng miễn phí 1 tháng (4 lần chỉnh sửa nhỏ) sau bàn giao",
-          "1 buổi hướng dẫn sử dụng + hỗ trợ 14 ngày"
+          "4–6 trang theo nhận diện thương hiệu",
+          "2 vòng chỉnh sửa trước khi chốt",
+          "Chuẩn SEO, kết nối Zalo, Messenger, Google Maps",
+          "Tháng đầu: 4 lần chỉnh sửa nhỏ và 1 buổi hướng dẫn"
         ],
-        "buttonText": "Bắt đầu làm website"
+        "buttonText": "Hỏi về gói này"
       },
       "dynamic": {
         "name": "Website có quản lý dữ liệu",
-        "description": "Khi bạn cần hơn một trang giới thiệu: form đăng ký/đặt lịch, đăng nhập thành viên, khu vực quản trị nội dung hay kết nối với hệ thống, API sẵn có của bạn.",
-        "note": "Dự án có thanh toán online tự động hoặc phân quyền phức tạp mình sẽ tách rõ từng phần trước khi bắt đầu.",
+        "description": "Khi web cần nhận đặt lịch, đơn hàng hoặc có đăng nhập.",
         "features": [
-          "1 luồng chức năng chính: đặt lịch hẹn HOẶC nhận đơn hàng cơ bản, có lưu cơ sở dữ liệu",
-          "Dashboard quản lý: xem đơn/lịch hẹn, khách hàng và số liệu cơ bản",
-          "Đăng nhập phân quyền 2 cấp độ: chủ và nhân viên",
-          "Kết nối 1 nguồn dữ liệu bạn đang dùng: Google Sheet hoặc Zalo",
-          "Bàn giao toàn bộ mã nguồn sạch — website là tài sản của bạn",
-          "Đồng hành kỹ thuật 1 tháng sau bàn giao (sửa lỗi phát sinh)"
+          "1 luồng chính: đặt lịch hoặc nhận đơn, có cơ sở dữ liệu",
+          "Dashboard quản lý đơn, lịch hẹn, khách hàng",
+          "Đăng nhập phân quyền chủ và nhân viên",
+          "Kết nối Google Sheet hoặc Zalo, bàn giao toàn bộ mã nguồn"
         ],
-        "buttonText": "Trao đổi tính năng cần làm"
+        "buttonText": "Hỏi về gói này"
       },
       "optimize": {
-        "name": "Tối ưu SEO & tăng tốc web có sẵn",
-        "description": "Dành cho website Next.js/React đang chạy nhưng tải chậm, hay lỗi, hiển thị xấu trên điện thoại hoặc chưa lên được Google — mình dọn lại cho gọn, nhanh và chuẩn SEO hơn.",
-        "note": "Phù hợp web React/Next.js hoặc website đang chậm, khó lên Google.",
+        "name": "Tối ưu SEO và tốc độ",
+        "description": "Cho website đang chậm, vỡ trên điện thoại hoặc chưa lên Google.",
         "features": [
-          "Tối ưu tốc độ: nén ảnh, dọn code thừa, bật cache cho web chạy nhanh mượt",
-          "Metadata + ảnh chia sẻ đẹp cho tối đa 5 trang chính",
-          "Khai báo Google Search Console và sitemap đầy đủ để lên Google",
-          "Báo cáo điểm PageSpeed trước–sau, kèm gợi ý việc nên làm tiếp"
+          "Nén ảnh, dọn code thừa, bật cache",
+          "Metadata và ảnh chia sẻ cho tối đa 5 trang chính",
+          "Khai báo Google Search Console và sitemap",
+          "Báo cáo PageSpeed trước–sau, kèm gợi ý tiếp theo"
         ],
-        "buttonText": "Gửi web cần tối ưu"
+        "buttonText": "Hỏi về gói này"
       }
     },
-    "miniHeading": "Chỉ cần một việc nhỏ? Nhắn là làm ngay",
-    "miniNote": "Không thấy việc bạn cần trong danh sách? Cứ nhắn mô tả, mình xem và trả lời sớm.",
+    "miniLabel": "Việc lẻ",
+    "miniHeading": "Đã có web?\nSửa nhanh, thấy ngay.",
+    "miniSub": "Một việc nhỏ cũng nhận. Đây là cách nhẹ nhàng để bắt đầu làm việc cùng mình.",
+    "miniNote": "Không thấy việc bạn cần?",
+    "miniCta": "Nhắn mô tả, mình trả lời trong 24 giờ",
     "mini": [
       {
-        "name": "Sửa lỗi / bug giao diện",
-        "desc": "Web vỡ layout, nút không bấm được, lỗi vặt... mình sửa nhanh gọn."
+        "name": "Sửa lỗi giao diện",
+        "desc": "Vỡ layout trên máy tính hay điện thoại, nút không bấm được – mình sửa nhanh gọn."
       },
       {
-        "name": "Chỉnh sửa & thêm nội dung",
-        "desc": "Đổi chữ, ảnh, màu sắc hay thêm một khu mới vào web đang có."
+        "name": "Chỉnh sửa và thêm nội dung",
+        "desc": "Đổi chữ, ảnh, màu sắc hoặc thêm một khu mới vào web đang có."
       },
       {
-        "name": "Sửa web đẹp trên điện thoại",
-        "desc": "Web hiển thị lỗi, vỡ trên mobile — mình chỉnh lại cho gọn đẹp."
+        "name": "Tăng tốc và SEO một trang",
+        "desc": "Xử lý điểm làm trang tải chậm, thêm tiêu đề, mô tả và ảnh chia sẻ."
       },
       {
-        "name": "Đưa web lên mạng + tên miền",
-        "desc": "Deploy web, gắn tên miền và hosting để website chính thức chạy."
+        "name": "Đưa web lên mạng",
+        "desc": "Deploy, gắn tên miền và hosting để website chính thức chạy."
       },
       {
         "name": "Gắn tiện ích cho web",
-        "desc": "Form liên hệ, chat Zalo/Messenger, Google Maps, nút gọi nhanh..."
+        "desc": "Form liên hệ, chat Zalo/Messenger, Google Maps, nút gọi nhanh…"
       },
       {
-        "name": "Tăng tốc web nhanh",
-        "desc": "Xử lý các điểm làm web tải chậm, nặng để mượt và lên điểm PageSpeed."
-      },
-      {
-        "name": "Chỉnh SEO nhanh 1 trang",
-        "desc": "Tiêu đề, mô tả, ảnh chia sẻ để lên Google và share Facebook đẹp hơn."
-      },
-      {
-        "name": "Cắt Figma sang giao diện",
+        "name": "Dựng web từ Figma",
         "desc": "Có sẵn thiết kế Figma? Mình dựng thành web thật, đúng từng chi tiết."
-      },
-      {
-        "name": "Bảo trì web theo tháng",
-        "desc": "Cập nhật nội dung, sao lưu và sửa lỗi nhỏ định kỳ, bạn khỏi lo."
       }
     ],
-    "journeyLabel": "Chọn theo nhu cầu",
-    "journeyHeading": "Bạn đang cần gì?",
-    "journeySub": "Chọn đúng tình huống của bạn — mỗi hướng nói rõ bạn nhận được gì.",
-    "fixLabel": "Bắt đầu nhỏ",
-    "fixHeading": "Đã có web? Chỉnh sửa & cải thiện nhanh",
-    "fixSub": "Từ một việc lẻ đến gói tối ưu toàn diện — làm nhanh, thấy kết quả ngay. Đây là cách dễ nhất để bắt đầu làm việc cùng mình.",
-    "fixMoreLead": "Cần làm bài bản hơn một việc lẻ?",
-    "buildLabel": "Xây mới",
-    "buildHeading": "Một website mới, chỉn chu từ đầu",
-    "buildSub": "Khi bạn cần một nơi chính thức trên internet — chọn landing gọn nhẹ hay web nhiều trang đầy đủ. Mỗi gói ghi rõ bạn nhận được gì.",
-    "appLabel": "Nâng tầm",
-    "appHeading": "Website có tính năng & hệ thống riêng",
-    "appSub": "Khi web cần làm việc thay bạn: nhận đăng ký, đặt lịch, đăng nhập, quản trị nội dung hay kết nối hệ thống sẵn có.",
-    "studentLabel": "Dành cho sinh viên",
-    "studentHeading": "Đồ án, coursework & CV cho sinh viên IT",
-    "studentSub": "Deadline tới gần mà bài chưa chạy? Mình nhận cứu đồ án môn học, sửa lỗi coursework và làm CV/Portfolio xin việc. Mình chỉ hỗ trợ phần code và giao diện, không viết báo cáo hay lý thuyết thay bạn.",
-    "student": [
+    "processLabel": "Cách làm việc",
+    "processHeading": "Bốn bước. Không bất ngờ.",
+    "workingSteps": [
+      "Bạn nhắn nhu cầu, gửi website đang có hoặc mô tả ý tưởng. Không ràng buộc gì.",
+      "Mình tư vấn hướng làm và đề xuất phương án vừa với nhu cầu của bạn.",
+      "Chốt phạm vi và thời gian rồi bắt đầu. Bạn theo dõi tiến độ qua từng bước.",
+      "Bàn giao đầy đủ và hướng dẫn sử dụng. Và mình sửa lỗi trọn đời cho phần code mình viết."
+    ],
+    "studentTeaserHeading": "Bạn là sinh viên IT?",
+    "studentTeaserSub": "Sửa lỗi đồ án, coursework và làm CV/Portfolio có trang riêng.",
+    "studentTeaserCta": "Tìm hiểu thêm về gói cho sinh viên",
+    "closingHeading": "Chưa biết bắt đầu từ đâu?",
+    "closingNote": "Nhắn mình mục tiêu hoặc website bạn đang có. Mình sẽ gợi ý cách gọn nhất, kể cả khi bạn chỉ cần một trang. Không rành kỹ thuật cũng không sao.",
+    "closingCta": "Nhận tư vấn miễn phí",
+    "closingCtaSecondary": "Xem dự án mình đã làm"
+  },
+  "students": {
+    "label": "Dành cho sinh viên",
+    "heading": "Bài chưa chạy?",
+    "headingAccent": "Để mình xem.",
+    "sub": "Nhận sửa lỗi đồ án, coursework và làm CV/Portfolio xin việc. Mình chỉ hỗ trợ phần code và giao diện, không viết báo cáo hay lý thuyết thay bạn.",
+    "cta": "Gửi đề bài cho mình",
+    "backToServices": "Xem dịch vụ làm website",
+    "plansHeading": "Chọn đúng việc bạn cần.",
+    "plansSub": "Năm gói, gói nào cũng ghi rõ bạn nhận được gì.",
+    "items": [
       {
-        "name": "Sửa lỗi Coursework",
-        "description": "Bài tập lớn cuối kỳ bị lỗi logic, kết nối database hay vỡ layout? Mình debug để bài chạy hoàn hảo trước hạn nộp.",
-        "note": "Xem đề bài rồi trao đổi hướng xử lý. Giải quyết nhanh trước thời hạn nộp bài.",
+        "name": "Đồ án web (HTML)",
+        "description": "Hợp với môn Thiết kế web: layout responsive, giao diện tĩnh.",
         "features": [
-          "Khắc phục đúng lỗi logic hoặc lỗi hiển thị đã chốt",
-          "Hướng dẫn nhanh qua Zalo cách deploy lên host free (Vercel/Render)",
-          "Bảo hành chạy thử ổn định trong 3 ngày",
-          "Bàn giao code chạy hoàn chỉnh"
+          "Giao diện responsive trên điện thoại",
+          "Hiệu ứng DOM và JavaScript cơ bản",
+          "Tài liệu tự chạy code, hướng dẫn deploy miễn phí",
+          "Nhận cả bài nhóm"
         ],
-        "buttonText": "Nhờ mình xem lỗi",
-        "href": "/contact"
+        "buttonText": "Hỏi về gói này"
+      },
+      {
+        "name": "Đồ án web (PHP)",
+        "description": "Hợp với môn Lập trình web động: CRUD, đăng ký, đăng nhập.",
+        "features": [
+          "PHP và MySQL, có sẵn dữ liệu mẫu",
+          "Đăng ký, đăng nhập, phân quyền cơ bản",
+          "Một buổi gọi video hướng dẫn cài đặt và chạy thử",
+          "Nhận cả bài nhóm"
+        ],
+        "buttonText": "Hỏi về gói này"
+      },
+      {
+        "name": "Đồ án web (React)",
+        "description": "Hợp với bài tập lớn Web nâng cao: SPA React, REST API, MongoDB/PostgreSQL.",
+        "features": [
+          "SPA React, backend REST API bằng Node.js/Express",
+          "Có sẵn dữ liệu mẫu để chạy thử",
+          "Một buổi gọi video giải thích code và cài môi trường",
+          "Nhận cả bài nhóm"
+        ],
+        "buttonText": "Hỏi về gói này"
       },
       {
         "name": "Bento CV / Portfolio",
-        "description": "Khoe thành tích học tập, bài tập nổi bật và các link cá nhân theo phong cách Bento Grid aesthetic chuẩn Apple.",
-        "note": "Thiết kế Bento Grid hiện đại. Tối ưu cho xin việc, học bổng hoặc du học.",
+        "description": "Một trang khoe thành tích, dự án nổi bật và link cá nhân. Hợp để xin việc, học bổng hoặc du học.",
         "features": [
-          "1 trang Portfolio chuẩn Bento Grid hiện đại, tối đa 7 section",
-          "Kết nối link GitHub, mạng xã hội và thông tin liên lạc",
-          "Form nhận liên hệ/tin nhắn đổ về Google Sheet miễn phí",
-          "Deploy lên hosting miễn phí trọn đời (Vercel/Netlify)"
+          "Bố cục Bento Grid, tối đa 7 section",
+          "Kết nối GitHub, mạng xã hội, thông tin liên lạc",
+          "Form nhận tin nhắn về Google Sheet miễn phí",
+          "Deploy lên hosting miễn phí (Vercel/Netlify)"
         ],
-        "buttonText": "Làm CV/Portfolio",
-        "href": "/contact"
+        "buttonText": "Hỏi về gói này"
       },
       {
-        "name": "Web App Coursework (HTML)",
-        "description": "Phù hợp môn Thiết kế web: xây layout Responsive, làm đồ án giao diện tĩnh.",
-        "note": "Cắt giao diện tĩnh, hiệu ứng DOM/JS cơ bản. Nhận cả bài làm nhóm.",
+        "name": "Sửa lỗi coursework",
+        "description": "Bài bị lỗi logic, lỗi database hay vỡ layout? Mình debug để bài chạy được trước hạn nộp.",
         "features": [
-          "Thiết kế giao diện Responsive, tương thích điện thoại",
-          "Hiệu ứng chuyển động DOM, JavaScript cơ bản",
-          "Tài liệu hướng dẫn tự chạy code chi tiết",
-          "Bàn giao source code sạch + hướng dẫn tự deploy free"
+          "Xem đề bài rồi trao đổi hướng xử lý",
+          "Sửa đúng lỗi logic hoặc lỗi hiển thị đã chốt",
+          "Hướng dẫn deploy lên hosting miễn phí (Vercel/Render)",
+          "Bàn giao code chạy hoàn chỉnh"
         ],
-        "buttonText": "Đặt làm đồ án HTML",
-        "href": "/contact"
-      },
-      {
-        "name": "Web App Coursework (PHP)",
-        "description": "Phù hợp môn Lập trình web động cơ bản: quản lý dữ liệu CRUD, đăng ký/đăng nhập.",
-        "note": "Web động PHP/MySQL cơ bản. Nhận cả bài làm nhóm.",
-        "features": [
-          "Xử lý dữ liệu động bằng PHP + database MySQL",
-          "Chức năng Đăng ký, Đăng nhập phân quyền cơ bản",
-          "Tích hợp sẵn bộ dữ liệu mẫu (Seed Mock Data) để chạy thử",
-          "Tặng kèm 1 buổi Call hướng dẫn setup và chạy thử"
-        ],
-        "buttonText": "Đặt làm đồ án PHP",
-        "href": "/contact"
-      },
-      {
-        "name": "Web App Coursework (React)",
-        "description": "Phù hợp bài tập lớn Web nâng cao: Single Page App React, REST API, MongoDB/PostgreSQL.",
-        "note": "Full-stack React/Node.js nâng cao. Nhận cả bài làm nhóm.",
-        "features": [
-          "Kiến trúc SPA React + REST API backend Node.js/Express",
-          "Tích hợp sẵn bộ dữ liệu mẫu (Seed Mock Data) để chạy thử",
-          "Tặng kèm 1 buổi Call giải thích code và hướng dẫn chạy",
-          "Đồng hành hỗ trợ cài đặt môi trường chạy"
-        ],
-        "buttonText": "Đặt làm đồ án React",
-        "href": "/contact"
+        "buttonText": "Hỏi về gói này"
       }
-    ]
+    ],
+    "closingHeading": "Chưa chắc gói nào hợp?",
+    "closingSub": "Gửi đề bài hoặc mô tả lỗi. Mình xem trước rồi trao đổi hướng xử lý."
   },
   "faq": {
     "heading": "Câu hỏi thường gặp",
-    "subtitle": "Một số thắc mắc phổ biến trước khi bắt đầu dự án.",
+    "subtitle": "Những điều bạn hay hỏi trước khi bắt đầu.",
     "items": [
       {
         "title": "Chi phí được tính như thế nào?",
-        "content": "Mỗi dự án một khác nên mình không niêm yết sẵn. Bạn mô tả nhu cầu, mình chốt phạm vi công việc thật rõ ràng rồi trao đổi trực tiếp — đã thống nhất thì không phát sinh phí ẩn."
+        "content": "Mỗi dự án một khác nên mình không niêm yết sẵn. Bạn mô tả nhu cầu, mình chốt phạm vi thật rõ rồi báo giá trực tiếp. Đã thống nhất thì không phát sinh phí ẩn."
       },
       {
-        "title": "Bạn là sinh viên thì làm có ổn không?",
-        "content": "Mình là sinh viên năm cuối ngành lập trình và đang nhận dự án thật để hoàn thiện tay nghề. Bạn nhận sản phẩm làm bằng công nghệ mới, code sạch, và mình làm hết mình vì đây cũng là portfolio của mình. Bạn hoàn toàn có thể xem demo, dự án cũ trước khi quyết định."
+        "title": "Sinh viên làm có ổn không?",
+        "content": "Mình là sinh viên năm cuối ngành Kỹ thuật phần mềm và đang nhận dự án thật. Bạn nhận sản phẩm làm bằng công nghệ mới, code sạch – và mình làm hết sức vì đây cũng là portfolio của mình. Bạn có thể xem các dự án cũ trước khi quyết định."
       },
       {
-        "title": "Tôi chưa có thiết kế thì có làm được không?",
-        "content": "Được. Bạn chỉ cần mô tả ý tưởng, lĩnh vực kinh doanh hoặc mục tiêu sử dụng. Mình sẽ tư vấn cấu trúc nội dung, bố cục và hướng triển khai phù hợp."
+        "title": "Chưa có thiết kế thì có làm được không?",
+        "content": "Được. Bạn chỉ cần mô tả ý tưởng, lĩnh vực kinh doanh hoặc mục tiêu. Mình sẽ tư vấn cấu trúc nội dung, bố cục và hướng triển khai."
       },
       {
         "title": "Website có được tối ưu SEO không?",
-        "content": "Có. Website được dựng với cấu trúc thân thiện với công cụ tìm kiếm, hỗ trợ tối ưu tốc độ tải trang, metadata, sitemap và các yếu tố SEO kỹ thuật cơ bản."
+        "content": "Có. Website được dựng với cấu trúc thân thiện với công cụ tìm kiếm, tối ưu tốc độ tải trang, metadata, sitemap và các yếu tố SEO kỹ thuật cơ bản."
       },
       {
-        "title": "Có hỗ trợ domain và hosting không?",
-        "content": "Có. Mình hỗ trợ tư vấn hoặc triển khai domain, hosting và các dịch vụ liên quan nếu bạn chưa có sẵn hạ tầng."
+        "title": "Có hỗ trợ tên miền và hosting không?",
+        "content": "Có. Nếu bạn chưa có, mình tư vấn và cài đặt tên miền, hosting cùng các dịch vụ liên quan."
       },
       {
         "title": "Sau khi bàn giao có được hỗ trợ không?",
-        "content": "Có. Sau khi hoàn thành, mình vẫn hướng dẫn sử dụng, giải đáp thắc mắc và xử lý các lỗi phát sinh cũng như chỉnh sửa nhỏ trong phạm vi đã thống nhất."
+        "content": "Có. Lỗi phát sinh từ code mình viết, mình sửa miễn phí trọn đời. Mình cũng hướng dẫn sử dụng và giải đáp thắc mắc sau bàn giao. Chính sách sửa lỗi không áp dụng khi mã nguồn đã bị bạn hoặc bên khác chỉnh sửa."
       }
     ]
   },
   "contact": {
-    "title": "Cùng nhau kiến tạo",
-    "titleAccent": "tương lai số.",
-    "subtitle": "Bạn có một ý tưởng tuyệt vời hay một dự án cần thực hiện? Hãy để lại lời nhắn, tôi sẽ phản hồi trong vòng 24h.",
+    "title": "Có ý tưởng?",
+    "titleAccent": "Nhắn là bắt đầu.",
+    "subtitle": "Để lại lời nhắn. Mình trả lời trong vòng 24 giờ.",
     "directEmail": "Email trực tiếp",
     "nameLabel": "Họ và tên",
     "namePlaceholder": "Nguyễn Văn A",
     "emailLabel": "Email liên hệ",
     "emailPlaceholder": "email@example.com",
     "messageLabel": "Lời nhắn",
-    "messagePlaceholder": "Nhập nội dung tin nhắn của bạn...",
-    "submit": "Gửi yêu cầu",
-    "submitting": "Đang gửi...",
-    "successTitle": "Đã gửi tin nhắn!",
-    "successBody": "Cảm ơn bạn đã liên hệ. Tôi sẽ sớm phản hồi.",
-    "toastSuccess": "Mình đã nhận được lời nhắn của bạn! Cảm ơn bạn đã liên hệ.",
-    "toastError": "Đã có lỗi xảy ra. Vui lòng thử lại sau."
+    "messagePlaceholder": "Bạn cần làm gì, website hiện tại (nếu có), thời hạn mong muốn…",
+    "submit": "Gửi lời nhắn",
+    "submitting": "Đang gửi…",
+    "successTitle": "Đã gửi.",
+    "successBody": "Mình sẽ trả lời qua email trong vòng 24 giờ.",
+    "toastSuccess": "Mình đã nhận được lời nhắn. Cảm ơn bạn.",
+    "toastError": "Chưa gửi được. Bạn thử lại sau ít phút, hoặc email trực tiếp cho mình."
   },
   "footer": {
+    "tagline": "Lập trình viên web tự do tại TP. Hồ Chí Minh.",
     "partner": "Đối tác",
     "quickLinksTitle": "Liên kết nhanh",
     "quickLinks": {
-      "home": "Trang chủ",
       "projects": "Dự án web đã thực hiện",
       "services": "Dịch vụ thiết kế website",
-      "contact": "Liên hệ làm website",
-      "utils": "Công cụ miễn phí"
+      "students": "Hỗ trợ đồ án cho sinh viên",
+      "library": "Component React mã nguồn mở",
+      "cv": "CV của Phan Hoàng Phúc",
+      "contact": "Liên hệ làm website"
     },
-    "rights": "Jason Dev. Bảo lưu mọi quyền.",
-    "version": "Phiên bản"
+    "rights": "Jason Dev. Bảo lưu mọi quyền."
   },
   "utils": {
     "badge": "Sắp ra mắt",
-    "heading": "Các Công Cụ Tiện Ích",
-    "description": "Tính năng này đang trong giai đoạn chuẩn bị và sẽ chính thức được kích hoạt. Hãy đếm ngược cùng Jason nhé!",
-    "backHome": "Quay lại trang chủ",
-    "countdown": {
-      "days": "Ngày",
-      "hours": "Giờ",
-      "minutes": "Phút",
-      "seconds": "Giây"
-    }
+    "heading": "Công cụ tiện ích",
+    "description": "Bộ công cụ đang được hoàn thiện. Mình sẽ cập nhật ngay khi sẵn sàng.",
+    "backHome": "Về trang chủ"
   },
   "notFound": {
-    "heading": "Oops! Lạc đường rồi",
-    "description": "Trang bạn đang tìm kiếm không tồn tại, đã bị thay đổi đường dẫn hoặc tạm thời không thể truy cập.",
+    "heading": "Lạc đường rồi.",
+    "description": "Trang bạn tìm không tồn tại hoặc đã đổi đường dẫn.",
     "back": "Trở lại trang trước",
-    "home": "Về trang chủ an toàn"
+    "home": "Về trang chủ"
   },
   "comingSoon": {
-    "defaultTitle": "Tính năng đang phát triển",
-    "defaultDescription": "Chúng tôi đang nỗ lực hoàn thiện và sẽ sớm ra mắt tính năng này. Cảm ơn bạn đã quan tâm và vui lòng quay lại sau nhé!",
+    "defaultTitle": "Tính năng đang được hoàn thiện",
+    "defaultDescription": "Mình đang hoàn thiện tính năng này. Bạn quay lại sau nhé.",
     "back": "Trở lại trang trước",
-    "signInTitle": "Tính năng Đăng Nhập đang phát triển",
-    "signUpTitle": "Tính năng Đăng Ký đang phát triển"
+    "signInTitle": "Đăng nhập đang được hoàn thiện",
+    "signUpTitle": "Đăng ký đang được hoàn thiện"
   },
   "metadata": {
     "homeTitle": "Jason Dev | Freelance Web Developer",
-    "homeDescription": "Trang cá nhân và dịch vụ freelance của Phan Hoàng Phúc (Jason Dev), chuyên làm website, tối ưu SEO, tối ưu web sẵn có và thiết kế hệ thống dữ liệu dễ mở rộng.",
+    "homeDescription": "Trang cá nhân và dịch vụ freelance của Phan Hoàng Phúc (Jason Dev): làm website, tối ưu SEO, tăng tốc website có sẵn và thiết kế hệ thống dữ liệu.",
     "projectsTitle": "Tất cả dự án",
-    "projectsDescription": "Khám phá tất cả dự án mà tôi đã thực hiện, từ các trang web cá nhân đến các ứng dụng phức tạp. Mỗi dự án đều được thiết kế và lập trình với sự chú ý đến chi tiết, hiệu suất và trải nghiệm người dùng.",
-    "servicesTitle": "Dịch vụ thiết kế website — Landing page, Web & SEO",
-    "servicesDescription": "Nhận thiết kế website, landing page, tối ưu SEO và tăng tốc web có sẵn bằng công nghệ hiện đại (Next.js, React) cho shop nhỏ, thương hiệu cá nhân và người mới bắt đầu. Freelancer trẻ, trao đổi rõ ràng ngay từ đầu.",
+    "projectsDescription": "Các dự án web và di động của Phan Hoàng Phúc, kèm bản demo: quản lý nhà hàng, bán hàng theo lô, nhắn tin thời gian thực, app hiking offline và website quán cà phê.",
+    "servicesTitle": "Dịch vụ thiết kế website – Landing page, Web & SEO",
+    "servicesDescription": "Làm website, landing page, tối ưu SEO và tăng tốc website có sẵn bằng Next.js, React cho shop nhỏ, thương hiệu cá nhân và người mới bắt đầu. Xem bản thử trước, sửa lỗi trọn đời.",
     "contactTitle": "Liên hệ",
-    "contactDescription": "Liên hệ với tôi để biết thêm thông tin về các dự án, kỹ năng hoặc cơ hội hợp tác. Tôi luôn sẵn sàng kết nối và trao đổi ý tưởng mới.",
+    "contactDescription": "Nhắn Phan Hoàng Phúc (Jason Dev) để làm website, landing page hoặc tối ưu SEO. Tư vấn miễn phí, trả lời trong vòng 24 giờ.",
     "utilsTitle": "Tiện ích",
-    "utilsDescription": "Khám phá các công cụ tiện ích hữu ích sắp ra mắt, giúp nâng cao trải nghiệm của bạn.",
-    "libraryTitle": "Thư viện mã nguồn mở — Component & tiện ích React",
-    "libraryDescription": "Bộ thư viện React mình tự viết: @hwagfu/link, @hwagfu/cursor, @hwagfu/images. Giới thiệu, ví dụ và hướng dẫn sử dụng chi tiết."
+    "utilsDescription": "Bộ công cụ web miễn phí của Jason Dev, đang được hoàn thiện.",
+    "libraryTitle": "Thư viện mã nguồn mở – Component & tiện ích React",
+    "libraryDescription": "Bộ thư viện React mình tự viết: @hwagfu/link, @hwagfu/cursor, @hwagfu/images. Giới thiệu, ví dụ và hướng dẫn sử dụng chi tiết.",
+    "cvTitle": "CV – Phan Hoàng Phúc (Jason Dev)",
+    "cvDescription": "Xem và tải CV của Phan Hoàng Phúc (Jason Dev), lập trình viên web tự do chuyên Next.js, React, tối ưu SEO và hiệu năng website.",
+    "studentsTitle": "Hỗ trợ đồ án và CV cho sinh viên IT",
+    "studentsDescription": "Sửa lỗi coursework, làm đồ án web HTML, PHP, React và CV/Portfolio Bento Grid cho sinh viên IT. Chỉ hỗ trợ phần code và giao diện."
   },
   "library": {
     "title": "Thư viện của mình",
-    "subtitle": "Nơi tập hợp những dự án mình đã làm và các component library mình tự đóng gói. Chọn một mục để xem chi tiết.",
+    "subtitle": "Những dự án mình đã làm và các component mình tự đóng gói.",
     "back": "Tất cả thư viện",
     "installLabel": "Cài đặt",
     "usageLabel": "Cách dùng",
@@ -400,15 +425,18 @@
     "notFoundTitle": "Không tìm thấy thư viện",
     "notFoundDescription": "Thư viện bạn tìm không tồn tại hoặc đã đổi tên.",
     "componentsHeading": "Component Library",
-    "componentsSubtitle": "Các component & tiện ích React mình tự viết và đóng gói để dùng lại. Bấm vào để xem hướng dẫn và thử trực tiếp trong playground.",
-    "componentsCardTitle": "Xem tất cả component library mình đã viết",
-    "componentsCardDesc": "Bộ component & tiện ích React mình tự đóng gói để dùng lại — kèm hướng dẫn và playground.",
+    "componentsSubtitle": "Các component và tiện ích React mình tự viết, đóng gói để dùng lại. Bấm vào để đọc hướng dẫn và thử trực tiếp trong playground.",
+    "componentsCardTitle": "Component và tiện ích React",
+    "componentsCardDesc": "Đóng gói sẵn để dùng lại, kèm hướng dẫn và playground.",
     "componentsCardCta": "Xem tất cả component",
     "playgroundLabel": "Playground",
-    "playgroundHint": "Chỉnh các thông số bên phải để xem component thay đổi trực tiếp.",
+    "playgroundHint": "Chỉnh các thông số để xem component thay đổi trực tiếp.",
+    "cursorHintOn": "Di chuột bất kỳ đâu trên trang để xem hiệu ứng.",
+    "cursorHintOff": "Bật công tắc “enabled” để kích hoạt hiệu ứng con trỏ.",
+    "imagesHint": "Bấm vào một ảnh để mở lightbox.",
     "projectsHeading": "Dự án",
-    "projectsCardTitle": "Xem tất cả dự án mình đã làm",
-    "projectsCardDesc": "Tổng hợp các sản phẩm web mình đã xây dựng — từ landing page đến hệ thống có backend.",
+    "projectsCardTitle": "Dự án mình đã làm",
+    "projectsCardDesc": "Từ landing page đến hệ thống có backend – dự án nào cũng có bản demo.",
     "projectsCardCta": "Xem tất cả dự án"
   }
 }

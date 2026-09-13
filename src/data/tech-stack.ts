@@ -2,9 +2,9 @@
  * The tech stack shown in the Skills section, grouped by what each tool is
  * *for* rather than as one flat list of logos.
  *
- * Only list things that have actually shipped in a project under
- * `src/data/projects.ts` (or that back this site) — the section reads as a
- * capability claim, so an aspirational entry here is a lie to a client.
+ * Only list things actually used in a project under `src/data/projects.ts`
+ * (or that back this site) — the section reads as a capability claim, so an
+ * aspirational entry here is a lie to a client.
  *
  * Two flags handle logos that are not full-colour artwork:
  * - `mono` — a solid *black* glyph (Next.js, Express, GitHub, Vercel). It
@@ -12,7 +12,7 @@
  * - `tint` — a `currentColor` glyph (the Simple Icons set). It already follows
  *   the text colour, so inverting it would break it in both themes.
  *
- * See `TechIcon` in `src/components/ui/TechMarquee.tsx`.
+ * Rendered as a static list in `src/components/Skills.tsx`.
  */
 export interface Tech {
   name: string;
