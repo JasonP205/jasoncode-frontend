@@ -2,7 +2,6 @@ import { getTranslations } from "next-intl/server";
 import {
   ArrowUpRight,
   Download,
-  ExternalLink,
   FileText,
   Globe,
   Mail,
@@ -72,25 +71,24 @@ const CvViewer = async () => {
   return (
     <article className="mx-auto w-full max-w-4xl px-5 pb-20 pt-8 sm:px-8 sm:pt-12">
       {/* Page chrome — translated, unlike the CV body below it. */}
-      <header className="flex flex-col gap-6 border-b border-border pb-8 sm:flex-row sm:items-end sm:justify-between">
-        <div className="space-y-3">
-          <span className="kicker inline-flex items-center gap-2 text-hue-blue">
-            <FileText className="h-4 w-4" aria-hidden />
-            {t("badge")}
-          </span>
-          <h1 className="headline-section text-foreground">
-            {cv.name}
-          </h1>
-          <p className="text-sm text-muted-foreground sm:text-base">
-            {cv.role}
-          </p>
-        </div>
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+      <header className="space-y-3 border-b border-border pb-8">
+        <span className="kicker inline-flex items-center gap-2 text-hue-blue">
+          <FileText className="h-4 w-4" aria-hidden />
+          {t("badge")}
+        </span>
+        <h1 className="headline-section text-foreground">
+          {cv.name}
+        </h1>
+        <p className="text-sm text-muted-foreground sm:text-base">
+          {cv.role}
+        </p>
+        {/* Apple's pair under a headline: one compact pill, one blue link. */}
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-3 pt-3">
           <a
             href={CV_SRC}
             download={CV_FILENAME}
             aria-label={t("downloadAria")}
-            className="btn-primary w-full sm:w-auto"
+            className="btn-primary min-h-9! px-4! text-sm"
           >
             <Download className="h-4 w-4" aria-hidden />
             {t("download")}
@@ -100,10 +98,10 @@ const CvViewer = async () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={t("openAria")}
-            className="btn-secondary w-full sm:w-auto"
+            className="link-more text-sm"
           >
-            <ExternalLink className="h-4 w-4" aria-hidden />
             {t("open")}
+            <ArrowUpRight className="h-4 w-4" aria-hidden />
           </a>
         </div>
       </header>
@@ -157,7 +155,7 @@ const CvViewer = async () => {
       </section>
 
       <section className="mt-12">
-        <SectionHeading>Projects &amp; Freelance Work</SectionHeading>
+        <SectionHeading>Projects and Freelance Work</SectionHeading>
         <div className="space-y-8">
           {cv.projects.map((project) => (
             <div key={project.name}>

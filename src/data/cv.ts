@@ -23,7 +23,7 @@ export interface CvProject {
 
 export const cv = {
   name: "Hoang Phuc Phan",
-  role: "Software Engineer | Full-Stack Web & Mobile Developer",
+  role: "Software Engineer — Full-Stack Web and Mobile Developer",
   location: "Ho Chi Minh City, Vietnam",
   phone: "+84 798 020 513",
   email: "phuc20513@gmail.com",
@@ -31,12 +31,12 @@ export const cv = {
   github: { label: "github.com/JasonP205", href: "https://github.com/JasonP205" },
 
   summary:
-    "Final-year Computing student at the University of Greenwich Vietnam and freelance web developer who has shipped production applications in React, Next.js, TypeScript, Node.js, Express and MongoDB. Experienced in RESTful API design, real-time systems with Socket.IO, JWT authentication, RBAC, POS and inventory logic, offline-first mobile apps and SEO. Seeking a Frontend, Backend or Full-Stack Developer role in Ho Chi Minh City.",
+    "Final-year Computing student at the University of Greenwich Vietnam and freelance web developer who has shipped production applications in React, Next.js, TypeScript, Node.js, Express and MongoDB. Experienced in RESTful API design, real-time systems with Socket.IO, JWT authentication, RBAC and SEO. Seeking a Frontend, Backend or Full-Stack Developer role in Ho Chi Minh City.",
 
   skills: [
     {
       label: "Programming Languages",
-      items: ["JavaScript", "TypeScript", "PHP", "Python"],
+      items: ["JavaScript", "TypeScript", "PHP"],
     },
     {
       label: "Frontend",
@@ -49,7 +49,6 @@ export const cv = {
         "Tailwind CSS",
         "shadcn/ui",
         "Zustand",
-        "TanStack Query",
         "Zod",
       ],
     },
@@ -61,9 +60,8 @@ export const cv = {
         "NestJS",
         "RESTful API",
         "Socket.IO",
-        "JWT & refresh sessions",
+        "JWT and refresh sessions",
         "bcrypt",
-        "Elasticsearch",
       ],
     },
     {
@@ -71,7 +69,7 @@ export const cv = {
       items: ["PostgreSQL", "MongoDB (Mongoose)", "MySQL", "SQLite"],
     },
     {
-      label: "Tools & Platforms",
+      label: "Tools and Platforms",
       items: [
         "Git",
         "GitHub",
@@ -86,9 +84,7 @@ export const cv = {
       label: "Concepts",
       items: [
         "Real-Time Systems",
-        "Offline-First Architecture",
         "RBAC",
-        "Database Transactions",
         "Responsive Design",
         "SEO",
         "Agile/Scrum",
@@ -97,17 +93,6 @@ export const cv = {
   ] satisfies CvSkillGroup[],
 
   projects: [
-    {
-      name: "TLUX — Retail POS & Batch Inventory System",
-      stack: ["Next.js", "Express", "MongoDB", "Elasticsearch"],
-      live: "https://tlux.hwagfu.dev",
-      bullets: [
-        "Built an internal retail operations platform on Next.js App Router with an Express and MongoDB backend, where stock is tracked per import batch instead of per product.",
-        "Implemented FEFO stock deduction inside database transactions, so each checkout consumes the earliest-expiring batch first and records exactly which batch was used.",
-        "Developed multi-invoice checkout with server-side draft orders that survive page reloads, plus barcode scanning via USB reader or a phone camera paired through QR and Socket.IO.",
-        "Added a real-time customer display with PayOS transfer QR, accent-insensitive Vietnamese search with Elasticsearch, four-role permissions and loyalty points.",
-      ],
-    },
     {
       name: "Bamboo House — Restaurant Management System",
       stack: ["React", "TypeScript", "Express", "MongoDB", "Socket.IO"],
@@ -134,15 +119,6 @@ export const cv = {
       ],
     },
     {
-      name: "Go Hike — Offline-First Hiking Journal App",
-      stack: ["React Native", "Expo", "SQLite"],
-      live: "https://gohike.hwagfu.dev",
-      bullets: [
-        "Built a cross-platform mobile app where seven of eight features — observation journal, route planning, statistics, achievements, maps, search and backup — run fully offline on local SQLite storage.",
-        "Auto-tags every entry with location, weather and temperature, with no account or server dependency required.",
-      ],
-    },
-    {
       name: "L3GO Coffee — Client Website",
       stack: ["Next.js", "TypeScript", "Design System", "SEO"],
       live: "https://legocoffee.hwagfu.dev",
@@ -158,7 +134,7 @@ export const cv = {
     location: "Ho Chi Minh City, Vietnam",
     degree: "Bachelor of Computing — Software Engineering",
     period: "Aug 2023 — Present (Final-year student)",
-    gpa: "GPA: 7.65/10.00 (equivalent to 3.18/4.00)",
+    gpa: "Provisional average (to date): 65% · US GPA equiv.: ~3.5/4.00",
     languages:
       "Vietnamese (Native), English B2 Proficiency (VSTEP), Chinese Basic Level (HSK 2)",
   },
