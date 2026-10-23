@@ -134,7 +134,7 @@ export const cv = {
     location: "Ho Chi Minh City, Vietnam",
     degree: "Bachelor of Computing — Software Engineering",
     period: "Aug 2023 — Present (Final-year student)",
-    gpa: "Provisional average (to date): 65% · US GPA equiv.: ~3.5/4.00",
+    gpa: "Provisional average (to date): 65% · US GPA equiv.: 3.60/4.00",
     languages:
       "Vietnamese (Native), English B2 Proficiency (VSTEP), Chinese Basic Level (HSK 2)",
   },
