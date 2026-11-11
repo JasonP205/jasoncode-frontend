@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import Reveal from "./Reveal";
 import ParallaxMedia from "./scroll/ParallaxMedia";
+import Tilt3D from "./three/Tilt3D";
 
 /**
  * A project is a picture of the product, its name and one line. The whole tile
@@ -14,9 +15,10 @@ const ProjectGrid = ({ projects }: { projects: LocalizedProject[] }) => {
     <>
       {projects.map((project, index) => (
         <Reveal key={project.id} variant="zoom" delay={Math.min(index, 2) * 0.08}>
+          <Tilt3D>
           <Link
             href={`/library/projects/${project.id}`}
-            className="group block h-full rounded-[1.75rem] bg-tile p-2.5 transition-shadow duration-300 hover:shadow-[0_12px_40px_-12px_rgb(0_0_0/0.18)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground"
+            className="group block h-full rounded-[1.75rem] bg-tile p-2.5 transition-shadow duration-300 [transform-style:preserve-3d] hover:shadow-[0_30px_60px_-20px_rgb(0_0_0/0.35)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground"
           >
             {/* The screenshot drifts inside its frame while the tile crosses
                 the viewport — the layered, parallax feel of Apple's tiles. */}
@@ -29,13 +31,14 @@ const ProjectGrid = ({ projects }: { projects: LocalizedProject[] }) => {
                 className="object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.03] motion-reduce:transition-none"
               />
             </ParallaxMedia>
-            <div className="px-3.5 pt-5 pb-4">
+            <div data-depth="1" className="px-3.5 pt-5 pb-4">
               <h3 className="headline-card text-foreground">{project.title}</h3>
               <p className="mt-1.5 leading-relaxed text-muted-foreground">
                 {project.tagline}
               </p>
             </div>
           </Link>
+          </Tilt3D>
         </Reveal>
       ))}
     </>

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import CvViewer from "@/components/CvViewer";
+import CvPage from "@/components/cv/CvPage";
 import { buildAlternates, ogLocaleFields } from "@/lib/seo";
 import type { Locale } from "@/i18n/routing";
 
@@ -40,5 +40,5 @@ export default async function Page({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  return <CvViewer />;
+  return <CvPage />;
 }

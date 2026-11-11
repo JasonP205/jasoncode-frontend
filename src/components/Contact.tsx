@@ -8,12 +8,14 @@ import { useLocale, useTranslations } from "next-intl";
 import { submitContact } from "@/actions/contact.action";
 import Jot from "./ui/Jot";
 import Reveal from "./ui/Reveal";
+import OrbScene from "./ui/three/OrbScene";
 
 // Fields sit on the white form card, so they take the band grey to stay
 // visible; the theme's own field background is white.
 const fieldClass = "bg-band font-sans text-foreground placeholder:text-muted-foreground";
 
-export default function Contact() {
+/** `bare` drops the band background so a page-wide 3D scene shows through. */
+export default function Contact({ bare = false }: { bare?: boolean }) {
   const t = useTranslations("contact");
   const locale = useLocale();
   const [submitted, setSubmitted] = useState(false);
@@ -43,9 +45,16 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="scroll-mt-16 bg-band px-4 py-20 sm:px-8 sm:py-32">
+    <section
+      id="contact"
+      data-world-anchor
+      className={`relative isolate scroll-mt-16 overflow-hidden px-4 py-20 sm:px-8 sm:py-32 ${bare ? "" : "bg-band"}`}
+    >
       <div className="mx-auto grid max-w-6xl items-start gap-12 lg:grid-cols-2 lg:gap-20">
         <Reveal>
+          <p className="mb-4 flex items-center gap-3">
+            <span className="layer-tag text-hue-pink">L4</span>
+          </p>
           <h2 className="headline-section text-foreground">
             <span className="block">{t("title")}</span>
             <span className="block headline-quiet">{t("titleAccent")}</span>
@@ -68,6 +77,13 @@ export default function Contact() {
               </span>
             </span>
           </a>
+
+          {/* L4's centrepiece: a particle orb. It swells toward the cursor;
+              click it and a shockwave runs around it. */}
+          {/* On the home page the six timeline stones gather around the orb. */}
+          <div data-world-slot="stones-ring" className="relative mt-6 -ml-6 w-[calc(100%+3rem)]">
+            <OrbScene className="relative h-[20rem] w-full opacity-0 transition-opacity duration-1000 data-ready:opacity-100 sm:h-[24rem]" />
+          </div>
         </Reveal>
 
         <Reveal delay={0.08} className="rounded-[1.75rem] bg-tile p-6 sm:p-9">

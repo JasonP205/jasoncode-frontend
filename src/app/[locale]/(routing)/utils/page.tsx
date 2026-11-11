@@ -1,3 +1,4 @@
+import KineticHeadline from "@/components/ui/kinetic/KineticHeadline";
 import { Link } from "@/i18n/navigation";
 import Jot from "@/components/ui/Jot";
 import { Metadata } from "next";
@@ -47,7 +48,7 @@ const UtilsPage = async ({
     <section className="flex min-h-[70vh] flex-col items-center justify-center px-5 py-24 text-center">
       <Jot mood="thinking" className="mb-8 size-36" />
       <p className="kicker mb-3 text-hue-orange">{t("badge")}</p>
-      <h1 className="headline-hero text-foreground">{t("heading")}</h1>
+      <KineticHeadline className="headline-hero text-foreground" segments={[{ text: t("heading") }]} />
       <p className="lede mt-6 max-w-xl">{t("description")}</p>
       {/* No countdown: its 2026-09-02 target passed and it sat at 00:00:00:00
           under a "coming soon" badge. Only add one back with a date you will

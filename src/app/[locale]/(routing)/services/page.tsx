@@ -1,3 +1,4 @@
+import KineticHeadline from "@/components/ui/kinetic/KineticHeadline";
 import { use } from "react";
 import type { Metadata } from "next";
 import Script from "next/script";
@@ -145,12 +146,13 @@ export default function ServicesPage({
       <section className="relative isolate overflow-hidden px-5 pt-20 pb-24 sm:px-8 sm:pt-32 sm:pb-28">
         <Aura />
         <HeroScrollFx className="mx-auto flex max-w-4xl flex-col items-center text-center">
-          <h1 className="headline-hero text-foreground">
-            <span className="animate-rise block">{t("heroTitle")}</span>
-            <span className="animate-rise block headline-quiet [animation-delay:110ms]">
-              {t("heroTitleAccent")}
-            </span>
-          </h1>
+          <KineticHeadline
+            className="headline-hero text-foreground"
+            segments={[
+              { text: `${t("heroTitle")}\n` },
+              { text: t("heroTitleAccent"), quiet: true },
+            ]}
+          />
           <p className="animate-rise lede mt-7 max-w-2xl [animation-delay:330ms]">
             {t("heroSubtitle")}
           </p>

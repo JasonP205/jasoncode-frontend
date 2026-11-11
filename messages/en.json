@@ -8,7 +8,10 @@
     "logoAria": "Jason Dev – Home",
     "themeToggle": "Toggle light/dark theme",
     "localeSwitcher": "Select language",
-    "primaryNav": "Primary navigation"
+    "primaryNav": "Primary navigation",
+    "cv": "Résumé",
+    "soundOn": "Sound: on",
+    "soundOff": "Sound: off"
   },
   "common": {
     "loading": "Loading…",
@@ -27,7 +30,20 @@
     "download": "Download CV (PDF)",
     "downloadAria": "Download Phan Hoang Phuc's CV as a PDF file",
     "open": "Open in new tab",
-    "openAria": "Open the CV PDF in a new tab"
+    "openAria": "Open the CV PDF in a new tab",
+    "lede": "The full résumé – read it here or download the PDF.",
+    "railLabel": "Résumé sections",
+    "rail": [
+      "Summary",
+      "Experience",
+      "Skills",
+      "Projects",
+      "Education"
+    ],
+    "now": "Current",
+    "closingHeading": "Prefer it on paper?",
+    "closingLede": "Same content, on one A4 page.",
+    "contact": "Message me"
   },
   "skills": {
     "techStackLabel": "Capabilities",
@@ -115,10 +131,17 @@
           "description": "Faster for people. Clearer for Google. Ready to be found."
         }
       ],
-      "progress": ["Multi-page", "Landing page", "Accelerate SEO"],
+      "progress": [
+        "Multi-page",
+        "Landing page",
+        "Accelerate SEO"
+      ],
       "speedUnit": "performance score",
       "mergeLabel": "Launch campaign",
-      "seoBurst": ["ACCELERATE", "SEO"]
+      "seoBurst": [
+        "ACCELERATE",
+        "SEO"
+      ]
     },
     "promiseLabel": "Promises",
     "promiseHeading": "Peace of mind\nfrom preview to handover."
@@ -340,16 +363,16 @@
     ]
   },
   "contact": {
-    "title": "Got an idea?",
-    "titleAccent": "Message me to start.",
-    "subtitle": "Leave a message. I'll reply within 24 hours.",
+    "title": "Want to talk?",
+    "titleAccent": "Message me.",
+    "subtitle": "A job, a project or just a question. I reply within 24 hours.",
     "directEmail": "Direct email",
     "nameLabel": "Full name",
     "namePlaceholder": "John Doe",
     "emailLabel": "Contact email",
     "emailPlaceholder": "email@example.com",
     "messageLabel": "Message",
-    "messagePlaceholder": "What you need, your current site (if any), your ideal timeline…",
+    "messagePlaceholder": "What would you like to talk about…",
     "submit": "Send message",
     "submitting": "Sending…",
     "successTitle": "Sent.",
@@ -358,7 +381,7 @@
     "toastError": "Couldn't send. Try again in a few minutes, or email me directly."
   },
   "footer": {
-    "tagline": "Freelance web developer based in Ho Chi Minh City.",
+    "tagline": "Software Engineer in Ho Chi Minh City. Building the web from interface to data.",
     "partner": "Partner",
     "quickLinksTitle": "Quick links",
     "quickLinks": {
@@ -369,7 +392,9 @@
       "cv": "Phan Hoang Phuc's CV",
       "contact": "Hire a web developer"
     },
-    "rights": "Jason Dev. All rights reserved."
+    "rights": "Jason Dev. All rights reserved.",
+    "localTime": "Now in Ho Chi Minh City",
+    "streamEnd": "End of the timeline. The next part – written with you."
   },
   "utils": {
     "badge": "Coming Soon",
@@ -391,8 +416,8 @@
     "signUpTitle": "Sign-up is in progress"
   },
   "metadata": {
-    "homeTitle": "Jason Dev | Freelance Web Developer",
-    "homeDescription": "Personal portfolio and freelance services of Phan Hoàng Phúc (Jason Dev): websites, SEO, speeding up existing sites and data system design.",
+    "homeTitle": "Phan Hoang Phuc (Jason Dev) – Software Engineer",
+    "homeDescription": "Personal site of Phan Hoang Phuc (Jason Dev): Software Developer at TOTDigi and final-year Greenwich student. Projects with demos, résumé and open-source React libraries.",
     "projectsTitle": "All projects",
     "projectsDescription": "Web and mobile projects by Phan Hoang Phuc, each with a demo: restaurant management, a batch-inventory POS, realtime chat, an offline hiking app and a coffee shop website.",
     "servicesTitle": "Website design services – Landing pages, Web & SEO",
@@ -438,5 +463,112 @@
     "projectsCardTitle": "Projects I've built",
     "projectsCardDesc": "From landing pages to backend systems — each one with a demo.",
     "projectsCardCta": "View all projects"
+  },
+  "profile": {
+    "kicker": "Software Engineer · Ho Chi Minh City",
+    "headlineLead": "Hi,\nI'm ",
+    "headlineAccent": "Phuc.",
+    "lede": "Software Developer at TOTDigi and final-year Software Engineering student at Greenwich. I build all three layers: interface, API and data.",
+    "ctaCv": "View résumé",
+    "ctaContact": "Message me",
+    "soundPrompt": "This page has sound. Turn it on, then run your cursor over my name.",
+    "soundOn": "Sound: on",
+    "soundOff": "Turn sound on",
+    "scrollCue": "Scroll one layer down",
+    "facts": [
+      {
+        "value": "TOTDigi",
+        "label": "Software Developer since Nov 2026"
+      },
+      {
+        "value": "3",
+        "label": "personal projects, each with a demo"
+      },
+      {
+        "value": "3.60",
+        "label": "GPA equivalent, out of 4"
+      },
+      {
+        "value": "B2",
+        "label": "English, VSTEP certified"
+      }
+    ],
+    "now": {
+      "kicker": "Now",
+      "heading": "Working.\nStill learning.",
+      "lede": "Days go to code at work. The rest goes to my final year and my own projects.",
+      "badge": "Current",
+      "job": {
+        "role": "Software Developer",
+        "org": "TOTDigi",
+        "period": "Nov 2026 – now",
+        "body": "Building the price management and display system for ESL (Electronic Shelf Label) devices – the small price screens on store shelves."
+      },
+      "school": {
+        "role": "Bachelor of Computing – Software Engineering",
+        "org": "University of Greenwich Vietnam",
+        "period": "Aug 2023 – now",
+        "body": "Final-year student. Provisional average 65%, a 3.60/4.00 GPA equivalent."
+      }
+    },
+    "time": {
+      "kicker": "Timeline",
+      "heading": "Six stones.\nOne stream.",
+      "lede": "Each stone marks a step along the way. Scroll to light them one by one – and carry all six to the end of the page.",
+      "items": [
+        {
+          "when": "08/2023",
+          "title": "Joined Greenwich.",
+          "body": "Started a BSc in Computing – Software Engineering at the University of Greenwich Vietnam."
+        },
+        {
+          "when": "While studying",
+          "title": "Freelance web work.",
+          "body": "Building websites alongside classes: React, Next.js, Node.js, MongoDB."
+        },
+        {
+          "when": "Personal project",
+          "title": "Bamboo House.",
+          "body": "Multi-branch restaurant management. QR table ordering, orders synced instantly over Socket.IO. Demo available."
+        },
+        {
+          "when": "Personal project",
+          "title": "Chap.",
+          "body": "Real-time chat: groups, friend requests, read receipts. Demo available."
+        },
+        {
+          "when": "Personal project",
+          "title": "Go Hike.",
+          "body": "A hiking journal that works without signal – seven of its eight features run offline. Demo available."
+        },
+        {
+          "when": "11/2026",
+          "title": "Joined TOTDigi.",
+          "body": "Software Developer, building price management and display for electronic shelf labels."
+        }
+      ]
+    },
+    "work": {
+      "kicker": "Projects",
+      "heading": "Built from scratch.\nAll the way to a demo.",
+      "lede": "The three projects I like most. Open one to see how it was made and try the demo.",
+      "viewAll": "See all projects"
+    },
+    "stack": {
+      "kicker": "Stack",
+      "heading": "Five layers.\nOne person.",
+      "lede": "Hover a layer to see what I use there.",
+      "layers": [
+        "Interface",
+        "State",
+        "API",
+        "Data",
+        "Infra"
+      ]
+    },
+    "aside": {
+      "text": "I still build websites for small shops and personal brands.",
+      "link": "See services"
+    }
   }
 }

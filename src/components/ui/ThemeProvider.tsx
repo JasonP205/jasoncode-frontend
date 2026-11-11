@@ -8,6 +8,7 @@ import {
   useRef,
   useSyncExternalStore,
 } from "react";
+import { flushSync } from "react-dom";
 import { useServerInsertedHTML } from "next/navigation";
 
 export type Theme = "light" | "dark" | "system";
@@ -79,11 +80,21 @@ const applyToDom = (resolved: ResolvedTheme) => {
   requestAnimationFrame(() => style.remove());
 };
 
+/** Where the new theme spreads from, in viewport pixels (usually the toggle). */
+export interface ThemeOrigin {
+  x: number;
+  y: number;
+}
+
 interface ThemeContextValue {
   theme: Theme;
   resolvedTheme: ResolvedTheme;
-  setTheme: (theme: Theme) => void;
+  setTheme: (theme: Theme, origin?: ThemeOrigin) => void;
 }
+
+type DocumentWithTransitions = Document & {
+  startViewTransition?: (update: () => void) => { finished: Promise<void> };
+};
 
 const ThemeContext = createContext<ThemeContextValue | null>(null);
 
@@ -120,10 +131,43 @@ const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     applyToDom(resolvedTheme);
   }, [resolvedTheme]);
 
-  const setTheme = useCallback((next: Theme) => {
-    localStorage.setItem(STORAGE_KEY, next);
-    // Notify this tab's store subscribers ("storage" only fires in other tabs).
-    window.dispatchEvent(new Event(CHANGE_EVENT));
+  const setTheme = useCallback((next: Theme, origin?: ThemeOrigin) => {
+    const commit = () => {
+      localStorage.setItem(STORAGE_KEY, next);
+      // Notify this tab's store subscribers ("storage" only fires in other tabs).
+      window.dispatchEvent(new Event(CHANGE_EVENT));
+    };
+
+    // View Transition API: the browser snapshots the page, we flip the theme
+    // synchronously inside the callback, and CSS (`html[data-theme-vt]` in
+    // globals.css) reveals the new snapshot as a circle growing out of the
+    // toggle. Browsers without it, and reduced-motion visitors, just switch.
+    const doc = document as DocumentWithTransitions;
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!doc.startViewTransition || reduced) {
+      commit();
+      return;
+    }
+
+    const root = document.documentElement;
+    const x = origin?.x ?? window.innerWidth / 2;
+    const y = origin?.y ?? 0;
+    // Radius that reaches the farthest corner from the origin.
+    const r = Math.hypot(Math.max(x, window.innerWidth - x), Math.max(y, window.innerHeight - y));
+    root.style.setProperty("--vt-x", `${x}px`);
+    root.style.setProperty("--vt-y", `${y}px`);
+    root.style.setProperty("--vt-r", `${r}px`);
+    root.dataset.themeVt = "";
+
+    const transition = doc.startViewTransition(() => {
+      // The new snapshot is taken when this returns, so the class flip and
+      // React's re-render (toggle icon) must both land before then.
+      flushSync(commit);
+      applyToDom(resolve(next));
+    });
+    transition.finished.finally(() => {
+      delete root.dataset.themeVt;
+    });
   }, []);
 
   return (

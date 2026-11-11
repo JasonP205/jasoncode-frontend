@@ -14,6 +14,7 @@ import ThemeProvider from "@/components/ui/ThemeProvider";
 import BottomNav from "@/components/ui/BottomNav";
 import MotionProvider from "@/components/ui/MotionProvider";
 import { routing } from "@/i18n/routing";
+import UiSounds from "@/components/ui/sound/UiSounds";
 
 // The only text family on the site: headlines (600) and body (400/500) alike,
 // with full Vietnamese glyph coverage. A display serif used to sit on top of
@@ -35,8 +36,8 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
+    { media: "(prefers-color-scheme: light)", color: "#fbf9f5" },
+    { media: "(prefers-color-scheme: dark)", color: "#0b0d13" },
   ],
 };
 
@@ -187,7 +188,7 @@ export default async function RootLayout({
       data-scroll-behavior="smooth"
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col bg-background text-foreground pb-[calc(3.5rem+env(safe-area-inset-bottom))] md:pb-0">
+      <body className="min-h-full flex flex-col bg-background text-foreground pb-[calc(4.5rem+env(safe-area-inset-bottom))] md:pb-0">
         <NextIntlClientProvider>
           <ThemeProvider>
             {/* ThemeProvider also writes the anti-FOUC theme script into the
@@ -202,6 +203,9 @@ export default async function RootLayout({
               <Footer />
 
               <BottomNav />
+
+              {/* Hover/press sounds for every link and button (opt-in). */}
+              <UiSounds />
 
               <Analytics />
             </MotionProvider>

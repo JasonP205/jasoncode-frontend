@@ -1,3 +1,4 @@
+import KineticHeadline from "@/components/ui/kinetic/KineticHeadline";
 import { use } from "react";
 import type { Metadata } from "next";
 import Script from "next/script";
@@ -99,12 +100,13 @@ export default function StudentsPage({
         <Aura />
         <HeroScrollFx className="mx-auto flex max-w-4xl flex-col items-center text-center">
           <p className="animate-rise kicker mb-3 text-hue-pink">{t("label")}</p>
-          <h1 className="headline-hero text-foreground">
-            <span className="animate-rise block [animation-delay:80ms]">{t("heading")}</span>
-            <span className="animate-rise block headline-quiet [animation-delay:190ms]">
-              {t("headingAccent")}
-            </span>
-          </h1>
+          <KineticHeadline
+            className="headline-hero text-foreground"
+            segments={[
+              { text: `${t("heading")}\n` },
+              { text: t("headingAccent"), quiet: true },
+            ]}
+          />
           <p className="animate-rise lede mt-7 max-w-2xl [animation-delay:410ms]">{t("sub")}</p>
           <div className="animate-rise mt-10 flex flex-col items-center gap-5 sm:flex-row [animation-delay:520ms]">
             <Link href="/contact" className="btn-primary">

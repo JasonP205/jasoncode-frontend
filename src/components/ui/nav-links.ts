@@ -1,9 +1,9 @@
-import { BookOpen, Home, LayoutGrid, Layers, Mail, type LucideIcon } from "lucide-react";
+import { BookOpen, FileUser, Home, LayoutGrid, Layers, Mail, type LucideIcon } from "lucide-react";
 
 export interface NavLink {
   to: string;
   /** Key in the `nav` message namespace. */
-  key: "home" | "projects" | "services" | "library" | "contact";
+  key: "home" | "projects" | "cv" | "services" | "library" | "contact";
   Icon: LucideIcon;
   /** Shown in the desktop header (Contact is a button there, Home is the logo). */
   desktop: boolean;
@@ -19,8 +19,10 @@ export interface NavLink {
 export const navLinks: NavLink[] = [
   { to: "/", key: "home", Icon: Home, desktop: false, mobile: true },
   { to: "/library/projects", key: "projects", Icon: LayoutGrid, desktop: true, mobile: true },
-  { to: "/services", key: "services", Icon: Layers, desktop: true, mobile: true },
+  { to: "/cv", key: "cv", Icon: FileUser, desktop: true, mobile: true },
   { to: "/library/components", key: "library", Icon: BookOpen, desktop: true, mobile: false },
+  // The site is about the person first; services stay one click away.
+  { to: "/services", key: "services", Icon: Layers, desktop: true, mobile: false },
   { to: "/contact", key: "contact", Icon: Mail, desktop: false, mobile: true },
 ];
 

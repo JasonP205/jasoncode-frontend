@@ -8,7 +8,10 @@
     "logoAria": "Jason Dev – Trang chủ",
     "themeToggle": "Chuyển giao diện sáng/tối",
     "localeSwitcher": "Chọn ngôn ngữ",
-    "primaryNav": "Điều hướng chính"
+    "primaryNav": "Điều hướng chính",
+    "cv": "CV",
+    "soundOn": "Âm thanh: bật",
+    "soundOff": "Âm thanh: tắt"
   },
   "common": {
     "loading": "Đang tải…",
@@ -27,7 +30,20 @@
     "download": "Tải CV (PDF)",
     "downloadAria": "Tải CV của Phan Hoàng Phúc dưới dạng file PDF",
     "open": "Mở tab mới",
-    "openAria": "Mở CV dạng PDF trong tab mới"
+    "openAria": "Mở CV dạng PDF trong tab mới",
+    "lede": "Bản CV đầy đủ – đọc ngay tại đây hoặc tải về dạng PDF.",
+    "railLabel": "Các phần của CV",
+    "rail": [
+      "Tóm tắt",
+      "Kinh nghiệm",
+      "Kỹ năng",
+      "Dự án",
+      "Học vấn"
+    ],
+    "now": "Hiện tại",
+    "closingHeading": "Thích bản giấy hơn?",
+    "closingLede": "Cùng nội dung, gói gọn trên một trang A4.",
+    "contact": "Nhắn cho mình"
   },
   "skills": {
     "techStackLabel": "Năng lực",
@@ -115,10 +131,17 @@
           "description": "Nhanh hơn cho người xem. Rõ ràng hơn với Google. Sẵn sàng để được tìm thấy."
         }
       ],
-      "progress": ["Nhiều trang", "Landing page", "Tăng tốc SEO"],
+      "progress": [
+        "Nhiều trang",
+        "Landing page",
+        "Tăng tốc SEO"
+      ],
       "speedUnit": "điểm hiệu năng",
       "mergeLabel": "Khởi chạy chiến dịch",
-      "seoBurst": ["TĂNG TỐC", "SEO"]
+      "seoBurst": [
+        "TĂNG TỐC",
+        "SEO"
+      ]
     },
     "promiseLabel": "Cam kết",
     "promiseHeading": "Yên tâm từ bản thử\nđến bàn giao."
@@ -340,16 +363,16 @@
     ]
   },
   "contact": {
-    "title": "Có ý tưởng?",
-    "titleAccent": "Nhắn là bắt đầu.",
-    "subtitle": "Để lại lời nhắn. Mình trả lời trong vòng 24 giờ.",
+    "title": "Muốn trò chuyện?",
+    "titleAccent": "Nhắn cho mình.",
+    "subtitle": "Công việc, dự án hay chỉ một câu hỏi. Mình trả lời trong vòng 24 giờ.",
     "directEmail": "Email trực tiếp",
     "nameLabel": "Họ và tên",
     "namePlaceholder": "Nguyễn Văn A",
     "emailLabel": "Email liên hệ",
     "emailPlaceholder": "email@example.com",
     "messageLabel": "Lời nhắn",
-    "messagePlaceholder": "Bạn cần làm gì, website hiện tại (nếu có), thời hạn mong muốn…",
+    "messagePlaceholder": "Bạn muốn trao đổi về điều gì…",
     "submit": "Gửi lời nhắn",
     "submitting": "Đang gửi…",
     "successTitle": "Đã gửi.",
@@ -358,7 +381,7 @@
     "toastError": "Chưa gửi được. Bạn thử lại sau ít phút, hoặc email trực tiếp cho mình."
   },
   "footer": {
-    "tagline": "Lập trình viên web tự do tại TP. Hồ Chí Minh.",
+    "tagline": "Software Engineer tại TP. Hồ Chí Minh. Làm web từ giao diện đến dữ liệu.",
     "partner": "Đối tác",
     "quickLinksTitle": "Liên kết nhanh",
     "quickLinks": {
@@ -369,7 +392,9 @@
       "cv": "CV của Phan Hoàng Phúc",
       "contact": "Liên hệ làm website"
     },
-    "rights": "Jason Dev. Bảo lưu mọi quyền."
+    "rights": "Jason Dev. Bảo lưu mọi quyền.",
+    "localTime": "Bây giờ ở TP.HCM",
+    "streamEnd": "Hết dòng thời gian. Phần tiếp theo – viết cùng bạn."
   },
   "utils": {
     "badge": "Sắp ra mắt",
@@ -391,8 +416,8 @@
     "signUpTitle": "Đăng ký đang được hoàn thiện"
   },
   "metadata": {
-    "homeTitle": "Jason Dev | Freelance Web Developer",
-    "homeDescription": "Trang cá nhân và dịch vụ freelance của Phan Hoàng Phúc (Jason Dev): làm website, tối ưu SEO, tăng tốc website có sẵn và thiết kế hệ thống dữ liệu.",
+    "homeTitle": "Phan Hoàng Phúc (Jason Dev) – Software Engineer",
+    "homeDescription": "Trang cá nhân của Phan Hoàng Phúc (Jason Dev): Software Developer tại TOTDigi, sinh viên năm cuối Greenwich. Dự án có bản demo, CV và thư viện React mã nguồn mở.",
     "projectsTitle": "Tất cả dự án",
     "projectsDescription": "Các dự án web và di động của Phan Hoàng Phúc, kèm bản demo: quản lý nhà hàng, bán hàng theo lô, nhắn tin thời gian thực, app hiking offline và website quán cà phê.",
     "servicesTitle": "Dịch vụ thiết kế website – Landing page, Web & SEO",
@@ -438,5 +463,112 @@
     "projectsCardTitle": "Dự án mình đã làm",
     "projectsCardDesc": "Từ landing page đến hệ thống có backend – dự án nào cũng có bản demo.",
     "projectsCardCta": "Xem tất cả dự án"
+  },
+  "profile": {
+    "kicker": "Software Engineer · TP. Hồ Chí Minh",
+    "headlineLead": "Xin chào,\nmình là ",
+    "headlineAccent": "Phúc.",
+    "lede": "Software Developer tại TOTDigi, sinh viên năm cuối Kỹ thuật phần mềm ở Greenwich. Mình làm trọn cả ba lớp: giao diện, API và dữ liệu.",
+    "ctaCv": "Xem CV",
+    "ctaContact": "Nhắn cho mình",
+    "soundPrompt": "Trang này có âm thanh. Bật lên rồi rê chuột qua tên mình.",
+    "soundOn": "Âm thanh: bật",
+    "soundOff": "Bật âm thanh",
+    "scrollCue": "Cuộn xuống một lớp",
+    "facts": [
+      {
+        "value": "TOTDigi",
+        "label": "Software Developer từ 11/2026"
+      },
+      {
+        "value": "3",
+        "label": "dự án cá nhân, dự án nào cũng có demo"
+      },
+      {
+        "value": "3.60",
+        "label": "GPA quy đổi, thang điểm 4"
+      },
+      {
+        "value": "B2",
+        "label": "tiếng Anh, chứng chỉ VSTEP"
+      }
+    ],
+    "now": {
+      "kicker": "Bây giờ",
+      "heading": "Đang đi làm.\nVẫn đang học.",
+      "lede": "Ban ngày viết code ở công ty. Phần còn lại cho năm cuối đại học và dự án riêng.",
+      "badge": "Hiện tại",
+      "job": {
+        "role": "Software Developer",
+        "org": "TOTDigi",
+        "period": "11/2026 – nay",
+        "body": "Phát triển hệ thống quản lý và hiển thị giá cho nhãn giá điện tử (ESL) – những màn hình giá nhỏ trên kệ hàng."
+      },
+      "school": {
+        "role": "Cử nhân Computing – Kỹ thuật phần mềm",
+        "org": "University of Greenwich Việt Nam",
+        "period": "08/2023 – nay",
+        "body": "Sinh viên năm cuối. Điểm tạm tính 65%, tương đương GPA 3.60/4.00."
+      }
+    },
+    "time": {
+      "kicker": "Dòng thời gian",
+      "heading": "Sáu viên đá.\nMột dòng chảy.",
+      "lede": "Mỗi viên đá là một mốc mình đã đi qua. Cuộn xuống để thắp sáng từng viên – và mang đủ sáu viên theo đến cuối trang.",
+      "items": [
+        {
+          "when": "08/2023",
+          "title": "Vào Greenwich.",
+          "body": "Bắt đầu Cử nhân Computing – Kỹ thuật phần mềm tại University of Greenwich Việt Nam."
+        },
+        {
+          "when": "Trong lúc học",
+          "title": "Nhận làm web tự do.",
+          "body": "Vừa học vừa làm web: React, Next.js, Node.js, MongoDB."
+        },
+        {
+          "when": "Dự án cá nhân",
+          "title": "Bamboo House.",
+          "body": "Quản lý nhà hàng nhiều chi nhánh. Gọi món qua mã QR, đơn hàng cập nhật tức thì bằng Socket.IO. Có bản demo."
+        },
+        {
+          "when": "Dự án cá nhân",
+          "title": "Chap.",
+          "body": "Ứng dụng chat realtime: nhóm, lời mời kết bạn, trạng thái đã xem. Có bản demo."
+        },
+        {
+          "when": "Dự án cá nhân",
+          "title": "Go Hike.",
+          "body": "Nhật ký leo núi không cần mạng – bảy trên tám tính năng chạy offline. Có bản demo."
+        },
+        {
+          "when": "11/2026",
+          "title": "Vào TOTDigi.",
+          "body": "Software Developer. Làm hệ thống quản lý và hiển thị giá cho nhãn giá điện tử."
+        }
+      ]
+    },
+    "work": {
+      "kicker": "Dự án",
+      "heading": "Tự làm từ đầu.\nĐến tận bản demo.",
+      "lede": "Ba dự án mình thích nhất. Mở ra để xem cách làm và dùng thử demo.",
+      "viewAll": "Xem tất cả dự án"
+    },
+    "stack": {
+      "kicker": "Công nghệ",
+      "heading": "Năm lớp.\nMột người làm.",
+      "lede": "Rê chuột qua từng lớp để xem mình dùng gì ở đó.",
+      "layers": [
+        "Giao diện",
+        "Trạng thái",
+        "API",
+        "Dữ liệu",
+        "Hạ tầng"
+      ]
+    },
+    "aside": {
+      "text": "Mình vẫn nhận làm website cho shop nhỏ và thương hiệu cá nhân.",
+      "link": "Xem dịch vụ"
+    }
   }
 }

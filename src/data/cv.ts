@@ -1,5 +1,5 @@
 /**
- * The CV rendered at `/cv`, transcribed from `public/cv/CV.pdf` so the page can
+ * The CV rendered at `/cv`, transcribed from `public/cv/new-cv.pdf` so the page can
  * be real HTML: selectable, themeable, responsive and crawlable, instead of an
  * embedded PDF that only paints on desktop.
  *
@@ -12,6 +12,14 @@
 export interface CvSkillGroup {
   label: string;
   items: string[];
+}
+
+export interface CvJob {
+  company: string;
+  title: string;
+  period: string;
+  current: boolean;
+  bullets: string[];
 }
 
 export interface CvProject {
@@ -32,6 +40,18 @@ export const cv = {
 
   summary:
     "Final-year Computing student at the University of Greenwich Vietnam and freelance web developer who has shipped production applications in React, Next.js, TypeScript, Node.js, Express and MongoDB. Experienced in RESTful API design, real-time systems with Socket.IO, JWT authentication, RBAC and SEO. Seeking a Frontend, Backend or Full-Stack Developer role in Ho Chi Minh City.",
+
+  experience: [
+    {
+      company: "TOTDigi",
+      title: "Software Developer",
+      period: "Nov 2026 — Present",
+      current: true,
+      bullets: [
+        "Contribute to and continue developing the company's price management and display system for ESL (Electronic Shelf Label) devices.",
+      ],
+    },
+  ] satisfies CvJob[],
 
   skills: [
     {

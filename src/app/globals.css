@@ -111,6 +111,7 @@
   --color-hue-green: var(--hue-green);
   --color-hue-orange: var(--hue-orange);
   --color-hue-pink: var(--hue-pink);
+  --color-stone-gold: var(--stone-gold);
   --color-action: var(--action);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -166,8 +167,8 @@
   --accent-foreground: oklch(99.11% 0 0);
   /* Page is pure white; alternate sections sit on a cool near-white band, and
      tiles placed on a band go back to white. One step of contrast each way. */
-  --background: oklch(100% 0 0);
-  --band: oklch(97.2% 0.0015 286);
+  --background: oklch(98.7% 0.0035 85);
+  --band: oklch(96.3% 0.0055 85);
   --tile: oklch(100% 0 0);
   /* Section tones — accents only (kickers, icons, step numbers), never large
      fills. Light values are the deep end of each hue so small text keeps
@@ -177,11 +178,20 @@
   --hue-green: #047857;
   --hue-orange: #c2410c;
   --hue-pink: #be185d;
+  /* Sixth stone of the home timeline; deep amber so small text passes 4.5:1. */
+  --stone-gold: #a16207;
+  /* The five layers of the stack (interface → infra) borrow the tones. Used by
+     the three.js scenes, the kinetic headline tints and the layer tags. */
+  --layer-0: var(--hue-blue);
+  --layer-1: var(--hue-purple);
+  --layer-2: var(--hue-green);
+  --layer-3: var(--hue-orange);
+  --layer-4: var(--hue-pink);
   /* The one action colour: primary buttons and "Tìm hiểu thêm" links. White
      text on it is 4.7:1; the hover goes darker so it never drops below that. */
   --action: #0071e3;
   --action-hover: #0062c4;
-  --border: oklch(87.00% 0.0000 0.00);
+  --border: oklch(88.5% 0.006 85);
   --danger: oklch(65.32% 0.2328 355.28);
   --danger-foreground: oklch(99.11% 0 0);
   --default: oklch(94.00% 0.0000 0.00);
@@ -198,7 +208,7 @@
   --scrollbar: oklch(87.10% 0.0000 0.00);
   --segment: oklch(100.00% 0.0000 0.00);
   --segment-foreground: oklch(21.03% 0.0000 0.00);
-  --separator: oklch(89.00% 0.0000 0.00);
+  --separator: oklch(90% 0.006 85);
   --success: oklch(73.29% 0.1935 120.35);
   --success-foreground: oklch(21.03% 0.0059 120.35);
   --surface: oklch(100.00% 0.0000 0.00);
@@ -224,17 +234,18 @@
   /* Theme Colors (Dark Mode) */
   --accent: oklch(0.9848 0 0);
   --accent-foreground: oklch(15% 0.0000 0.00);
-  --background: oklch(10.00% 0.0000 0.00);
-  --band: oklch(16.50% 0.0000 0.00);
-  --tile: oklch(21.00% 0.0000 0.00);
+  --background: oklch(13.5% 0.012 265);
+  --band: oklch(17% 0.014 265);
+  --tile: oklch(21% 0.016 265);
   --hue-blue: #2997ff;
   --hue-purple: #b58cff;
   --hue-green: #34d399;
   --hue-orange: #fb923c;
   --hue-pink: #f472b6;
+  --stone-gold: #fcd34d;
   --action: #0071e3;
   --action-hover: #0062c4;
-  --border: oklch(28.00% 0.0000 0.00);
+  --border: oklch(29% 0.016 265);
   --danger: oklch(59.40% 0.1967 354.17);
   --danger-foreground: oklch(99.11% 0 0);
   --default: oklch(27.40% 0.0000 0.00);
@@ -251,10 +262,10 @@
   --scrollbar: oklch(70.50% 0.0000 0.00);
   --segment: oklch(39.64% 0.0000 0.00);
   --segment-foreground: oklch(99.11% 0.0000 0.00);
-  --separator: oklch(25.00% 0.0000 0.00);
+  --separator: oklch(26% 0.014 265);
   --success: oklch(73.29% 0.1935 120.35);
   --success-foreground: oklch(21.03% 0.0059 120.35);
-  --surface: oklch(21.03% 0.0000 0.00);
+  --surface: oklch(21% 0.016 265);
   --surface-foreground: oklch(99.11% 0.0000 0.00);
   --surface-secondary: oklch(25.70% 0.0000 0.00);
   --surface-secondary-foreground: oklch(99.11% 0.0000 0.00);
@@ -489,10 +500,10 @@
      minifier dropped it as overridden by `text-wrap: balance` below. */
   white-space-collapse: preserve-breaks;
   font-family: var(--font-heading);
-  font-weight: 600;
-  font-size: clamp(2rem, 1rem + 4.6vw, 5rem);
+  font-weight: 700;
+  font-size: clamp(2.25rem, 1rem + 5vw, 5.5rem);
   line-height: 1.15;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.04em;
   text-wrap: balance;
 }
 
@@ -502,10 +513,10 @@
      minifier dropped it as overridden by `text-wrap: balance` below. */
   white-space-collapse: preserve-breaks;
   font-family: var(--font-heading);
-  font-weight: 600;
-  font-size: clamp(2rem, 1.45rem + 2.4vw, 3.5rem);
+  font-weight: 700;
+  font-size: clamp(2rem, 1.4rem + 2.6vw, 3.75rem);
   line-height: 1.18;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.035em;
   text-wrap: balance;
 }
 
@@ -616,3 +627,272 @@
     border-radius: 4px;
   }
 }
+
+/*
+ ---break---
+ */
+
+/*
+ * The layers system — the site-wide redesign.
+ *
+ * The site is drawn as a stack: interface → state → api → data → infra, one
+ * tone each (--layer-0…4). Sections carry a small mono "L1" tag, page heroes
+ * sit on a three.js stack (LayerScene), headlines are kinetic (letters on
+ * springs) and the UI can make sound (lib/sound/engine.ts).
+ */
+
+/* Small mono tag naming a layer: "L2". Latin and digits only — Geist Mono has
+   no Vietnamese glyphs, so Vietnamese text never goes through it. */
+@utility layer-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--muted-foreground);
+  &::before {
+    content: "";
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 9999px;
+    background: currentColor;
+    box-shadow: 0 0 0 4px color-mix(in oklab, currentColor 20%, transparent);
+  }
+}
+
+/* The layer gradient, for the one accent run in a headline. */
+@utility text-layers {
+  background-image: linear-gradient(95deg, var(--layer-0), var(--layer-1) 45%, var(--layer-4));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* A faint wash of the layer tones over a dot grid, behind page heroes. */
+.layer-wash {
+  background:
+    radial-gradient(40rem 22rem at 18% 18%, color-mix(in oklab, var(--layer-0) 14%, transparent), transparent 70%),
+    radial-gradient(36rem 20rem at 82% 30%, color-mix(in oklab, var(--layer-1) 12%, transparent), transparent 70%),
+    radial-gradient(color-mix(in oklab, var(--foreground) 9%, transparent) 1px, transparent 1.2px) 0 0 / 26px 26px;
+  mask-image: linear-gradient(to bottom, black 40%, transparent);
+}
+
+.layer-scene canvas {
+  display: block;
+}
+/* The stack's glow and orbiters fade out before the canvas edge instead of
+   being cut by it. (The field variant gets its radial mask from Aura.) */
+.layer-scene[data-variant="stack"] {
+  mask-image:
+    linear-gradient(to bottom, transparent, #000 8%, #000 82%, transparent),
+    linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+  mask-composite: intersect;
+}
+
+/* --- Kinetic headline ---------------------------------------------------- */
+.kinetic {
+  position: relative;
+  cursor: default;
+}
+.kinetic .kw {
+  display: inline-block;
+  white-space: nowrap;
+}
+.kinetic .kc {
+  display: inline-block;
+  transition: color 0.3s ease;
+  transform-origin: 50% 70%;
+}
+/* Each accent letter shows its own slice of one long gradient, so the run
+   reads as a single gradient even though every letter moves on its own.
+   The padding keeps stacked diacritics inside the painted box. */
+.kinetic .kc-accent {
+  background-image: linear-gradient(95deg, var(--layer-0), var(--layer-1) 45%, var(--layer-4));
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  padding: 0.16em 0.015em;
+  margin: -0.16em -0.015em;
+}
+
+/* --- Sound toggle bars --------------------------------------------------- */
+.eq i {
+  display: block;
+  width: 2px;
+  height: 100%;
+  border-radius: 1px;
+  background: currentColor;
+  transform: scaleY(0.25);
+  transform-origin: bottom;
+  transition: transform 0.3s ease;
+}
+.eq[data-on] i {
+  animation: eq-bounce 0.9s ease-in-out infinite alternate;
+}
+.eq[data-on] i:nth-child(2) { animation-delay: -0.3s; }
+.eq[data-on] i:nth-child(3) { animation-delay: -0.6s; }
+.eq[data-on] i:nth-child(4) { animation-delay: -0.15s; }
+@keyframes eq-bounce {
+  from { transform: scaleY(0.3); }
+  to { transform: scaleY(1); }
+}
+
+/* Fading scroll hint line under heroes. */
+.scroll-cue {
+  position: relative;
+  width: 1px;
+  height: 2.5rem;
+  overflow: hidden;
+  background: color-mix(in oklab, var(--foreground) 15%, transparent);
+}
+.scroll-cue::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--foreground);
+  animation: scroll-cue 1.8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+@keyframes scroll-cue {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(100%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .eq[data-on] i {
+    animation: none;
+    transform: scaleY(0.7);
+  }
+  .scroll-cue::after {
+    animation: none;
+  }
+}
+
+/* --- Theme switch: View Transition API -----------------------------------
+ * ThemeProvider.setTheme sets --vt-x/--vt-y/--vt-r and data-theme-vt on
+ * <html>, then calls document.startViewTransition. The new theme grows as a
+ * circle from the toggle over a still snapshot of the old one. Scoped to the
+ * attribute so any other view transition keeps the browser's default fade.
+ *
+ * HeroUI's base layer sets `:root { view-transition-name: none }`, which
+ * leaves the browser nothing to snapshot (the transition "finishes" at once).
+ * Restore the root name for the duration of the theme switch only. */
+html[data-theme-vt] {
+  view-transition-name: root;
+}
+html[data-theme-vt]::view-transition-old(root),
+html[data-theme-vt]::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+html[data-theme-vt]::view-transition-new(root) {
+  animation: theme-reveal 0.7s cubic-bezier(0.7, 0, 0.25, 1) both;
+}
+@keyframes theme-reveal {
+  from {
+    clip-path: circle(0 at var(--vt-x, 50%) var(--vt-y, 0));
+  }
+  to {
+    clip-path: circle(var(--vt-r, 150vmax) at var(--vt-x, 50%) var(--vt-y, 0));
+  }
+}
+
+/* --- Tilt3D: cards that lean toward the cursor ------------------------- */
+.tilt-3d {
+  perspective: 1000px;
+  height: 100%;
+}
+.tilt-3d-inner {
+  position: relative;
+  height: 100%;
+  border-radius: var(--tilt-radius, 1.75rem);
+  transform-style: preserve-3d;
+  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  will-change: transform;
+}
+.tilt-3d [data-depth="1"] { transform: translateZ(18px); }
+.tilt-3d [data-depth="2"] { transform: translateZ(34px); }
+.tilt-3d [data-depth="3"] { transform: translateZ(52px); }
+.tilt-3d-glare {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: var(--glare, 0);
+  background: radial-gradient(
+    circle at var(--gx, 50%) var(--gy, 50%),
+    rgb(255 255 255 / 0.45),
+    rgb(255 255 255 / 0) 55%
+  );
+  mix-blend-mode: soft-light;
+  transform: translateZ(1px);
+}
+.dark .tilt-3d-glare {
+  mix-blend-mode: overlay;
+}
+@media (prefers-reduced-motion: reduce) {
+  .tilt-3d-inner { transform: none; }
+}
+
+
+
+/* --- Header / footer: glass capsule + the stream of time ------------------ */
+.glass-capsule {
+  background: color-mix(in oklab, var(--background) 72%, transparent);
+  border: 1px solid color-mix(in oklab, var(--foreground) 10%, transparent);
+  box-shadow:
+    0 1px 0 0 color-mix(in oklab, white 35%, transparent) inset,
+    0 12px 40px -18px color-mix(in oklab, black 45%, transparent);
+  backdrop-filter: blur(20px) saturate(1.6);
+}
+.dark .glass-capsule {
+  box-shadow:
+    0 1px 0 0 color-mix(in oklab, white 8%, transparent) inset,
+    0 16px 50px -20px black;
+}
+/* Six stone colours in time order; shared by the header progress line and
+   the footer stones. */
+.stream-gradient {
+  background: linear-gradient(
+    90deg,
+    var(--hue-blue),
+    var(--hue-purple),
+    var(--hue-green),
+    var(--hue-orange),
+    var(--hue-pink),
+    var(--stone-gold)
+  );
+}
+/* How far down the page the reader is: CSS scroll-driven, no JS. Browsers
+   without scroll timelines simply don't show it. */
+.time-progress {
+  transform: scaleX(0);
+  transform-origin: left;
+}
+@supports (animation-timeline: scroll()) {
+  .time-progress {
+    animation: time-progress linear both;
+    animation-timeline: scroll(root);
+  }
+}
+@keyframes time-progress {
+  to {
+    transform: scaleX(1);
+  }
+}
+/* A cut stone in CSS: crown, girdle, pavilion. */
+.stone-gem {
+  clip-path: polygon(24% 0, 76% 0, 100% 34%, 50% 100%, 0 34%);
+  background:
+    linear-gradient(115deg, transparent 38%, color-mix(in oklab, white 55%, transparent) 46%, transparent 54%),
+    linear-gradient(180deg, color-mix(in oklab, var(--gem) 55%, white) 0 34%, var(--gem) 34% 100%);
+}
+@media (prefers-reduced-motion: reduce) {
+  .time-progress {
+    animation: none;
+  }
+}
+

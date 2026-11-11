@@ -17,12 +17,12 @@ export default function BottomNav() {
   return (
     <nav
       aria-label={t("primaryNav")}
-      className="fixed inset-x-0 bottom-0 z-50 border-t border-border/60 bg-background/85 backdrop-blur-xl backdrop-saturate-150 md:hidden"
+      className="glass-capsule fixed inset-x-3 bottom-[calc(0.5rem+env(safe-area-inset-bottom))] z-50 rounded-[1.75rem] p-1.5 md:hidden"
     >
-      {/* The inset padding sits inside the bar so its background still covers
-          the home-indicator area on iOS. */}
+      {/* A floating capsule like the header; it sits above the iOS home
+          indicator instead of covering it. */}
       <ul
-        className="grid pb-[env(safe-area-inset-bottom)]"
+        className="grid gap-1"
         style={{ gridTemplateColumns: `repeat(${links.length}, minmax(0, 1fr))` }}
       >
         {links.map((link) => {
@@ -34,8 +34,8 @@ export default function BottomNav() {
                 href={link.to}
                 aria-current={active ? "page" : undefined}
                 className={cn(
-                  "flex h-14 flex-col items-center justify-center gap-1 transition-colors",
-                  active ? "text-foreground" : "text-muted-foreground hover:text-foreground",
+                  "flex h-12 flex-col items-center justify-center gap-1 rounded-[1.25rem] transition-colors",
+                  active ? "bg-foreground/[0.07] text-foreground" : "text-muted-foreground hover:text-foreground",
                 )}
               >
                 <Icon className="h-5 w-5" strokeWidth={active ? 2.25 : 1.75} aria-hidden />
