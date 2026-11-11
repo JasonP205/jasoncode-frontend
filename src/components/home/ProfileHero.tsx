@@ -71,7 +71,7 @@ export default async function ProfileHero() {
       </div>
 
       <div className="mx-auto max-w-6xl border-t border-border pb-14">
-        <dl className="grid grid-cols-2 gap-x-6 gap-y-8 pt-8 md:grid-cols-4">
+        <dl className="grid grid-cols-2 gap-x-6 gap-y-8 pt-8 md:grid-cols-3">
           {facts.map((fact, i) => (
             // Label first in the markup (dt before dd), value on top visually.
             <div

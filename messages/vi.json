@@ -417,7 +417,7 @@
   },
   "metadata": {
     "homeTitle": "Phan Hoàng Phúc (Jason Dev) – Software Engineer",
-    "homeDescription": "Trang cá nhân của Phan Hoàng Phúc (Jason Dev): Software Developer tại TOTDigi, sinh viên năm cuối Greenwich. Dự án có bản demo, CV và thư viện React mã nguồn mở.",
+    "homeDescription": "Trang cá nhân của Phan Hoàng Phúc (Jason Dev): Software Engineer, sinh viên năm cuối Greenwich. Dự án có bản demo, CV và thư viện React mã nguồn mở.",
     "projectsTitle": "Tất cả dự án",
     "projectsDescription": "Các dự án web và di động của Phan Hoàng Phúc, kèm bản demo: quản lý nhà hàng, bán hàng theo lô, nhắn tin thời gian thực, app hiking offline và website quán cà phê.",
     "servicesTitle": "Dịch vụ thiết kế website – Landing page, Web & SEO",
@@ -468,7 +468,7 @@
     "kicker": "Software Engineer · TP. Hồ Chí Minh",
     "headlineLead": "Xin chào,\nmình là ",
     "headlineAccent": "Phúc.",
-    "lede": "Software Developer tại TOTDigi, sinh viên năm cuối Kỹ thuật phần mềm ở Greenwich. Mình làm trọn cả ba lớp: giao diện, API và dữ liệu.",
+    "lede": "Sinh viên năm cuối Kỹ thuật phần mềm ở Greenwich. Mình làm trọn cả ba lớp: giao diện, API và dữ liệu.",
     "ctaCv": "Xem CV",
     "ctaContact": "Nhắn cho mình",
     "soundPrompt": "Trang này có âm thanh. Bật lên rồi rê chuột qua tên mình.",
@@ -476,10 +476,6 @@
     "soundOff": "Bật âm thanh",
     "scrollCue": "Cuộn xuống một lớp",
     "facts": [
-      {
-        "value": "TOTDigi",
-        "label": "Software Developer từ 11/2026"
-      },
       {
         "value": "3",
         "label": "dự án cá nhân, dự án nào cũng có demo"
@@ -577,7 +573,7 @@
       "eyebrow": "Software Engineer · TP. Hồ Chí Minh",
       "title": "Xin chào,\nmình là ",
       "accent": "Phúc.",
-      "subtitle": "Software Developer tại TOTDigi. Sinh viên năm cuối Kỹ thuật phần mềm ở Greenwich."
+      "subtitle": "Sinh viên năm cuối Kỹ thuật phần mềm ở Greenwich. Làm trọn cả ba lớp: giao diện, API và dữ liệu."
     },
     "projects": {
       "eyebrow": "Dự án",

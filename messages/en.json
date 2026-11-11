@@ -417,7 +417,7 @@
   },
   "metadata": {
     "homeTitle": "Phan Hoang Phuc (Jason Dev) – Software Engineer",
-    "homeDescription": "Personal site of Phan Hoang Phuc (Jason Dev): Software Developer at TOTDigi and final-year Greenwich student. Projects with demos, résumé and open-source React libraries.",
+    "homeDescription": "Personal site of Phan Hoang Phuc (Jason Dev): software engineer and final-year Greenwich student. Projects with demos, résumé and open-source React libraries.",
     "projectsTitle": "All projects",
     "projectsDescription": "Web and mobile projects by Phan Hoang Phuc, each with a demo: restaurant management, a batch-inventory POS, realtime chat, an offline hiking app and a coffee shop website.",
     "servicesTitle": "Website design services – Landing pages, Web & SEO",
@@ -468,7 +468,7 @@
     "kicker": "Software Engineer · Ho Chi Minh City",
     "headlineLead": "Hi,\nI'm ",
     "headlineAccent": "Phuc.",
-    "lede": "Software Developer at TOTDigi and final-year Software Engineering student at Greenwich. I build all three layers: interface, API and data.",
+    "lede": "Final-year Software Engineering student at Greenwich. I build all three layers: interface, API and data.",
     "ctaCv": "View résumé",
     "ctaContact": "Message me",
     "soundPrompt": "This page has sound. Turn it on, then run your cursor over my name.",
@@ -476,10 +476,6 @@
     "soundOff": "Turn sound on",
     "scrollCue": "Scroll one layer down",
     "facts": [
-      {
-        "value": "TOTDigi",
-        "label": "Software Developer since Nov 2026"
-      },
       {
         "value": "3",
         "label": "personal projects, each with a demo"
@@ -577,7 +573,7 @@
       "eyebrow": "Software Engineer · Ho Chi Minh City",
       "title": "Hi,\nI'm ",
       "accent": "Phuc.",
-      "subtitle": "Software Developer at TOTDigi. Final-year Software Engineering student at Greenwich."
+      "subtitle": "Final-year Software Engineering student at Greenwich. Interface, API and data – all three layers."
     },
     "projects": {
       "eyebrow": "Projects",
