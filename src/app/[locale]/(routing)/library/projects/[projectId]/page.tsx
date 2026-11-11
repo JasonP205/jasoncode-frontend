@@ -48,16 +48,12 @@ export async function generateMetadata(props: {
       title: `${project.title} | Jason Dev`,
       description: project.description,
       url: alternates?.canonical as string,
-      images: project.image[0].src
-        ? [{ url: project.image[0].src, alt: project.title }]
-        : undefined,
       ...ogLocaleFields(locale),
     },
     twitter: {
       card: "summary_large_image",
       title: project.title,
       description: project.description,
-      images: project.image[0].src ? [project.image[0].src] : undefined,
     },
   };
 }

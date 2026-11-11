@@ -570,5 +570,59 @@
       "text": "Mình vẫn nhận làm website cho shop nhỏ và thương hiệu cá nhân.",
       "link": "Xem dịch vụ"
     }
+  },
+  "og": {
+    "alt": "Jason Dev – Phan Hoàng Phúc, Software Engineer",
+    "home": {
+      "eyebrow": "Software Engineer · TP. Hồ Chí Minh",
+      "title": "Xin chào,\nmình là ",
+      "accent": "Phúc.",
+      "subtitle": "Software Developer tại TOTDigi. Sinh viên năm cuối Kỹ thuật phần mềm ở Greenwich."
+    },
+    "projects": {
+      "eyebrow": "Dự án",
+      "title": "Tự làm từ đầu.\nĐến tận ",
+      "accent": "bản demo.",
+      "subtitle": "Quản lý nhà hàng, chat realtime, app leo núi offline và website quán cà phê."
+    },
+    "project": {
+      "eyebrow": "Dự án · có bản demo"
+    },
+    "cv": {
+      "eyebrow": "CV",
+      "title": "Phan Hoàng\n",
+      "accent": "Phúc.",
+      "subtitle": "Software Developer tại TOTDigi. Cử nhân Computing – Greenwich, GPA quy đổi 3.60/4.00."
+    },
+    "services": {
+      "eyebrow": "Dịch vụ",
+      "title": "Website nhanh.\nĐúng ",
+      "accent": "việc.",
+      "subtitle": "Landing page, website và SEO bằng Next.js. Xem bản thử rồi mới quyết."
+    },
+    "library": {
+      "eyebrow": "Thư viện",
+      "title": "Mã nguồn\n",
+      "accent": "mở.",
+      "subtitle": "@hwagfu/link, @hwagfu/cursor, @hwagfu/images – component React mình tự viết."
+    },
+    "contact": {
+      "eyebrow": "Liên hệ",
+      "title": "Nhắn cho\n",
+      "accent": "mình.",
+      "subtitle": "Công việc, dự án hay chỉ một câu hỏi. Mình trả lời trong vòng 24 giờ."
+    },
+    "students": {
+      "eyebrow": "Cho sinh viên IT",
+      "title": "Đồ án và CV.\n",
+      "accent": "Gọn gàng.",
+      "subtitle": "Sửa lỗi coursework, làm đồ án web và CV/Portfolio. Chỉ hỗ trợ phần code và giao diện."
+    },
+    "utils": {
+      "eyebrow": "Tiện ích",
+      "title": "Đang\n",
+      "accent": "hoàn thiện.",
+      "subtitle": "Bộ công cụ web miễn phí của Jason Dev."
+    }
   }
 }

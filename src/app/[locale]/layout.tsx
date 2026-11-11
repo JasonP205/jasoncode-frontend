@@ -115,22 +115,13 @@ export async function generateMetadata({
       siteName: "Jason Dev Portfolio",
       title: t("homeTitle"),
       description: t("homeDescription"),
-      images: [
-        {
-          url: "/opengraph-image.jpg",
-          width: 1200,
-          height: 630,
-          type: "image/jpeg",
-          alt: "Jason Dev – Một chút thiết kế. Một chút lập trình. Thành một sản phẩm.",
-        },
-      ],
+      // Images come from the generated opengraph-image / twitter-image routes.
     },
 
     twitter: {
       card: "summary_large_image",
       title: t("homeTitle"),
       description: t("homeDescription"),
-      images: ["/twitter-image.jpg"],
     },
 
     robots: {

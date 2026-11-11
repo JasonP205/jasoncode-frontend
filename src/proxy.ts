@@ -10,7 +10,10 @@ export const config = {
   // and the root-level metadata image/file routes. The dynamic metadata routes
   // (opengraph-image, twitter-image, icon, …) resolve to extension-less paths
   // like `/opengraph-image`, so the dot rule alone wouldn't exclude them and the
-  // locale middleware would otherwise rewrite them to `/vi/...` → 404.
+  // locale middleware would otherwise rewrite them to `/vi/...` → 404. The
+  // generated OG/Twitter cards live under [locale] at any depth
+  // (`/vi/opengraph-image`, `/en/cv/twitter-image`), so those are skipped
+  // wherever they appear — next-intl must not strip the `/vi` from them.
   matcher:
-    "/((?!api|_next|_vercel|opengraph-image|twitter-image|icon|apple-icon|sitemap|robots|manifest|.*\\..*).*)",
+    "/((?!api|_next|_vercel|icon|apple-icon|sitemap|robots|manifest|.*opengraph-image|.*twitter-image|.*\\..*).*)",
 };

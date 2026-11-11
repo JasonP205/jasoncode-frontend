@@ -570,5 +570,59 @@
       "text": "I still build websites for small shops and personal brands.",
       "link": "See services"
     }
+  },
+  "og": {
+    "alt": "Jason Dev – Phan Hoang Phuc, Software Engineer",
+    "home": {
+      "eyebrow": "Software Engineer · Ho Chi Minh City",
+      "title": "Hi,\nI'm ",
+      "accent": "Phuc.",
+      "subtitle": "Software Developer at TOTDigi. Final-year Software Engineering student at Greenwich."
+    },
+    "projects": {
+      "eyebrow": "Projects",
+      "title": "Built from scratch.\nAll the way to ",
+      "accent": "a demo.",
+      "subtitle": "Restaurant management, realtime chat, an offline hiking app and a coffee shop website."
+    },
+    "project": {
+      "eyebrow": "Project · demo available"
+    },
+    "cv": {
+      "eyebrow": "CV",
+      "title": "Phan Hoang\n",
+      "accent": "Phuc.",
+      "subtitle": "Software Developer at TOTDigi. BSc Computing – Greenwich, US GPA equivalent 3.60/4.00."
+    },
+    "services": {
+      "eyebrow": "Services",
+      "title": "Fast websites.\nThat do the ",
+      "accent": "job.",
+      "subtitle": "Landing pages, websites and SEO with Next.js. See a preview, then decide."
+    },
+    "library": {
+      "eyebrow": "Library",
+      "title": "Open\n",
+      "accent": "source.",
+      "subtitle": "@hwagfu/link, @hwagfu/cursor, @hwagfu/images – React components I built."
+    },
+    "contact": {
+      "eyebrow": "Contact",
+      "title": "Message\n",
+      "accent": "me.",
+      "subtitle": "Work, a project or just a question. I reply within 24 hours."
+    },
+    "students": {
+      "eyebrow": "For IT students",
+      "title": "Coursework and CVs.\n",
+      "accent": "Done right.",
+      "subtitle": "Coursework fixes, web course projects and CV/portfolio sites. Code and interface only."
+    },
+    "utils": {
+      "eyebrow": "Utilities",
+      "title": "Work in\n",
+      "accent": "progress.",
+      "subtitle": "Free web tools from Jason Dev."
+    }
   }
 }
