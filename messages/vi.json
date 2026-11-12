@@ -9,9 +9,7 @@
     "themeToggle": "Chuyển giao diện sáng/tối",
     "localeSwitcher": "Chọn ngôn ngữ",
     "primaryNav": "Điều hướng chính",
-    "cv": "CV",
-    "soundOn": "Âm thanh: bật",
-    "soundOff": "Âm thanh: tắt"
+    "cv": "CV"
   },
   "common": {
     "loading": "Đang tải…",
@@ -471,10 +469,6 @@
     "lede": "Sinh viên năm cuối Kỹ thuật phần mềm ở Greenwich. Mình làm trọn cả ba lớp: giao diện, API và dữ liệu.",
     "ctaCv": "Xem CV",
     "ctaContact": "Nhắn cho mình",
-    "soundPrompt": "Trang này có âm thanh. Bật lên rồi rê chuột qua tên mình.",
-    "soundOn": "Âm thanh: bật",
-    "soundOff": "Bật âm thanh",
-    "scrollCue": "Cuộn xuống một lớp",
     "facts": [
       {
         "value": "3",
@@ -509,8 +503,8 @@
     },
     "time": {
       "kicker": "Dòng thời gian",
-      "heading": "Sáu viên đá.\nMột dòng chảy.",
-      "lede": "Mỗi viên đá là một mốc mình đã đi qua. Cuộn xuống để thắp sáng từng viên – và mang đủ sáu viên theo đến cuối trang.",
+      "heading": "Từng bước.\nĐến hôm nay.",
+      "lede": "Sáu mốc mình đã đi qua – từ ngày vào Greenwich đến công việc hiện tại.",
       "items": [
         {
           "when": "08/2023",
@@ -553,7 +547,7 @@
     "stack": {
       "kicker": "Công nghệ",
       "heading": "Năm lớp.\nMột người làm.",
-      "lede": "Rê chuột qua từng lớp để xem mình dùng gì ở đó.",
+      "lede": "Mình làm ở cả năm lớp của một sản phẩm. Đây là công cụ mình dùng ở từng lớp.",
       "layers": [
         "Giao diện",
         "Trạng thái",

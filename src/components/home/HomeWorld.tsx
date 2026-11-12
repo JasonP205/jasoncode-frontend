@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import type * as THREE from "three";
 import { useRouter } from "@/i18n/navigation";
 import { play } from "@/lib/sound/engine";
+import { isLowPower, pixelRatio } from "@/lib/three/quality";
 
 export interface WorldProject {
   id: string;
@@ -157,12 +158,14 @@ export default function HomeWorld({ projects }: HomeWorldProps) {
     ]).then(([THREE, { RoomEnvironment }]) => {
       if (disposed) return;
       const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      // Phones: no MSAA, DPR ≤ 1.25, a third of the particles, cheaper stones.
+      const lite = isLowPower();
       const probe = document.createElement("canvas").getContext("2d", { willReadFrequently: true })!;
       const bin: { dispose: () => void }[] = [];
       const keep = <X extends { dispose: () => void }>(x: X) => (bin.push(x), x);
 
-      const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: "high-performance" });
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+      const renderer = new THREE.WebGLRenderer({ antialias: !lite, alpha: true, powerPreference: "high-performance" });
+      renderer.setPixelRatio(pixelRatio(1.5, lite));
       renderer.setClearColor(0x000000, 0);
       renderer.outputColorSpace = THREE.SRGBColorSpace;
       el.appendChild(renderer.domElement);
@@ -213,7 +216,7 @@ export default function HomeWorld({ projects }: HomeWorldProps) {
         keep(new THREE.LineBasicMaterial({ transparent: true, opacity: 0.4, depthWrite: false })),
       );
       const wires: { mesh: THREE.LineSegments; docY: number; spin: THREE.Vector3; z: number; xf: number }[] = [];
-      const WIRES = 34;
+      const WIRES = lite ? 14 : 34;
       for (let i = 0; i < WIRES; i++) {
         const mesh = new THREE.LineSegments(wireGeos[i % wireGeos.length], wireMats[i % 5]);
         mesh.scale.setScalar(0.6 + Math.random() * 1.8);
@@ -229,7 +232,7 @@ export default function HomeWorld({ projects }: HomeWorldProps) {
       }
 
       // --- Dust ---------------------------------------------------------------
-      const DUST = 1100;
+      const DUST = lite ? 360 : 1100;
       const dustPos = new Float32Array(DUST * 3);
       const dustSeed = new Float32Array(DUST * 3);
       for (let i = 0; i < DUST; i++) dustSeed.set([Math.random(), Math.random(), Math.random()], i * 3);
@@ -331,7 +334,7 @@ export default function HomeWorld({ projects }: HomeWorldProps) {
           const canvas = document.createElement("canvas");
           const tex = keep(new THREE.CanvasTexture(canvas));
           tex.colorSpace = THREE.SRGBColorSpace;
-          tex.anisotropy = 8;
+          tex.anisotropy = lite ? 2 : 8;
           const mesh = new THREE.Mesh(tagFace, keep(new THREE.MeshBasicMaterial({ map: tex })));
           mesh.position.z = side ? -0.05 : 0.05;
           mesh.rotation.y = side ? Math.PI : 0;
@@ -404,7 +407,7 @@ export default function HomeWorld({ projects }: HomeWorldProps) {
           }),
         );
         tex.colorSpace = THREE.SRGBColorSpace;
-        tex.anisotropy = 8;
+        tex.anisotropy = lite ? 2 : 8;
         const group = new THREE.Group();
         const mesh = new THREE.Mesh(panelGeo, keep(new THREE.MeshBasicMaterial({ map: tex, side: THREE.FrontSide })));
         mesh.userData.panel = i;
@@ -478,7 +481,7 @@ export default function HomeWorld({ projects }: HomeWorldProps) {
       interface Stone {
         group: THREE.Group;
         mesh: THREE.Mesh;
-        mat: THREE.MeshPhysicalMaterial;
+        mat: THREE.MeshStandardMaterial;
         glow: THREE.Sprite;
         glowMat: THREE.SpriteMaterial;
         dial: THREE.LineSegments;
@@ -495,15 +498,19 @@ export default function HomeWorld({ projects }: HomeWorldProps) {
       }
       const grey = new THREE.Color("#8a8f9c");
       const stones: Stone[] = CUTS.map((_, i) => {
+        // Clearcoat + iridescence is the costliest shader on the page; phones
+        // get the plain standard material.
         const mat = keep(
-          new THREE.MeshPhysicalMaterial({
-            flatShading: true,
-            roughness: 0.1,
-            metalness: 0.15,
-            clearcoat: 1,
-            iridescence: 0.55,
-            envMapIntensity: 1.4,
-          }),
+          lite
+            ? new THREE.MeshStandardMaterial({ flatShading: true, roughness: 0.15, metalness: 0.2, envMapIntensity: 1.6 })
+            : new THREE.MeshPhysicalMaterial({
+                flatShading: true,
+                roughness: 0.1,
+                metalness: 0.15,
+                clearcoat: 1,
+                iridescence: 0.55,
+                envMapIntensity: 1.4,
+              }),
         );
         const mesh = new THREE.Mesh(stoneGeos[i], mat);
         mesh.userData.stone = i;
@@ -541,7 +548,7 @@ export default function HomeWorld({ projects }: HomeWorldProps) {
       let hud = false;
 
       // --- Time stream: particles flowing along the ribbon, past → present ------
-      const STREAM = 1400;
+      const STREAM = lite ? 500 : 1400;
       const streamPos = new Float32Array(STREAM * 3);
       const streamCol = new Float32Array(STREAM * 3);
       const streamSeed = Array.from({ length: STREAM }, () => ({
@@ -694,10 +701,10 @@ export default function HomeWorld({ projects }: HomeWorldProps) {
             ];
           });
           const curve = new THREE.CatmullRomCurve3(pts, false, "catmullrom", 0.5);
-          ribbon = new THREE.Mesh(new THREE.TubeGeometry(curve, 900, 0.05, 8, false), ribbonMat);
+          ribbon = new THREE.Mesh(new THREE.TubeGeometry(curve, lite ? 420 : 900, 0.05, lite ? 5 : 8, false), ribbonMat);
           ribbon.renderOrder = -1;
           scene.add(ribbon);
-          streamPath = curve.getSpacedPoints(1800);
+          streamPath = curve.getSpacedPoints(lite ? 900 : 1800);
         }
 
         // Stones: anchored on their dials in the timeline.
@@ -923,8 +930,15 @@ export default function HomeWorld({ projects }: HomeWorldProps) {
         renderer.render(scene, camera);
       };
 
-      const loop = () => {
-        render();
+      // On phones, idle frames (nothing scrolling) drop to ~30 fps; while the
+      // page scrolls every frame is drawn so z = 0 pieces stay glued to it.
+      let lastFrame = 0;
+      let lastScroll = 0;
+      const loop = (now: number) => {
+        if (!lite || now - lastScroll < 200 || now - lastFrame > 30) {
+          lastFrame = now;
+          render();
+        }
         frame = running ? requestAnimationFrame(loop) : 0;
       };
       function wake() {
@@ -937,9 +951,16 @@ export default function HomeWorld({ projects }: HomeWorldProps) {
       }
 
       const onScroll = () => {
+        lastScroll = performance.now();
         if (reduced) render();
       };
-      const ro = new ResizeObserver(() => layout());
+      // Body size changes in bursts (images, fonts); layout() rebuilds the
+      // ribbon, so run it once per burst.
+      let layoutTimer = 0;
+      const ro = new ResizeObserver(() => {
+        window.clearTimeout(layoutTimer);
+        layoutTimer = window.setTimeout(layout, 120);
+      });
       ro.observe(document.body);
       const themeWatch = new MutationObserver(() => {
         paint();
@@ -965,6 +986,7 @@ export default function HomeWorld({ projects }: HomeWorldProps) {
         running = false;
         cancelAnimationFrame(frame);
         ro.disconnect();
+        window.clearTimeout(layoutTimer);
         themeWatch.disconnect();
         window.removeEventListener("pointermove", onMove);
         window.removeEventListener("pointerdown", onDown);

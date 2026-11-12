@@ -70,7 +70,7 @@ export default function LibraryIndexPage({
               <Reveal variant="zoom" delay={index * 0.08} className="h-full">
                 <Link
                   href={card.href}
-                  className="group flex h-full flex-col rounded-[1.75rem] bg-band p-8 transition-shadow hover:shadow-[0_12px_40px_-12px_rgb(0_0_0/0.18)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground sm:p-10"
+                  className="group flex h-full flex-col card card-link p-8 sm:p-10"
                 >
                   <p className={`kicker ${card.tone}`}>{card.label}</p>
                   <h2 className="headline-card mt-2 text-foreground">{card.title}</h2>

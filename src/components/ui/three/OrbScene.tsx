@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { play } from "@/lib/sound/engine";
 import { cn } from "@/lib/utils";
+import { isLowPower, pixelRatio } from "@/lib/three/quality";
 
 /* The particle orb's shaders. Every point sits on a sphere and is pushed out
    along its normal by a cheap 3-axis sine "noise", by a bulge toward the
@@ -89,8 +90,9 @@ export default function OrbScene({ className }: { className?: string }) {
       if (disposed) return;
       const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-      const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.75));
+      const lite = isLowPower();
+      const renderer = new THREE.WebGLRenderer({ antialias: !lite, alpha: true });
+      renderer.setPixelRatio(pixelRatio(1.75, lite));
       renderer.setClearColor(0x000000, 0);
       el.appendChild(renderer.domElement);
 

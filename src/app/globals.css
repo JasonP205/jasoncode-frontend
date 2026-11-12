@@ -113,6 +113,11 @@
   --color-hue-pink: var(--hue-pink);
   --color-stone-gold: var(--stone-gold);
   --color-action: var(--action);
+  --color-action-foreground: var(--action-foreground);
+  --color-brand: var(--brand);
+  --color-paper: var(--paper);
+  --color-pop: var(--pop);
+  --color-pop-ink: var(--pop-ink);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -157,127 +162,172 @@
  * @see https://heroui.com/docs/react/getting-started/theming
  */
 
+/*
+ * SaaS palette (2026-11). Three colours carry the whole site:
+ *   --brand  #09318D  navy — text ink, primary buttons, links, icons
+ *   --paper  #FCFFFF  the page
+ *   --pop    #FD91CC  pink — the surprise. Used rarely and on purpose: the
+ *                    highlighter under one headline word, the "now" dot, the
+ *                    recommended-plan badge, the scroll hairline, selection.
+ * Everything else (bands, borders, greys, the dark theme) is mixed from these.
+ * Pink is a FILL on light surfaces (navy text on pink is 5.7:1); as text it
+ * only appears on navy (dark theme, footer), where it is ≥5.7:1.
+ */
 :root,
 .light,
 .default,
 [data-theme="light"],
 [data-theme="default"] {
-  /* Theme Colors (Light Mode) */
-  --accent: oklch(0 0 0);
-  --accent-foreground: oklch(99.11% 0 0);
-  /* Page is pure white; alternate sections sit on a cool near-white band, and
-     tiles placed on a band go back to white. One step of contrast each way. */
-  --background: oklch(98.7% 0.0035 85);
-  --band: oklch(96.3% 0.0055 85);
-  --tile: oklch(100% 0 0);
-  /* Section tones — accents only (kickers, icons, step numbers), never large
-     fills. Light values are the deep end of each hue so small text keeps
-     ≥4.5:1 on white and on the band; the dark theme swaps in the bright end. */
-  --hue-blue: #0066cc;
-  --hue-purple: #7c3aed;
-  --hue-green: #047857;
-  --hue-orange: #c2410c;
-  --hue-pink: #be185d;
-  /* Sixth stone of the home timeline; deep amber so small text passes 4.5:1. */
-  --stone-gold: #a16207;
-  /* The five layers of the stack (interface → infra) borrow the tones. Used by
-     the three.js scenes, the kinetic headline tints and the layer tags. */
-  --layer-0: var(--hue-blue);
-  --layer-1: var(--hue-purple);
-  --layer-2: var(--hue-green);
-  --layer-3: var(--hue-orange);
-  --layer-4: var(--hue-pink);
-  /* The one action colour: primary buttons and "Tìm hiểu thêm" links. White
-     text on it is 4.7:1; the hover goes darker so it never drops below that. */
-  --action: #0071e3;
-  --action-hover: #0062c4;
-  --border: oklch(88.5% 0.006 85);
-  --danger: oklch(65.32% 0.2328 355.28);
-  --danger-foreground: oklch(99.11% 0 0);
-  --default: oklch(94.00% 0.0000 0.00);
-  --default-foreground: oklch(21.03% 0.0059 0.00);
-  --field-background: oklch(100.00% 0.0000 0.00);
+  --brand: #09318d;
+  --paper: #fcffff;
+  --pop: #fd91cc;
+  --pop-ink: #09318d;
+
+  --accent: var(--brand);
+  --accent-foreground: var(--paper);
+  --background: var(--paper);
+  /* Alternate sections: a breath of navy over the paper. Cards go white. */
+  --band: color-mix(in oklab, var(--brand) 4%, var(--paper));
+  --tile: #ffffff;
+  /* Legacy tone names all resolve to the brand: one accent colour, not five.
+     Kept as tokens so older classes (text-hue-*) still render on-brand. */
+  --hue-blue: var(--brand);
+  --hue-purple: var(--brand);
+  --hue-green: var(--brand);
+  --hue-orange: var(--brand);
+  --hue-pink: var(--brand);
+  --stone-gold: var(--brand);
+  --layer-0: var(--brand);
+  --layer-1: var(--brand);
+  --layer-2: var(--brand);
+  --layer-3: var(--brand);
+  --layer-4: var(--pop);
+  /* Primary action: navy fill, paper text (12:1). */
+  --action: var(--brand);
+  --action-hover: color-mix(in oklab, var(--brand) 82%, black);
+  --action-foreground: var(--paper);
+  --primary: var(--brand);
+  --primary-foreground: var(--paper);
+  --ring: color-mix(in oklab, var(--brand) 45%, transparent);
+  --border: color-mix(in oklab, var(--brand) 13%, var(--paper));
+  --input: color-mix(in oklab, var(--brand) 13%, var(--paper));
+  --danger: oklch(58% 0.2 25);
+  --danger-foreground: var(--paper);
+  --default: color-mix(in oklab, var(--brand) 7%, var(--paper));
+  --default-foreground: var(--foreground);
+  --field-background: #ffffff;
   --field-border: transparent;
-  --field-foreground: oklch(21.03% 0.0000 0.00);
-  --field-placeholder: oklch(55.17% 0.0000 0.00);
-  --focus: oklch(0 0 0);
-  --foreground: oklch(21.03% 0.0000 0.00);
-  --muted: oklch(55.17% 0.0000 0.00);
-  --overlay: oklch(100.00% 0.0000 0.00);
-  --overlay-foreground: oklch(21.03% 0.0000 0.00);
-  --scrollbar: oklch(87.10% 0.0000 0.00);
-  --segment: oklch(100.00% 0.0000 0.00);
-  --segment-foreground: oklch(21.03% 0.0000 0.00);
-  --separator: oklch(90% 0.006 85);
-  --success: oklch(73.29% 0.1935 120.35);
-  --success-foreground: oklch(21.03% 0.0059 120.35);
-  --surface: oklch(100.00% 0.0000 0.00);
-  --surface-foreground: oklch(21.03% 0.0000 0.00);
-  --surface-secondary: oklch(95.24% 0.0000 0.00);
-  --surface-secondary-foreground: oklch(21.03% 0.0000 0.00);
-  --surface-tertiary: oklch(93.73% 0.0000 0.00);
-  --surface-tertiary-foreground: oklch(21.03% 0.0000 0.00);
+  --field-foreground: var(--foreground);
+  --field-placeholder: color-mix(in oklab, var(--brand) 45%, var(--paper));
+  --focus: var(--brand);
+  /* Ink: the navy taken most of the way to black, so body text is calm. */
+  --foreground: color-mix(in oklab, var(--brand) 62%, #050a1a);
+  --muted: color-mix(in oklab, var(--brand) 62%, #8a93a8);
+  --muted-foreground: color-mix(in oklab, var(--brand) 55%, #7d8699);
+  --card: var(--tile);
+  --card-foreground: var(--foreground);
+  --popover: var(--tile);
+  --popover-foreground: var(--foreground);
+  --secondary: var(--band);
+  --secondary-foreground: var(--foreground);
+  --overlay: #ffffff;
+  --overlay-foreground: var(--foreground);
+  --scrollbar: color-mix(in oklab, var(--brand) 25%, var(--paper));
+  --segment: #ffffff;
+  --segment-foreground: var(--foreground);
+  --separator: color-mix(in oklab, var(--brand) 9%, var(--paper));
+  --success: oklch(62% 0.15 155);
+  --success-foreground: var(--paper);
+  --surface: #ffffff;
+  --surface-foreground: var(--foreground);
+  --surface-secondary: var(--band);
+  --surface-secondary-foreground: var(--foreground);
+  --surface-tertiary: color-mix(in oklab, var(--brand) 7%, var(--paper));
+  --surface-tertiary-foreground: var(--foreground);
   --warning: oklch(78.19% 0.1585 41.87);
   --warning-foreground: oklch(21.03% 0.0059 41.87);
 
-  /* Border Radius */
-  --radius: 0.5rem;
+  --radius: 0.75rem;
   --field-radius: 0.75rem;
-
-  /* Font Family — loaded via next/font in layout.tsx (--font-be-vietnam) */
   --font-sans: var(--font-be-vietnam), "Be Vietnam Pro", sans-serif;
+  /* Card elevation: a navy-tinted shadow, never grey. */
+  --shadow-card: 0 1px 2px color-mix(in oklab, var(--brand) 8%, transparent),
+    0 8px 24px -12px color-mix(in oklab, var(--brand) 18%, transparent);
+  --shadow-lift: 0 2px 4px color-mix(in oklab, var(--brand) 8%, transparent),
+    0 24px 48px -20px color-mix(in oklab, var(--brand) 35%, transparent);
 }
 
+/* Dark: deep navy derived from the brand; paper becomes the ink and the
+   primary button, pink can now be text. */
 .dark,
 [data-theme="dark"] {
   color-scheme: dark;
-  /* Theme Colors (Dark Mode) */
-  --accent: oklch(0.9848 0 0);
-  --accent-foreground: oklch(15% 0.0000 0.00);
-  --background: oklch(13.5% 0.012 265);
-  --band: oklch(17% 0.014 265);
-  --tile: oklch(21% 0.016 265);
-  --hue-blue: #2997ff;
-  --hue-purple: #b58cff;
-  --hue-green: #34d399;
-  --hue-orange: #fb923c;
-  --hue-pink: #f472b6;
-  --stone-gold: #fcd34d;
-  --action: #0071e3;
-  --action-hover: #0062c4;
-  --border: oklch(29% 0.016 265);
-  --danger: oklch(59.40% 0.1967 354.17);
-  --danger-foreground: oklch(99.11% 0 0);
-  --default: oklch(27.40% 0.0000 0.00);
-  --default-foreground: oklch(99.11% 0 0);
-  --field-background: oklch(21.03% 0.0000 0.00);
+  --accent: var(--paper);
+  --accent-foreground: var(--brand);
+  --background: color-mix(in oklab, var(--brand) 38%, #020615);
+  --band: color-mix(in oklab, var(--brand) 50%, #020615);
+  --tile: color-mix(in oklab, var(--brand) 62%, #030a22);
+  --hue-blue: color-mix(in oklab, var(--brand) 30%, var(--paper));
+  --hue-purple: var(--hue-blue);
+  --hue-green: var(--hue-blue);
+  --hue-orange: var(--hue-blue);
+  --hue-pink: var(--pop);
+  --stone-gold: var(--hue-blue);
+  --layer-0: var(--hue-blue);
+  --layer-1: var(--hue-blue);
+  --layer-2: var(--hue-blue);
+  --layer-3: var(--hue-blue);
+  --layer-4: var(--pop);
+  --action: var(--paper);
+  --action-hover: color-mix(in oklab, var(--brand) 12%, var(--paper));
+  --action-foreground: var(--brand);
+  --primary: var(--paper);
+  --primary-foreground: var(--brand);
+  --ring: color-mix(in oklab, var(--paper) 45%, transparent);
+  --border: color-mix(in oklab, var(--brand) 55%, #2a3a66);
+  --input: color-mix(in oklab, var(--brand) 55%, #2a3a66);
+  --danger: oklch(65% 0.19 25);
+  --danger-foreground: var(--paper);
+  --default: color-mix(in oklab, var(--brand) 70%, #1a2547);
+  --default-foreground: var(--paper);
+  --field-background: var(--band);
   --field-border: transparent;
-  --field-foreground: oklch(99.11% 0.0000 0.00);
-  --field-placeholder: oklch(70.50% 0.0000 0.00);
-  --focus: oklch(0.9848 0 0);
-  --foreground: oklch(99.11% 0.0000 0.00);
-  --muted: oklch(70.50% 0.0000 0.00);
-  --overlay: oklch(21.03% 0.0000 0.00);
-  --overlay-foreground: oklch(99.11% 0.0000 0.00);
-  --scrollbar: oklch(70.50% 0.0000 0.00);
-  --segment: oklch(39.64% 0.0000 0.00);
-  --segment-foreground: oklch(99.11% 0.0000 0.00);
-  --separator: oklch(26% 0.014 265);
-  --success: oklch(73.29% 0.1935 120.35);
-  --success-foreground: oklch(21.03% 0.0059 120.35);
-  --surface: oklch(21% 0.016 265);
-  --surface-foreground: oklch(99.11% 0.0000 0.00);
-  --surface-secondary: oklch(25.70% 0.0000 0.00);
-  --surface-secondary-foreground: oklch(99.11% 0.0000 0.00);
-  --surface-tertiary: oklch(27.21% 0.0000 0.00);
-  --surface-tertiary-foreground: oklch(99.11% 0.0000 0.00);
+  --field-foreground: var(--paper);
+  --field-placeholder: color-mix(in oklab, var(--paper) 45%, var(--brand));
+  --focus: var(--paper);
+  --foreground: var(--paper);
+  --muted: color-mix(in oklab, var(--paper) 68%, var(--brand));
+  --muted-foreground: color-mix(in oklab, var(--paper) 68%, var(--brand));
+  --card: var(--tile);
+  --card-foreground: var(--paper);
+  --popover: var(--tile);
+  --popover-foreground: var(--paper);
+  --secondary: var(--band);
+  --secondary-foreground: var(--paper);
+  --overlay: var(--tile);
+  --overlay-foreground: var(--paper);
+  --scrollbar: color-mix(in oklab, var(--paper) 35%, var(--brand));
+  --segment: var(--default);
+  --segment-foreground: var(--paper);
+  --separator: color-mix(in oklab, var(--brand) 55%, #1f2d55);
+  --success: oklch(72% 0.15 155);
+  --success-foreground: var(--brand);
+  --surface: var(--tile);
+  --surface-foreground: var(--paper);
+  --surface-secondary: var(--band);
+  --surface-secondary-foreground: var(--paper);
+  --surface-tertiary: var(--default);
+  --surface-tertiary-foreground: var(--paper);
   --warning: oklch(82.03% 0.1388 45.88);
   --warning-foreground: oklch(21.03% 0.0059 45.88);
+  --shadow-card: 0 1px 0 0 color-mix(in oklab, white 6%, transparent) inset, 0 10px 30px -14px #000;
+  --shadow-lift: 0 1px 0 0 color-mix(in oklab, white 8%, transparent) inset, 0 28px 56px -22px #000;
 }
 
+/* The pink surprise, part one: selecting text paints it. */
 ::selection {
-  background: var(--accent);
-  color: var(--accent-foreground);
+  background: var(--pop);
+  color: var(--pop-ink);
 }
 
 /*
@@ -544,9 +594,36 @@
 @utility kicker {
   /* No colour here: every kicker sets one explicitly (a section tone or
      text-muted-foreground), so two utilities never compete for `color`. */
-  font-size: 1rem;
+  font-size: 0.875rem;
   line-height: 1.5;
   font-weight: 600;
+}
+
+/* SaaS eyebrow: the kicker in a pill, with a dot. `data-pop` turns the dot
+   pink — the section's one surprise. */
+@utility eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0.8rem 0.3rem 0.65rem;
+  border-radius: 9999px;
+  background: color-mix(in oklab, var(--hue-blue) 8%, var(--tile));
+  box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--hue-blue) 18%, transparent);
+  color: var(--hue-blue);
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  font-weight: 600;
+  &::before {
+    content: "";
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 9999px;
+    background: currentColor;
+  }
+  &[data-pop]::before {
+    background: var(--pop);
+    box-shadow: 0 0 0 3px color-mix(in oklab, var(--pop) 35%, transparent);
+  }
 }
 
 /* Ledes are one to three lines; balancing keeps a lone word ("giờ.") from
@@ -574,13 +651,19 @@
   gap: 0.5rem;
   min-height: 2.75rem;
   padding-inline: 1.375rem;
-  border-radius: 9999px;
+  border-radius: 0.75rem;
   background: var(--action);
-  color: #ffffff;
-  font-weight: 500;
-  transition: background-color 150ms ease;
+  color: var(--action-foreground);
+  font-weight: 600;
+  box-shadow: 0 1px 0 0 color-mix(in oklab, white 18%, transparent) inset,
+    0 6px 16px -6px color-mix(in oklab, var(--action) 55%, transparent);
+  transition: background-color 150ms ease, transform 150ms ease, box-shadow 150ms ease;
   &:hover {
     background: var(--action-hover);
+    transform: translateY(-1px);
+  }
+  &:active {
+    transform: none;
   }
   &:focus-visible {
     outline: 2px solid var(--action);
@@ -595,10 +678,11 @@
   gap: 0.5rem;
   min-height: 2.75rem;
   padding-inline: 1.375rem;
-  border-radius: 9999px;
-  box-shadow: inset 0 0 0 1px var(--border);
+  border-radius: 0.75rem;
+  background: var(--tile);
+  box-shadow: inset 0 0 0 1px var(--border), var(--shadow-card);
   color: var(--foreground);
-  font-weight: 500;
+  font-weight: 600;
   transition: background-color 150ms ease;
   &:hover {
     /* Relative to whatever it sits on, so it still shows on a grey band. */
@@ -616,8 +700,11 @@
   align-items: center;
   gap: 0.25rem;
   font-weight: 500;
+  font-weight: 600;
   color: var(--hue-blue);
   text-underline-offset: 4px;
+  text-decoration-color: var(--pop);
+  text-decoration-thickness: 2px;
   &:hover {
     text-decoration: underline;
   }
@@ -633,142 +720,95 @@
  */
 
 /*
- * The layers system — the site-wide redesign.
- *
- * The site is drawn as a stack: interface → state → api → data → infra, one
- * tone each (--layer-0…4). Sections carry a small mono "L1" tag, page heroes
- * sit on a three.js stack (LayerScene), headlines are kinetic (letters on
- * springs) and the UI can make sound (lib/sound/engine.ts).
+ * SaaS primitives.
  */
 
-/* Small mono tag naming a layer: "L2". Latin and digits only — Geist Mono has
-   no Vietnamese glyphs, so Vietnamese text never goes through it. */
-@utility layer-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
+/* The pink surprise, part two: a highlighter stroke under one word of a
+   headline. Navy ink on pink in light (5.7:1); pink ink in dark. */
+.pop-mark {
+  padding-inline: 0.06em;
+  margin-inline: -0.06em;
+  background-image: linear-gradient(
+    to top,
+    transparent 0.08em,
+    var(--pop) 0.08em,
+    var(--pop) 0.42em,
+    transparent 0.42em
+  );
+  background-repeat: no-repeat;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.dark .pop-mark {
+  color: var(--pop);
+  background-image: linear-gradient(
+    to top,
+    transparent 0.08em,
+    color-mix(in oklab, var(--pop) 22%, transparent) 0.08em,
+    color-mix(in oklab, var(--pop) 22%, transparent) 0.42em,
+    transparent 0.42em
+  );
+}
+
+/* Hero backdrop: a faint navy grid fading out, a navy glow, and one pink
+   bloom off to the side. Place in a `relative isolate overflow-hidden`
+   section; the element sits at -z-10. */
+.saas-backdrop {
+  background:
+    radial-gradient(28rem 18rem at 82% 12%, color-mix(in oklab, var(--pop) 28%, transparent), transparent 70%),
+    radial-gradient(48rem 28rem at 30% 0%, color-mix(in oklab, var(--brand) 14%, transparent), transparent 70%),
+    linear-gradient(color-mix(in oklab, var(--brand) 7%, transparent) 1px, transparent 1px) 0 0 / 44px 44px,
+    linear-gradient(90deg, color-mix(in oklab, var(--brand) 7%, transparent) 1px, transparent 1px) 0 0 / 44px 44px;
+  mask-image: linear-gradient(to bottom, black 35%, transparent 95%);
+}
+.dark .saas-backdrop {
+  background:
+    radial-gradient(28rem 18rem at 82% 12%, color-mix(in oklab, var(--pop) 18%, transparent), transparent 70%),
+    radial-gradient(48rem 28rem at 30% 0%, color-mix(in oklab, var(--brand) 70%, transparent), transparent 70%),
+    linear-gradient(color-mix(in oklab, var(--paper) 5%, transparent) 1px, transparent 1px) 0 0 / 44px 44px,
+    linear-gradient(90deg, color-mix(in oklab, var(--paper) 5%, transparent) 1px, transparent 1px) 0 0 / 44px 44px;
+}
+
+/* Cards: white on paper, a navy-tinted hairline and shadow; links lift. */
+@utility card {
+  border-radius: 1.25rem;
+  background: var(--tile);
+  box-shadow: inset 0 0 0 1px var(--border), var(--shadow-card);
+}
+@utility card-link {
+  transition: transform 200ms ease, box-shadow 200ms ease;
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--hue-blue) 35%, var(--border)), var(--shadow-lift);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 3px;
+  }
+}
+
+/* Browser-window chrome around a screenshot (hero mockup). */
+.window-dots {
+  display: flex;
+  gap: 0.375rem;
+}
+.window-dots i {
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 9999px;
+  background: color-mix(in oklab, var(--brand) 18%, var(--tile));
+}
+.window-dots i:first-child {
+  background: var(--pop);
+}
+
+/* Mono tags (Latin/digits only: Geist Mono has no Vietnamese glyphs). */
+@utility mono-tag {
   font-family: var(--font-mono);
   font-size: 0.75rem;
   line-height: 1;
   font-weight: 500;
-  letter-spacing: 0.06em;
-  color: var(--muted-foreground);
-  &::before {
-    content: "";
-    width: 0.5rem;
-    height: 0.5rem;
-    border-radius: 9999px;
-    background: currentColor;
-    box-shadow: 0 0 0 4px color-mix(in oklab, currentColor 20%, transparent);
-  }
-}
-
-/* The layer gradient, for the one accent run in a headline. */
-@utility text-layers {
-  background-image: linear-gradient(95deg, var(--layer-0), var(--layer-1) 45%, var(--layer-4));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-/* A faint wash of the layer tones over a dot grid, behind page heroes. */
-.layer-wash {
-  background:
-    radial-gradient(40rem 22rem at 18% 18%, color-mix(in oklab, var(--layer-0) 14%, transparent), transparent 70%),
-    radial-gradient(36rem 20rem at 82% 30%, color-mix(in oklab, var(--layer-1) 12%, transparent), transparent 70%),
-    radial-gradient(color-mix(in oklab, var(--foreground) 9%, transparent) 1px, transparent 1.2px) 0 0 / 26px 26px;
-  mask-image: linear-gradient(to bottom, black 40%, transparent);
-}
-
-.layer-scene canvas {
-  display: block;
-}
-/* The stack's glow and orbiters fade out before the canvas edge instead of
-   being cut by it. (The field variant gets its radial mask from Aura.) */
-.layer-scene[data-variant="stack"] {
-  mask-image:
-    linear-gradient(to bottom, transparent, #000 8%, #000 82%, transparent),
-    linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
-  mask-composite: intersect;
-}
-
-/* --- Kinetic headline ---------------------------------------------------- */
-.kinetic {
-  position: relative;
-  cursor: default;
-}
-.kinetic .kw {
-  display: inline-block;
-  white-space: nowrap;
-}
-.kinetic .kc {
-  display: inline-block;
-  transition: color 0.3s ease;
-  transform-origin: 50% 70%;
-}
-/* Each accent letter shows its own slice of one long gradient, so the run
-   reads as a single gradient even though every letter moves on its own.
-   The padding keeps stacked diacritics inside the painted box. */
-.kinetic .kc-accent {
-  background-image: linear-gradient(95deg, var(--layer-0), var(--layer-1) 45%, var(--layer-4));
-  background-repeat: no-repeat;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  padding: 0.16em 0.015em;
-  margin: -0.16em -0.015em;
-}
-
-/* --- Sound toggle bars --------------------------------------------------- */
-.eq i {
-  display: block;
-  width: 2px;
-  height: 100%;
-  border-radius: 1px;
-  background: currentColor;
-  transform: scaleY(0.25);
-  transform-origin: bottom;
-  transition: transform 0.3s ease;
-}
-.eq[data-on] i {
-  animation: eq-bounce 0.9s ease-in-out infinite alternate;
-}
-.eq[data-on] i:nth-child(2) { animation-delay: -0.3s; }
-.eq[data-on] i:nth-child(3) { animation-delay: -0.6s; }
-.eq[data-on] i:nth-child(4) { animation-delay: -0.15s; }
-@keyframes eq-bounce {
-  from { transform: scaleY(0.3); }
-  to { transform: scaleY(1); }
-}
-
-/* Fading scroll hint line under heroes. */
-.scroll-cue {
-  position: relative;
-  width: 1px;
-  height: 2.5rem;
-  overflow: hidden;
-  background: color-mix(in oklab, var(--foreground) 15%, transparent);
-}
-.scroll-cue::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--foreground);
-  animation: scroll-cue 1.8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
-}
-@keyframes scroll-cue {
-  from { transform: translateY(-100%); }
-  to { transform: translateY(100%); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .eq[data-on] i {
-    animation: none;
-    transform: scaleY(0.7);
-  }
-  .scroll-cue::after {
-    animation: none;
-  }
+  letter-spacing: 0.04em;
 }
 
 /* --- Theme switch: View Transition API -----------------------------------
@@ -839,60 +879,36 @@ html[data-theme-vt]::view-transition-new(root) {
 
 
 
-/* --- Header / footer: glass capsule + the stream of time ------------------ */
-.glass-capsule {
-  background: color-mix(in oklab, var(--background) 72%, transparent);
-  border: 1px solid color-mix(in oklab, var(--foreground) 10%, transparent);
-  box-shadow:
-    0 1px 0 0 color-mix(in oklab, white 35%, transparent) inset,
-    0 12px 40px -18px color-mix(in oklab, black 45%, transparent);
-  backdrop-filter: blur(20px) saturate(1.6);
+/* --- Header ----------------------------------------------------------------
+ * A solid paper bar with a hairline; on scroll a pink progress line runs along
+ * its bottom edge (CSS scroll timeline, no JS). */
+.nav-bar {
+  background: color-mix(in oklab, var(--background) 88%, transparent);
+  backdrop-filter: blur(12px);
 }
-.dark .glass-capsule {
-  box-shadow:
-    0 1px 0 0 color-mix(in oklab, white 8%, transparent) inset,
-    0 16px 50px -20px black;
+@media (pointer: coarse) {
+  .nav-bar {
+    background: color-mix(in oklab, var(--background) 96%, transparent);
+    backdrop-filter: none;
+  }
 }
-/* Six stone colours in time order; shared by the header progress line and
-   the footer stones. */
-.stream-gradient {
-  background: linear-gradient(
-    90deg,
-    var(--hue-blue),
-    var(--hue-purple),
-    var(--hue-green),
-    var(--hue-orange),
-    var(--hue-pink),
-    var(--stone-gold)
-  );
-}
-/* How far down the page the reader is: CSS scroll-driven, no JS. Browsers
-   without scroll timelines simply don't show it. */
-.time-progress {
+.scroll-progress {
   transform: scaleX(0);
   transform-origin: left;
 }
 @supports (animation-timeline: scroll()) {
-  .time-progress {
-    animation: time-progress linear both;
+  .scroll-progress {
+    animation: scroll-progress linear both;
     animation-timeline: scroll(root);
   }
 }
-@keyframes time-progress {
+@keyframes scroll-progress {
   to {
     transform: scaleX(1);
   }
 }
-/* A cut stone in CSS: crown, girdle, pavilion. */
-.stone-gem {
-  clip-path: polygon(24% 0, 76% 0, 100% 34%, 50% 100%, 0 34%);
-  background:
-    linear-gradient(115deg, transparent 38%, color-mix(in oklab, white 55%, transparent) 46%, transparent 54%),
-    linear-gradient(180deg, color-mix(in oklab, var(--gem) 55%, white) 0 34%, var(--gem) 34% 100%);
-}
 @media (prefers-reduced-motion: reduce) {
-  .time-progress {
+  .scroll-progress {
     animation: none;
   }
 }
-

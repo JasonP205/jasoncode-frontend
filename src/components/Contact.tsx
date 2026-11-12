@@ -8,13 +8,12 @@ import { useLocale, useTranslations } from "next-intl";
 import { submitContact } from "@/actions/contact.action";
 import Jot from "./ui/Jot";
 import Reveal from "./ui/Reveal";
-import OrbScene from "./ui/three/OrbScene";
 
 // Fields sit on the white form card, so they take the band grey to stay
 // visible; the theme's own field background is white.
 const fieldClass = "bg-band font-sans text-foreground placeholder:text-muted-foreground";
 
-/** `bare` drops the band background so a page-wide 3D scene shows through. */
+/** `bare` drops the band background (for pages that alternate bands themselves). */
 export default function Contact({ bare = false }: { bare?: boolean }) {
   const t = useTranslations("contact");
   const locale = useLocale();
@@ -47,14 +46,10 @@ export default function Contact({ bare = false }: { bare?: boolean }) {
   return (
     <section
       id="contact"
-      data-world-anchor
-      className={`relative isolate scroll-mt-16 overflow-hidden px-4 py-20 sm:px-8 sm:py-32 ${bare ? "" : "bg-band"}`}
+      className={`relative isolate scroll-mt-20 overflow-hidden px-4 py-20 sm:px-8 sm:py-32 ${bare ? "" : "bg-band"}`}
     >
       <div className="mx-auto grid max-w-6xl items-start gap-12 lg:grid-cols-2 lg:gap-20">
         <Reveal>
-          <p className="mb-4 flex items-center gap-3">
-            <span className="layer-tag text-hue-pink">L4</span>
-          </p>
           <h2 className="headline-section text-foreground">
             <span className="block">{t("title")}</span>
             <span className="block headline-quiet">{t("titleAccent")}</span>
@@ -67,7 +62,7 @@ export default function Contact({ bare = false }: { bare?: boolean }) {
             // visitor actually uses.
             href="mailto:contact@hwagfu.dev"
           >
-            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-hue-blue/10 text-hue-blue dark:bg-hue-blue/15">
+            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-hue-blue/[0.08] text-hue-blue">
               <Mail className="h-5 w-5" aria-hidden />
             </span>
             <span>
@@ -78,15 +73,9 @@ export default function Contact({ bare = false }: { bare?: boolean }) {
             </span>
           </a>
 
-          {/* L4's centrepiece: a particle orb. It swells toward the cursor;
-              click it and a shockwave runs around it. */}
-          {/* On the home page the six timeline stones gather around the orb. */}
-          <div data-world-slot="stones-ring" className="relative mt-6 -ml-6 w-[calc(100%+3rem)]">
-            <OrbScene className="relative h-[20rem] w-full opacity-0 transition-opacity duration-1000 data-ready:opacity-100 sm:h-[24rem]" />
-          </div>
         </Reveal>
 
-        <Reveal delay={0.08} className="rounded-[1.75rem] bg-tile p-6 sm:p-9">
+        <Reveal delay={0.08} className="card p-6 sm:p-9">
           <AnimatePresence mode="wait">
             {submitted ? (
               <motion.div
@@ -171,7 +160,7 @@ export default function Contact({ bare = false }: { bare?: boolean }) {
                   type="submit"
                   size="lg"
                   isPending={isPending}
-                  className="w-full rounded-full bg-action font-medium text-white hover:bg-[var(--action-hover)]"
+                  className="w-full rounded-xl bg-action font-semibold text-action-foreground hover:bg-[var(--action-hover)]"
                 >
                   {isPending ? (
                     <>

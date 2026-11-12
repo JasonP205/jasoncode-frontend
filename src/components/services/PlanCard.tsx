@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { Link } from "@/i18n/navigation";
 import IconBadge from "@/components/ui/IconBadge";
 import Reveal from "@/components/ui/Reveal";
-import { toneRing, toneSoft, toneText, type Tone } from "@/components/ui/tones";
+import { toneRing, type Tone } from "@/components/ui/tones";
 
 export interface Plan {
   name: string;
@@ -27,14 +27,13 @@ export default function PlanCard({
   icon,
   tone,
   badge,
-  surface = "band",
   delay = 0,
 }: {
   plan: Plan;
   icon: LucideIcon;
   tone: Tone;
   badge?: string;
-  /** The card's fill: `band` on a white section, `tile` on a grey one. */
+  /** Legacy; every plan is a white `card` now. */
   surface?: "band" | "tile";
   delay?: number;
 }) {
@@ -43,21 +42,15 @@ export default function PlanCard({
       variant="zoom"
       delay={delay}
       className={cn(
-        "flex h-full flex-col rounded-[1.75rem] p-6 sm:p-8",
-        surface === "band" ? "bg-band" : "bg-tile",
+        "card flex h-full flex-col p-6 sm:p-8",
         badge && toneRing[tone],
       )}
     >
       <div className="flex items-start justify-between gap-4">
         <IconBadge icon={icon} tone={tone} />
         {badge && (
-          <span
-            className={cn(
-              "rounded-full px-3 py-1 text-sm font-semibold",
-              toneSoft[tone],
-              toneText[tone],
-            )}
-          >
+          // The recommended plan's badge is the page's pink surprise.
+          <span className="rounded-full bg-pop px-3 py-1 text-sm font-semibold text-pop-ink">
             {badge}
           </span>
         )}

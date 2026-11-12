@@ -3,7 +3,7 @@
 // Client component on purpose: a not-found boundary gets no `params`, so a
 // server-side `useTranslations` would read the locale from request headers
 // and force the whole segment to render dynamically.
-import KineticHeadline from "@/components/ui/kinetic/KineticHeadline";
+import Headline from "@/components/ui/Headline";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { BackButton } from "@/components/ui/BackButton";
@@ -17,7 +17,7 @@ export default function NotFound() {
       {/* Jot has lost its full stop — the 404 in one picture. */}
       <Jot mood="lost" className="mb-6 size-40 sm:size-48" />
       <p className="kicker mb-3 tabular-nums text-hue-pink">404</p>
-      <KineticHeadline className="headline-hero text-foreground" segments={[{ text: t("heading") }]} />
+      <Headline className="headline-hero text-foreground" segments={[{ text: t("heading") }]} />
       <p className="lede mt-6 max-w-xl">{t("description")}</p>
       <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row">
         <Link href="/" className="btn-primary">

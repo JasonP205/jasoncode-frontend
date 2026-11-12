@@ -17,10 +17,9 @@ export default function BottomNav() {
   return (
     <nav
       aria-label={t("primaryNav")}
-      className="glass-capsule fixed inset-x-3 bottom-[calc(0.5rem+env(safe-area-inset-bottom))] z-50 rounded-[1.75rem] p-1.5 md:hidden"
+      className="nav-bar fixed inset-x-0 bottom-0 z-50 border-t border-border px-2 pt-1.5 pb-[calc(0.375rem+env(safe-area-inset-bottom))] md:hidden"
     >
-      {/* A floating capsule like the header; it sits above the iOS home
-          indicator instead of covering it. */}
+      {/* A docked tab bar; its padding clears the iOS home indicator. */}
       <ul
         className="grid gap-1"
         style={{ gridTemplateColumns: `repeat(${links.length}, minmax(0, 1fr))` }}
@@ -34,12 +33,14 @@ export default function BottomNav() {
                 href={link.to}
                 aria-current={active ? "page" : undefined}
                 className={cn(
-                  "flex h-12 flex-col items-center justify-center gap-1 rounded-[1.25rem] transition-colors",
-                  active ? "bg-foreground/[0.07] text-foreground" : "text-muted-foreground hover:text-foreground",
+                  "relative flex h-12 flex-col items-center justify-center gap-1 rounded-xl transition-colors",
+                  active ? "text-hue-blue" : "text-muted-foreground hover:text-foreground",
                 )}
               >
+                {/* The active tab's pink tick — the bar's one surprise. */}
+                {active && <span aria-hidden className="absolute top-0 h-0.5 w-6 rounded-full bg-pop" />}
                 <Icon className="h-5 w-5" strokeWidth={active ? 2.25 : 1.75} aria-hidden />
-                <span className={cn("text-[0.6875rem] leading-none", active && "font-medium")}>
+                <span className={cn("text-[0.6875rem] leading-none", active && "font-semibold")}>
                   {t(link.key)}
                 </span>
               </Link>

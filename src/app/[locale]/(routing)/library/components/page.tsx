@@ -70,7 +70,7 @@ export default function LibraryComponentsPage({
             >
               <Link
                 href={`/library/${lib.slug}`}
-                className="group flex flex-col h-full rounded-[1.75rem] bg-band p-7 transition-shadow hover:shadow-[0_12px_40px_-12px_rgb(0_0_0/0.18)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground"
+                className="group flex flex-col h-full card card-link p-7"
               >
                 <div className="flex items-center gap-3">
                   <span

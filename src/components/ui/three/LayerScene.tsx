@@ -5,6 +5,7 @@ import { useEffect, useRef } from "react";
 import type * as THREE from "three";
 import { play } from "@/lib/sound/engine";
 import { cn } from "@/lib/utils";
+import { isLowPower, pixelRatio } from "@/lib/three/quality";
 
 /** The five layers of the stack, top to bottom. Latin only: drawn in mono. */
 export const LAYER_NAMES = ["interface", "state", "api", "data", "infra"] as const;
@@ -276,8 +277,9 @@ export default function LayerScene({ variant = "stack", focus, className }: Laye
         return x;
       };
 
-      const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: "high-performance" });
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.75));
+      const lite = isLowPower();
+      const renderer = new THREE.WebGLRenderer({ antialias: !lite, alpha: true, powerPreference: "high-performance" });
+      renderer.setPixelRatio(pixelRatio(1.75, lite));
       renderer.setClearColor(0x000000, 0);
       renderer.outputColorSpace = THREE.SRGBColorSpace;
       renderer.domElement.setAttribute("aria-hidden", "true");

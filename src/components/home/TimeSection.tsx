@@ -3,16 +3,6 @@ import SectionHeader from "@/components/ui/SectionHeader";
 import Reveal from "@/components/ui/Reveal";
 import { cn } from "@/lib/utils";
 
-/** Text colour per stone; the 3D stones in HomeWorld use the same order. */
-export const STONE_TEXT = [
-  "text-hue-blue",
-  "text-hue-purple",
-  "text-hue-green",
-  "text-hue-orange",
-  "text-hue-pink",
-  "text-stone-gold",
-] as const;
-
 interface Milestone {
   when: string;
   title: string;
@@ -20,51 +10,41 @@ interface Milestone {
 }
 
 /**
- * The stream of time: six milestones down a central spine. Each spine cell
- * is an empty slot (`data-world-slot="stone-i"`) where HomeWorld draws a
- * faceted stone on a ticking dial; the time stream ribbon threads through
- * them (`data-world-node`). Stones light as the reader reaches them, then
- * travel along with the reader to the contact section.
+ * Six milestones on a vertical timeline, the header pinned beside them on
+ * wide screens. Each step is a numbered navy node; the latest one — today —
+ * is the pink one.
  */
 export default async function TimeSection() {
   const t = await getTranslations("profile.time");
   const items = t.raw("items") as Milestone[];
+  const last = items.length - 1;
 
   return (
-    <section id="time" data-world-anchor className="scroll-mt-16 px-5 py-20 sm:px-8 sm:py-28">
-      <div className="mx-auto max-w-6xl">
-        <div className="max-w-2xl">
-          <SectionHeader align="left" tone="blue" kicker={t("kicker")} title={t("heading")} lede={t("lede")} />
+    <section id="time" className="scroll-mt-20 px-5 py-20 sm:px-8 sm:py-28">
+      <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1fr_1.2fr] lg:gap-20">
+        <div className="lg:sticky lg:top-28 lg:self-start">
+          <SectionHeader align="left" kicker={t("kicker")} title={t("heading")} lede={t("lede")} />
         </div>
-        <ol className="mt-14 space-y-8 lg:mt-20 lg:space-y-2">
+        <ol className="relative">
+          {/* The spine. */}
+          <span aria-hidden className="absolute top-2 bottom-2 left-[1.1875rem] w-px bg-border" />
           {items.map((m, i) => {
-            const right = i % 2 === 1;
+            const now = i === last;
             return (
-              <li
-                key={i}
-                className="grid grid-cols-[4.5rem_1fr] items-center gap-5 lg:grid-cols-[1fr_10rem_1fr] lg:gap-10"
-              >
-                <div
-                  data-world-node
-                  data-world-slot={`stone-${i}`}
+              <li key={i} className="relative grid grid-cols-[2.5rem_1fr] gap-5 pb-10 last:pb-0">
+                <span
                   aria-hidden
-                  className="size-[4.5rem] lg:col-start-2 lg:row-start-1 lg:size-40"
-                />
-                <Reveal
-                  delay={0.05}
                   className={cn(
-                    "lg:row-start-1",
-                    right ? "lg:col-start-3" : "lg:col-start-1 lg:text-right",
+                    "mono-tag relative z-10 flex size-10 items-center justify-center rounded-full ring-4 ring-background",
+                    now ? "bg-pop text-pop-ink" : "bg-tile text-hue-blue shadow-[inset_0_0_0_1px_var(--border)]",
                   )}
                 >
-                  <p className={cn("text-sm font-semibold tracking-wide", STONE_TEXT[i])}>
-                    <span className="mr-2 font-mono text-xs opacity-70">{String(i + 1).padStart(2, "0")}</span>
-                    {m.when}
-                  </p>
-                  <h3 className="headline-card mt-2 text-foreground">{m.title}</h3>
-                  <p className={cn("mt-2 max-w-md leading-relaxed text-muted-foreground", !right && "lg:ml-auto")}>
-                    {m.body}
-                  </p>
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <Reveal delay={0.04} className={cn("pt-1.5", now && "card -mt-3 p-5 sm:p-6")}>
+                  <p className="text-sm font-semibold text-hue-blue">{m.when}</p>
+                  <h3 className="headline-card mt-1.5 text-foreground">{m.title}</h3>
+                  <p className="mt-2 max-w-lg leading-relaxed text-muted-foreground">{m.body}</p>
                 </Reveal>
               </li>
             );

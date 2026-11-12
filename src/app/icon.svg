@@ -1,20 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <!-- Jason Dev mark: three isometric layers. Same geometry as src/components/ui/LayersMark.tsx.
+  <!-- Jason Dev mark: three flat isometric plates (navy, light navy, pink on top).
+       Same geometry as src/components/ui/LayersMark.tsx (light-theme colours).
        Rasterised to the PNG/ICO app icons by `node scripts/gen-icons.mjs`. -->
-  <defs><linearGradient id="g0" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffa24c"/><stop offset="1" stop-color="#ff4f9a"/></linearGradient><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2ee6a8"/><stop offset="1" stop-color="#22b8ee"/></linearGradient><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2f8bff"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient></defs>
   <g stroke-linejoin="round" stroke-width="2.5">
-    <path d="M6 43 L32 56 L58 43 L58 48 L32 61 L6 48 Z" fill="#d63a7d" stroke="#d63a7d"/>
-    <path d="M32 30 L58 43 L32 56 L6 43 Z" fill="url(#g0)" stroke="url(#g0)"/>
-    <path d="M8.5 43 L32 54.6 L55.5 43" fill="none" stroke="#fff" stroke-opacity="0.45" stroke-width="1.2"/>
+    <path d="M6 43 L32 56 L58 43 L58 48 L32 61 L6 48 Z" fill="#06225f" stroke="#06225f"/>
+    <path d="M32 30 L58 43 L32 56 L6 43 Z" fill="#09318d" stroke="#09318d"/>
   </g>
   <g stroke-linejoin="round" stroke-width="2.5">
-    <path d="M6 30 L32 43 L58 30 L58 35 L32 48 L6 35 Z" fill="#1696b8" stroke="#1696b8"/>
-    <path d="M32 17 L58 30 L32 43 L6 30 Z" fill="url(#g1)" stroke="url(#g1)"/>
-    <path d="M8.5 30 L32 41.6 L55.5 30" fill="none" stroke="#fff" stroke-opacity="0.45" stroke-width="1.2"/>
+    <path d="M6 30 L32 43 L58 30 L58 35 L32 48 L6 35 Z" fill="#3b5aa8" stroke="#3b5aa8"/>
+    <path d="M32 17 L58 30 L32 43 L6 30 Z" fill="#7e94c9" stroke="#7e94c9"/>
   </g>
   <g stroke-linejoin="round" stroke-width="2.5">
-    <path d="M6 17 L32 30 L58 17 L58 22 L32 35 L6 22 Z" fill="#5a3fd6" stroke="#5a3fd6"/>
-    <path d="M32 4 L58 17 L32 30 L6 17 Z" fill="url(#g2)" stroke="url(#g2)"/>
-    <path d="M8.5 17 L32 28.6 L55.5 17" fill="none" stroke="#fff" stroke-opacity="0.45" stroke-width="1.2"/>
+    <path d="M6 17 L32 30 L58 17 L58 22 L32 35 L6 22 Z" fill="#c26aa8" stroke="#c26aa8"/>
+    <path d="M32 4 L58 17 L32 30 L6 17 Z" fill="#fd91cc" stroke="#fd91cc"/>
   </g>
 </svg>

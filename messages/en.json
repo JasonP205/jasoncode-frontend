@@ -9,9 +9,7 @@
     "themeToggle": "Toggle light/dark theme",
     "localeSwitcher": "Select language",
     "primaryNav": "Primary navigation",
-    "cv": "Résumé",
-    "soundOn": "Sound: on",
-    "soundOff": "Sound: off"
+    "cv": "Résumé"
   },
   "common": {
     "loading": "Loading…",
@@ -471,10 +469,6 @@
     "lede": "Final-year Software Engineering student at Greenwich. I build all three layers: interface, API and data.",
     "ctaCv": "View résumé",
     "ctaContact": "Message me",
-    "soundPrompt": "This page has sound. Turn it on, then run your cursor over my name.",
-    "soundOn": "Sound: on",
-    "soundOff": "Turn sound on",
-    "scrollCue": "Scroll one layer down",
     "facts": [
       {
         "value": "3",
@@ -509,8 +503,8 @@
     },
     "time": {
       "kicker": "Timeline",
-      "heading": "Six stones.\nOne stream.",
-      "lede": "Each stone marks a step along the way. Scroll to light them one by one – and carry all six to the end of the page.",
+      "heading": "Step by step.\nTo today.",
+      "lede": "Six milestones – from the first day at Greenwich to the job I do now.",
       "items": [
         {
           "when": "08/2023",
@@ -553,7 +547,7 @@
     "stack": {
       "kicker": "Stack",
       "heading": "Five layers.\nOne person.",
-      "lede": "Hover a layer to see what I use there.",
+      "lede": "I work across all five layers of a product. Here are the tools I use on each.",
       "layers": [
         "Interface",
         "State",

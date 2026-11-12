@@ -16,6 +16,8 @@ export interface CvSkillGroup {
 
 export interface CvJob {
   company: string;
+  /** Company website, linked from the company name. */
+  url?: string;
   title: string;
   period: string;
   current: boolean;
@@ -44,6 +46,7 @@ export const cv = {
   experience: [
     {
       company: "TOTDigi",
+      url: "https://totdigi.vn/",
       title: "Software Developer",
       period: "Nov 2026 — Present",
       current: true,

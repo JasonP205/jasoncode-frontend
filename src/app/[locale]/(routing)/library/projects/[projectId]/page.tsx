@@ -134,7 +134,7 @@ async function ProjectContent({ project }: { project: LocalizedProject }) {
               ) : (
                 <Dialog type="info" acceptText={t("deployingAccept")} title={t("deployingTitle")} message={t("deployingMessage")}>
                   <Button
-                    className="w-full sm:w-auto font-medium bg-action text-white hover:bg-[var(--action-hover)] rounded-full px-6"
+                    className="w-full sm:w-auto font-medium bg-action text-action-foreground hover:bg-[var(--action-hover)] rounded-xl px-6"
                     size="lg"
                   >
                     {t("visit")}
